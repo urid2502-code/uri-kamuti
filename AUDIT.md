@@ -1,6 +1,8 @@
-# Extraction audit — Uri quantitative mixed sets
+# Extraction audit — quantitative mixed sets
 
 Source: the book, sets 1–40, 10 questions per set (**400 questions**). The questions were transcribed from a video of someone paging through the book. The book itself is **not** in this repository or on this machine, so this audit compares the transcription with the book structure (40 × 10), the book answer key, and the gap notes recorded during transcription.
+
+> Update: 38 questions were added from photos of the book (set 5 Q10, set 6, set 7 Q1–3, set 8 Q10, set 9, set 10 Q1–3, set 11 Q10, set 12 Q1–9). Now 359 of 400 are transcribed and 41 are still missing.
 
 ## Totals
 
@@ -10,17 +12,15 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | Transcribed (complete and readable) | 249 |
 | Transcribed but partly guessed (small or blurry text in the video) | 68 |
 | Transcribed but incomplete or unreadable | 4 |
-| **Not transcribed (pages skipped in the video)** | **79** |
-| Book answer key available | 380 (sets 6 and 9 have no key) |
+| Transcribed from photos of the book | 38 |
+| **Not transcribed (pages skipped in the video)** | **41** |
+| Book answer key available | 400 |
 
 ## Book pages needed to recover the missing questions
 
 | Book pages | Missing questions |
 |---|---|
-| 26–31 | דילגו בסרטון (גללת מהר): חסרות שאלה 10 של מקבץ 5, כל מקבץ 6, ושאלות 1–3 של מקבץ 7. |
-| 38–43 | דילגו בסרטון: חסרות שאלה 10 של מקבץ 8, כל מקבץ 9, ושאלות 1–3 של מקבץ 10. |
 | 44 | מטושטש מאוד בסרטון: שאלות 4–6 של מקבץ 10 נקראו חלקית בלבד. |
-| 50–53 | דילגו בסרטון: חסרות שאלה 10 של מקבץ 11 ושאלות 1–9 של מקבץ 12. |
 | 68–69 | דילגו בסרטון: חסרות שאלות 4–9 של מקבץ 16. |
 | 88–90 | דילגו בסרטון: חסרות שאלות 4–10 של מקבץ 21. |
 | 92–93 | לא צולמו: חסרות שאלות 4–9 של מקבץ 22. |

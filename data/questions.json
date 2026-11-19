@@ -1133,14 +1133,21 @@
   "q": 10,
   "page": 26,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "כמה מספרים ארבע־ספרתיים, הגדולים מ־4,300, ניתן ליצור באמצעות הספרות 0, 3, 4, 5, 7, 8, אם ידוע שניתן להשתמש בכל אחת מהספרות פעם אחת בלבד?"
+  ],
+  "options": [
+   "144",
+   "216",
+   "228",
+   "360"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "6-1",
@@ -1148,14 +1155,21 @@
   "q": 1,
   "page": 27,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "(a + b + c + d)² − (a − b + c − d)² = ?"
+  ],
+  "options": [
+   "2(a + c)² + 2(b + d)²",
+   "4ab + 4cd",
+   "4(a + c)(b + d)",
+   "4abcd"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "6-2",
@@ -1163,14 +1177,22 @@
   "q": 2,
   "page": 27,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "אמא דובה צריכה לאגור מלאי של 100 ק\"ג מזון כדי להיכנס לשנת החורף. האם אוספת 45 ק\"ג מזון בשעה וחצי. לאם יש במערה 2 גורים, שכל אחד מהם אוכל חצי ק\"ג מזון ב־18 דקות.",
+   "כמה זמן (בשעות) זקוקה האמא דובה כדי לאגור 100 ק\"ג של מזון?"
+  ],
+  "options": [
+   "3¼",
+   "3½",
+   "3¾",
+   "4"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "6-3",
@@ -1178,14 +1200,23 @@
   "q": 3,
   "page": 27,
   "answer": 2,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "x = 2¹⁰ + 2¹⁰",
+   "y = 1/2¹¹ + 1/2¹¹",
+   "xy = ?"
+  ],
+  "options": [
+   "1",
+   "2",
+   "½",
+   "¼"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "6-4",
@@ -1193,14 +1224,22 @@
   "q": 4,
   "page": 28,
   "answer": 2,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם שני מעגלים חופפים שמרכזיהם הם O₁ ו־O₂ ורדיוסם r ס\"מ. A ו־D הן נקודות החיתוך של שני המעגלים. [סרטוט: הקטעים AB ו־AC עוברים דרך מרכזי המעגלים; הזווית BAC מסומנת 60°.]",
+   "על פי נתונים אלו ונתוני הסרטוט, מה סכום אורכן של הקשתות הקצרות BD ו־DC (בס\"מ)?"
+  ],
+  "options": [
+   "⅓πr",
+   "⅔πr",
+   "πr",
+   "לא ניתן לדעת"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/6-4.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "6-5",
@@ -1208,14 +1247,21 @@
   "q": 5,
   "page": 28,
   "answer": 2,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "כמה אחוזים מהווה הביטוי (x/4 + x/5) מתוך הביטוי (2.2x + 7x/5)?"
+  ],
+  "options": [
+   "10%",
+   "12.5%",
+   "25%",
+   "30%"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "6-6",
@@ -1223,14 +1269,22 @@
   "q": 6,
   "page": 28,
   "answer": 2,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתונה המשוואה x² + 1 = y (⚠️ המעריך קטן בתמונה).",
+   "ידוע כי אין ערך של x המקיים את המשוואה. מה מהבאים יכול להיות ערכו של y?"
+  ],
+  "options": [
+   "0",
+   "1",
+   "2",
+   "אף אחת מהתשובות אינה נכונה"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
-  "needsReview": false,
-  "source": null
+  "needsReview": true,
+  "source": "photo"
  },
  {
   "id": "6-7",
@@ -1238,14 +1292,22 @@
   "q": 7,
   "page": 29,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם מעגל שעל היקפו הנקודות A, B, C, D, E ו־F. הקשתות שנוצרו בסרטוט הן בעלות אורך שווה.",
+   "α + β + γ + δ = ?"
+  ],
+  "options": [
+   "120°",
+   "180°",
+   "240°",
+   "360°"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/6-7.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "6-8",
@@ -1253,14 +1315,21 @@
   "q": 8,
   "page": 29,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "(3x + 2y)/(x + y) = ?"
+  ],
+  "options": [
+   "5",
+   "3/y + 2/x",
+   "2 + x/(x + y)",
+   "3 + y/(x + y) (⚠️ מטושטש)"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
-  "needsReview": false,
-  "source": null
+  "needsReview": true,
+  "source": "photo"
  },
  {
   "id": "6-9",
@@ -1268,14 +1337,22 @@
   "q": 9,
   "page": 29,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: a < 0 , a/b < a/c",
+   "מה מהבאים בהכרח אינו נכון?"
+  ],
+  "options": [
+   "0 < b < c",
+   "b < c < 0",
+   "b < 0 < c",
+   "c < 0 < b"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "6-10",
@@ -1283,14 +1360,25 @@
   "q": 10,
   "page": 30,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "לכל מספר טבעי x הוגדרה הפעולה $ כך:",
+   "אם x זוגי: $(x) = 2x − 1",
+   "אם x אי־זוגי: $(x) = 3x − 1",
+   "נתון: a ו־b הם מספרים עוקבים.",
+   "מה מהבאים נכון בהכרח?"
+  ],
+  "options": [
+   "$(a)/$(b) הוא מספר זוגי",
+   "($(a))^($(b)) הוא מספר זוגי",
+   "$(a) + $(b) הוא מספר זוגי",
+   "$(a) · $(b) הוא מספר זוגי"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "7-1",
@@ -1298,14 +1386,22 @@
   "q": 1,
   "page": 31,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "6 מכונות זהות, בעלות הספק זהה, מכינות 5 כדי זכוכית ב־11 שעות.",
+   "כמה זמן (בדקות) יידרש ל־42 מכונות כדי לייצר 7 כדי זכוכית?"
+  ],
+  "options": [
+   "1.1",
+   "2.2",
+   "66",
+   "132"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "7-2",
@@ -1313,14 +1409,22 @@
   "q": 2,
   "page": 31,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: −1 < x < 0",
+   "מה מהבאים נכון בהכרח בנוגע לביטויים x, ∛x, x⁻⁵, x⁵?"
+  ],
+  "options": [
+   "x⁵ < x⁻⁵ < ∛x < x",
+   "x⁻⁵ < x < ∛x < x⁵",
+   "x⁻⁵ < x⁵ < x < ∛x",
+   "x⁻⁵ < ∛x < x < x⁵"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "7-3",
@@ -1328,14 +1432,22 @@
   "q": 3,
   "page": 31,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: x הוא מספר שלם, 20 < x.",
+   "איזה מהביטויים הבאים הוא הגדול ביותר?"
+  ],
+  "options": [
+   "(x − 1)!/x!",
+   "(x − 2)!/x!",
+   "(x − 3)!/(x − 2)!",
+   "(x − 2)!/(x − 1)!"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "7-4",
@@ -1715,14 +1827,21 @@
   "q": 10,
   "page": 38,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "(√5 + 1)⁴ − (√5 + 1)² = ?"
+  ],
+  "options": [
+   "50 + 17√5",
+   "6 + 2√5",
+   "12 + 4√5",
+   "50 + 22√5"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-1",
@@ -1730,14 +1849,22 @@
   "q": 1,
   "page": 39,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: ab = 4 , a² + b² = 10",
+   "(a − b)¹⁰ = ?"
+  ],
+  "options": [
+   "2¹⁰",
+   "2²",
+   "2⁵",
+   "2⁴"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-2",
@@ -1745,14 +1872,22 @@
   "q": 2,
   "page": 39,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: b < a",
+   "איזו מהטענות הבאות נכונה בהכרח?"
+  ],
+  "options": [
+   "b − 2 < a − 1",
+   "b < 3a",
+   "a < b²",
+   "b < a²"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-3",
@@ -1760,14 +1895,25 @@
   "q": 3,
   "page": 39,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם משושה משוכלל בו הועברו כל האלכסונים הראשיים. עכבר יוצא מנקודה A ועליו להגיע לנקודה B כאשר עליו לפעול בהתאם לכללים הבאים:",
+   "א. מותר ללכת רק על הקווים.",
+   "ב. אסור לחזור על אותו הקו פעמיים.",
+   "ג. אסור לעבור באותו הקודקוד פעמיים.",
+   "בהתאם לכללים אלו, בכמה דרכים שונות ניתן להגיע מ־A ל־B?"
+  ],
+  "options": [
+   "8",
+   "12",
+   "15",
+   "21"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/9-3.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-4",
@@ -1775,14 +1921,22 @@
   "q": 4,
   "page": 40,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: a ≠ −4 , (a + 4)⁵ = −64 · (a + 4)²",
+   "a = ?"
+  ],
+  "options": [
+   "0",
+   "4",
+   "−4",
+   "−8"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-5",
@@ -1790,14 +1944,22 @@
   "q": 5,
   "page": 40,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון מעגל שרדיוסו r.",
+   "מה מהבאים נכון בהכרח?"
+  ],
+  "options": [
+   "היקפו של מתומן משוכלל החסום במעגל הנתון קטן מהיקפו של משובע משוכלל החסום במעגל הנתון",
+   "צלעו של מתומן משוכלל החסום במעגל הנתון קטנה מצלעו של מתושע משוכלל החסום במעגל הנתון",
+   "שטחו של מתומן משוכלל החסום במעגל הנתון קטן משטחו של משושה משוכלל החסום במעגל הנתון",
+   "אף אחת מהתשובות אינה נכונה בהכרח"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-6",
@@ -1805,14 +1967,22 @@
   "q": 6,
   "page": 40,
   "answer": 2,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: x²y⁴ + 10 = (xy² + 3)² , √6/6 < y",
+   "מה מהבאים מתאר נכונה את תחום הערכים של x?"
+  ],
+  "options": [
+   "1 < x",
+   "0 < x < 1",
+   "−1 < x < 0",
+   "x < −1"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-7",
@@ -1820,14 +1990,22 @@
   "q": 7,
   "page": 41,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "לליאור קובייה הוגנת ומטבע שעליו מוטבעות הספרות 1 ו־2. ליאור מטיל את שניהם פעמיים רצופות.",
+   "מה הסיכוי שסכום התוצאות שהתקבלו בקובייה ובמטבע לא קטן מ־15?"
+  ],
+  "options": [
+   "5/144",
+   "1/12",
+   "1/16",
+   "1/18"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-8",
@@ -1835,14 +2013,23 @@
   "q": 8,
   "page": 41,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "לכל מספר שלם וחיובי a הוגדרו שתי הפעולות הבאות כך:",
+   "$(a) = a!/(a + 1)! ; #(a) = (a − 1)!/a!",
+   "$(a − 1)/#(a) = ?"
+  ],
+  "options": [
+   "1",
+   "a",
+   "a + 1",
+   "a − 1"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-9",
@@ -1850,14 +2037,21 @@
   "q": 9,
   "page": 41,
   "answer": 2,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בחווה 6 תרנגולות המטילות ביצה כל 3 ימים. 5 ימים לאחר ההטלה בוקעים האפרוחים מהביצה. בהנחה שביום הראשון כל התרנגולות הטילו ביצה, כמה אפרוחים יהיו בחווה לאחר 31 ימים?"
+  ],
+  "options": [
+   "48",
+   "54",
+   "60",
+   "66"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "9-10",
@@ -1865,14 +2059,22 @@
   "q": 10,
   "page": 42,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם שני מעגלים החופפים זה לזה. בתוך כל אחד מהמעגלים חסומים מעגלים קטנים זהים המשיקים זה לזה, משיקים למעגל הגדול ומרכזיהם מונחים על הקוטר של המעגל הגדול בו הם חסומים.",
+   "על פי נתונים אלו ונתוני הסרטוט, מה מהבאים נכון בהכרח?"
+  ],
+  "options": [
+   "סכום שטחי שני המעגלים הקטנים החסומים במעגל קטן מסכום שטחי שלושת המעגלים הקטנים החסומים במעגל",
+   "סכום שטחי שני המעגלים הקטנים החסומים במעגל שווה לסכום שטחי שלושת המעגלים הקטנים החסומים במעגל",
+   "סכום שטחי שני המעגלים הקטנים החסומים במעגל גדול מסכום שטחי שלושת המעגלים הקטנים החסומים במעגל",
+   "אף אחת מהתשובות אינה נכונה בהכרח"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/9-10.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "10-1",
@@ -1880,14 +2082,22 @@
   "q": 1,
   "page": 43,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: y⁴ − 16 = (x² − 4)(y² + 4)",
+   "מה מהבאים נכון בהכרח?"
+  ],
+  "options": [
+   "x = y",
+   "y = x + 2",
+   "|x| = |y|",
+   "y² = x"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "10-2",
@@ -1895,14 +2105,23 @@
   "q": 2,
   "page": 43,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם ABCD מקבילית.",
+   "נתון: שטח המשולש ABE מהווה ¼ משטח הטרפז ADCE.",
+   "BE/BC = ?"
+  ],
+  "options": [
+   "1:4",
+   "2:3",
+   "3:5",
+   "2:5"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/10-2.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "10-3",
@@ -1910,14 +2129,25 @@
   "q": 3,
   "page": 43,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: x מספר שלם המתחלק ב־4 וב־5 ללא שארית.",
+   "y = x + 10",
+   "איזה מהביטויים הבאים **אינו** מתחלק ב־20 ללא שארית?"
+  ],
+  "options": [
+   "6y",
+   "2y",
+   "3y",
+   "4y"
+  ],
   "code": [],
-  "notes": [],
+  "notes": [
+   "עמוד 44 (שאלות 4–6) מטושטש מאוד בסרטון. מה שאפשר היה לקרוא:"
+  ],
   "figure": null,
-  "needsReview": false,
-  "source": null
+  "needsReview": true,
+  "source": "photo"
  },
  {
   "id": "10-4",
@@ -2287,14 +2517,22 @@
   "q": 10,
   "page": 50,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם קובייה שאורך מקצועה הוא 3 ס\"מ. בני העביר שלושה אלכסונים על פאותיה של הקובייה וצבע את שטח המשולשים שנוצרו.",
+   "מה היחס בין שטח שלושת המשולשים לבין שאר שטח הפנים הלא צבוע של הקובייה?"
+  ],
+  "options": [
+   "3:4",
+   "1:2",
+   "1:3",
+   "1:4"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/11-10.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-1",
@@ -2302,14 +2540,23 @@
   "q": 1,
   "page": 51,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: a + b = √15",
+   "a − b = √60",
+   "a = ?"
+  ],
+  "options": [
+   "√75",
+   "√75/2",
+   "3√15",
+   "(3√15)/2"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-2",
@@ -2317,14 +2564,22 @@
   "q": 2,
   "page": 51,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "a גדול ב־b% ממספר כלשהו.",
+   "מהו אותו מספר?"
+  ],
+  "options": [
+   "a + a/100",
+   "a + 100a/b",
+   "100a/(100 + b)",
+   "100a/b"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-3",
@@ -2332,14 +2587,23 @@
   "q": 3,
   "page": 51,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "3ᵃ · 9ᵇ = 27",
+   "4ab = 8",
+   "a² + 4b² = ?"
+  ],
+  "options": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-4",
@@ -2347,14 +2611,22 @@
   "q": 4,
   "page": 52,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם משולש שווה צלעות ABC שאורך צלעו a. כמו כן, בסרטוט שני מעגלים חופפים – האחד שמרכזו A והשני שמרכזו מונח על הצלע BC.",
+   "לאור נתונים אלו ונתוני הסרטוט, מה גודלו של השטח הלבן בסרטוט?"
+  ],
+  "options": [
+   "πa²/3",
+   "2πa²/3",
+   "πa²",
+   "4πa²/3"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/12-4.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-5",
@@ -2362,14 +2634,24 @@
   "q": 5,
   "page": 52,
   "answer": 2,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם קובייה. ארנב וצב יוצאים באותו הזמן ובאותה המהירות לריצה מהנקודה A.",
+   "מסלול הארנב היה A → B → C → A",
+   "מסלול הצב היה A → B → D → E → A",
+   "כאשר הארנב הגיע חזרה ל־A, הצב ____"
+  ],
+  "options": [
+   "כבר היה ב־A",
+   "היה במהלכו של הקטע E → A",
+   "היה במהלכו של הקטע D → E",
+   "לא ניתן לדעת"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/12-5.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-6",
@@ -2377,14 +2659,22 @@
   "q": 6,
   "page": 52,
   "answer": 2,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: הביטוי x!/(x − 3)! מתחלק ב־30 ללא שארית.",
+   "איזה מהמספרים הבאים יכול להיות x?"
+  ],
+  "options": [
+   "13",
+   "17",
+   "23",
+   "29"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-7",
@@ -2392,14 +2682,22 @@
   "q": 7,
   "page": 53,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: x < −5 , x/2 הוא מספר שלם.",
+   "איזה מהביטויים הבאים הוא הגדול ביותר?"
+  ],
+  "options": [
+   "(−1/11)^x",
+   "(−1/11)^(x+1)",
+   "(−1/11)^(x−1)",
+   "(−1/11)^(2x+1)"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-8",
@@ -2407,14 +2705,22 @@
   "q": 8,
   "page": 53,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "מצולע משוכלל בעל 10 צלעות משורטט במערכת צירים כך שראשית הצירים נמצאת במרכז המעגל החוסם את המצולע.",
+   "אילו מהנקודות הבאות שעל המצולע המשוכלל הכי רחוקות מראשית הצירים?"
+  ],
+  "options": [
+   "קודקודי המעשר",
+   "נקודות החיתוך של צלעות המצולע עם הצירים (שאינם קודקודים)",
+   "נקודות האמצע של צלעות המצולע שאינן חותכות את הצירים",
+   "כל הנקודות שעל המצולע רחוקות באותה המידה מראשית הצירים"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/12-8.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-9",
@@ -2422,14 +2728,23 @@
   "q": 9,
   "page": 53,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "ניא ביקש מאלי להשתתף במשחק מסוים בו עליו לבחור את ספרת האחדות של מספר ראשוני דו־ספרתי הקטן מ־50.",
+   "ניא: \"אלי, שים לב שחשוב לי שספרת האחדות שתבחר היא בעלת הסיכוי הנמוך ביותר להופיע\".",
+   "אלי: \"אם כך אני חושב שעלי לבחור בספרה ___\"."
+  ],
+  "options": [
+   "1",
+   "3",
+   "7",
+   "9"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "12-10",

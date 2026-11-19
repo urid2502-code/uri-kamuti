@@ -1,6 +1,7 @@
 (function(){
   'use strict';
-  var KEY='uri-kamuti:v2', OLD='uri-kamuti:v1', THEME='uri-kamuti:theme', HIDE='uri-kamuti:hideTimer';
+  var UID=null; try{ UID=localStorage.getItem('uriq:uid'); }catch(e){}
+  var KEY='uri-kamuti:v2'+(UID?':'+UID:''), OLD='uri-kamuti:v1', THEME='uri-kamuti:theme', HIDE='uri-kamuti:hideTimer';
   var D=window.KAMUTI||{key:{},exist:{},review:[],fresh:[],idx:[]};
   var body=document.body, root=body.dataset.root||'';
   function load(k,d){ try{ var v=JSON.parse(localStorage.getItem(k)); return v==null?d:v; }catch(e){ return d; } }
@@ -8,13 +9,19 @@
   var store=load(KEY,null);
   if(!store||!store.sets){
     store={sets:{}};
-    var old=load(OLD,{}); // migrate earlier answers as unsubmitted selections
+    var old=UID?{}:load(OLD,{}); // migrate earlier answers as unsubmitted selections
     Object.keys(old||{}).forEach(function(id){ var s=id.split('-')[0]; (store.sets[s]=store.sets[s]||fresh()).a[id]=old[id]; });
     put(KEY,store);
   }
   function fresh(){ return {a:{},x:{},sub:false,t:{el:0,run:false,st:0}}; }
   function S(n){ return store.sets[n]||(store.sets[n]=fresh()); }
-  function save(){ put(KEY,store); }
+  function save(){ store.u=Date.now(); put(KEY,store); try{ window.dispatchEvent(new CustomEvent('uriq:save')); }catch(e){} }
+  store.hist=store.hist||[]; store.m=store.m||{};
+  function summarize(n,st){ var ok=0, wr=[], sk=[], ex=D.exist[n]||[]; ex.forEach(function(q){ var id=n+'-'+q, p=st.a[id], k=+keyOf(id); if(!p) sk.push(id); else if(p===k) ok++; else wr.push(id); }); return {ok:ok,tot:ex.length,wr:wr,sk:sk}; }
+  function logAttempt(n,st){ var r=summarize(n,st); store.hist.push({n:+n,at:st.at||Date.now(),ok:r.ok,tot:r.tot,el:st.t.el||0,wr:r.wr,sk:r.sk}); }
+  // older submissions (before the history log existed) become history entries from their saved answers
+  Object.keys(store.sets).forEach(function(n){ var st=store.sets[n]; if(st&&st.sub&&!store.hist.some(function(h){ return h.n===+n&&h.at===st.at; })) logAttempt(n,st); });
+  store.hist.sort(function(a,b){ return a.at-b.at; });
   var REV={}, NEW={};
   (D.review||[]).forEach(function(i){REV[i]=1;}); (D.fresh||[]).forEach(function(i){NEW[i]=1;});
   function pad(n){ return (n<10?'0':'')+n; }
@@ -24,7 +31,7 @@
 
   /* ---- theme ---- */
   var tb=document.getElementById('theme');
-  function syncTheme(){ var dk=document.documentElement.dataset.theme==='dark'; if(tb){ tb.setAttribute('aria-pressed',dk?'true':'false'); tb.setAttribute('aria-label',dk?'מצב בהיר':'מצב כהה'); } var m=document.querySelector('meta[name=theme-color]'); if(m) m.content=dk?'#0B1120':'#F8FAFC'; }
+  function syncTheme(){ var dk=document.documentElement.dataset.theme==='dark'; if(tb){ tb.setAttribute('aria-pressed',dk?'true':'false'); tb.setAttribute('aria-label',dk?'מצב בהיר':'מצב כהה'); } var m=document.querySelector('meta[name=theme-color]'); if(m&&!body.classList.contains('landing')&&!body.classList.contains('loginpage')) m.content=dk?'#000000':'#F5F5F4'; }
   if(tb) tb.addEventListener('click',function(){ var dk=document.documentElement.dataset.theme!=='dark'; if(dk) document.documentElement.dataset.theme='dark'; else delete document.documentElement.dataset.theme; try{ localStorage.setItem(THEME,dk?'dark':'light'); }catch(e){} syncTheme(); });
   syncTheme();
 
@@ -95,6 +102,7 @@
   /* ================= set page ================= */
   if(body.classList.contains('setpage')){
     var n=body.dataset.set, st=S(n);
+    var save0=save; save=function(){ st.u=Date.now(); save0(); };
     var cards=[].slice.call(document.querySelectorAll('.q:not(.miss)')), misses=[].slice.call(document.querySelectorAll('.q.miss'));
     var total=cards.length;
     var digits=document.getElementById('t-digits'), startB=document.getElementById('t-start'), resetB=document.getElementById('t-reset'), hideB=document.getElementById('t-hide'), paceEl=document.getElementById('t-pace');
@@ -157,7 +165,7 @@
       cards.forEach(function(c){ var id=c.dataset.q, q=id.split('-')[1], p=st.a[id], k=+keyOf(id), cls=!p?'skip':p===k?'ok':'no'; if(cls==='ok') ok++;
         pills+='<a class="pill '+cls+'" href="#q'+id+'">'+q+'<span class="vh"> – '+(cls==='ok'?'נכונה':cls==='no'?'שגויה':'לא נענתה')+'</span></a>'; });
       var ms=st.t.el, pct=total?Math.round(100*ok/total):0;
-      var nx=+n<40?'<a class="btn" href="'+pad(+n+1)+'.html">למקבץ '+(+n+1)+'</a>':'<a class="btn" href="../index.html">לגיליון התשובות</a>';
+      var nx=+n<40?'<a class="btn" href="'+pad(+n+1)+'.html">למקבץ '+(+n+1)+'</a>':'<a class="btn" href="../sets.html">לכל המקבצים</a>';
       box.innerHTML='<div class="rd-top"><div><h2 class="rd-h" id="res-h">תוצאות מקבץ '+n+'</h2><p class="rd-sub">המקבץ הוגש והתשובות נעולות. הפתרון המלא מופיע מתחת לכל שאלה.</p></div></div>'+
         '<div class="rd-stats"><div class="stat"><b><bdi dir="ltr">'+ok+' / '+total+'</bdi></b><span>ציון<small>'+pct+'%</small></span></div>'+
         '<div class="stat"><b>'+(ms?fmt(ms):'—')+'</b><span>'+(ms?'זמן כולל':'הטיימר לא הופעל')+'</span></div>'+
@@ -167,7 +175,7 @@
         '<div class="rd-act"><button type="button" class="btn primary" id="retake">איפוס מקבץ ופתרון מחדש</button>'+nx+'</div>';
       box.hidden=false;
       document.getElementById('retake').addEventListener('click',function(){
-        ask('לאפס את המקבץ?','כל התשובות, הסימונים והזמן של מקבץ '+n+' יימחקו, ותוכלו לפתור אותו מחדש.','איפוס',function(){ store.sets[n]=fresh(); save(); location.replace(location.pathname); });
+        ask('לאפס את המקבץ?','כל התשובות, הסימונים והזמן של מקבץ '+n+' יימחקו, ותוכלו לפתור אותו מחדש.','איפוס',function(){ store.sets[n]=fresh(); store.sets[n].u=Date.now(); save(); location.replace(location.pathname); });
       });
     }
     function drawAll(){ body.classList.toggle('is-review',!!st.sub); cards.forEach(drawCard); drawCounts(); drawResults(); drawStartBtn(); drawTimer(); }
@@ -204,7 +212,7 @@
 
     function doSubmit(){
       if(st.t.run){ st.t.el+=Date.now()-st.t.st; st.t.run=false; } loop(false);
-      st.sub=true; st.at=Date.now(); save(); drawAll();
+      st.sub=true; st.at=Date.now(); logAttempt(n,st); save(); drawAll();
       var box=document.getElementById('results'); if(box){ box.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); box.focus({preventScroll:true}); }
     }
     document.querySelectorAll('[data-submit]').forEach(function(b){ b.addEventListener('click',function(){
@@ -258,12 +266,21 @@
       document.querySelectorAll('.c.miss:not(a)').forEach(function(c){ c.classList.toggle('dim',f!=='all'); });
     },function(){ var a=[]; Object.keys(D.exist).forEach(function(s){ D.exist[s].forEach(function(q){ a.push(s+'-'+q); }); }); return a; });
     document.getElementById('wipe').onclick=function(){
-      if(this.dataset.armed){ store={sets:{}}; save(); location.reload(); return; }
+      if(this.dataset.armed){ store={sets:{},hist:[],m:{},wiped:Date.now()}; save(); location.reload(); return; }
       this.dataset.armed=1; this.textContent='ללחוץ שוב כדי לאשר את האיפוס';
     };
   }
 
   window.addEventListener('beforeprint',function(){ document.querySelectorAll('details.sol').forEach(function(d){ d.dataset.was=d.open?'1':''; d.open=true; }); });
   window.addEventListener('afterprint',function(){ document.querySelectorAll('details.sol').forEach(function(d){ d.open=!!d.dataset.was; }); });
+  /* ---- account chip ---- */
+  var acct=document.getElementById('acct');
+  if(acct){ var pf=UID?load('uriq:profile',null):null;
+    if(pf){ var av=acct.querySelector('.av'), nm=(pf.name||pf.email||'').split(' ')[0];
+      acct.href=root+'dashboard.html'; acct.setAttribute('aria-label','האזור שלי – '+(pf.name||pf.email||''));
+      acct.querySelector('.an').textContent=nm||'החשבון שלי';
+      if(pf.avatar){ var im=new Image(); im.alt=''; im.referrerPolicy='no-referrer'; im.src=pf.avatar; im.onerror=function(){ av.textContent=(nm||'?').charAt(0); }; av.innerHTML=''; av.appendChild(im); } else av.textContent=(nm||'?').charAt(0);
+    } }
+  window.URIQ={get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

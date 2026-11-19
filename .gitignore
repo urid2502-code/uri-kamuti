@@ -1,1 +1,3 @@
 push-to-github.bat
+__pycache__/
+*.pyc

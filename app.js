@@ -1,189 +1,268 @@
 (function(){
-  var KEY='uri-kamuti:v1', st={};
-  try{ st=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ st={}; }
-  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(st)); }catch(e){} }
+  'use strict';
+  var KEY='uri-kamuti:v2', OLD='uri-kamuti:v1', THEME='uri-kamuti:theme', HIDE='uri-kamuti:hideTimer';
   var D=window.KAMUTI||{key:{},exist:{},review:[],fresh:[],idx:[]};
   var body=document.body, root=body.dataset.root||'';
-  var REV={}, NEW={};
-  D.review.forEach(function(i){REV[i]=1;}); D.fresh.forEach(function(i){NEW[i]=1;});
-  function pad(n){ return (n<10?'0':'')+n; }
-  function isRight(id){ var p=id.split('-'); return st[id]===D.key[p[0]][p[1]-1]; }
-  function match(id,f){
-    if(f==='open') return !st[id];
-    if(f==='review') return !!REV[id];
-    if(f==='new') return !!NEW[id];
-    return true;
+  function load(k,d){ try{ var v=JSON.parse(localStorage.getItem(k)); return v==null?d:v; }catch(e){ return d; } }
+  function put(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
+  var store=load(KEY,null);
+  if(!store||!store.sets){
+    store={sets:{}};
+    var old=load(OLD,{}); // migrate earlier answers as unsubmitted selections
+    Object.keys(old||{}).forEach(function(id){ var s=id.split('-')[0]; (store.sets[s]=store.sets[s]||fresh()).a[id]=old[id]; });
+    put(KEY,store);
   }
-  function allIds(){ var a=[]; Object.keys(D.exist).forEach(function(s){ D.exist[s].forEach(function(q){ a.push(s+'-'+q); }); }); return a; }
+  function fresh(){ return {a:{},x:{},sub:false,t:{el:0,run:false,st:0}}; }
+  function S(n){ return store.sets[n]||(store.sets[n]=fresh()); }
+  function save(){ put(KEY,store); }
+  var REV={}, NEW={};
+  (D.review||[]).forEach(function(i){REV[i]=1;}); (D.fresh||[]).forEach(function(i){NEW[i]=1;});
+  function pad(n){ return (n<10?'0':'')+n; }
+  function keyOf(id){ var p=id.split('-'); return (D.key[p[0]]||[])[p[1]-1]; }
+  function fmt(ms){ var s=Math.floor(ms/1000), h=Math.floor(s/3600), m=Math.floor(s%3600/60), r=s%60; return (h?h+':'+pad(m):pad(m))+':'+pad(r); }
+  function fmtShort(ms){ var s=Math.round(ms/1000), m=Math.floor(s/60), r=s%60; return m+':'+pad(r); }
 
-  /* ---- sidebar progress + mobile drawer ---- */
+  /* ---- theme ---- */
+  var tb=document.getElementById('theme');
+  function syncTheme(){ var dk=document.documentElement.dataset.theme==='dark'; if(tb){ tb.setAttribute('aria-pressed',dk?'true':'false'); tb.setAttribute('aria-label',dk?'מצב בהיר':'מצב כהה'); } var m=document.querySelector('meta[name=theme-color]'); if(m) m.content=dk?'#0B1120':'#F8FAFC'; }
+  if(tb) tb.addEventListener('click',function(){ var dk=document.documentElement.dataset.theme!=='dark'; if(dk) document.documentElement.dataset.theme='dark'; else delete document.documentElement.dataset.theme; try{ localStorage.setItem(THEME,dk?'dark':'light'); }catch(e){} syncTheme(); });
+  syncTheme();
+
+  /* ---- sidebar progress + drawer ---- */
   function sideProgress(){
     Object.keys(D.exist).forEach(function(s){
       var ex=D.exist[s]; if(!ex.length) return;
-      var done=0, ok=0; ex.forEach(function(q){ var id=s+'-'+q; if(st[id]){ done++; if(isRight(id)) ok++; } });
+      var st=store.sets[s], done=0; if(st) ex.forEach(function(q){ if(st.a[s+'-'+q]) done++; });
       var i=document.querySelector('[data-pb="'+s+'"]'); if(i) i.style.width=(100*done/ex.length)+'%';
       var sm=document.querySelector('[data-sp="'+s+'"]');
-      if(sm){ sm.textContent= done ? done+'/'+ex.length : String(ex.length); sm.closest('.sl').classList.toggle('full',done===ex.length); sm.closest('.sl').setAttribute('aria-label','מקבץ '+s+', נענו '+done+' מתוך '+ex.length); }
+      if(sm){ var sub=st&&st.sub; sm.textContent= done ? done+'/'+ex.length : String(ex.length); var a=sm.closest('.sl'); a.classList.toggle('full',!!sub); a.setAttribute('aria-label','מקבץ '+s+(sub?', הוגש':'')+', נענו '+done+' מתוך '+ex.length); }
     });
   }
   var side=document.getElementById('side'), nb=document.querySelector('.navbtn'), scrim=document.querySelector('.scrim');
-  function drawer(open){
-    if(!side) return; side.classList.toggle('open',open); if(scrim) scrim.hidden=!open;
-    if(nb) nb.setAttribute('aria-expanded',open?'true':'false');
-    if(open){ var c=side.querySelector('[aria-current]'); (c||side.querySelector('a')).focus(); }
-  }
+  function drawer(open){ if(!side) return; side.classList.toggle('open',open); if(scrim) scrim.hidden=!open; if(nb) nb.setAttribute('aria-expanded',open?'true':'false'); if(open){ var c=side.querySelector('[aria-current]'); (c||side.querySelector('a')).focus(); } }
   if(nb) nb.addEventListener('click',function(){ drawer(!side.classList.contains('open')); });
   if(scrim) scrim.addEventListener('click',function(){ drawer(false); nb.focus(); });
   var sx=document.querySelector('.side-x'); if(sx) sx.addEventListener('click',function(){ drawer(false); nb.focus(); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && side && side.classList.contains('open')){ drawer(false); nb.focus(); } });
   if(side){ var cur=side.querySelector('[aria-current]'); if(cur) side.scrollTop=Math.max(0,cur.offsetTop-side.clientHeight/2); }
+  var sel=document.getElementById('setsel'); if(sel) sel.addEventListener('change',function(){ location.href=sel.value+'.html'; });
 
   /* ---- global search ---- */
-  var inp=document.getElementById('q-search'), res=document.getElementById('q-results'), sel=-1;
+  var inp=document.getElementById('q-search'), res=document.getElementById('q-results'), si=-1;
   function norm(s){ return s.replace(/[֑-ׇ]/g,'').toLowerCase(); }
-  var IDX=D.idx.map(function(r){ return [r[0],r[1],norm(r[1])]; });
+  var IDX=(D.idx||[]).map(function(r){ return [r[0],r[1],norm(r[1])]; });
   function esc(s){ return s.replace(/[&<>"]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-  function snippet(t,w){
-    var i=norm(t).indexOf(w), a=Math.max(0,i-30), s=(a?'…':'')+t.slice(a,a+110)+(t.length>a+110?'…':'');
-    if(i<0) return esc(s);
-    var j=norm(s).indexOf(w); return esc(s.slice(0,j))+'<mark>'+esc(s.slice(j,j+w.length))+'</mark>'+esc(s.slice(j+w.length));
-  }
-  function close(){ if(!res) return; res.hidden=true; inp.setAttribute('aria-expanded','false'); sel=-1; }
+  function snippet(t,w){ var i=norm(t).indexOf(w), a=Math.max(0,i-30), s=(a?'…':'')+t.slice(a,a+110)+(t.length>a+110?'…':''); if(i<0) return esc(s); var j=norm(s).indexOf(w); return esc(s.slice(0,j))+'<mark>'+esc(s.slice(j,j+w.length))+'</mark>'+esc(s.slice(j+w.length)); }
+  function closeRes(){ if(!res) return; res.hidden=true; inp.setAttribute('aria-expanded','false'); si=-1; }
   function run(){
-    var v=norm(inp.value.trim()); if(!v){ close(); return; }
-    var words=v.split(/\s+/), out=[];
-    var m=v.match(/^(?:מקבץ\s*)?(\d{1,2})$/);
+    var v=norm(inp.value.trim()); if(!v){ closeRes(); return; }
+    var words=v.split(/\s+/), out=[], m=v.match(/^(?:מקבץ\s*)?(\d{1,2})$/);
     if(m && +m[1]>=1 && +m[1]<=40) out.push('<li><a role="option" href="'+root+'sets/'+pad(+m[1])+'.html"><b>מעבר</b>מקבץ '+(+m[1])+'</a></li>');
-    for(var k=0;k<IDX.length && out.length<12;k++){
-      var r=IDX[k]; if(words.every(function(w){ return r[2].indexOf(w)>=0; })){
-        var p=r[0].split('-');
-        out.push('<li><a role="option" href="'+root+'sets/'+pad(+p[0])+'.html#q'+r[0]+'"><b>מקבץ '+p[0]+', שאלה '+p[1]+'</b>'+snippet(r[1],words[0])+'</a></li>');
-      }
-    }
+    for(var k=0;k<IDX.length && out.length<12;k++){ var r=IDX[k]; if(words.every(function(w){ return r[2].indexOf(w)>=0; })){ var p=r[0].split('-'); out.push('<li><a role="option" href="'+root+'sets/'+pad(+p[0])+'.html#q'+r[0]+'"><b>מקבץ '+p[0]+', שאלה '+p[1]+'</b>'+snippet(r[1],words[0])+'</a></li>'); } }
     res.innerHTML=out.length?out.join(''):'<li class="nores">לא נמצאו שאלות. אפשר לחפש מילה מהשאלה או מספר מקבץ.</li>';
-    res.hidden=false; inp.setAttribute('aria-expanded','true'); sel=-1;
+    res.hidden=false; inp.setAttribute('aria-expanded','true'); si=-1;
   }
   if(inp){
     inp.addEventListener('input',run);
     inp.addEventListener('keydown',function(e){
       var links=res.querySelectorAll('a');
-      if(e.key==='ArrowDown'||e.key==='ArrowUp'){ if(!links.length) return; e.preventDefault(); sel=(sel+(e.key==='ArrowDown'?1:-1)+links.length)%links.length; links.forEach(function(a,i){ a.setAttribute('aria-selected',i===sel?'true':'false'); }); links[sel].scrollIntoView({block:'nearest'}); }
-      else if(e.key==='Enter'){ var a=links[sel<0?0:sel]; if(a){ e.preventDefault(); close(); location.href=a.href; } }
-      else if(e.key==='Escape'){ close(); }
+      if(e.key==='ArrowDown'||e.key==='ArrowUp'){ if(!links.length) return; e.preventDefault(); si=(si+(e.key==='ArrowDown'?1:-1)+links.length)%links.length; links.forEach(function(a,i){ a.setAttribute('aria-selected',i===si?'true':'false'); }); links[si].scrollIntoView({block:'nearest'}); }
+      else if(e.key==='Enter'){ var a=links[si<0?0:si]; if(a){ e.preventDefault(); closeRes(); location.href=a.href; } }
+      else if(e.key==='Escape'){ closeRes(); }
     });
-    res.addEventListener('click',function(){ close(); inp.value=''; });
-    document.addEventListener('click',function(e){ if(!e.target.closest('.search')) close(); });
+    res.addEventListener('click',function(){ closeRes(); inp.value=''; });
+    document.addEventListener('click',function(e){ if(!e.target.closest('.search')) closeRes(); });
   }
 
   /* ---- filter chips ---- */
-  function chips(apply,ids){
+  function chips(match,apply,ids){
     var bs=[].slice.call(document.querySelectorAll('.chip'));
-    function counts(){
-      ['all','open','review','new'].forEach(function(f){
-        var n=ids().filter(function(id){ return match(id,f); }).length, el=document.querySelector('[data-c="'+f+'"]');
-        if(el) el.textContent=n;
-        var b=document.querySelector('.chip[data-f="'+f+'"]'); if(b && f!=='all') b.disabled=!n && b.getAttribute('aria-pressed')!=='true';
-      });
-    }
-    bs.forEach(function(b){ b.addEventListener('click',function(){
-      bs.forEach(function(x){ x.setAttribute('aria-pressed',x===b?'true':'false'); });
-      apply(b.dataset.f); counts();
-    }); });
+    function counts(){ ['all','open','review','new'].forEach(function(f){ var n=ids().filter(function(id){ return match(id,f); }).length, el=document.querySelector('[data-c="'+f+'"]'); if(el) el.textContent=n; var b=document.querySelector('.chip[data-f="'+f+'"]'); if(b&&f!=='all') b.disabled=!n&&b.getAttribute('aria-pressed')!=='true'; }); }
+    bs.forEach(function(b){ b.addEventListener('click',function(){ bs.forEach(function(x){ x.setAttribute('aria-pressed',x===b?'true':'false'); }); apply(b.dataset.f); counts(); }); });
     counts(); return counts;
   }
   function curFilter(){ var b=document.querySelector('.chip[aria-pressed="true"]'); return b?b.dataset.f:'all'; }
 
-  /* ---- set page ---- */
-  if(body.classList.contains('setpage')){
-    var key=body.dataset.key.split('').map(Number);
-    var qs=[].slice.call(document.querySelectorAll('.q:not(.miss)')), miss=[].slice.call(document.querySelectorAll('.q.miss'));
-    function render(q){
-      var id=q.dataset.q, n=+id.split('-')[1], ans=key[n-1], picked=st[id];
-      var opts=[].slice.call(q.querySelectorAll('.opt')), v=q.querySelector('.verdict');
-      opts.forEach(function(o){ o.className='opt'; o.setAttribute('aria-pressed','false'); });
-      q.classList.toggle('answered',!!picked);
-      var mb=document.querySelector('.mb[data-q="'+id+'"]'); if(mb) mb.classList.remove('ok','no');
-      if(!picked){ v.textContent=''; v.className='verdict'; return; }
-      opts.forEach(function(o){
-        var k=+o.dataset.n;
-        if(k===ans) o.classList.add('correct');
-        if(k===picked){ o.classList.add('picked', k===ans?'right':'wrong'); o.setAttribute('aria-pressed','true'); }
-      });
-      var ok=picked===ans;
-      v.className='verdict '+(ok?'r':'w');
-      v.textContent= ok ? 'נכון.' : 'לא נכון. התשובה הנכונה היא ('+ans+').';
-      var b=document.createElement('button'); b.type='button'; b.className='again'; b.textContent='לענות שוב';
-      b.onclick=function(){ delete st[id]; save(); render(q); update(); };
-      v.appendChild(b);
-      if(mb) mb.classList.add(ok?'ok':'no');
-    }
-    var recount=function(){};
-    function apply(f){
-      var shown=0;
-      qs.forEach(function(q){ var m=match(q.dataset.q,f); q.hidden=!m; if(m) shown++; var mb=document.querySelector('.mb[data-q="'+q.dataset.q+'"]'); if(mb) mb.classList.toggle('dim',!m); });
-      miss.forEach(function(q){ q.hidden=f!=='all'; });
-      document.querySelectorAll('.mb.miss').forEach(function(m){ m.classList.toggle('dim',f!=='all'); });
-      var e=document.querySelector('.empty'); if(e) e.hidden=shown>0 || f==='all';
-    }
-    function update(){
-      var done=0, ok=0;
-      qs.forEach(function(q){ var id=q.dataset.q; if(st[id]){ done++; if(isRight(id)) ok++; } });
-      var sc=document.querySelector('.score');
-      sc.textContent= !qs.length ? '' : done ? ok+' מתוך '+done+' נכונות' : qs.length+' שאלות לתרגול';
-      var d=document.querySelector('.done');
-      if(qs.length && done===qs.length){ d.hidden=false; d.querySelector('.done-t').textContent='סיימת את המקבץ: '+ok+' מתוך '+qs.length+' נכונות'; }
-      else d.hidden=true;
-      sideProgress(); recount();
-      if(curFilter()==='open') apply('open');
-    }
-    qs.forEach(function(q){
-      var id=q.dataset.q;
-      q.querySelectorAll('.opt').forEach(function(o){
-        o.addEventListener('click',function(){ if(st[id]) return; st[id]=+o.dataset.n; save(); render(q); update(); });
-      });
-      render(q);
-    });
-    if(document.querySelector('.chip')) recount=chips(apply,function(){ return qs.map(function(q){ return q.dataset.q; }); });
-    update();
-    document.querySelector('.redo').onclick=function(){
-      qs.forEach(function(q){ delete st[q.dataset.q]; render(q); }); save(); update(); window.scrollTo(0,0);
-    };
-    document.addEventListener('keydown',function(e){
-      if(e.altKey||e.ctrlKey||e.metaKey||!/^[1-4]$/.test(e.key)||/INPUT|TEXTAREA/.test(document.activeElement.tagName)) return;
-      var cur=qs.find(function(q){ return !q.hidden && q.getBoundingClientRect().bottom>160 && !q.classList.contains('answered'); });
-      if(!cur) return; var b=cur.querySelector('.opt[data-n="'+e.key+'"]'); if(b) b.click();
-    });
+  /* ---- modal ---- */
+  var dlg=document.getElementById('confirm');
+  function ask(title,text,okLabel,cb){
+    if(!dlg||typeof dlg.showModal!=='function'){ if(window.confirm(title+'\n'+text)) cb(); return; }
+    document.getElementById('cf-t').textContent=title; document.getElementById('cf-p').textContent=text; document.getElementById('cf-ok').textContent=okLabel;
+    var back=document.activeElement;
+    dlg.returnValue=''; dlg.showModal(); document.getElementById('cf-no').focus();
+    dlg.addEventListener('close',function h(){ dlg.removeEventListener('close',h); if(dlg.returnValue==='ok') cb(); else if(back) back.focus(); });
   }
 
-  /* ---- home ---- */
+  /* ================= set page ================= */
+  if(body.classList.contains('setpage')){
+    var n=body.dataset.set, st=S(n);
+    var cards=[].slice.call(document.querySelectorAll('.q:not(.miss)')), misses=[].slice.call(document.querySelectorAll('.q.miss'));
+    var total=cards.length;
+    var digits=document.getElementById('t-digits'), startB=document.getElementById('t-start'), resetB=document.getElementById('t-reset'), hideB=document.getElementById('t-hide'), paceEl=document.getElementById('t-pace');
+    var hidden=!!load(HIDE,false), timerIv=null, nudged=false;
+    function elapsed(){ return st.t.el+(st.t.run?Date.now()-st.t.st:0); }
+    function answered(){ return cards.filter(function(c){ return st.a[c.dataset.q]; }).length; }
+    function drawTimer(){
+      if(!digits) return;
+      var ms=elapsed(), idle=!st.t.run&&!ms;
+      digits.textContent= hidden&&st.t.run ? '••:••' : fmt(ms);
+      digits.classList.toggle('idle',idle);
+      var a=answered(); if(paceEl) paceEl.textContent= ms&&a ? 'קצב '+fmtShort(ms/a)+' לשאלה' : '';
+    }
+    function drawStartBtn(){
+      if(!startB) return;
+      var lbl=startB.querySelector('.t-lbl');
+      startB.classList.toggle('running',st.t.run);
+      startB.innerHTML=(st.t.run?'<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>':'<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></svg>')+'<span class="t-lbl">'+(st.t.run?'השהיה':(st.t.el?'המשך':'התחלת טיימר'))+'</span>';
+      startB.setAttribute('aria-label',st.t.run?'השהיית הטיימר':(st.t.el?'המשך הטיימר':'התחלת הטיימר'));
+    }
+    function loop(on){ if(timerIv){ clearInterval(timerIv); timerIv=null; } if(on) timerIv=setInterval(drawTimer,250); }
+    function startPause(){ if(st.sub) return; if(st.t.run){ st.t.el+=Date.now()-st.t.st; st.t.run=false; } else { st.t.st=Date.now(); st.t.run=true; } save(); drawStartBtn(); drawTimer(); loop(st.t.run); }
+    if(startB) startB.addEventListener('click',startPause);
+    if(resetB) resetB.addEventListener('click',function(){ if(st.sub) return; st.t={el:0,run:false,st:0}; save(); drawStartBtn(); drawTimer(); loop(false); });
+    if(hideB){ hideB.setAttribute('aria-pressed',hidden?'true':'false'); hideB.addEventListener('click',function(){ hidden=!hidden; put(HIDE,hidden); hideB.setAttribute('aria-pressed',hidden?'true':'false'); hideB.setAttribute('aria-label',hidden?'הצגת הספרות':'הסתרת הספרות'); drawTimer(); }); }
+
+    function drawCard(c){
+      var id=c.dataset.q, pick=st.a[id], strikes=st.x[id]||[], ans=+keyOf(id);
+      c.querySelectorAll('.orow').forEach(function(row){
+        var b=row.querySelector('.opt'), s=row.querySelector('.strike'), k=+b.dataset.n, out=strikes.indexOf(k)>=0;
+        b.setAttribute('aria-pressed',pick===k?'true':'false');
+        row.classList.toggle('out',out&&pick!==k); if(s) s.setAttribute('aria-pressed',out?'true':'false');
+        b.classList.remove('correct','wrong'); var tag=b.querySelector('.otag'); if(tag) tag.textContent='';
+        if(st.sub){
+          b.setAttribute('aria-disabled','true');
+          if(k===ans){ b.classList.add('correct'); if(tag) tag.textContent= pick===k?'התשובה שלך · נכונה':'התשובה הנכונה'; }
+          else if(k===pick){ b.classList.add('wrong'); if(tag) tag.textContent='התשובה שלך'; }
+        } else b.removeAttribute('aria-disabled');
+      });
+      var qr=c.querySelector('.qres'), sol=c.querySelector('.sol');
+      if(st.sub){
+        qr.hidden=false;
+        qr.className='qres '+(!pick?'s':pick===ans?'r':'w');
+        qr.textContent= !pick ? 'לא נענתה · התשובה הנכונה ('+ans+')' : pick===ans ? 'נכון' : 'לא נכון · בחרת ('+pick+'), התשובה הנכונה ('+ans+')';
+        if(sol) sol.hidden=false;
+      } else { qr.hidden=true; if(sol){ sol.hidden=true; sol.open=false; } }
+      var mb=document.querySelector('.mb[data-q="'+id+'"]');
+      if(mb){ mb.classList.remove('sel','ok','no','skip'); if(st.sub) mb.classList.add(!pick?'skip':pick===ans?'ok':'no'); else if(pick) mb.classList.add('sel'); }
+    }
+    function drawCounts(){
+      var a=answered();
+      document.querySelectorAll('.ans-n').forEach(function(e){ e.textContent=a; });
+      var bar=document.querySelector('.eb-bar i'); if(bar) bar.style.width=(total?100*a/total:0)+'%';
+      sideProgress(); recount(); if(curFilter()==='open') apply('open');
+    }
+    function drawResults(){
+      var box=document.getElementById('results'); if(!box) return;
+      if(!st.sub){ box.hidden=true; box.innerHTML=''; return; }
+      var ok=0, pills='';
+      cards.forEach(function(c){ var id=c.dataset.q, q=id.split('-')[1], p=st.a[id], k=+keyOf(id), cls=!p?'skip':p===k?'ok':'no'; if(cls==='ok') ok++;
+        pills+='<a class="pill '+cls+'" href="#q'+id+'">'+q+'<span class="vh"> – '+(cls==='ok'?'נכונה':cls==='no'?'שגויה':'לא נענתה')+'</span></a>'; });
+      var ms=st.t.el, pct=total?Math.round(100*ok/total):0;
+      var nx=+n<40?'<a class="btn" href="'+pad(+n+1)+'.html">למקבץ '+(+n+1)+'</a>':'<a class="btn" href="../index.html">לגיליון התשובות</a>';
+      box.innerHTML='<div class="rd-top"><div><h2 class="rd-h" id="res-h">תוצאות מקבץ '+n+'</h2><p class="rd-sub">המקבץ הוגש והתשובות נעולות. הפתרון המלא מופיע מתחת לכל שאלה.</p></div></div>'+
+        '<div class="rd-stats"><div class="stat"><b><bdi dir="ltr">'+ok+' / '+total+'</bdi></b><span>ציון<small>'+pct+'%</small></span></div>'+
+        '<div class="stat"><b>'+(ms?fmt(ms):'—')+'</b><span>'+(ms?'זמן כולל':'הטיימר לא הופעל')+'</span></div>'+
+        '<div class="stat"><b>'+(ms&&total?fmtShort(ms/total):'—')+'</b><span>ממוצע לשאלה</span></div></div>'+
+        '<nav class="rd-map" aria-label="מפת שאלות">'+pills+'</nav>'+
+        '<ul class="rd-legend"><li><i style="background:var(--ok)"></i>נכונה</li><li><i style="background:var(--no)"></i>שגויה</li><li><i style="border:1.5px dashed var(--line2)"></i>לא נענתה</li></ul>'+
+        '<div class="rd-act"><button type="button" class="btn primary" id="retake">איפוס מקבץ ופתרון מחדש</button>'+nx+'</div>';
+      box.hidden=false;
+      document.getElementById('retake').addEventListener('click',function(){
+        ask('לאפס את המקבץ?','כל התשובות, הסימונים והזמן של מקבץ '+n+' יימחקו, ותוכלו לפתור אותו מחדש.','איפוס',function(){ store.sets[n]=fresh(); save(); location.replace(location.pathname); });
+      });
+    }
+    function drawAll(){ body.classList.toggle('is-review',!!st.sub); cards.forEach(drawCard); drawCounts(); drawResults(); drawStartBtn(); drawTimer(); }
+
+    function apply(f){
+      var shown=0;
+      cards.forEach(function(c){ var id=c.dataset.q, m= f==='open'?!st.a[id] : f==='review'?!!REV[id] : f==='new'?!!NEW[id] : true; c.hidden=!m; if(m) shown++; var mb=document.querySelector('.mb[data-q="'+id+'"]'); if(mb) mb.classList.toggle('dim',!m); });
+      misses.forEach(function(c){ c.hidden=f!=='all'; });
+      document.querySelectorAll('.mb.miss').forEach(function(m){ m.classList.toggle('dim',f!=='all'); });
+      var e=document.querySelector('.empty'); if(e) e.hidden=shown>0||f==='all';
+    }
+    var recount=function(){};
+    if(document.querySelector('.chip')) recount=chips(function(id,f){ return f==='open'?!st.a[id]:f==='review'?!!REV[id]:f==='new'?!!NEW[id]:true; },apply,function(){ return cards.map(function(c){ return c.dataset.q; }); });
+
+    var curIdx=-1;
+    function setCur(i){ if(i<0||i>=cards.length) return; if(curIdx>=0&&cards[curIdx]) cards[curIdx].classList.remove('cur'); curIdx=i; cards[i].classList.add('cur'); }
+    cards.forEach(function(c,i){
+      var id=c.dataset.q;
+      c.setAttribute('tabindex','-1');
+      c.addEventListener('focusin',function(){ setCur(i); });
+      c.addEventListener('click',function(){ setCur(i); });
+      c.querySelectorAll('.opt').forEach(function(b){ b.addEventListener('click',function(){
+        if(st.sub) return; var k=+b.dataset.n;
+        if(st.a[id]===k) delete st.a[id]; else { st.a[id]=k; var xs=st.x[id]; if(xs){ var j=xs.indexOf(k); if(j>=0) xs.splice(j,1); } }
+        save(); drawCard(c); drawCounts(); drawTimer();
+        if(!st.t.run&&!st.t.el&&!nudged&&startB){ nudged=true; startB.classList.add('nudge'); }
+      }); });
+      c.querySelectorAll('.strike').forEach(function(s){ s.addEventListener('click',function(){
+        if(st.sub) return; var k=+s.dataset.n, xs=st.x[id]||(st.x[id]=[]), j=xs.indexOf(k);
+        if(j>=0) xs.splice(j,1); else { xs.push(k); if(st.a[id]===k) delete st.a[id]; }
+        save(); drawCard(c); drawCounts();
+      }); });
+    });
+
+    function doSubmit(){
+      if(st.t.run){ st.t.el+=Date.now()-st.t.st; st.t.run=false; } loop(false);
+      st.sub=true; st.at=Date.now(); save(); drawAll();
+      var box=document.getElementById('results'); if(box){ box.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); box.focus({preventScroll:true}); }
+    }
+    document.querySelectorAll('[data-submit]').forEach(function(b){ b.addEventListener('click',function(){
+      if(st.sub) return; var left=total-answered();
+      if(left>0) ask(left===total?'עוד לא ענית על אף שאלה':'נותרו '+left+' שאלות לא פתורות', left===total?'להגיש את המקבץ בלי תשובות? אחרי ההגשה התשובות ננעלות.':'להגיש בכל זאת? אחרי ההגשה התשובות ננעלות ותוכלו לראות את הפתרונות.','הגשה',doSubmit);
+      else ask('להגיש את המקבץ?','ענית על כל '+total+' השאלות. אחרי ההגשה התשובות ננעלות.','הגשה',doSubmit);
+    }); });
+
+    document.addEventListener('keydown',function(e){
+      if(e.altKey||e.ctrlKey||e.metaKey) return;
+      var t=document.activeElement; if(t&&/INPUT|TEXTAREA|SELECT/.test(t.tagName)) return;
+      if(dlg&&dlg.open) return;
+      if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+        var vis=cards.filter(function(c){ return !c.hidden; }); if(!vis.length) return;
+        e.preventDefault();
+        var pos=vis.indexOf(cards[curIdx]);
+        if(pos<0){ var top=0; vis.some(function(c,i){ if(c.getBoundingClientRect().bottom>140){ top=i; return true; } }); pos=e.key==='ArrowDown'?top-1:top+1; }
+        var nxt=vis[Math.max(0,Math.min(vis.length-1,pos+(e.key==='ArrowDown'?1:-1)))];
+        setCur(cards.indexOf(nxt)); nxt.focus({preventScroll:true}); nxt.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+        return;
+      }
+      if(/^[1-4]$/.test(e.key)&&!st.sub){
+        var c=cards[curIdx]; if(!c||c.hidden){ c=cards.filter(function(x){ return !x.hidden; }).find(function(x){ return x.getBoundingClientRect().bottom>160; }); if(c) setCur(cards.indexOf(c)); }
+        if(!c) return; var b=c.querySelector('.opt[data-n="'+e.key+'"]'); if(b){ e.preventDefault(); b.click(); }
+      }
+    });
+
+    drawAll(); loop(st.t.run);
+    if(location.hash){ var h=document.getElementById(location.hash.slice(1)); if(h&&cards.indexOf(h)>=0) setCur(cards.indexOf(h)); }
+  }
+
+  /* ================= home ================= */
   if(body.classList.contains('home-page')){
     var done=0, ok=0, resume=null;
     Object.keys(D.exist).sort(function(a,b){return a-b;}).forEach(function(s){
-      var sd=0, so=0;
+      var st=store.sets[s], sd=0, so=0;
       D.exist[s].forEach(function(q){
-        var id=s+'-'+q, c=document.querySelector('.c[data-q="'+id+'"]');
-        if(st[id]){ sd++; done++; var r=isRight(id); if(r){so++;ok++;} if(c) c.classList.add(r?'ok':'no'); }
-        else if(!resume) resume=[s,q];
+        var id=s+'-'+q, c=document.querySelector('.c[data-q="'+id+'"]'), p=st&&st.a[id];
+        if(st&&st.sub){ if(p){ sd++; done++; } var r=p&&p===+keyOf(id); if(r){so++;ok++;} if(c) c.classList.add(r?'ok':p?'no':'miss'); }
+        else { if(p&&c) c.classList.add('sel'); if(!resume&&!p) resume=[s,q]; }
       });
-      var rs=document.querySelector('.rs[data-set="'+s+'"]'); if(rs&&sd) rs.textContent=so+'/'+sd;
+      var rs=document.querySelector('.rs[data-set="'+s+'"]'); if(rs&&st&&st.sub) rs.textContent=so+'/'+D.exist[s].length;
     });
     document.getElementById('t-done').textContent=done;
     document.getElementById('t-ok').textContent=ok;
     document.getElementById('t-pct').textContent=done?Math.round(100*ok/done)+'%':'–';
     var a=document.getElementById('resume');
-    if(done&&resume){ a.href='sets/'+pad(+resume[0])+'.html#q'+resume[0]+'-'+resume[1]; a.textContent='להמשיך ממקבץ '+resume[0]+', שאלה '+resume[1]; }
-    else if(done&&!resume){ a.textContent='עברת על כל השאלות'; a.href='solutions.html'; }
-    chips(function(f){
-      document.querySelectorAll('a.c').forEach(function(c){ var m=match(c.dataset.q,f); c.classList.toggle('dim',!m); c.classList.toggle('hit',m && f!=='all'); });
-      document.querySelectorAll('.c.miss').forEach(function(c){ c.classList.toggle('dim',f!=='all'); });
-    },allIds);
+    if(resume&&(done||Object.keys(store.sets).length)){ a.href='sets/'+pad(+resume[0])+'.html#q'+resume[0]+'-'+resume[1]; a.textContent='להמשיך ממקבץ '+resume[0]; }
+    chips(function(id,f){ var s=id.split('-')[0], st=store.sets[s]; return f==='open'?!(st&&st.a[id]):f==='review'?!!REV[id]:f==='new'?!!NEW[id]:true; },function(f){
+      document.querySelectorAll('a.c').forEach(function(c){ var id=c.dataset.q, s=id.split('-')[0], st=store.sets[s], m=f==='open'?!(st&&st.a[id]):f==='review'?!!REV[id]:f==='new'?!!NEW[id]:true; c.classList.toggle('dim',!m); c.classList.toggle('hit',m&&f!=='all'); });
+      document.querySelectorAll('.c.miss:not(a)').forEach(function(c){ c.classList.toggle('dim',f!=='all'); });
+    },function(){ var a=[]; Object.keys(D.exist).forEach(function(s){ D.exist[s].forEach(function(q){ a.push(s+'-'+q); }); }); return a; });
     document.getElementById('wipe').onclick=function(){
-      if(this.dataset.armed){ st={}; save(); location.reload(); return; }
+      if(this.dataset.armed){ store={sets:{}}; save(); location.reload(); return; }
       this.dataset.armed=1; this.textContent='ללחוץ שוב כדי לאשר את האיפוס';
     };
   }
 
-  /* ---- print: open every solution ---- */
   window.addEventListener('beforeprint',function(){ document.querySelectorAll('details.sol').forEach(function(d){ d.dataset.was=d.open?'1':''; d.open=true; }); });
   window.addEventListener('afterprint',function(){ document.querySelectorAll('details.sol').forEach(function(d){ d.open=!!d.dataset.was; }); });
   sideProgress();

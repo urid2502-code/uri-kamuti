@@ -275,6 +275,22 @@
       else { card.style.setProperty('--p',0); lab.textContent=tot+' שאלות'; if(!nextSet) nextSet=card; }
     });
     if(nextSet&&(done||Object.keys(store.sets).length)){ nextSet.classList.add('next'); var nl=nextSet.querySelector('.setc-s'); if(!nextSet.classList.contains('started')) nl.textContent='הבא בתור'; }
+    (function(){ var track=document.querySelector('.setpages'); if(!track) return;
+      var groups=[].slice.call(track.querySelectorAll('.setgroup')), dots=[].slice.call(document.querySelectorAll('.sn-dot')),
+        prev=document.querySelector('.sn-prev'), next=document.querySelector('.sn-next'), label=document.getElementById('sn-label'), cur=-1;
+      function mark(g){ if(g===cur) return; cur=g; label.textContent='מקבצים '+(g*10+1)+'–'+(g*10+10);
+        dots.forEach(function(d,i){ d.setAttribute('aria-current',i===g?'true':'false'); });
+        prev.disabled=g===0; next.disabled=g===groups.length-1;
+        groups.forEach(function(el,i){ el.setAttribute('aria-hidden',i===g?'false':'true'); el.querySelectorAll('a').forEach(function(a){ a.tabIndex=i===g?0:-1; }); }); }
+      function go(g,instant){ g=Math.max(0,Math.min(groups.length-1,g)); var el=groups[g];
+        track.scrollTo({left:track.scrollLeft+el.getBoundingClientRect().left-track.getBoundingClientRect().left,behavior:instant?'auto':'smooth'}); mark(g); }
+      function nearest(){ var r=track.getBoundingClientRect(), best=0, bd=1e9; groups.forEach(function(el,i){ var d=Math.abs(el.getBoundingClientRect().left-r.left); if(d<bd){bd=d;best=i;} }); return best; }
+      var t; track.addEventListener('scroll',function(){ clearTimeout(t); t=setTimeout(function(){ mark(nearest()); },80); },{passive:true});
+      prev.addEventListener('click',function(){ go(cur-1); }); next.addEventListener('click',function(){ go(cur+1); });
+      dots.forEach(function(d,i){ d.addEventListener('click',function(){ go(i); }); });
+      track.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'){ e.preventDefault(); go(cur+1); } if(e.key==='ArrowRight'){ e.preventDefault(); go(cur-1); } });
+      var start=nextSet?Math.floor((+nextSet.dataset.set-1)/10):0; go(start,true);
+    })();
     document.getElementById('t-done').textContent=done;
     document.getElementById('t-ok').textContent=ok;
     document.getElementById('t-pct').textContent=done?Math.round(100*ok/done)+'%':'–';

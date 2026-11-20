@@ -1382,3 +1382,13 @@ details.omr .omr-head{margin-top:16px}
   .home-page .tally .resume{margin-inline-start:auto;min-height:44px;padding:0 16px}
   .setpick{margin-top:4px}
 }
+/* legal pages */
+.legal-b{background:#fff;border:1px solid #E3E5E1;border-radius:16px;padding:28px 30px;color:#0F0F0F;line-height:1.75;max-width:72ch}
+.legal-b h2{font-size:1.15rem;font-weight:800;margin:26px 0 6px}
+.legal-b h2:first-of-type{margin-top:18px}
+.legal-b p,.legal-b ul{margin:0 0 10px}
+.legal-b ul{padding-inline-start:20px}
+.legal-b a{color:var(--ac-ink)}
+.sitefoot .cr a{color:inherit}
+:root[data-theme="dark"] .legal-b{background:#151515;border-color:#2A2A2A;color:#F2F2F0}
+@media (max-width:600px){.legal-b{padding:20px 18px}}

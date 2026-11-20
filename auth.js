@@ -49,7 +49,7 @@
     var rs={}; (a.rl||[]).concat(b.rl||[]).forEach(function(r){ var key=r.id+'@'+r.at; if(!rs[key]){ rs[key]=1; out.rl.push(r); } });
     out.rl.sort(function(x,y){ return x.at-y.at; }); if(out.rl.length>500) out.rl=out.rl.slice(-500);
     var newer=(a.u||0)>=(b.u||0)?a:b, older=newer===a?b:a;
-    out.bm=newer.bm||older.bm||{}; out.avatar=newer.avatar||older.avatar||''; out.accent=newer.accent||older.accent||'';
+    out.bm=newer.bm||older.bm||{}; out.avatar=newer.avatar||older.avatar||''; out.accent=newer.accent||older.accent||''; out.name=newer.name||older.name||'';
     return out;
   }
   function same(a,b){ return JSON.stringify(a)===JSON.stringify(b); }
@@ -104,11 +104,11 @@
       sb.auth.signInWithOAuth({provider:'google',options:{redirectTo:back}}).then(function(r){ if(r.error){ busy(false); say('err','לא הצלחתי להתחיל את ההתחברות: '+esc(r.error.message)); } });
     });
     document.addEventListener('click',function(e){
-      if(!e.target.closest('#logout')) return;
-      var b=e.target.closest('#logout'); b.disabled=true; b.textContent='מתנתק…';
+      if(!e.target.closest('#logout,[data-signout]')) return;
+      var b=e.target.closest('#logout,[data-signout]'); b.disabled=true; b.textContent='מתנתק…';
       var flush=pushT?push():Promise.resolve(); clearTimeout(pushT); pushT=null;
       flush.catch(function(){}).then(function(){ return sb.auth.signOut(); }).then(function(){
-        set(BASE+':'+uid,null); set(UIDK,null); set(PROF,null); location.replace('index.html'); // the account keeps the progress; this device keeps nothing of it
+        set(BASE+':'+uid,null); set(UIDK,null); set(PROF,null); location.replace(root+'index.html'); // the account keeps the progress; this device keeps nothing of it
       });
     });
   }

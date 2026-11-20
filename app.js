@@ -323,7 +323,7 @@
     box.querySelectorAll('input').forEach(function(r){ r.addEventListener('change',function(){ store.avatar=r.value; save(); paintChip(); emit('avatar',{id:r.value}); if(onPick) onPick(r.value); }); });
   }
   /* ---- personal accent colour ---- */
-  var ACC=[['green','ירוק','#12805C'],['ink','שחור','#111111'],['blue','כחול','#2B3BFF'],['violet','סגול','#7339F0'],['pink','ורוד','#E2336B'],['orange','כתום','#E25F14']];
+  var ACC=[['green','ירוק','#12805C'],['ink','שחור','#111111'],['blue','כחול','#2B3BFF'],['violet','סגול','#7339F0'],['pink','ורוד','#E2336B'],['orange','כתום','#E25F14'],['teal','טורקיז','#0E7C86'],['sky','תכלת','#0A6CB5'],['red','אדום','#D12C2C'],['amber','חרדל','#A85F00'],['olive','זית','#5B7A12'],['wine','בורדו','#9C1F4A']];
   function applyAccent(a){ var r=document.documentElement; if(a&&a!=='green') r.dataset.accent=a; else delete r.dataset.accent; try{ if(a) localStorage.setItem('uriq:accent',a); else localStorage.removeItem('uriq:accent'); }catch(e){} }
   (function(){ var want=store.accent&&store.accent!=='green'?store.accent:''; if(want!==(document.documentElement.dataset.accent||'')) applyAccent(want); })();
   function accentPicker(box){
@@ -331,15 +331,18 @@
     box.innerHTML='<fieldset class="acpick"><legend class="vh">צבע האתר</legend>'+ACC.map(function(c){ return '<label class="acopt"><input type="radio" name="uriq-ac" value="'+c[0]+'"'+(c[0]===cur?' checked':'')+'><span class="sw" style="--c:'+c[2]+'"></span><span>'+c[1]+'</span></label>'; }).join('')+'</fieldset>';
     box.querySelectorAll('input').forEach(function(r){ r.addEventListener('change',function(){ store.accent=r.value; save(); applyAccent(r.value); emit('accent',{id:r.value}); }); });
   }
+  /* ---- display name: the user's own choice, else the first name from Google ---- */
+  function displayName(){ var n=(store.name||'').trim(); if(n) return n; var pf=UID?load('uriq:profile',null):null; return pf&&pf.name?pf.name.split(' ')[0]:''; }
+  if(UID) document.querySelectorAll('a.f-login').forEach(function(a){ a.remove(); });
   /* ---- account chip ---- */
   var acct=document.getElementById('acct');
-  function paintChip(){ if(!acct) return; var av=acct.querySelector('.av'); if(store.avatar&&AV[store.avatar]){ av.innerHTML=avatarHTML(store.avatar); av.classList.add('has-av'); } }
+  function paintChip(){ if(!acct) return; var av=acct.querySelector('.av'), an=acct.querySelector('.an'), dn=displayName(); if(an&&dn) an.textContent=dn; if(store.avatar&&AV[store.avatar]){ av.innerHTML=avatarHTML(store.avatar); av.classList.add('has-av'); } }
   if(acct){ var pf=UID?load('uriq:profile',null):null;
     if(pf){ var av=acct.querySelector('.av'), nm=(pf.name||pf.email||'').split(' ')[0];
       acct.href=root+'dashboard.html'; acct.setAttribute('aria-label','האזור שלי – '+(pf.name||pf.email||''));
-      acct.querySelector('.an').textContent=nm||'החשבון שלי';
+      acct.querySelector('.an').textContent=displayName()||nm||'החשבון שלי';
       if(store.avatar&&AV[store.avatar]){ /* painted below */ } else if(pf.avatar){ var im=new Image(); im.alt=''; im.referrerPolicy='no-referrer'; im.src=pf.avatar; im.onerror=function(){ av.textContent=(nm||'?').charAt(0); }; av.innerHTML=''; av.appendChild(im); } else av.textContent=(nm||'?').charAt(0);
     } paintChip(); }
-  window.URIQ={accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
+  window.URIQ={displayName:displayName, accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

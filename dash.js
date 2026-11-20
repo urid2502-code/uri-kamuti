@@ -56,13 +56,14 @@
   if(body.classList.contains('dashpage')){
     var box=document.getElementById('dash'), r=compute(), pf=U.UID?U.load('uriq:profile',null):null;
     var cfg=window.URIQ_CONFIG||{}, authOn=!!(cfg.supabaseUrl&&cfg.supabaseAnonKey);
-    if(pf&&pf.name) document.getElementById('dash-h').textContent='שלום, '+pf.name.split(' ')[0];
+    var dn=U.displayName?U.displayName():''; if(dn) document.getElementById('dash-h').textContent='שלום, '+dn;
     var banner=U.UID?'':'<div class="dash-banner"><p><b>ההתקדמות נשמרת כרגע רק בדפדפן הזה.</b> '+(authOn?'כניסה עם Google תשמור אותה בחשבון ותסנכרן בין מכשירים.':'סנכרון בין מכשירים יופעל כשהכניסה עם Google תחובר.')+'</p><a class="cta" href="login.html">'+(authOn?'כניסה עם Google':'פרטים')+'</a></div>';
     var hist=(store.hist||[]).slice().sort(function(a,b){ return a.at-b.at; });
     var AVS=window.URIQ_AVATARS||{}, myAv=AVS[store.avatar];
-    var profile='<section class="panel profile" id="avatar" aria-labelledby="pf-h"><div class="pf-top"><span class="pf-av'+(myAv?'':' empty')+'" aria-hidden="true">'+(myAv?myAv.svg:'?')+'</span><div class="pf-t"><h2 id="pf-h">'+esc(pf&&pf.name||'הפרופיל שלי')+'</h2><p>'+(pf&&pf.email?esc(pf.email):(U.UID?'':'לא מחובר/ת · הדמות נשמרת בדפדפן הזה'))+'</p>'+(myAv?'<p class="pf-n">הדמות שלך: '+myAv.name+'</p>':'')+'</div></div>'+
+    var profile='<section class="panel profile" id="avatar" aria-labelledby="pf-h"><div class="pf-top"><span class="pf-av'+(myAv?'':' empty')+'" aria-hidden="true">'+(myAv?myAv.svg:'?')+'</span><div class="pf-t"><h2 id="pf-h">'+esc((store.name||'').trim()||pf&&pf.name||'הפרופיל שלי')+'</h2><p>'+(pf&&pf.email?esc(pf.email):(U.UID?'':'לא מחובר/ת · הדמות נשמרת בדפדפן הזה'))+'</p>'+(myAv?'<p class="pf-n">הדמות שלך: '+myAv.name+'</p>':'')+'</div></div>'+
       '<details class="pf-pick"'+(myAv?'':' open')+'><summary>'+(myAv?'החלפת דמות':'בחרו דמות לפרופיל')+'</summary><div id="pf-picker"></div></details>'+
-      '<div class="pf-sec"><h3>הצבע שלך</h3><p>משנה את צבע הכפתורים, הבחירות וההדגשות בכל האתר. נשמר בחשבון.</p><div id="ac-picker"></div></div></section>';
+      '<div class="pf-sec"><h3><label for="pf-name">שם תצוגה</label></h3><p>השם שיופיע באתר, למשל בתפריט העליון ובברכה כאן.</p><form class="pf-name" id="pf-name-f"><input id="pf-name" type="text" maxlength="24" autocomplete="nickname" placeholder="'+esc(pf&&pf.name?pf.name.split(' ')[0]:'השם שלך')+'" value="'+esc(store.name||'')+'"><button type="submit" class="cta solid">שמירה</button><span class="pf-ok" id="pf-ok" role="status"></span></form></div>'+
+      '<div class="pf-sec"><h3>הצבע שלך</h3><p>משנה את צבע הכפתורים, הבחירות וההדגשות בכל האתר. נשמר בחשבון.</p><div id="ac-picker"></div></div>'+(U.UID?'<div class="pf-sec pf-out"><h3>החשבון</h3><p>מחובר/ת עם Google'+(pf&&pf.email?' · '+esc(pf.email):'')+'. ההתקדמות נשמרת בחשבון.</p><button type="button" class="cta line" data-signout>התנתקות</button></div>':'')+'</section>';
     var bms=Object.keys(store.bm||{}).sort(function(a,b){ var x=a.split('-'),y=b.split('-'); return x[0]-y[0]||x[1]-y[1]; });
     var bmPanel='<section class="panel"><div class="ph"><h2>שאלות שסימנת</h2><p>'+(bms.length===1?'שאלה אחת':bms.length?bms.length+' שאלות':'עוד אין')+'</p></div>'+(bms.length?'<div class="ids refs" style="margin-bottom:16px">'+bms.map(function(i){ return '<a href="'+setHref(i)+'">'+i+'</a>'; }).join('')+'</div><a class="cta line" href="review.html?bm=1">לתרגל את השאלות המסומנות</a>':'<p style="color:var(--mute);margin:0;line-height:1.6">בכל שאלה יש כפתור סימנייה. סמנו שאלות קשות כדי לחזור אליהן מכאן.</p>')+'</section>';
     if(!r.sub){
@@ -96,13 +97,18 @@
     }
   }
 
-  if(body.classList.contains('dashpage')){ var pk=document.getElementById('pf-picker'); if(pk&&U.avatarPicker) U.avatarPicker(pk,function(){ location.reload(); }); var acp=document.getElementById('ac-picker'); if(acp&&U.accentPicker) U.accentPicker(acp); if(location.hash==='#avatar'){ var d=document.querySelector('.pf-pick'); if(d) d.open=true; } }
+  if(body.classList.contains('dashpage')){ var pk=document.getElementById('pf-picker'); if(pk&&U.avatarPicker) U.avatarPicker(pk,function(){ location.reload(); }); var acp=document.getElementById('ac-picker'); if(acp&&U.accentPicker) U.accentPicker(acp); var nf=document.getElementById('pf-name-f'); if(nf) nf.addEventListener('submit',function(e){ e.preventDefault(); var v=document.getElementById('pf-name').value.replace(/\s+/g,' ').trim().slice(0,24); store.name=v; U.save(); var d=U.displayName(); document.getElementById('dash-h').textContent=d?'שלום, '+d:'האזור שלי'; var h=document.getElementById('pf-h'); if(h) h.textContent=v||(pf&&pf.name)||'הפרופיל שלי'; if(U.paintChip) U.paintChip(); var an=document.querySelector('#acct .an'); if(an&&!d) an.textContent='האזור שלי'; if(U.emit) U.emit('name',{}); var ok=document.getElementById('pf-ok'); ok.textContent=v?'נשמר':'השם הוסר'; setTimeout(function(){ ok.textContent=''; },2200); }); if(location.hash==='#avatar'){ var d=document.querySelector('.pf-pick'); if(d) d.open=true; } }
   /* ================= lessons: personal accuracy per topic ================= */
   if(body.classList.contains('lessonspage')){
     var rr=compute();
     document.querySelectorAll('[data-acc]').forEach(function(p){ var T=rr.topic[p.dataset.acc]; if(T&&T.n) p.textContent='הדיוק שלך בנושא: '+Math.round(100*T.ok/T.n)+'% ('+T.ok+' מתוך '+T.n+')'; });
     var tabs=[].slice.call(document.querySelectorAll('.ls-tabs a'));
-    if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ tabs.forEach(function(a){ var on=a.getAttribute('href')==='#'+e.target.id; a.classList.toggle('on',on); if(on) a.scrollIntoView({block:'nearest',inline:'nearest'}); }); } }); },{rootMargin:'-30% 0px -60% 0px'}); document.querySelectorAll('.topic').forEach(function(t){ io.observe(t); }); }
+    /* keep the active chip visible by scrolling only the chip strip sideways, never the page */
+    function showTab(a){ var st=a.closest('.ls-tabs'); if(!st) return; var r=a.getBoundingClientRect(), sr=st.getBoundingClientRect(); if(r.left<sr.left+8||r.right>sr.right-8) st.scrollLeft+= (r.left+r.width/2)-(sr.left+sr.width/2); }
+    /* a link like lessons.html#t-solid: land on that topic once fonts and maths have settled the layout */
+    var hashT=location.hash&&document.getElementById(location.hash.slice(1));
+    if(hashT&&hashT.classList.contains('topic')){ var go=function(){ hashT.scrollIntoView({block:'start',behavior:'instant'}); tabs.forEach(function(a){ var on=a.getAttribute('href')==='#'+hashT.id; a.classList.toggle('on',on); if(on) showTab(a); }); }; go(); (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){ requestAnimationFrame(go); }); window.addEventListener('load',function(){ setTimeout(go,50); }); }
+    if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ tabs.forEach(function(a){ var on=a.getAttribute('href')==='#'+e.target.id; a.classList.toggle('on',on); if(on) showTab(a); }); } }); },{rootMargin:'-30% 0px -60% 0px'}); document.querySelectorAll('.topic').forEach(function(t){ io.observe(t); }); }
     if(location.hash){ var t=document.querySelector(location.hash); if(t&&t.tagName==='DETAILS') t.open=true; }
   }
 

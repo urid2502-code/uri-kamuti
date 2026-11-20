@@ -1259,6 +1259,12 @@ body.landing .top.solid{background:rgba(10,10,10,.97)}
 :root[data-accent="pink"]{--acD:#E2336B;--acD-ink:#C81E57;--acD-soft:#FFEAF0;--acD-line:#F59AB7;--hi:#FF7DA3;--hi-ink:#FF95B4;--hi-soft:#3A1428;--hi-line:#8E3359;--on-hi:#2A0714}
 :root[data-accent="orange"]{--acD:#E25F14;--acD-ink:#C24E0B;--acD-soft:#FFEFE4;--acD-line:#F6AF85;--hi:#FF9A5C;--hi-ink:#FFAD7A;--hi-soft:#3A2010;--hi-line:#8A4A22;--on-hi:#2A1204}
 :root[data-accent="ink"]{--acD:#111111;--acD-ink:#111111;--acD-soft:#E9EAE8;--acD-line:#9A9A9A;--hi:#F2F2F0;--hi-ink:#FFFFFF;--hi-soft:#232323;--hi-line:#555555;--on-hi:#0A0A0A}
+:root[data-accent="teal"]{--acD:#0E7C86;--acD-ink:#0A6870;--acD-soft:#E2F4F5;--acD-line:#86CDD2;--hi:#3FD0DA;--hi-ink:#62DCE4;--hi-soft:#0E2A2C;--hi-line:#1B6B71;--on-hi:#04191B}
+:root[data-accent="sky"]{--acD:#0A6CB5;--acD-ink:#085A97;--acD-soft:#E4F1FB;--acD-line:#8CC2EA;--hi:#6CC2FF;--hi-ink:#8ED0FF;--hi-soft:#0F2536;--hi-line:#2A6390;--on-hi:#04121F}
+:root[data-accent="red"]{--acD:#D12C2C;--acD-ink:#B32222;--acD-soft:#FDEAEA;--acD-line:#F2A2A2;--hi:#FF7A70;--hi-ink:#FF968E;--hi-soft:#3A1614;--hi-line:#8E342E;--on-hi:#2A0806}
+:root[data-accent="amber"]{--acD:#A85F00;--acD-ink:#8F5100;--acD-soft:#FFF3DF;--acD-line:#E8BE78;--hi:#FFC14D;--hi-ink:#FFCF73;--hi-soft:#33260C;--hi-line:#8A6420;--on-hi:#241802}
+:root[data-accent="olive"]{--acD:#5B7A12;--acD-ink:#4C670E;--acD-soft:#EFF5E0;--acD-line:#B4CB80;--hi:#B5DB4E;--hi-ink:#C6E571;--hi-soft:#222C0E;--hi-line:#5E7524;--on-hi:#151C04}
+:root[data-accent="wine"]{--acD:#9C1F4A;--acD-ink:#84183E;--acD-soft:#F9E6EC;--acD-line:#DB95AC;--hi:#F07AA3;--hi-ink:#F496B7;--hi-soft:#331422;--hi-line:#853055;--on-hi:#25060F}
 
 /* light pages; accents follow the user's colour */
 html{background:#F4F5F3}
@@ -1405,3 +1411,20 @@ details.omr .omr-head{margin-top:16px}
 /* narrow page bodies line up with the page title instead of centring */
 .pbody.narrow>*{max-width:804px}
 .topic .acc:empty{display:none}
+.topic{scroll-margin-top:0}
+/* display name + sign out on the profile card */
+.pf-name{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.pf-name input{flex:1 1 180px;min-width:0;max-width:320px;height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:1rem}
+.pf-name input:focus-visible{outline:3px solid var(--ac);outline-offset:1px;border-color:var(--ac)}
+.pf-name .cta{min-height:44px}
+.pf-ok{font-size:.88rem;color:var(--ac-ink);font-weight:600}
+.pf-out .cta{margin-top:10px}
+/* 16 avatars: denser grid */
+.avpick{grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px}
+@media (max-width:600px){
+  .avpick,#av-login .avpick{grid-template-columns:repeat(4,1fr);gap:6px}
+  .avopt{padding:10px 2px 8px;gap:5px;border-radius:12px}
+  .avopt .avimg{width:52px;height:52px}
+  .avopt .avname{font-size:.74rem}
+  .avopt:has(input:checked)::after{top:4px;inset-inline-end:4px;width:14px;height:14px;background-size:10px}
+}

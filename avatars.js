@@ -67,8 +67,70 @@
       '<ellipse cx="32" cy="40" rx="3.6" ry="4.4" fill="#F7D046"/><ellipse cx="48" cy="40" rx="3.6" ry="4.4" fill="#F7D046"/>'+
       '<ellipse cx="32" cy="40" rx="1.3" ry="3.4" fill="#1A1A1A"/><ellipse cx="48" cy="40" rx="1.3" ry="3.4" fill="#1A1A1A"/>'+
       '<path d="M38 47h4l-2 2.4z" fill="#F28FA8"/><path d="M40 49.5v2M40 51.5q-3 2.5-5 0M40 51.5q3 2.5 5 0" stroke="#2B2B2B" stroke-width="1.3" fill="none" stroke-linecap="round"/>'+
-      '<path d="M22 47h9M22 51l9-2M58 47h-9M58 51l-9-2" stroke="#D9DAE0" stroke-width="1.1" stroke-linecap="round"/></svg>'}
+      '<path d="M22 47h9M22 51l9-2M58 47h-9M58 51l-9-2" stroke="#D9DAE0" stroke-width="1.1" stroke-linecap="round"/></svg>'},
+    panda:{name:'הפנדה',svg:S+'<circle cx="40" cy="40" r="40" fill="#CFE8D4"/>'+
+      '<path d="M15 80c3-14 12-20 25-20s22 6 25 20z" fill="#2B2B2B"/><path d="M30 62c3 6 6 9 10 9s7-3 10-9z" fill="#FFFFFF"/>'+
+      '<circle cx="22" cy="22" r="8" fill="#2B2B2B"/><circle cx="58" cy="22" r="8" fill="#2B2B2B"/>'+
+      '<ellipse cx="40" cy="40" rx="21" ry="19" fill="#FFFFFF"/>'+
+      '<ellipse cx="31" cy="39" rx="6" ry="7.5" transform="rotate(-25 31 39)" fill="#2B2B2B"/><ellipse cx="49" cy="39" rx="6" ry="7.5" transform="rotate(25 49 39)" fill="#2B2B2B"/>'+
+      '<circle cx="32" cy="39" r="2" fill="#FFFFFF"/><circle cx="48" cy="39" r="2" fill="#FFFFFF"/>'+
+      '<ellipse cx="40" cy="48" rx="3.4" ry="2.4" fill="#2B2B2B"/><path d="M36 52q4 3 8 0" stroke="#2B2B2B" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>'},
+    lion:{name:'האריה',svg:S+'<circle cx="40" cy="40" r="40" fill="#FFF0C2"/>'+
+      '<path d="M16 80c3-13 12-19 24-19s21 6 24 19z" fill="#D9932B"/>'+
+      '<circle cx="40" cy="40" r="25" fill="#B5651D"/><path d="M40 13l5 6 7-3 1 7 7 1-3 7 6 5-6 4 3 7-7 1-1 7-7-3-5 6-5-6-7 3-1-7-7-1 3-7-6-4 6-5-3-7 7-1 1-7 7 3z" fill="#B5651D"/>'+
+      '<circle cx="26" cy="27" r="4.5" fill="#F2B54A"/><circle cx="54" cy="27" r="4.5" fill="#F2B54A"/>'+
+      '<ellipse cx="40" cy="42" rx="16" ry="15" fill="#F2B54A"/>'+
+      '<circle cx="34" cy="39" r="2.2" fill="#1A1A1A"/><circle cx="46" cy="39" r="2.2" fill="#1A1A1A"/>'+
+      '<ellipse cx="40" cy="49" rx="6" ry="4.5" fill="#FBE3B0"/><path d="M37.5 46h5l-2.5 3z" fill="#5A2E12"/>'+
+      '<path d="M40 49v2.5M40 51.5q-2.5 2-4.5 0M40 51.5q2.5 2 4.5 0" stroke="#5A2E12" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>'},
+    frog:{name:'הצפרדע',svg:S+'<circle cx="40" cy="40" r="40" fill="#D7EEF7"/>'+
+      '<path d="M14 80c3-14 13-21 26-21s23 7 26 21z" fill="#4E9F3D"/><ellipse cx="40" cy="72" rx="13" ry="8" fill="#B8E08A"/>'+
+      '<ellipse cx="40" cy="46" rx="24" ry="17" fill="#5DB247"/>'+
+      '<circle cx="28" cy="31" r="9" fill="#5DB247"/><circle cx="52" cy="31" r="9" fill="#5DB247"/>'+
+      '<circle cx="28" cy="31" r="5.5" fill="#FFFFFF"/><circle cx="52" cy="31" r="5.5" fill="#FFFFFF"/><circle cx="29" cy="32" r="2.6" fill="#1A1A1A"/><circle cx="51" cy="32" r="2.6" fill="#1A1A1A"/>'+
+      '<path d="M27 49q13 10 26 0" stroke="#2F6B24" stroke-width="2.4" fill="none" stroke-linecap="round"/>'+
+      '<circle cx="24" cy="47" r="3" fill="#F29C9C" opacity=".6"/><circle cx="56" cy="47" r="3" fill="#F29C9C" opacity=".6"/></svg>'},
+    bunny:{name:'הארנבת',svg:S+'<circle cx="40" cy="40" r="40" fill="#F9DCE6"/>'+
+      '<path d="M16 80c3-13 12-19 24-19s21 6 24 19z" fill="#E7E2EC"/>'+
+      '<ellipse cx="31" cy="20" rx="6" ry="15" fill="#F4F1F6"/><ellipse cx="49" cy="20" rx="6" ry="15" fill="#F4F1F6"/>'+
+      '<ellipse cx="31" cy="21" rx="2.8" ry="10" fill="#F5A9C0"/><ellipse cx="49" cy="21" rx="2.8" ry="10" fill="#F5A9C0"/>'+
+      '<ellipse cx="40" cy="44" rx="18" ry="17" fill="#F4F1F6"/>'+
+      '<circle cx="33" cy="42" r="2.3" fill="#1A1A1A"/><circle cx="47" cy="42" r="2.3" fill="#1A1A1A"/>'+
+      '<path d="M38 48h4l-2 2.4z" fill="#E86F93"/><path d="M40 50.5v2M40 52.5q-3 2.5-5 0M40 52.5q3 2.5 5 0" stroke="#5A4A5E" stroke-width="1.3" fill="none" stroke-linecap="round"/>'+
+      '<rect x="37.5" y="54" width="5" height="4" rx="1" fill="#FFFFFF" stroke="#D8D2DE" stroke-width=".8"/>'+
+      '<circle cx="29" cy="48" r="2.6" fill="#F5A9C0" opacity=".6"/><circle cx="51" cy="48" r="2.6" fill="#F5A9C0" opacity=".6"/></svg>'},
+    penguin:{name:'הפינגווין',svg:S+'<circle cx="40" cy="40" r="40" fill="#BFE3F2"/>'+
+      '<path d="M18 80c0-20 8-33 22-33s22 13 22 33z" fill="#22303C"/><path d="M28 80c0-14 5-24 12-24s12 10 12 24z" fill="#FFFFFF"/>'+
+      '<ellipse cx="40" cy="38" rx="19" ry="19" fill="#22303C"/>'+
+      '<path d="M26 42c0-8 6-13 14-13s14 5 14 13c0 7-6 11-14 11s-14-4-14-11z" fill="#FFFFFF"/>'+
+      '<circle cx="34" cy="39" r="2.3" fill="#1A1A1A"/><circle cx="46" cy="39" r="2.3" fill="#1A1A1A"/>'+
+      '<path d="M35 44h10l-5 5z" fill="#F5A623"/>'+
+      '<circle cx="30" cy="46" r="2.4" fill="#F7A8B8" opacity=".6"/><circle cx="50" cy="46" r="2.4" fill="#F7A8B8" opacity=".6"/></svg>'},
+    koala:{name:'הקואלה',svg:S+'<circle cx="40" cy="40" r="40" fill="#E3EFD9"/>'+
+      '<path d="M16 80c3-13 12-19 24-19s21 6 24 19z" fill="#8E96A3"/>'+
+      '<circle cx="20" cy="30" r="11" fill="#9AA3AF"/><circle cx="60" cy="30" r="11" fill="#9AA3AF"/><circle cx="20" cy="30" r="6" fill="#E9D7DE"/><circle cx="60" cy="30" r="6" fill="#E9D7DE"/>'+
+      '<ellipse cx="40" cy="42" rx="20" ry="18" fill="#AEB6C1"/>'+
+      '<circle cx="32" cy="38" r="2.3" fill="#1A1A1A"/><circle cx="48" cy="38" r="2.3" fill="#1A1A1A"/>'+
+      '<ellipse cx="40" cy="47" rx="6" ry="7.5" fill="#3B3F47"/><path d="M36 56q4 3 8 0" stroke="#3B3F47" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>'},
+    scientist:{name:'המדענית',svg:S+'<circle cx="40" cy="40" r="40" fill="#C9E7E1"/>'+
+      '<path d="M14 80c2-15 13-22 26-22s24 7 26 22z" fill="#FFFFFF"/><path d="M40 58l-7 22h14z" fill="#3E7CB1"/><path d="M33 58l7 9 7-9" fill="none" stroke="#D3D8DE" stroke-width="1.5"/>'+
+      '<rect x="34" y="48" width="12" height="12" rx="5" fill="#C98E62"/>'+
+      '<circle cx="26" cy="30" r="9" fill="#2A1B12"/><circle cx="54" cy="30" r="9" fill="#2A1B12"/><circle cx="40" cy="22" r="12" fill="#2A1B12"/><circle cx="24" cy="42" r="7" fill="#2A1B12"/><circle cx="56" cy="42" r="7" fill="#2A1B12"/>'+
+      '<ellipse cx="40" cy="39" rx="13" ry="15" fill="#D9A27A"/>'+
+      '<circle cx="34" cy="38" r="5" fill="none" stroke="#2C2C2C" stroke-width="1.8"/><circle cx="46" cy="38" r="5" fill="none" stroke="#2C2C2C" stroke-width="1.8"/><path d="M39 38h2" stroke="#2C2C2C" stroke-width="1.8"/>'+
+      '<circle cx="34" cy="38" r="1.8" fill="#1A1A1A"/><circle cx="46" cy="38" r="1.8" fill="#1A1A1A"/>'+
+      '<path d="M35 46q5 4 10 0" stroke="#1A1A1A" stroke-width="2" fill="none" stroke-linecap="round"/></svg>'},
+    artist:{name:'האמן',svg:S+'<circle cx="40" cy="40" r="40" fill="#FFD9C9"/>'+
+      '<path d="M14 80c2-15 13-22 26-22s24 7 26 22z" fill="#2E3A59"/><path d="M28 64q12 8 24 0" stroke="#F2C14E" stroke-width="5" fill="none" stroke-linecap="round"/>'+
+      '<rect x="34" y="48" width="12" height="12" rx="5" fill="#8C5A3C"/>'+
+      '<ellipse cx="40" cy="39" rx="13" ry="15" fill="#A86B47"/>'+
+      '<path d="M24 30c2-9 9-13 16-13s16 3 18 9c-4-2-9-3-14-3-8 0-15 3-20 7z" fill="#1F1F1F"/>'+
+      '<path d="M22 27c3-8 12-12 22-11 9 1 15 5 15 9-5-2-12-2-19-1-7 1-13 2-18 3z" fill="#D7263D"/><circle cx="44" cy="15" r="2.5" fill="#D7263D"/>'+
+      '<circle cx="35" cy="39" r="2" fill="#1A1A1A"/><circle cx="45" cy="39" r="2" fill="#1A1A1A"/>'+
+      '<path d="M34 47c2 1 4 1 6 0 2 1 4 1 6 0" stroke="#3B2416" stroke-width="2.2" fill="none" stroke-linecap="round"/>'+
+      '<path d="M36 51q4 3 8 0" stroke="#1A1A1A" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>'}
+
   };
   window.URIQ_AVATARS=A;
-  window.URIQ_AVATAR_ORDER=['explorer','professor','buddy','astro','fox','owl','robot','cat'];
+  window.URIQ_AVATAR_ORDER=['explorer','professor','buddy','astro','scientist','artist','fox','owl','robot','cat','panda','lion','frog','bunny','penguin','koala'];
 })();

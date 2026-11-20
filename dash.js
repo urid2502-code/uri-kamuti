@@ -140,7 +140,7 @@
   }
 
   /* ================= review my mistakes ================= */
-  if(body.classList.contains('reviewpage')){
+  if(body.classList.contains('reviewpage')&&U.UID){
     var root=document.getElementById('rv'), list=compute().mis.sort(function(a,b){ var x=a.split('-'),y=b.split('-'); return x[0]-y[0]||x[1]-y[1]; });
     var qs=new URLSearchParams(location.search); if(qs.get('set')) list=list.filter(function(i){ return i.split('-')[0]===qs.get('set'); });
     var bmMode=qs.get('bm')==='1';

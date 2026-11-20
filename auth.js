@@ -34,6 +34,8 @@
     function loop(){ cx+=(tx-cx)*.08; cy+=(ty-cy)*.08; art.style.setProperty('--px',cx.toFixed(3)); art.style.setProperty('--py',cy.toFixed(3)); raf=Math.abs(tx-cx)+Math.abs(ty-cy)>.001?requestAnimationFrame(loop):0; }
     window.addEventListener('pointermove',function(ev){ if(ev.pointerType==='touch') return; tx=ev.clientX/innerWidth-.5; ty=ev.clientY/innerHeight-.5; if(!raf) raf=requestAnimationFrame(loop); },{passive:true});
   })();
+  /* where to go after signing in: the page that asked for it (same site only), else the home page */
+  function nextUrl(){ var n=''; try{ n=sessionStorage.getItem('uriq:next')||''; sessionStorage.removeItem('uriq:next'); }catch(e){} var base=location.pathname.replace(/[^\/]*$/,''); return (n&&n.indexOf(base)===0&&!/login\.html/.test(n))?n:'index.html'; }
   /* accounts remembered on this device for one-tap sign-in (name, email, picture only) */
   var ACCK='uriq:accounts';
   function accounts(){ try{ var l=JSON.parse(localStorage.getItem(ACCK)); return Array.isArray(l)?l:[]; }catch(e){ return []; } }
@@ -115,9 +117,9 @@
         var needPush=!same(merged,remote||{});
         var p=needPush?push():Promise.resolve();
         return p.then(function(){
-          if(stored!==uid){ set(UIDK,uid); set(BASE,null); /* anonymous progress now lives in the account, so the next person on this device starts clean */ if(!isLogin){ location.reload(); return; } location.replace('index.html'); return; }
+          if(stored!==uid){ set(UIDK,uid); set(BASE,null); /* anonymous progress now lives in the account, so the next person on this device starts clean */ if(!isLogin){ location.reload(); return; } location.replace(nextUrl()); return; }
           else if(changed&&!isLogin){ location.reload(); return; }
-          if(isLogin&&hasCode){ location.replace('index.html'); return; }   // back from Google: go to the landing page
+          if(isLogin&&hasCode){ location.replace(nextUrl()); return; }   // back from Google: go to the landing page
           if(isLogin){ busy(false); showUser(prof); if(hasCode||/welcome=1/.test(location.search)) say('ok','התחברת בהצלחה. ההתקדמות שלך סונכרנה.'); }
         });
       }).catch(function(e){

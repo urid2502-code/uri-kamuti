@@ -101,7 +101,17 @@
   }
 
   /* ================= set page ================= */
-  if(body.classList.contains('setpage')){
+  /* ---- solving is for signed-in users: everyone else gets a sign-in gate ---- */
+  var LOCKED=!UID&&(body.classList.contains('setpage')||body.classList.contains('reviewpage'));
+  function rememberNext(){ try{ sessionStorage.setItem('uriq:next',location.pathname+location.search+location.hash); }catch(e){} }
+  function gateHTML(h,p){ return '<section class="gate" role="region" aria-labelledby="gate-h"><span class="gate-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><circle cx="12" cy="15.5" r="1.4"/></svg></span><h2 id="gate-h">'+h+'</h2><p>'+p+'</p><a class="cta solid gate-go" href="'+root+'login.html">כניסה עם Google</a><p class="gate-fine">חינם, בלי סיסמה. ההתקדמות, הציונים והטעויות נשמרים בחשבון שלך.</p></section>'; }
+  document.addEventListener('click',function(e){ if(e.target.closest('.gate-go')) rememberNext(); });
+  if(LOCKED){
+    var anchor=document.querySelector('.sethead')||document.querySelector('.phead');
+    if(anchor) anchor.insertAdjacentHTML('afterend',gateHTML(body.classList.contains('setpage')?'כדי לפתור את המקבץ צריך להתחבר':'תרגול הטעויות זמין למשתמשים מחוברים','המקבצים, הטיימר, הציונים והפתרונות פתוחים רק למי שנכנס עם חשבון Google.'));
+  }
+  if(!UID&&body.classList.contains('home-page')){ var sp=document.querySelector('.setpick'); if(sp) sp.insertAdjacentHTML('beforebegin','<div class="gate-strip"><span class="gate-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg></span><p><b>כדי לפתור מקבצים צריך להתחבר.</b> הכניסה עם Google חינמית ולוקחת כמה שניות.</p><a class="cta solid gate-go" href="'+root+'login.html">כניסה עם Google</a></div>'); }
+  if(body.classList.contains('setpage')&&!LOCKED){
     var n=body.dataset.set, st=S(n);
     var save0=save; save=function(){ st.u=Date.now(); save0(); };
     var cards=[].slice.call(document.querySelectorAll('.q:not(.miss)')), misses=[].slice.call(document.querySelectorAll('.q.miss'));

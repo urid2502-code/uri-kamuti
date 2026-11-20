@@ -902,3 +902,20 @@ body.loginpage{background:var(--bg)}
   .auth-art .ring{display:none}
   .auth-art blockquote{font-size:1.8rem}
 }
+
+/* compact landing: hero hands straight over to the carousel */
+.stage{min-height:min(88svh,820px)}
+.stage-in{padding:calc(var(--top) + 32px) 28px 56px}
+.stage .facts{margin-top:40px}
+.dest .sec{padding-top:8px;padding-bottom:88px}
+.dest .car{margin-top:0}
+@media (max-width:760px){ .stage{min-height:auto} .stage-in{padding:calc(var(--top) + 72px) 20px 48px} .dest .sec{padding-top:0;padding-bottom:64px} }
+
+.stage{min-height:0}
+.stage-in{padding:calc(var(--top) + 40px) 28px 48px}
+.stage h1{font-size:clamp(3rem,8vw,6.6rem)}
+.stage .sub{margin-top:20px}
+.stage .acts{margin-top:26px}
+.stage .facts{margin-top:30px}
+.geo .lyr{width:min(52vw,600px);margin-top:calc(min(52vw,600px)/-2)}
+.dest .sec{padding-top:0}

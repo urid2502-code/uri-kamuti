@@ -1243,3 +1243,68 @@ body.landing .top.solid{background:rgba(10,10,10,.97)}
 .stage h1.he{direction:rtl;text-align:right;font-size:clamp(4.6rem,11vw,10.5rem);line-height:.86}
 .stage h1.he .ln:nth-child(2)>span{color:var(--green)}
 @media (max-width:760px){ .stage h1.he{font-size:clamp(4rem,19vw,6rem)} }
+
+/* =====================================================================
+   Uri Q v4 — one theme everywhere: a dark frame, bright cards for reading.
+   Every accent follows the colour the user picked in "האזור שלי".
+   ===================================================================== */
+/* accent families: deep (on white cards) + high (on the dark frame) */
+:root{
+  --acD:#12805C;--acD-ink:#0E6B4C;--acD-soft:#E5F3EC;--acD-line:#8CCBB0;
+  --hi:#3DDC97;--hi-ink:#5BE5A9;--hi-soft:#10291F;--hi-line:#1E6B4C;--on-hi:#06140E;
+  --green:var(--hi);
+}
+:root[data-accent="blue"]{--acD:#2B3BFF;--acD-ink:#2230E0;--acD-soft:#E8EBFF;--acD-line:#9AA3FF;--hi:#8F9AFF;--hi-ink:#A9B1FF;--hi-soft:#18205A;--hi-line:#4652C8;--on-hi:#060A24}
+:root[data-accent="violet"]{--acD:#7339F0;--acD-ink:#6A2FE6;--acD-soft:#F0EAFF;--acD-line:#B9A2FA;--hi:#B39BFF;--hi-ink:#C4B1FF;--hi-soft:#22184F;--hi-line:#5B44B8;--on-hi:#12082E}
+:root[data-accent="pink"]{--acD:#E2336B;--acD-ink:#C81E57;--acD-soft:#FFEAF0;--acD-line:#F59AB7;--hi:#FF7DA3;--hi-ink:#FF95B4;--hi-soft:#3A1428;--hi-line:#8E3359;--on-hi:#2A0714}
+:root[data-accent="orange"]{--acD:#E25F14;--acD-ink:#C24E0B;--acD-soft:#FFEFE4;--acD-line:#F6AF85;--hi:#FF9A5C;--hi-ink:#FFAD7A;--hi-soft:#3A2010;--hi-line:#8A4A22;--on-hi:#2A1204}
+:root[data-accent="ink"]{--acD:#111111;--acD-ink:#111111;--acD-soft:#E9EAE8;--acD-line:#9A9A9A;--hi:#F2F2F0;--hi-ink:#FFFFFF;--hi-soft:#232323;--hi-line:#555555;--on-hi:#0A0A0A}
+
+/* the frame: same dark theme as the home page */
+html{background:#0B0B0B}
+body:not(.landing){
+  --bg:#0B0B0B;--paper:#161616;--ink:#F2F2F0;--ink2:#DCDCDA;--mute:#A8A8A8;--faint:#939393;
+  --line:#262626;--line2:#3A3A3A;--hover:#1D1D1D;
+  --ac:var(--hi);--ac-ink:var(--hi-ink);--ac-soft:var(--hi-soft);--ac-line:var(--hi-line);--on-ac:var(--on-hi);
+  --ok:#34D399;--ok-bg:#062A1E;--ok-line:#1F6B53;--no:#FB7185;--no-bg:#2E0F18;--no-line:#7A2639;--rv:#FCD34D;--rv-bg:#2B210A;
+  --grid:rgba(255,255,255,.035);--lift:0 0 0 1px #262626;--shadow:none;
+  color:var(--ink);color-scheme:dark;background-color:var(--bg)
+}
+body:not(.landing) .top{background:rgba(11,11,11,.9);border-bottom-color:#1F1F1F;backdrop-filter:blur(12px)}
+body:not(.landing) .phead h1::after,body:not(.landing) .hero h1::after{background:var(--hi)}
+body:not(.landing) .dash-banner{background:#161616;border:1px solid #262626}
+
+/* bright reading surfaces: question cards, the timer bar, results, panels */
+:root:not([data-theme="dark"]) :is(.q,.exambar,.resultsdash,.modal,.omr,.panel,.kpis,.topic,.setl,.ls-legend,.sq-item,.auth-main,.pn,.results,.rec,.rv-stage){
+  --bg:#F4F5F3;--paper:#FFFFFF;--ink:#0F0F0F;--ink2:#2A2A2A;--mute:#525252;--faint:#6B6B6B;
+  --line:#E3E5E1;--line2:#CDD1CB;--hover:#EDEFEB;
+  --ac:var(--acD);--ac-ink:var(--acD-ink);--ac-soft:var(--acD-soft);--ac-line:var(--acD-line);--on-ac:#fff;
+  --ok:#047857;--ok-bg:#ECFDF5;--ok-line:#6EE7B7;--no:#BE123C;--no-bg:#FFF1F2;--no-line:#FDA4AF;--rv:#854D0E;--rv-bg:#FEF3C7;
+  --grid:rgba(0,0,0,.035);--lift:0 1px 1px rgba(0,0,0,.04),0 18px 40px -18px rgba(0,0,0,.3);
+  color:var(--ink);color-scheme:light
+}
+:root:not([data-theme="dark"]) .auth-main{background:#F4F5F3}
+:root:not([data-theme="dark"]) .exambar{outline-color:#0B0B0B;box-shadow:0 10px 30px -10px rgba(0,0,0,.6)}
+:root:not([data-theme="dark"]) .opt[aria-pressed="true"] .bub{color:#fff}
+:root[data-theme="dark"] .opt[aria-pressed="true"] .bub{color:var(--on-hi)}
+
+/* home page follows the user's colour too */
+.stage::after{background:radial-gradient(60% 70% at 25% 45%,color-mix(in srgb,var(--hi) 12%,transparent),transparent 70%)}
+.slide .s-k{color:var(--acD)}
+.slide ul li::before{background:var(--acD)}
+.slide .cta.solid:hover{background:var(--acD);border-color:var(--acD)}
+.pv-grid .done{background:var(--acD);border-color:var(--acD)}
+.pv-grid .part{background:linear-gradient(to top,var(--acD) var(--p),#fff var(--p))}
+.dm-bar i{background:var(--acD)}
+.demo.press .dm-sub{background:var(--acD)}
+.dm-o.ok b{background:#047857;border-color:#047857}
+body.landing .acct .av{color:var(--on-hi)}
+.stage .cta.solid{color:var(--on-hi)}
+.stage .cta.solid:hover{box-shadow:0 0 0 6px color-mix(in srgb,var(--hi) 20%,transparent)}
+.car-arrows button:hover{color:var(--on-hi)}
+.acopt:has(input:checked) .sw{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--c)}
+
+/* the timer bar travels with you on phones too (its offset now follows the real header height) */
+@media (max-width:640px){
+  .exambar{border-radius:14px}
+}

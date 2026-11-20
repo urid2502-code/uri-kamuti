@@ -32,7 +32,7 @@
 
   /* ---- theme ---- */
   var tb=document.getElementById('theme');
-  function syncTheme(){ var dk=document.documentElement.dataset.theme==='dark'; if(tb){ tb.setAttribute('aria-pressed',dk?'true':'false'); tb.setAttribute('aria-label',dk?'מצב בהיר':'מצב כהה'); } var m=document.querySelector('meta[name=theme-color]'); if(m&&!body.classList.contains('landing')&&!body.classList.contains('loginpage')) m.content=dk?'#0A0A0A':'#F4F5F3'; }
+  function syncTheme(){ var dk=document.documentElement.dataset.theme==='dark'; if(tb){ tb.setAttribute('aria-pressed',dk?'true':'false'); tb.setAttribute('aria-label',dk?'מצב בהיר':'מצב כהה'); } var m=document.querySelector('meta[name=theme-color]'); if(m&&!body.classList.contains('landing')&&!body.classList.contains('loginpage')) m.content=dk?'#0A0A0A':'#0B0B0B'; }
   if(tb) tb.addEventListener('click',function(){ var dk=document.documentElement.dataset.theme!=='dark'; if(dk) document.documentElement.dataset.theme='dark'; else delete document.documentElement.dataset.theme; try{ localStorage.setItem(THEME,dk?'dark':'light'); }catch(e){} syncTheme(); });
   syncTheme();
 
@@ -281,6 +281,11 @@
 
   window.addEventListener('beforeprint',function(){ document.querySelectorAll('details.sol').forEach(function(d){ d.dataset.was=d.open?'1':''; d.open=true; }); });
   window.addEventListener('afterprint',function(){ document.querySelectorAll('details.sol').forEach(function(d){ d.open=!!d.dataset.was; }); });
+  /* ---- sticky offsets follow the real header height ---- */
+  (function(){ var hdr=document.querySelector('.top'); if(!hdr||body.classList.contains('landing')) return;
+    var mq=matchMedia('(max-width: 860px)'), last=0;
+    var set=function(){ var r=document.documentElement; if(!mq.matches){ r.style.removeProperty('--top'); last=0; return; } var h=hdr.offsetHeight; if(h!==last){ last=h; r.style.setProperty('--top',h+'px'); } };
+    set(); addEventListener('resize',set,{passive:true}); if(window.ResizeObserver) new ResizeObserver(set).observe(hdr); })();
   /* ---- avatars ---- */
   var AV=window.URIQ_AVATARS||{}, AVO=window.URIQ_AVATAR_ORDER||[];
   function avatarHTML(id){ return AV[id]?AV[id].svg:''; }

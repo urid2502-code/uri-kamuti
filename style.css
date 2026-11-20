@@ -1392,3 +1392,7 @@ details.omr .omr-head{margin-top:16px}
 .sitefoot .cr a{color:inherit}
 :root[data-theme="dark"] .legal-b{background:#151515;border-color:#2A2A2A;color:#F2F2F0}
 @media (max-width:600px){.legal-b{padding:20px 18px}}
+/* the UD mark follows the user's colour */
+.top .brand .mark,body.landing .brand .mark{color:var(--hi);transition:color .2s}
+.sitefoot .fb .mark{color:var(--acD)}
+:root[data-theme="dark"] .sitefoot .fb .mark{color:var(--hi)}

@@ -44,6 +44,34 @@
     new IntersectionObserver(function(es){ heroOn=es[0].isIntersecting; stage.classList.toggle('paused',!heroOn); },{threshold:0}).observe(stage);
   }
 
+  /* ---- live demo card: a real question being solved, on a loop while visible ---- */
+  var demo=document.getElementById('demo');
+  if(demo){
+    var O=[].slice.call(demo.querySelectorAll('.dm-o')), secEl=document.getElementById('dm-s'), sec=38, tmr=[], run=false, tick=null;
+    var o=function(n){ return O[n-1]; };
+    function clear(){ tmr.forEach(clearTimeout); tmr=[]; clearInterval(tick); }
+    function reset(){ demo.className='demo'; O.forEach(function(x){ x.className='dm-o'; }); sec=38; if(secEl) secEl.textContent=sec; }
+    function finalState(){ demo.className='demo s3 done'; o(1).className='dm-o x'; o(3).className='dm-o ok'; }
+    function at(ms,f){ tmr.push(setTimeout(f,ms)); }
+    function play(){
+      clear(); reset();
+      tick=setInterval(function(){ if(sec<59){ sec++; if(secEl) secEl.textContent=sec; } },1000);
+      at(900,function(){ o(2).classList.add('hov'); });
+      at(1700,function(){ o(2).classList.remove('hov'); o(1).classList.add('x'); });
+      at(2600,function(){ o(3).classList.add('hov'); });
+      at(3100,function(){ o(3).classList.remove('hov'); o(3).classList.add('on'); demo.classList.add('s3'); });
+      at(4300,function(){ demo.classList.add('press'); clearInterval(tick); });
+      at(4600,function(){ demo.classList.remove('press'); o(3).classList.remove('on'); o(3).classList.add('ok'); demo.classList.add('done'); });
+      at(9200,function(){ if(run) play(); });
+    }
+    if(reduce) finalState();
+    else if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ var v=es[0].isIntersecting; if(v&&!run){ run=true; setTimeout(play,900); } else if(!v&&run){ run=false; clear(); } },{threshold:0.3}).observe(demo);
+      document.addEventListener('visibilitychange',function(){ if(document.hidden){ run=false; clear(); } else if(!run){ run=true; play(); } });
+    } else finalState();
+    layers.push({el:demo,d:0.5});
+  }
+
   /* ---- scroll reveals ---- */
   var rv=[].slice.call(document.querySelectorAll('.rv'));
   if(reduce||!('IntersectionObserver' in window)) rv.forEach(function(e){ e.classList.add('in'); });

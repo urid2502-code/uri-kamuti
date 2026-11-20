@@ -32,7 +32,7 @@
 
   /* ---- theme ---- */
   var tb=document.getElementById('theme');
-  function syncTheme(){ var dk=document.documentElement.dataset.theme==='dark'; if(tb){ tb.setAttribute('aria-pressed',dk?'true':'false'); tb.setAttribute('aria-label',dk?'מצב בהיר':'מצב כהה'); } var m=document.querySelector('meta[name=theme-color]'); if(m&&!body.classList.contains('landing')&&!body.classList.contains('loginpage')) m.content=dk?'#000000':'#F5F5F4'; }
+  function syncTheme(){ var dk=document.documentElement.dataset.theme==='dark'; if(tb){ tb.setAttribute('aria-pressed',dk?'true':'false'); tb.setAttribute('aria-label',dk?'מצב בהיר':'מצב כהה'); } var m=document.querySelector('meta[name=theme-color]'); if(m&&!body.classList.contains('landing')&&!body.classList.contains('loginpage')) m.content=dk?'#060A24':'#F3F5FC'; }
   if(tb) tb.addEventListener('click',function(){ var dk=document.documentElement.dataset.theme!=='dark'; if(dk) document.documentElement.dataset.theme='dark'; else delete document.documentElement.dataset.theme; try{ localStorage.setItem(THEME,dk?'dark':'light'); }catch(e){} syncTheme(); });
   syncTheme();
 
@@ -290,6 +290,15 @@
       return '<label class="avopt"><input type="radio" name="uriq-av" value="'+k+'"'+(k===cur?' checked':'')+'><span class="avimg">'+AV[k].svg+'</span><span class="avname">'+AV[k].name+'</span></label>'; }).join('')+'</fieldset>';
     box.querySelectorAll('input').forEach(function(r){ r.addEventListener('change',function(){ store.avatar=r.value; save(); paintChip(); emit('avatar',{id:r.value}); if(onPick) onPick(r.value); }); });
   }
+  /* ---- personal accent colour ---- */
+  var ACC=[['blue','כחול','#2B3BFF'],['violet','סגול','#7339F0'],['pink','ורוד','#E2336B'],['teal','טורקיז','#0B8A7D'],['orange','כתום','#E25F14'],['ink','דיו','#0B1033']];
+  function applyAccent(a){ var r=document.documentElement; if(a&&a!=='blue') r.dataset.accent=a; else delete r.dataset.accent; try{ if(a) localStorage.setItem('uriq:accent',a); else localStorage.removeItem('uriq:accent'); }catch(e){} }
+  (function(){ var want=store.accent&&store.accent!=='blue'?store.accent:''; if(want!==(document.documentElement.dataset.accent||'')) applyAccent(want); })();
+  function accentPicker(box){
+    var cur=store.accent||'blue';
+    box.innerHTML='<fieldset class="acpick"><legend class="vh">צבע האתר</legend>'+ACC.map(function(c){ return '<label class="acopt"><input type="radio" name="uriq-ac" value="'+c[0]+'"'+(c[0]===cur?' checked':'')+'><span class="sw" style="--c:'+c[2]+'"></span><span>'+c[1]+'</span></label>'; }).join('')+'</fieldset>';
+    box.querySelectorAll('input').forEach(function(r){ r.addEventListener('change',function(){ store.accent=r.value; save(); applyAccent(r.value); emit('accent',{id:r.value}); }); });
+  }
   /* ---- account chip ---- */
   var acct=document.getElementById('acct');
   function paintChip(){ if(!acct) return; var av=acct.querySelector('.av'); if(store.avatar&&AV[store.avatar]){ av.innerHTML=avatarHTML(store.avatar); av.classList.add('has-av'); } }
@@ -299,6 +308,6 @@
       acct.querySelector('.an').textContent=nm||'החשבון שלי';
       if(store.avatar&&AV[store.avatar]){ /* painted below */ } else if(pf.avatar){ var im=new Image(); im.alt=''; im.referrerPolicy='no-referrer'; im.src=pf.avatar; im.onerror=function(){ av.textContent=(nm||'?').charAt(0); }; av.innerHTML=''; av.appendChild(im); } else av.textContent=(nm||'?').charAt(0);
     } paintChip(); }
-  window.URIQ={avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
+  window.URIQ={accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

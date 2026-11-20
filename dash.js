@@ -61,7 +61,8 @@
     var hist=(store.hist||[]).slice().sort(function(a,b){ return a.at-b.at; });
     var AVS=window.URIQ_AVATARS||{}, myAv=AVS[store.avatar];
     var profile='<section class="panel profile" id="avatar" aria-labelledby="pf-h"><div class="pf-top"><span class="pf-av'+(myAv?'':' empty')+'" aria-hidden="true">'+(myAv?myAv.svg:'?')+'</span><div class="pf-t"><h2 id="pf-h">'+esc(pf&&pf.name||'הפרופיל שלי')+'</h2><p>'+(pf&&pf.email?esc(pf.email):(U.UID?'':'לא מחובר/ת · הדמות נשמרת בדפדפן הזה'))+'</p>'+(myAv?'<p class="pf-n">הדמות שלך: '+myAv.name+'</p>':'')+'</div></div>'+
-      '<details class="pf-pick"'+(myAv?'':' open')+'><summary>'+(myAv?'החלפת דמות':'בחרו דמות לפרופיל')+'</summary><div id="pf-picker"></div></details></section>';
+      '<details class="pf-pick"'+(myAv?'':' open')+'><summary>'+(myAv?'החלפת דמות':'בחרו דמות לפרופיל')+'</summary><div id="pf-picker"></div></details>'+
+      '<div class="pf-sec"><h3>הצבע שלך</h3><p>משנה את צבע הכפתורים, הבחירות וההדגשות בכל האתר. נשמר בחשבון.</p><div id="ac-picker"></div></div></section>';
     var bms=Object.keys(store.bm||{}).sort(function(a,b){ var x=a.split('-'),y=b.split('-'); return x[0]-y[0]||x[1]-y[1]; });
     var bmPanel='<section class="panel"><div class="ph"><h2>שאלות שסימנת</h2><p>'+(bms.length===1?'שאלה אחת':bms.length?bms.length+' שאלות':'עוד אין')+'</p></div>'+(bms.length?'<div class="ids refs" style="margin-bottom:16px">'+bms.map(function(i){ return '<a href="'+setHref(i)+'">'+i+'</a>'; }).join('')+'</div><a class="cta line" href="review.html?bm=1">לתרגל את השאלות המסומנות</a>':'<p style="color:var(--mute);margin:0;line-height:1.6">בכל שאלה יש כפתור סימנייה. סמנו שאלות קשות כדי לחזור אליהן מכאן.</p>')+'</section>';
     if(!r.sub){
@@ -95,7 +96,7 @@
     }
   }
 
-  if(body.classList.contains('dashpage')){ var pk=document.getElementById('pf-picker'); if(pk&&U.avatarPicker) U.avatarPicker(pk,function(){ location.reload(); }); if(location.hash==='#avatar'){ var d=document.querySelector('.pf-pick'); if(d) d.open=true; } }
+  if(body.classList.contains('dashpage')){ var pk=document.getElementById('pf-picker'); if(pk&&U.avatarPicker) U.avatarPicker(pk,function(){ location.reload(); }); var acp=document.getElementById('ac-picker'); if(acp&&U.accentPicker) U.accentPicker(acp); if(location.hash==='#avatar'){ var d=document.querySelector('.pf-pick'); if(d) d.open=true; } }
   /* ================= lessons: personal accuracy per topic ================= */
   if(body.classList.contains('lessonspage')){
     var rr=compute();

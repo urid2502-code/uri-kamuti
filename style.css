@@ -894,3 +894,11 @@ body.loginpage{background:var(--bg)}
 .bm-btn[aria-pressed="true"]{color:var(--ink)}
 .bm-btn[aria-pressed="true"] svg path{fill:currentColor}
 .rv-stage .bm-btn{display:none}
+.auth-art .mono-big{width:min(62%,340px)}
+@media (max-width:900px){
+  .auth{grid-template-columns:1fr}
+  .auth-art{min-height:230px;padding:28px}
+  .auth-art .mono-big{width:118px;top:40%}
+  .auth-art .ring{display:none}
+  .auth-art blockquote{font-size:1.8rem}
+}

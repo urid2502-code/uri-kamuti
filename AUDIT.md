@@ -5,17 +5,19 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 > Update: 38 questions were added from photos of the book (set 5 Q10, set 6, set 7 Q1–3, set 8 Q10, set 9, set 10 Q1–3, set 11 Q10, set 12 Q1–9). Now 359 of 400 are transcribed and 41 are still missing.
 >
 > Update 2: 19 more questions were added from photos (set 16 Q4–9, set 21 Q4–10, set 22 Q4–9). Now 378 of 400 are transcribed and 22 are still missing.
+>
+> Update 3: the last 22 questions were added from photos (set 30 Q4–9, set 33 Q10, set 34 Q1–3, set 35 Q4–9, set 36 Q4–9). The same photos also confirmed five questions that had been read only approximately from the video (30-2, 30-10, 35-2, 35-3, 35-10). **All 400 questions are now transcribed.**
 
 ## Totals
 
 | | Questions |
 |---|---|
 | In the book | **400** |
-| Transcribed (complete and readable) | 249 |
-| Transcribed but partly guessed (small or blurry text in the video) | 68 |
+| Transcribed (complete and readable) | 254 |
+| Transcribed but partly guessed (small or blurry text in the video) | 63 |
 | Transcribed but incomplete or unreadable | 4 |
-| Transcribed from photos of the book | 57 |
-| **Not transcribed (pages skipped in the video)** | **22** |
+| Transcribed from photos of the book | 79 |
+| **Not transcribed (pages skipped in the video)** | **0** |
 | Book answer key available | 400 |
 
 ## Book pages needed to recover the missing questions
@@ -23,10 +25,6 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | Book pages | Missing questions |
 |---|---|
 | 44 | מטושטש מאוד בסרטון: שאלות 4–6 של מקבץ 10 נקראו חלקית בלבד. |
-| 124–125 | דילגו בסרטון: חסרות שאלות 4–9 של מקבץ 30. |
-| 138–139 | דילגו בסרטון: חסרות שאלה 10 של מקבץ 33 ושאלות 1–3 של מקבץ 34. |
-| 144–145 | דילגו בסרטון: חסרות שאלות 4–9 של מקבץ 35. |
-| 148–149 | דילגו בסרטון: חסרות שאלות 4–9 של מקבץ 36. |
 
 ## Inventory by set
 
@@ -61,13 +59,13 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | 27 | 10/10 | — | — | 3, 7, 8 | ✓ |
 | 28 | 10/10 | — | — | — | ✓ |
 | 29 | 10/10 | — | — | 2, 10 | ✓ |
-| 30 | 4/10 | 4, 5, 6, 7, 8, 9 | — | 2, 10 | ✓ |
+| 30 | 10/10 | — | — | 7 | ✓ |
 | 31 | 10/10 | — | — | 4, 7, 9, 10 | ✓ |
 | 32 | 10/10 | — | — | 3, 6, 7 | ✓ |
-| 33 | 9/10 | 10 | — | 4, 7 | ✓ |
-| 34 | 7/10 | 1, 2, 3 | — | 5, 7 | ✓ |
-| 35 | 4/10 | 4, 5, 6, 7, 8, 9 | — | 2, 3, 10 | ✓ |
-| 36 | 4/10 | 4, 5, 6, 7, 8, 9 | — | — | ✓ |
+| 33 | 10/10 | — | — | 4, 7, 10 | ✓ |
+| 34 | 10/10 | — | — | 5, 7 | ✓ |
+| 35 | 10/10 | — | — | 8 | ✓ |
+| 36 | 10/10 | — | — | — | ✓ |
 | 37 | 10/10 | — | — | 5, 9 | ✓ |
 | 38 | 10/10 | — | — | 7 | ✓ |
 | 39 | 10/10 | — | — | 5, 6, 10 | ✓ |
@@ -127,8 +125,7 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | 27-8 | approximate | "ב־5"/"ב־15" בסוף השאלה מטושטש. |
 | 29-2 | approximate | המונה/מכנה קטנים – נקראו בקירוב |
 | 29-10 | approximate | נקרא בקירוב |
-| 30-2 | approximate | הביטוי הפנימי קטן – נקרא בקירוב. |
-| 30-10 | approximate | השברים קטנים – נקראו בקירוב. |
+| 30-7 | approximate | השברים בתשובות 1 ו־4 קטנים בתמונה – נקראו בקירוב. |
 | 31-4 | approximate | המעריכים קטנים – שוחזרו לפי מפתח התשובות |
 | 31-7 | approximate | נקרא בקירוב |
 | 31-9 | approximate | כנראה מטר |
@@ -138,11 +135,10 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | 32-7 | approximate | המעריכים קטנים – נקראו בקירוב |
 | 33-4 | approximate | סדר השורש והמעריכים קטנים – נקראו בקירוב |
 | 33-7 | approximate | המעריך העליון קטן מאוד – נקרא בקירוב |
+| 33-10 | approximate | סוף השורה חתוך בתמונה – המספר 4 נקרא בקירוב (מתאים למפתח). |
 | 34-5 | approximate | המעריכים קטנים – נקראו בקירוב |
 | 34-7 | approximate | נקרא בקירוב |
-| 35-2 | approximate | נקרא בקירוב; נקרא בקירוב; מתאים למפתח |
-| 35-3 | approximate | נקרא בקירוב; החלק התחתון של העמוד מטושטש מאוד בסרטון (הדף זז) – המקדמים והתשובות נקראו בקירוב; יש לבדוק בספר (עמוד 143). |
-| 35-10 | approximate | המעריכים קטנים – נקראו בקירוב; נקרא בקירוב |
+| 35-8 | approximate | השבר בתשובה 3 קטן בתמונה – נקרא בקירוב. |
 | 37-5 | approximate | המעריכים קטנים – נקראו בקירוב |
 | 37-9 | approximate | נקרא בקירוב |
 | 38-7 | approximate | ייתכן שהתשובות הן בדקות ולא בשעות. |

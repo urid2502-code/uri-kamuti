@@ -12,6 +12,7 @@
   function J(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } }
   var stored=get(UIDK);
   var hasCode=/[?&#](code|access_token|error)=/.test(location.search+location.hash);
+  var urlErr=(function(){ try{ var q=new URLSearchParams(location.search), h=new URLSearchParams(location.hash.slice(1)); return q.get('error_description')||h.get('error_description')||''; }catch(e){ return ''; } })();
 
   /* ---------- login page UI ---------- */
   var gbtn=document.getElementById('gbtn'), msg=document.getElementById('auth-msg'), who=document.getElementById('auth-who');
@@ -72,7 +73,7 @@
       if(hasCode&&history.replaceState) history.replaceState(null,'',location.pathname);
       if(!user){
         if(stored){ set(UIDK,null); set(PROF,null); location.reload(); return; }
-        if(isLogin){ busy(false); var err=new URLSearchParams(location.search).get('error_description'); if(err) say('err','ההתחברות נכשלה: '+esc(err)+'. אפשר לנסות שוב.'); }
+        if(isLogin){ busy(false); if(urlErr) say('err','ההתחברות עם Google נכשלה. נסו שוב בעוד רגע, ואם זה חוזר, כתבו ל־urid2502@gmail.com.'); }
         return;
       }
       uid=user.id; var prof=profileOf(user); set(PROF,JSON.stringify(prof));
@@ -86,8 +87,9 @@
         var needPush=!same(merged,remote||{});
         var p=needPush?push():Promise.resolve();
         return p.then(function(){
-          if(stored!==uid){ set(UIDK,uid); set(BASE,null); /* anonymous progress now lives in the account, so the next person on this device starts clean */ if(!isLogin){ location.reload(); return; } location.replace(location.pathname+'?welcome=1'); return; }
+          if(stored!==uid){ set(UIDK,uid); set(BASE,null); /* anonymous progress now lives in the account, so the next person on this device starts clean */ if(!isLogin){ location.reload(); return; } location.replace('index.html'); return; }
           else if(changed&&!isLogin){ location.reload(); return; }
+          if(isLogin&&hasCode){ location.replace('index.html'); return; }   // back from Google: go to the landing page
           if(isLogin){ busy(false); showUser(prof); if(hasCode||/welcome=1/.test(location.search)) say('ok','התחברת בהצלחה. ההתקדמות שלך סונכרנה.'); }
         });
       }).catch(function(e){

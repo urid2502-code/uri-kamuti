@@ -59,9 +59,14 @@
     if(pf&&pf.name) document.getElementById('dash-h').textContent='שלום, '+pf.name.split(' ')[0];
     var banner=U.UID?'':'<div class="dash-banner"><p><b>ההתקדמות נשמרת כרגע רק בדפדפן הזה.</b> '+(authOn?'כניסה עם Google תשמור אותה בחשבון ותסנכרן בין מכשירים.':'סנכרון בין מכשירים יופעל כשהכניסה עם Google תחובר.')+'</p><a class="cta" href="login.html">'+(authOn?'כניסה עם Google':'פרטים')+'</a></div>';
     var hist=(store.hist||[]).slice().sort(function(a,b){ return a.at-b.at; });
+    var AVS=window.URIQ_AVATARS||{}, myAv=AVS[store.avatar];
+    var profile='<section class="panel profile" id="avatar" aria-labelledby="pf-h"><div class="pf-top"><span class="pf-av'+(myAv?'':' empty')+'" aria-hidden="true">'+(myAv?myAv.svg:'?')+'</span><div class="pf-t"><h2 id="pf-h">'+esc(pf&&pf.name||'הפרופיל שלי')+'</h2><p>'+(pf&&pf.email?esc(pf.email):(U.UID?'':'לא מחובר/ת · הדמות נשמרת בדפדפן הזה'))+'</p>'+(myAv?'<p class="pf-n">הדמות שלך: '+myAv.name+'</p>':'')+'</div></div>'+
+      '<details class="pf-pick"'+(myAv?'':' open')+'><summary>'+(myAv?'החלפת דמות':'בחרו דמות לפרופיל')+'</summary><div id="pf-picker"></div></details></section>';
+    var bms=Object.keys(store.bm||{}).sort(function(a,b){ var x=a.split('-'),y=b.split('-'); return x[0]-y[0]||x[1]-y[1]; });
+    var bmPanel='<section class="panel"><div class="ph"><h2>שאלות שסימנת</h2><p>'+(bms.length===1?'שאלה אחת':bms.length?bms.length+' שאלות':'עוד אין')+'</p></div>'+(bms.length?'<div class="ids refs" style="margin-bottom:16px">'+bms.map(function(i){ return '<a href="'+setHref(i)+'">'+i+'</a>'; }).join('')+'</div><a class="cta line" href="review.html?bm=1">לתרגל את השאלות המסומנות</a>':'<p style="color:var(--mute);margin:0;line-height:1.6">בכל שאלה יש כפתור סימנייה. סמנו שאלות קשות כדי לחזור אליהן מכאן.</p>')+'</section>';
     if(!r.sub){
       var st1=sets()[0];
-      box.innerHTML=banner+'<div class="panel empty-st"><h2>עוד לא הגשת מקבץ</h2><p>הנתונים כאן נבנים רק מהגשות אמיתיות. אחרי שתגישו מקבץ ראשון יופיעו כאן הציון, הדיוק לפי נושא והשאלות לחזרה.</p><a class="cta solid" href="sets/'+pad(+st1)+'.html">להתחיל ממקבץ '+st1+'</a></div>';
+      box.innerHTML=profile+banner+bmPanel.replace('class="panel"','class="panel" style="margin-bottom:18px"')+'<div class="panel empty-st"><h2>עוד לא הגשת מקבץ</h2><p>הנתונים כאן נבנים רק מהגשות אמיתיות. אחרי שתגישו מקבץ ראשון יופיעו כאן הציון, הדיוק לפי נושא והשאלות לחזרה.</p><a class="cta solid" href="sets/'+pad(+st1)+'.html">להתחיל ממקבץ '+st1+'</a></div>';
     } else {
       var acc=r.ok+r.no+r.sk?Math.round(100*r.ok/(r.ok+r.no+r.sk)):0;
       var wt=weakTopics(r), recs=recommend(r);
@@ -72,7 +77,7 @@
       var recHtml=recs.length?recs.map(function(x){ return '<a class="rec" href="sets/'+pad(+x.s)+'.html"><b>מקבץ '+x.s+'</b><span>'+esc(x.why)+'</span></a>'; }).join(''):'<p style="color:var(--mute)">הגשת את כל המקבצים. אפשר לאפס מקבץ ולפתור שוב.</p>';
       var rows=hist.slice().reverse().slice(0,30).map(function(h){ return '<tr><td>'+fmtDate(h.at)+'</td><td><a href="sets/'+pad(h.n)+'.html">מקבץ '+h.n+'</a></td><td class="n">'+h.ok+' / '+h.tot+'</td><td class="n">'+(h.tot?Math.round(100*h.ok/h.tot):0)+'%</td><td class="n">'+(h.el?U.fmt(h.el):'—')+'</td></tr>'; }).join('');
       var rl=store.rl||[], rlok=rl.filter(function(x){ return x.ok; }).length;
-      box.innerHTML=banner+
+      box.innerHTML=profile+banner+
         '<section class="kpis" aria-label="סיכום">'+
         '<div class="kpi"><b>'+r.sub+'<small> / '+sets().length+'</small></b><span>מקבצים שהוגשו</span></div>'+
         '<div class="kpi"><b>'+r.ans+'</b><span>שאלות שנענו</span></div>'+
@@ -84,11 +89,13 @@
         '<section class="panel"><div class="ph"><h2>נושאים לחיזוק</h2><p>מהחלש לחזק</p></div><ul class="weak">'+weakHtml+'</ul></section>'+
         '<section class="panel mistakes"><div class="ph"><h2>תרגול טעויות</h2><p>'+(rl.length?rl.length+' ניסיונות חוזרים, '+rlok+' נכונים':'שגויות ושדולגו')+'</p></div>'+misHtml+'</section>'+
         '<section class="panel"><div class="ph"><h2>מה לפתור עכשיו</h2><p>לפי הנושאים שלך</p></div><div class="recs" style="grid-template-columns:1fr">'+recHtml+'</div></section>'+
+        bmPanel+
         '<section class="panel wide"><div class="ph"><h2>היסטוריית הגשות</h2><p>'+hist.length+' הגשות</p></div><div style="overflow-x:auto"><table class="hist"><thead><tr><th scope="col">תאריך</th><th scope="col">מקבץ</th><th scope="col">ציון</th><th scope="col">אחוז</th><th scope="col">זמן</th></tr></thead><tbody>'+rows+'</tbody></table></div></section>'+
         '</div>';
     }
   }
 
+  if(body.classList.contains('dashpage')){ var pk=document.getElementById('pf-picker'); if(pk&&U.avatarPicker) U.avatarPicker(pk,function(){ location.reload(); }); if(location.hash==='#avatar'){ var d=document.querySelector('.pf-pick'); if(d) d.open=true; } }
   /* ================= lessons: personal accuracy per topic ================= */
   if(body.classList.contains('lessonspage')){
     var rr=compute();
@@ -102,8 +109,10 @@
   if(body.classList.contains('reviewpage')){
     var root=document.getElementById('rv'), list=compute().mis.sort(function(a,b){ var x=a.split('-'),y=b.split('-'); return x[0]-y[0]||x[1]-y[1]; });
     var qs=new URLSearchParams(location.search); if(qs.get('set')) list=list.filter(function(i){ return i.split('-')[0]===qs.get('set'); });
+    var bmMode=qs.get('bm')==='1';
+    if(bmMode){ list=Object.keys(store.bm||{}).sort(function(a,b){ var x=a.split('-'),y=b.split('-'); return x[0]-y[0]||x[1]-y[1]; }); var h1=document.querySelector('.phead h1'), hp=document.querySelector('.phead p'); if(h1) h1.textContent='שאלות שסימנת'; if(hp) hp.textContent='השאלות שסימנת כקשות. פותרים שוב, רואים מיד אם צדקת, ומסירים את הסימנייה כשהשאלה כבר יושבת.'; }
     var pos=0, cache={};
-    if(!list.length){ root.innerHTML='<div class="panel empty-st"><h2>אין כרגע שאלות לחזרה</h2><p>כאן יופיעו שאלות שטעית בהן או דילגת עליהן במקבצים שהגשת, עד שתסמנו אותן כנלמדו.</p><a class="cta solid" href="sets.html">למקבצים</a></div>'; return; }
+    if(!list.length){ root.innerHTML=bmMode?'<div class="panel empty-st"><h2>אין שאלות מסומנות</h2><p>בכל שאלה במקבץ יש כפתור סימנייה. שאלות שתסמנו יופיעו כאן.</p><a class="cta solid" href="sets.html">למקבצים</a></div>':'<div class="panel empty-st"><h2>אין כרגע שאלות לחזרה</h2><p>כאן יופיעו שאלות שטעית בהן או דילגת עליהן במקבצים שהגשת, עד שתסמנו אותן כנלמדו.</p><a class="cta solid" href="sets.html">למקבצים</a></div>'; return; }
     function getCard(id){
       var s=pad(+id.split('-')[0]);
       if(!cache[s]) cache[s]=fetch('sets/'+s+'.html').then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); }).then(function(t){ return new DOMParser().parseFromString(t,'text/html'); });
@@ -125,14 +134,14 @@
           b.setAttribute('aria-pressed','true');
           qr.hidden=false; qr.className='qres '+(ok?'r':'w'); qr.textContent=ok?'נכון':'לא נכון · התשובה הנכונה ('+k+')';
           if(sol){ sol.hidden=false; sol.open=!ok; }
-          (store.rl=store.rl||[]).push({id:id,at:Date.now(),ok:ok}); if(store.rl.length>500) store.rl.splice(0,store.rl.length-500); U.save();
+          (store.rl=store.rl||[]).push({id:id,at:Date.now(),ok:ok}); if(U.emit) U.emit('answer',{id:id,ok:ok}); if(store.rl.length>500) store.rl.splice(0,store.rl.length-500); U.save();
           var mk=act.querySelector('.mk'); if(mk) mk.disabled=false;
         }); });
         stg.innerHTML=''; stg.appendChild(c);
         var act=document.createElement('div'); act.className='rv-act';
-        act.innerHTML='<button type="button" class="cta solid mk" disabled>למדתי, להוציא מהרשימה</button><button type="button" class="cta line nx">'+(pos<list.length-1?'לשאלה הבאה':'לסיום')+'</button>'+(pos>0?'<button type="button" class="cta line pv">הקודמת</button>':'');
+        act.innerHTML='<button type="button" class="cta solid mk" disabled>'+(bmMode?'להסיר את הסימנייה':'למדתי, להוציא מהרשימה')+'</button><button type="button" class="cta line nx">'+(pos<list.length-1?'לשאלה הבאה':'לסיום')+'</button>'+(pos>0?'<button type="button" class="cta line pv">הקודמת</button>':'');
         stg.appendChild(act);
-        act.querySelector('.mk').addEventListener('click',function(){ (store.m=store.m||{})[id]=Date.now(); U.save(); list.splice(pos,1); if(!list.length){ location.reload(); return; } if(pos>=list.length) pos=list.length-1; show(); });
+        act.querySelector('.mk').addEventListener('click',function(){ if(bmMode) delete store.bm[id]; else (store.m=store.m||{})[id]=Date.now(); U.save(); list.splice(pos,1); if(!list.length){ location.reload(); return; } if(pos>=list.length) pos=list.length-1; show(); });
         act.querySelector('.nx').addEventListener('click',function(){ if(pos<list.length-1){ pos++; show(); } else location.href='dashboard.html'; });
         var pv=act.querySelector('.pv'); if(pv) pv.addEventListener('click',function(){ pos--; show(); });
         var first=c.querySelector('.opt'); if(first) c.focus({preventScroll:true});

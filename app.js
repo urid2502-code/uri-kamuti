@@ -16,7 +16,8 @@
   function fresh(){ return {a:{},x:{},sub:false,t:{el:0,run:false,st:0}}; }
   function S(n){ return store.sets[n]||(store.sets[n]=fresh()); }
   function save(){ store.u=Date.now(); put(KEY,store); try{ window.dispatchEvent(new CustomEvent('uriq:save')); }catch(e){} }
-  store.hist=store.hist||[]; store.m=store.m||{};
+  store.hist=store.hist||[]; store.m=store.m||{}; store.bm=store.bm||{};
+  function emit(t,d){ try{ window.dispatchEvent(new CustomEvent('uriq:'+t,{detail:d||{}})); }catch(e){} }
   function summarize(n,st){ var ok=0, wr=[], sk=[], ex=D.exist[n]||[]; ex.forEach(function(q){ var id=n+'-'+q, p=st.a[id], k=+keyOf(id); if(!p) sk.push(id); else if(p===k) ok++; else wr.push(id); }); return {ok:ok,tot:ex.length,wr:wr,sk:sk}; }
   function logAttempt(n,st){ var r=summarize(n,st); store.hist.push({n:+n,at:st.at||Date.now(),ok:r.ok,tot:r.tot,el:st.t.el||0,wr:r.wr,sk:r.sk}); }
   // older submissions (before the history log existed) become history entries from their saved answers
@@ -191,16 +192,22 @@
     if(document.querySelector('.chip')) recount=chips(function(id,f){ return f==='open'?!st.a[id]:f==='review'?!!REV[id]:f==='new'?!!NEW[id]:true; },apply,function(){ return cards.map(function(c){ return c.dataset.q; }); });
 
     var curIdx=-1;
-    function setCur(i){ if(i<0||i>=cards.length) return; if(curIdx>=0&&cards[curIdx]) cards[curIdx].classList.remove('cur'); curIdx=i; cards[i].classList.add('cur'); }
+    function setCur(i){ if(i<0||i>=cards.length) return; if(curIdx>=0&&cards[curIdx]) cards[curIdx].classList.remove('cur'); var ch=curIdx!==i; curIdx=i; cards[i].classList.add('cur'); if(ch) emit('focus',{id:cards[i].dataset.q,set:n}); }
     cards.forEach(function(c,i){
       var id=c.dataset.q;
       c.setAttribute('tabindex','-1');
+      var qh=c.querySelector('.qh');
+      if(qh){ var bmB=document.createElement('button'); bmB.type='button'; bmB.className='bm-btn';
+        var bmDraw=function(){ var on=!!store.bm[id]; bmB.setAttribute('aria-pressed',on?'true':'false'); bmB.setAttribute('aria-label',(on?'הסרת סימנייה משאלה ':'סימון שאלה ')+id.split('-')[1]+(on?'':' כקשה')); bmB.title=on?'מסומנת כקשה':'סימון כשאלה קשה'; };
+        bmB.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 3.5h12v17l-6-4.2-6 4.2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+        bmB.addEventListener('click',function(ev){ ev.stopPropagation(); if(store.bm[id]) delete store.bm[id]; else store.bm[id]=Date.now(); save(); bmDraw(); emit('bookmark',{id:id,on:!!store.bm[id]}); });
+        bmDraw(); qh.appendChild(bmB); }
       c.addEventListener('focusin',function(){ setCur(i); });
       c.addEventListener('click',function(){ setCur(i); });
       c.querySelectorAll('.opt').forEach(function(b){ b.addEventListener('click',function(){
         if(st.sub) return; var k=+b.dataset.n;
         if(st.a[id]===k) delete st.a[id]; else { st.a[id]=k; var xs=st.x[id]; if(xs){ var j=xs.indexOf(k); if(j>=0) xs.splice(j,1); } }
-        save(); drawCard(c); drawCounts(); drawTimer();
+        save(); drawCard(c); drawCounts(); drawTimer(); emit('pick',{id:id,set:n,n:st.a[id]||0,answered:answered(),total:total});
         if(!st.t.run&&!st.t.el&&!nudged&&startB){ nudged=true; startB.classList.add('nudge'); }
       }); });
       c.querySelectorAll('.strike').forEach(function(s){ s.addEventListener('click',function(){
@@ -213,6 +220,7 @@
     function doSubmit(){
       if(st.t.run){ st.t.el+=Date.now()-st.t.st; st.t.run=false; } loop(false);
       st.sub=true; st.at=Date.now(); logAttempt(n,st); save(); drawAll();
+      var last=store.hist[store.hist.length-1]; emit('submit',{set:n,ok:last.ok,tot:last.tot});
       var box=document.getElementById('results'); if(box){ box.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); box.focus({preventScroll:true}); }
     }
     document.querySelectorAll('[data-submit]').forEach(function(b){ b.addEventListener('click',function(){
@@ -273,14 +281,24 @@
 
   window.addEventListener('beforeprint',function(){ document.querySelectorAll('details.sol').forEach(function(d){ d.dataset.was=d.open?'1':''; d.open=true; }); });
   window.addEventListener('afterprint',function(){ document.querySelectorAll('details.sol').forEach(function(d){ d.open=!!d.dataset.was; }); });
+  /* ---- avatars ---- */
+  var AV=window.URIQ_AVATARS||{}, AVO=window.URIQ_AVATAR_ORDER||[];
+  function avatarHTML(id){ return AV[id]?AV[id].svg:''; }
+  function avatarPicker(box,onPick){
+    var cur=store.avatar||'';
+    box.innerHTML='<fieldset class="avpick"><legend class="vh">בחירת דמות לפרופיל</legend>'+AVO.map(function(k){
+      return '<label class="avopt"><input type="radio" name="uriq-av" value="'+k+'"'+(k===cur?' checked':'')+'><span class="avimg">'+AV[k].svg+'</span><span class="avname">'+AV[k].name+'</span></label>'; }).join('')+'</fieldset>';
+    box.querySelectorAll('input').forEach(function(r){ r.addEventListener('change',function(){ store.avatar=r.value; save(); paintChip(); emit('avatar',{id:r.value}); if(onPick) onPick(r.value); }); });
+  }
   /* ---- account chip ---- */
   var acct=document.getElementById('acct');
+  function paintChip(){ if(!acct) return; var av=acct.querySelector('.av'); if(store.avatar&&AV[store.avatar]){ av.innerHTML=avatarHTML(store.avatar); av.classList.add('has-av'); } }
   if(acct){ var pf=UID?load('uriq:profile',null):null;
     if(pf){ var av=acct.querySelector('.av'), nm=(pf.name||pf.email||'').split(' ')[0];
       acct.href=root+'dashboard.html'; acct.setAttribute('aria-label','האזור שלי – '+(pf.name||pf.email||''));
       acct.querySelector('.an').textContent=nm||'החשבון שלי';
-      if(pf.avatar){ var im=new Image(); im.alt=''; im.referrerPolicy='no-referrer'; im.src=pf.avatar; im.onerror=function(){ av.textContent=(nm||'?').charAt(0); }; av.innerHTML=''; av.appendChild(im); } else av.textContent=(nm||'?').charAt(0);
-    } }
-  window.URIQ={get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
+      if(store.avatar&&AV[store.avatar]){ /* painted below */ } else if(pf.avatar){ var im=new Image(); im.alt=''; im.referrerPolicy='no-referrer'; im.src=pf.avatar; im.onerror=function(){ av.textContent=(nm||'?').charAt(0); }; av.innerHTML=''; av.appendChild(im); } else av.textContent=(nm||'?').charAt(0);
+    } paintChip(); }
+  window.URIQ={avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

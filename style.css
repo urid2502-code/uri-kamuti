@@ -851,3 +851,46 @@ body.loginpage{background:var(--bg)}
   .top .search:focus-within input::placeholder{color:var(--faint)}
   .navbtn span{display:none}
 }
+
+/* ======================= profile avatars ======================= */
+.acct .av.has-av{background:transparent;overflow:hidden}
+.acct .av svg,.who .av svg{width:100%;height:100%;display:block}
+.who .av{overflow:hidden}
+.profile{margin-bottom:18px}
+.pf-top{display:flex;align-items:center;gap:18px}
+.pf-av{width:84px;height:84px;flex:none;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line)}
+.pf-av svg{width:100%;height:100%;display:block}
+.pf-av.empty{border-style:dashed;color:var(--faint);font:500 1.6rem var(--mono)}
+.pf-t h2{margin:0;font-size:1.35rem}
+.pf-t p{margin:4px 0 0;color:var(--mute);font-size:.92rem}
+.pf-t .pf-n{color:var(--ink2)}
+.pf-pick{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.pf-pick>summary{cursor:pointer;font-weight:600;list-style:none;display:inline-flex;align-items:center;gap:8px}
+.pf-pick>summary::-webkit-details-marker{display:none}
+.pf-pick>summary::after{content:"+";font:500 1.1rem var(--mono);color:var(--faint);transition:transform var(--t2) var(--ease)}
+.pf-pick[open]>summary::after{transform:rotate(45deg)}
+.avpick{border:0;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:12px}
+.avopt{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px 12px;border-radius:16px;border:1px solid var(--line);background:var(--paper);cursor:pointer;transition:border-color var(--t1),transform var(--t2) var(--ease),box-shadow var(--t2)}
+.avopt:hover{border-color:var(--line2);transform:translateY(-2px)}
+.avopt input{position:absolute;opacity:0;pointer-events:none}
+.avopt .avimg{width:68px;height:68px;border-radius:50%;overflow:hidden;display:block;transition:transform var(--t2) var(--ease)}
+.avopt .avimg svg{width:100%;height:100%;display:block}
+.avopt .avname{font-size:.88rem;font-weight:500;color:var(--ink2)}
+.avopt:has(input:checked){border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.avopt:has(input:checked) .avimg{transform:scale(1.06)}
+.avopt:has(input:checked)::after{content:"";position:absolute;top:8px;inset-inline-end:8px;width:18px;height:18px;border-radius:50%;background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.6 2.5L13 6.5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat}
+:root[data-theme="dark"] .avopt:has(input:checked)::after{filter:invert(1)}
+.avopt:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:2px}
+.av-h{margin:32px 0 0;font-size:1.2rem}
+.av-p{margin:6px 0 0;color:var(--mute);font-size:.92rem}
+#av-login .avpick{grid-template-columns:repeat(4,1fr)}
+@media (max-width:420px){ #av-login .avpick{grid-template-columns:repeat(3,1fr)} }
+
+/* bookmark on question cards */
+.bm-btn{margin-inline-start:auto;width:34px;height:34px;display:grid;place-items:center;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--faint);cursor:pointer;transition:color var(--t1),background var(--t1),transform var(--t1) var(--ease)}
+.bm-btn svg path{fill:none}
+.bm-btn:hover{color:var(--ink);background:var(--hover)}
+.bm-btn:active{transform:scale(.9)}
+.bm-btn[aria-pressed="true"]{color:var(--ink)}
+.bm-btn[aria-pressed="true"] svg path{fill:currentColor}
+.rv-stage .bm-btn{display:none}

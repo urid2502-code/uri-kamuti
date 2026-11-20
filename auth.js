@@ -23,9 +23,11 @@
     document.getElementById('auth-h').textContent='מחובר/ת ל־Uri Q';
     document.getElementById('auth-p').textContent='ההתקדמות שלך נשמרת בחשבון ומסונכרנת בכל מכשיר שבו תתחברו.';
     if(gbtn) gbtn.hidden=true;
-    var av=p.avatar?'<img src="'+esc(p.avatar)+'" alt="" referrerpolicy="no-referrer">':esc((p.name||p.email||'?').charAt(0));
+    var st=(window.URIQ&&URIQ.UID?URIQ.store:null)||{}, mine=st.avatar&&window.URIQ_AVATARS&&window.URIQ_AVATARS[st.avatar];
+    var av=mine?mine.svg:(p.avatar?'<img src="'+esc(p.avatar)+'" alt="" referrerpolicy="no-referrer">':esc((p.name||p.email||'?').charAt(0)));
     who.hidden=false;
-    who.innerHTML='<div class="who"><span class="av">'+av+'</span><div><b>'+esc(p.name||'')+'</b><span>'+esc(p.email||'')+'</span></div></div><div class="auth-acts"><a class="cta solid" href="dashboard.html">לאזור שלי</a><button type="button" class="cta line" id="logout">התנתקות</button></div>';
+    who.innerHTML='<div class="who"><span class="av">'+av+'</span><div><b>'+esc(p.name||'')+'</b><span>'+esc(p.email||'')+'</span></div></div><div class="auth-acts"><a class="cta solid" href="dashboard.html">לאזור שלי</a><button type="button" class="cta line" id="logout">התנתקות</button></div>'+(mine?'':'<h2 class="av-h">בחרו דמות לפרופיל</h2><p class="av-p">היא תופיע בפינת המסך ובאזור האישי. אפשר להחליף בכל רגע.</p><div id="av-login"></div>');
+    var box=document.getElementById('av-login'); if(box&&window.URIQ&&URIQ.avatarPicker) URIQ.avatarPicker(box,function(){ showUser(p); });
   }
   if(isLogin&&!ON){
     if(gbtn){ gbtn.disabled=true; }
@@ -45,6 +47,8 @@
     [a.m||{},b.m||{}].forEach(function(m){ Object.keys(m).forEach(function(id){ out.m[id]=Math.max(out.m[id]||0,m[id]); }); });
     var rs={}; (a.rl||[]).concat(b.rl||[]).forEach(function(r){ var key=r.id+'@'+r.at; if(!rs[key]){ rs[key]=1; out.rl.push(r); } });
     out.rl.sort(function(x,y){ return x.at-y.at; }); if(out.rl.length>500) out.rl=out.rl.slice(-500);
+    var newer=(a.u||0)>=(b.u||0)?a:b, older=newer===a?b:a;
+    out.bm=newer.bm||older.bm||{}; out.avatar=newer.avatar||older.avatar||'';
     return out;
   }
   function same(a,b){ return JSON.stringify(a)===JSON.stringify(b); }
@@ -82,9 +86,9 @@
         var needPush=!same(merged,remote||{});
         var p=needPush?push():Promise.resolve();
         return p.then(function(){
-          if(stored!==uid){ set(UIDK,uid); set(BASE,null); /* anonymous progress now lives in the account, so the next person on this device starts clean */ if(!isLogin){ location.reload(); return; } }
+          if(stored!==uid){ set(UIDK,uid); set(BASE,null); /* anonymous progress now lives in the account, so the next person on this device starts clean */ if(!isLogin){ location.reload(); return; } location.replace(location.pathname+'?welcome=1'); return; }
           else if(changed&&!isLogin){ location.reload(); return; }
-          if(isLogin){ busy(false); showUser(prof); if(hasCode) say('ok','התחברת בהצלחה. ההתקדמות שלך סונכרנה.'); }
+          if(isLogin){ busy(false); showUser(prof); if(hasCode||/welcome=1/.test(location.search)) say('ok','התחברת בהצלחה. ההתקדמות שלך סונכרנה.'); }
         });
       }).catch(function(e){
         if(stored!==uid) set(UIDK,uid);

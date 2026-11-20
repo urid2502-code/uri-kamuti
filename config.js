@@ -1,7 +1,7 @@
-/* Public Supabase settings for Google sign-in. Both values are safe to publish:
-   the anon key only works together with the row-level security policies in supabase/migrations.
-   Leave empty to run without accounts (progress stays in the browser). */
+/* Public Supabase settings for Google sign-in (project uri-q, Uri Deutsch org).
+   The publishable key is meant to be public: data is protected by the row-level security
+   policies in supabase/migrations/001_progress.sql. Never put a secret / service_role key here. */
 window.URIQ_CONFIG={
-  supabaseUrl:"",
-  supabaseAnonKey:""
+  supabaseUrl:"https://kxwuwnygyhadbmebmkza.supabase.co",
+  supabaseAnonKey:"sb_publishable_kEHCrPvnOH07ppX4hhXwSQ_aMVEjufC"
 };

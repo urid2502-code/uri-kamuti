@@ -17,5 +17,6 @@ create policy "read own progress"   on public.progress for select to authenticat
 create policy "insert own progress" on public.progress for insert to authenticated with check ((select auth.uid()) = user_id);
 create policy "update own progress" on public.progress for update to authenticated using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
 
-revoke all on public.progress from anon;
+-- default grants include DELETE/TRUNCATE (TRUNCATE ignores RLS), so reset them explicitly
+revoke all on public.progress from anon, authenticated;
 grant select, insert, update on public.progress to authenticated;

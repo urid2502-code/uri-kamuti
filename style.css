@@ -1396,3 +1396,12 @@ details.omr .omr-head{margin-top:16px}
 .top .brand .mark,body.landing .brand .mark{color:var(--hi);transition:color .2s}
 .sitefoot .fb .mark{color:var(--acD)}
 :root[data-theme="dark"] .sitefoot .fb .mark{color:var(--hi)}
+/* pitfall lists: question chip in its own column, wrapped lines stay aligned with the text */
+.pits li{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:10px;align-items:start}
+.pits li a{margin:0;margin-top:.15em;padding:2px 7px;border-radius:6px;background:var(--bg);border:1px solid var(--line);color:var(--ink2);line-height:1.5;text-align:center;min-width:3.4em}
+.pits li a:hover{border-color:var(--ink)}
+.pits li{grid-template-columns:4.6em minmax(0,1fr)}
+.pits li a{min-width:0;width:100%;box-sizing:border-box;padding-inline:0}
+/* narrow page bodies line up with the page title instead of centring */
+.pbody.narrow>*{max-width:804px}
+.topic .acc:empty{display:none}

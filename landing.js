@@ -31,7 +31,8 @@
     if(!settle) raf=requestAnimationFrame(frame);
   }
   function kick(){ if(!raf) raf=requestAnimationFrame(frame); }
-  if(!reduce){
+  var small=matchMedia('(max-width: 1000px)').matches;
+  if(!reduce&&!small){
     if(finePointer&&!lite) addEventListener('pointermove',function(e){ if(e.pointerType!=='mouse') return; tx=e.clientX/innerWidth-0.5; ty=e.clientY/innerHeight-0.5; kick(); },{passive:true});
     addEventListener('scroll',function(){ sy=Math.min(scrollY,H*1.2); kick(); },{passive:true});
     addEventListener('resize',function(){ H=innerHeight; },{passive:true});

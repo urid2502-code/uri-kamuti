@@ -32,7 +32,7 @@
 
   /* ---- theme ---- */
   var tb=document.getElementById('theme');
-  function syncTheme(){ var dk=document.documentElement.dataset.theme==='dark'; if(tb){ tb.setAttribute('aria-pressed',dk?'true':'false'); tb.setAttribute('aria-label',dk?'מצב בהיר':'מצב כהה'); } var m=document.querySelector('meta[name=theme-color]'); if(m&&!body.classList.contains('landing')&&!body.classList.contains('loginpage')) m.content=dk?'#060A24':'#F3F5FC'; }
+  function syncTheme(){ var dk=document.documentElement.dataset.theme==='dark'; if(tb){ tb.setAttribute('aria-pressed',dk?'true':'false'); tb.setAttribute('aria-label',dk?'מצב בהיר':'מצב כהה'); } var m=document.querySelector('meta[name=theme-color]'); if(m&&!body.classList.contains('landing')&&!body.classList.contains('loginpage')) m.content=dk?'#0A0A0A':'#F4F5F3'; }
   if(tb) tb.addEventListener('click',function(){ var dk=document.documentElement.dataset.theme!=='dark'; if(dk) document.documentElement.dataset.theme='dark'; else delete document.documentElement.dataset.theme; try{ localStorage.setItem(THEME,dk?'dark':'light'); }catch(e){} syncTheme(); });
   syncTheme();
 
@@ -291,11 +291,11 @@
     box.querySelectorAll('input').forEach(function(r){ r.addEventListener('change',function(){ store.avatar=r.value; save(); paintChip(); emit('avatar',{id:r.value}); if(onPick) onPick(r.value); }); });
   }
   /* ---- personal accent colour ---- */
-  var ACC=[['blue','כחול','#2B3BFF'],['violet','סגול','#7339F0'],['pink','ורוד','#E2336B'],['teal','טורקיז','#0B8A7D'],['orange','כתום','#E25F14'],['ink','דיו','#0B1033']];
-  function applyAccent(a){ var r=document.documentElement; if(a&&a!=='blue') r.dataset.accent=a; else delete r.dataset.accent; try{ if(a) localStorage.setItem('uriq:accent',a); else localStorage.removeItem('uriq:accent'); }catch(e){} }
-  (function(){ var want=store.accent&&store.accent!=='blue'?store.accent:''; if(want!==(document.documentElement.dataset.accent||'')) applyAccent(want); })();
+  var ACC=[['green','ירוק','#12805C'],['ink','שחור','#111111'],['blue','כחול','#2B3BFF'],['violet','סגול','#7339F0'],['pink','ורוד','#E2336B'],['orange','כתום','#E25F14']];
+  function applyAccent(a){ var r=document.documentElement; if(a&&a!=='green') r.dataset.accent=a; else delete r.dataset.accent; try{ if(a) localStorage.setItem('uriq:accent',a); else localStorage.removeItem('uriq:accent'); }catch(e){} }
+  (function(){ var want=store.accent&&store.accent!=='green'?store.accent:''; if(want!==(document.documentElement.dataset.accent||'')) applyAccent(want); })();
   function accentPicker(box){
-    var cur=store.accent||'blue';
+    var cur=store.accent||'green';
     box.innerHTML='<fieldset class="acpick"><legend class="vh">צבע האתר</legend>'+ACC.map(function(c){ return '<label class="acopt"><input type="radio" name="uriq-ac" value="'+c[0]+'"'+(c[0]===cur?' checked':'')+'><span class="sw" style="--c:'+c[2]+'"></span><span>'+c[1]+'</span></label>'; }).join('')+'</fieldset>';
     box.querySelectorAll('input').forEach(function(r){ r.addEventListener('change',function(){ store.accent=r.value; save(); applyAccent(r.value); emit('accent',{id:r.value}); }); });
   }

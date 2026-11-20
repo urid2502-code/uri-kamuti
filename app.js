@@ -264,6 +264,17 @@
       });
       var rs=document.querySelector('.rs[data-set="'+s+'"]'); if(rs&&st&&st.sub) rs.textContent=so+'/'+D.exist[s].length;
     });
+    var nextSet=null;
+    document.querySelectorAll('.setc').forEach(function(card){
+      var s=card.dataset.set, ex=D.exist[s]||[], st=store.sets[s], ans=0, ok2=0, tot=ex.length;
+      ex.forEach(function(q){ var id=s+'-'+q, p=st&&st.a[id]; if(p){ ans++; if(p===+keyOf(id)) ok2++; } });
+      var lab=card.querySelector('.setc-s'), n=card.querySelector('.setc-n').textContent.replace(/\D/g,'');
+      card.classList.remove('done','next','started');
+      if(st&&st.sub){ card.classList.add('done'); card.style.setProperty('--p',1); lab.textContent='הוגש · '+ok2+'/'+tot; card.setAttribute('aria-label','מקבץ '+n+', הוגש, '+ok2+' נכונות מתוך '+tot); }
+      else if(ans){ card.classList.add('started'); card.style.setProperty('--p',ans/tot); lab.textContent='נענו '+ans+' מתוך '+tot; card.setAttribute('aria-label','מקבץ '+n+', נענו '+ans+' מתוך '+tot); if(!nextSet) nextSet=card; }
+      else { card.style.setProperty('--p',0); lab.textContent=tot+' שאלות'; if(!nextSet) nextSet=card; }
+    });
+    if(nextSet&&(done||Object.keys(store.sets).length)){ nextSet.classList.add('next'); var nl=nextSet.querySelector('.setc-s'); if(!nextSet.classList.contains('started')) nl.textContent='הבא בתור'; }
     document.getElementById('t-done').textContent=done;
     document.getElementById('t-ok').textContent=ok;
     document.getElementById('t-pct').textContent=done?Math.round(100*ok/done)+'%':'–';

@@ -1308,3 +1308,58 @@ body.landing .acct .av{color:var(--on-hi)}
 @media (max-width:640px){
   .exambar{border-radius:14px}
 }
+
+/* ---------- sets hub: pick a set first, the answer sheet is secondary ---------- */
+.setpick{margin:8px 0 28px}
+.setpick h2{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,5vw,3rem);line-height:.95;margin:0 0 6px}
+.pick-sub{margin:0 0 18px;color:var(--mute);max-width:60ch}
+.setgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
+.setc{--p:0;position:relative;display:flex;flex-direction:column;gap:6px;min-height:104px;padding:14px 14px 16px;border-radius:14px;
+  background:#fff;border:1px solid #E3E5E1;color:#0F0F0F;text-decoration:none;overflow:hidden;
+  transition:border-color .15s,transform .15s,box-shadow .15s}
+.setc:hover{border-color:var(--ac);transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(0,0,0,.35)}
+.setc:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.setc-n{display:flex;align-items:baseline;gap:6px;font-family:var(--display);font-weight:700;font-size:2.6rem;line-height:.9}
+.setc-n small{font-family:inherit;font-size:1.05rem;color:#6B6B6B;font-weight:700}
+.setc-s{font-size:.86rem;color:#525252;margin-top:auto}
+.setc-bar{position:absolute;inset-inline:0;bottom:0;height:4px;background:#EEF0EC}
+.setc-bar i{display:block;height:100%;width:calc(var(--p)*100%);background:var(--ac);transition:width .3s}
+.setc.next{border-color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac)}
+.setc.next .setc-s{color:var(--ac-ink);font-weight:600}
+.setc.done{background:var(--ac-soft);border-color:var(--ac-line)}
+.setc.done .setc-s{color:var(--ac-ink);font-weight:600}
+:root[data-theme="dark"] .setc{background:#151515;border-color:#2A2A2A;color:#F2F2F0}
+:root[data-theme="dark"] .setc-n small,:root[data-theme="dark"] .setc-s{color:#A8A8A8}
+:root[data-theme="dark"] .setc-bar{background:#262626}
+:root[data-theme="dark"] .setc.done{background:var(--ac-soft)}
+details.omr{padding:0;overflow:hidden}
+details.omr>.omr-sum{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 24px;min-height:44px}
+details.omr>.omr-sum::-webkit-details-marker{display:none}
+details.omr>.omr-sum span{display:flex;flex-direction:column;gap:2px}
+details.omr>.omr-sum b{font-size:1.1rem;font-weight:800}
+details.omr>.omr-sum small{color:var(--mute);font-size:.86rem}
+details.omr>.omr-sum::after{content:"";width:10px;height:10px;border:solid var(--ink);border-width:0 0 2px 2px;transform:rotate(-45deg);transition:transform .2s;flex:none;margin-inline-end:4px}
+details.omr[open]>.omr-sum::after{transform:rotate(135deg)}
+details.omr[open]>.omr-sum{border-bottom:1px solid var(--line)}
+details.omr>:not(summary){margin-inline:24px}
+details.omr>.cols{margin-bottom:24px}
+details.omr .omr-head{margin-top:16px}
+@media (max-width:600px){
+  .setgrid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .setc{min-height:88px;padding:10px 10px 14px}
+  .setc-n{font-size:2.1rem}.setc-n small{font-size:.9rem}
+  .setc-s{font-size:.78rem}
+  details.omr>.omr-sum{padding:16px}
+  details.omr>:not(summary){margin-inline:12px}
+}
+.home-page .hero{padding-bottom:6px}
+.home-page .hero .lede{max-width:46ch}
+@media (max-width:600px){
+  .home-page .hero h1{font-size:3.2rem}
+  .home-page .hero h1::after{margin-top:12px;height:5px}
+  .home-page .hero .lede{font-size:1rem;margin-bottom:14px}
+  .home-page .tally{gap:18px;align-items:center}
+  .home-page .tally b{font-size:1.6rem}
+  .home-page .tally .resume{margin-inline-start:auto;min-height:44px;padding:0 16px}
+  .setpick{margin-top:4px}
+}

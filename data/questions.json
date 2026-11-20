@@ -3528,14 +3528,21 @@
   "q": 4,
   "page": 68,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "(⁴√(1/√5 + 1/√7))⁸ = ?"
+  ],
+  "options": [
+   "12/35",
+   "12/√35",
+   "(√7 + √5)/√35",
+   "(12 + 2√35)/35"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "16-5",
@@ -3543,14 +3550,22 @@
   "q": 5,
   "page": 68,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "חרוט שרדיוסו r ס\"מ וגובהו h ס\"מ כלוא בתוך גליל שרדיוסו 4r ס\"מ וגובהו H ס\"מ (h < H).",
+   "מהו הנפח (בסמ\"ק) של הגוף שהוא חלק מהגליל אבל אינו חלק מהחרוט הכלוא בו?"
+  ],
+  "options": [
+   "πr²·(16H − h)/3",
+   "πr²·(24H − h)/3",
+   "πr²·(32H − h)/3",
+   "πr²·(48H − h)/3"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "16-6",
@@ -3558,14 +3573,25 @@
   "q": 6,
   "page": 68,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "עלי באבא החביא במערה a שקים, שכל אחד מהם מכיל a מטבעות (a > 7).",
+   "ביום ראשון הגיע למערה, לקח שק אחד, ובדרכו החוצה שם מטבע אחד בכל אחד משאר השקים שנותרו במערה.",
+   "ביום שני הגיע שוב עלי באבא למערה ועשה את אותו הדבר, וכך הלאה במשך כל אחד מימות השבוע.",
+   "ביום ראשון, שבוע לאחר מכן, הגיע שוב למערה ונטל שק.",
+   "אם עלי באבא ישאיר כהרגלו מטבע אחד בכל אחד מהשקים שנותרו, כמה מטבעות יוותרו לו בשק שייקח איתו?"
+  ],
+  "options": [
+   "a − 7",
+   "7",
+   "a − 8",
+   "15"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "16-7",
@@ -3573,14 +3599,23 @@
   "q": 7,
   "page": 69,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "a הוא מספר טבעי הגדול מ־1.",
+   "נתון: x = a³·(a − 1)! / (a + 2)!",
+   "מה מהבאים נכון לגבי ערכו של x?"
+  ],
+  "options": [
+   "0 < x < 1",
+   "1 < x < 2",
+   "2 < x < 3",
+   "3 < x < 4"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "16-8",
@@ -3588,14 +3623,21 @@
   "q": 8,
   "page": 69,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "(6^(x+1) + 6^(x+2)) / 42 = ?"
+  ],
+  "options": [
+   "6^x",
+   "6^(x+1)",
+   "6^(x+1)/7",
+   "6^(2x+2)/7"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "16-9",
@@ -3603,14 +3645,22 @@
   "q": 9,
   "page": 69,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "ממעגל שרדיוסו 2 ס\"מ נחתכו 2 חתיכות כך שנוצרה הצורה הבאה. [סרטוט: מעגל שממנו נחתכו שתי קטעות נגדיות; אורך כל אחד משני קווי החיתוך הישרים 2 ס\"מ.]",
+   "לפי נתון זה והנתונים שבסרטוט, מה שטח הצורה שנוצרה (בסמ\"ר)?"
+  ],
+  "options": [
+   "1⅓π − 2√3",
+   "2⅔π − 2√3",
+   "2⅔π + 2√3",
+   "4π"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/16-9.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "16-10",
@@ -4643,14 +4693,22 @@
   "q": 4,
   "page": 88,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם משושה משוכלל, בו הועברו שישה אלכסונים שיצרו את הצורה שלפניכם. [סרטוט: ששת האלכסונים יוצרים מגן דוד בתוך המשושה; המגן צבוע אפור, וששת המשולשים שבין המגן לצלעות המשושה לבנים.]",
+   "לפי נתונים אלו ונתוני הסרטוט, מה היחס בין השטח הלבן לבין השטח האפור שבסרטוט?"
+  ],
+  "options": [
+   "1:2",
+   "2:3",
+   "1:3",
+   "1:4"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/21-4.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "21-5",
@@ -4658,14 +4716,23 @@
   "q": 5,
   "page": 88,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "A, B, C ו־D אותיות המייצגות ספרות שונות בין 1 ל־9.",
+   "נתון: 462A × 7B = 356,CD9",
+   "מה מהבאים נכון בהכרח?"
+  ],
+  "options": [
+   "סכומם של B ו־A הוא מספר זוגי",
+   "סכומם של B ו־A הוא מספר אי זוגי",
+   "סכומם של B ו־A מתחלק ב־9",
+   "סכומם של B ו־A קטן מ־10"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "21-6",
@@ -4673,14 +4740,23 @@
   "q": 6,
   "page": 88,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "לכל שני מספרים חיוביים x ו־y הוגדרה הפעולה $ כך: $(x,y) = x^(y/x)",
+   "a ו־b הם מספרים חיוביים.",
+   "ᵇ√$(a², b²) = ?"
+  ],
+  "options": [
+   "$(a², b²)",
+   "√(ab)",
+   "a^(2b/a²)",
+   "a^(b/a)"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "21-7",
@@ -4688,14 +4764,23 @@
   "q": 7,
   "page": 89,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: xy + xz + xt > (y + z + t)⁴ (⚠️ המעריך קטן בתמונה – 4 או 6; התשובה זהה בשני המקרים)",
+   "x = y + z + t",
+   "איזה מהתחומים הבאים מתאר במדויק את תחום הערכים של x?"
+  ],
+  "options": [
+   "x > 1",
+   "x < 1",
+   "−1 < x < 1",
+   "x < −1 או 1 < x"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
-  "needsReview": false,
-  "source": null
+  "needsReview": true,
+  "source": "photo"
  },
  {
   "id": "21-8",
@@ -4703,14 +4788,22 @@
   "q": 8,
   "page": 89,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "דחיסותו של גוף כלשהו מוגדרת כיחס בין נפח הגוף לבין שטח הפנים של אותו הגוף.",
+   "כיצד תשתנה דחיסותו של גוף מסוים אם נגדיל את נפחו של הגוף ב־50% ונקטין את שטח הפנים שלו ב־50%?"
+  ],
+  "options": [
+   "תגדל ב־100%",
+   "תגדל ב־150%",
+   "תגדל ב־200%",
+   "תגדל ב־300%"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "21-9",
@@ -4718,14 +4811,22 @@
   "q": 9,
   "page": 89,
   "answer": 2,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "לינאי יש יותר כדורים מליאו, אבל לא יותר מפי 2 ממנו. מספר הכדורים של שניהם יחדיו הוא 45.",
+   "כמה כדורים יש לינאי?"
+  ],
+  "options": [
+   "לכל הפחות 30",
+   "לכל היותר 30",
+   "לכל היותר 29",
+   "אף אחת מהתשובות אינה נכונה בהכרח"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "21-10",
@@ -4733,14 +4834,21 @@
   "q": 10,
   "page": 90,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בסרטוט שלפניכם מסלולה של סירה השטה מארה\"ב להודו. מה מהבאים מתאר את מרחקה ממרכז כדור הארץ לאורך מסלולה? [סרטוט: כדור הארץ ועליו מסלול הסירה, ולצידו שלושה גרפים. בכל גרף הציר האנכי הוא המרחק ממרכז כדור הארץ, והציר האופקי הוא ההתקדמות לאורך המסלול.]"
+  ],
+  "options": [
+   "גרף 1",
+   "גרף 2",
+   "גרף 3",
+   "אף אחת מהתשובות אינה נכונה"
+  ],
   "code": [],
   "notes": [],
-  "figure": null,
+  "figure": "fig/21-10.png",
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "22-1",
@@ -4819,14 +4927,23 @@
   "q": 4,
   "page": 92,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "x ו־y הם שני מספרים טבעיים.",
+   "נתון: x²y²/12 הוא מספר שלם.",
+   "מה מהבאים לא ייתכן?"
+  ],
+  "options": [
+   "x זוגי ו־y אי זוגי",
+   "x + y הוא מספר זוגי",
+   "(x + y)/2 שבר",
+   "x/2 וגם y/2 הם שברים"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "22-5",
@@ -4834,14 +4951,22 @@
   "q": 5,
   "page": 92,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "באמפי פארק המיועד להופעות יש 180 שורות. בכל שורה 6 או 7 כיסאות. מספר הכיסאות הממוצע בשורה הוא 6⅙.",
+   "בכמה שורות באמפי פארק יש בדיוק 7 כיסאות?"
+  ],
+  "options": [
+   "30",
+   "60",
+   "120",
+   "150"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "22-6",
@@ -4849,14 +4974,22 @@
   "q": 6,
   "page": 92,
   "answer": 4,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתונה מנסרה שבסיסה הוא מצולע בעל n צלעות.",
+   "מה היחס בין מספר הפאות למספר המקצועות של המנסרה?"
+  ],
+  "options": [
+   "(n − 3) : n",
+   "n : (2n − 1)",
+   "(n − 2) : (n + 1)",
+   "(n + 2) : 3n"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "22-7",
@@ -4864,14 +4997,22 @@
   "q": 7,
   "page": 93,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "מכפלתם של שלושה מספרים עוקבים מתחלקת ב־6.",
+   "איזו מהטענות הבאות נכונה בהכרח?"
+  ],
+  "options": [
+   "מכפלת שלושת המספרים גדולה מ־5",
+   "סכום שלושת המספרים הוא מספר אי זוגי",
+   "סכום שלושת המספרים מתחלק ב־3 ללא שארית",
+   "אף אחת מהטענות אינה נכונה בהכרח"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "22-8",
@@ -4879,14 +5020,22 @@
   "q": 8,
   "page": 93,
   "answer": 3,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "בנאי א' בונה 6 קירות בשלושה שבועות. בנאי ב' הורס חצי קיר ב־48 שעות. שני הבנאים החלו לעבוד יחדיו באותה נקודת זמן.",
+   "בהנחה שבחודש שלם יש 30 ימים, כמה קירות יצליח לבנות בנאי א' בחודש שלם, למרות ההרס של בנאי ב'?"
+  ],
+  "options": [
+   "פחות מקיר אחד",
+   "בדיוק קיר אחד",
+   "מעט יותר מקיר אחד",
+   "שני קירות"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "22-9",
@@ -4894,14 +5043,23 @@
   "q": 9,
   "page": 93,
   "answer": 1,
-  "status": "missing",
-  "stem": [],
-  "options": [],
+  "status": "extracted",
+  "stem": [
+   "נתון: a מספר שלם. a, b > 0",
+   "b^(3a) = b^(2a)",
+   "a^b = ?"
+  ],
+  "options": [
+   "a",
+   "a²",
+   "1/a",
+   "1/a²"
+  ],
   "code": [],
   "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": null
+  "source": "photo"
  },
  {
   "id": "22-10",

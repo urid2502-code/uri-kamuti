@@ -3,6 +3,8 @@
 Source: the book, sets 1–40, 10 questions per set (**400 questions**). The questions were transcribed from a video of someone paging through the book. The book itself is **not** in this repository or on this machine, so this audit compares the transcription with the book structure (40 × 10), the book answer key, and the gap notes recorded during transcription.
 
 > Update: 38 questions were added from photos of the book (set 5 Q10, set 6, set 7 Q1–3, set 8 Q10, set 9, set 10 Q1–3, set 11 Q10, set 12 Q1–9). Now 359 of 400 are transcribed and 41 are still missing.
+>
+> Update 2: 19 more questions were added from photos (set 16 Q4–9, set 21 Q4–10, set 22 Q4–9). Now 378 of 400 are transcribed and 22 are still missing.
 
 ## Totals
 
@@ -12,8 +14,8 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | Transcribed (complete and readable) | 249 |
 | Transcribed but partly guessed (small or blurry text in the video) | 68 |
 | Transcribed but incomplete or unreadable | 4 |
-| Transcribed from photos of the book | 38 |
-| **Not transcribed (pages skipped in the video)** | **41** |
+| Transcribed from photos of the book | 57 |
+| **Not transcribed (pages skipped in the video)** | **22** |
 | Book answer key available | 400 |
 
 ## Book pages needed to recover the missing questions
@@ -21,9 +23,6 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | Book pages | Missing questions |
 |---|---|
 | 44 | מטושטש מאוד בסרטון: שאלות 4–6 של מקבץ 10 נקראו חלקית בלבד. |
-| 68–69 | דילגו בסרטון: חסרות שאלות 4–9 של מקבץ 16. |
-| 88–90 | דילגו בסרטון: חסרות שאלות 4–10 של מקבץ 21. |
-| 92–93 | לא צולמו: חסרות שאלות 4–9 של מקבץ 22. |
 | 124–125 | דילגו בסרטון: חסרות שאלות 4–9 של מקבץ 30. |
 | 138–139 | דילגו בסרטון: חסרות שאלה 10 של מקבץ 33 ושאלות 1–3 של מקבץ 34. |
 | 144–145 | דילגו בסרטון: חסרות שאלות 4–9 של מקבץ 35. |
@@ -48,13 +47,13 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | 13 | 10/10 | — | — | — | ✓ |
 | 14 | 10/10 | — | 5 | 4 | ✓ |
 | 15 | 10/10 | — | — | 6 | ✓ |
-| 16 | 4/10 | 4, 5, 6, 7, 8, 9 | — | — | ✓ |
+| 16 | 10/10 | — | — | — | ✓ |
 | 17 | 10/10 | — | — | 2, 4, 9, 10 | ✓ |
 | 18 | 10/10 | — | — | — | ✓ |
 | 19 | 10/10 | — | — | 2, 3, 4, 8, 9, 10 | ✓ |
 | 20 | 10/10 | — | — | 3, 8, 10 | ✓ |
-| 21 | 3/10 | 4, 5, 6, 7, 8, 9, 10 | — | — | ✓ |
-| 22 | 4/10 | 4, 5, 6, 7, 8, 9 | — | 3 | ✓ |
+| 21 | 10/10 | — | — | 7 | ✓ |
+| 22 | 10/10 | — | — | 3 | ✓ |
 | 23 | 10/10 | — | — | 5, 7 | ✓ |
 | 24 | 10/10 | — | — | 1, 2, 6, 8 | ✓ |
 | 25 | 10/10 | — | — | 4, 6, 8 | ✓ |
@@ -109,6 +108,7 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | 20-3 | approximate | המונה הראשון קטן – נקרא בקירוב |
 | 20-8 | approximate | ייתכן 16 |
 | 20-10 | approximate | התשובות קטנות – נקראו בקירוב; לא ברור מהסרטון אילו אזורים אפורים. |
+| 21-7 | approximate | המעריך בצד ימין קטן בתמונה – 4 או 6; התשובה זהה בשני המקרים. |
 | 22-3 | approximate | המכנה בצד שמאל נקרא בקירוב |
 | 23-5 | approximate | התשובות קטנות – נקראו בקירוב. |
 | 23-7 | approximate | המעריכים הקטנים נקראו בקירוב |
@@ -154,3 +154,13 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 ## How to add recovered questions
 
 Edit `data/bank.json`: find the slot (for example `"id": "6-1"`), fill in `stem`, `options` (4 entries), `figure` if needed, and set `status` to `"clean"`. For sets 6 and 9, also fill in `answer`. Then run `node scripts/build.mjs` to regenerate `data/bank.js`.
+
+## Answer-key conflicts (photos)
+
+These questions were transcribed from clear photos, but the math gives a different answer from the book key. The site checks answers against the key and shows a note in the solution.
+
+| Question | Key | Math | Note |
+|---|---|---|---|
+| 6-6 | 2 | 1 | The exponent may be read slightly differently from the book. |
+| 10-3 | 1 | 3 | 3y ≡ 10 (mod 20) is the only option not divisible by 20. |
+| 21-4 | 3 (1:3) | 1 (1:2) | White : gray in the hexagram is 6 : 12 small triangles. 1:3 is white : whole hexagon. |

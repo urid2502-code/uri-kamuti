@@ -17,18 +17,46 @@
   /* ---------- login page UI ---------- */
   var gbtn=document.getElementById('gbtn'), msg=document.getElementById('auth-msg'), who=document.getElementById('auth-who');
   function say(kind,text){ if(msg) msg.innerHTML=text?'<p class="auth-msg '+kind+'">'+text+'</p>':''; }
-  function busy(on,label){ if(!gbtn) return; gbtn.disabled=on; gbtn.querySelector('span').textContent=label||'Continue with Google'; var sp=gbtn.querySelector('.spin'); if(on&&!sp){ sp=document.createElement('i'); sp.className='spin'; sp.setAttribute('aria-hidden','true'); gbtn.insertBefore(sp,gbtn.firstChild); gbtn.querySelector('svg').style.display='none'; } if(!on&&sp){ sp.remove(); gbtn.querySelector('svg').style.display=''; } }
+  function busy(on,label){ if(!gbtn) return; gbtn.disabled=on; gbtn.querySelector('span').textContent=label||(gbtn.classList.contains('alt')?'חשבון Google אחר':'Continue with Google'); var sp=gbtn.querySelector('.spin'); if(on&&!sp){ sp=document.createElement('i'); sp.className='spin'; sp.setAttribute('aria-hidden','true'); gbtn.insertBefore(sp,gbtn.firstChild); gbtn.querySelector('svg').style.display='none'; } if(!on&&sp){ sp.remove(); gbtn.querySelector('svg').style.display=''; } }
   function esc(s){ return String(s||'').replace(/[&<>"]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  /* ---------- login art: drifting maths, orbiting rings, pointer parallax ---------- */
+  if(isLogin) (function(){
+    var art=document.querySelector('.auth-art'); if(!art) return;
+    var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var G=['π','√','x²','∑','≠','∞','÷','%','½','∠','≤','3!','a·b','(x+y)','n²','≈'], frag=document.createDocumentFragment(), els=[];
+    for(var i=0;i<16;i++){ var e=document.createElement('span'); e.className='glyph'; e.textContent=G[i]; var d=.3+((i*37)%70)/100;
+      var col=i%4, row=Math.floor(i/4), jx=((i*37)%17)-8, jy=((i*53)%15)-7; e.style.cssText='--x:'+(col*24+6+jx/2+(row%2)*10)+'%;--y:'+(row*23+5+jy/2)+'%;--d:'+d.toFixed(2)+';--s:'+(14+Math.round(d*30))+'px;--t:'+(9+(i*7)%11)+'s;--dl:-'+((i*13)%9)+'s';
+      frag.appendChild(e); els.push(e); }
+    var layer=document.createElement('div'); layer.className='glyphs'; layer.setAttribute('aria-hidden','true'); layer.appendChild(frag); art.insertBefore(layer,art.firstChild);
+    art.classList.add('live');
+    if(still) return;
+    var tx=0,ty=0,cx=0,cy=0,raf=0;
+    function loop(){ cx+=(tx-cx)*.08; cy+=(ty-cy)*.08; art.style.setProperty('--px',cx.toFixed(3)); art.style.setProperty('--py',cy.toFixed(3)); raf=Math.abs(tx-cx)+Math.abs(ty-cy)>.001?requestAnimationFrame(loop):0; }
+    window.addEventListener('pointermove',function(ev){ if(ev.pointerType==='touch') return; tx=ev.clientX/innerWidth-.5; ty=ev.clientY/innerHeight-.5; if(!raf) raf=requestAnimationFrame(loop); },{passive:true});
+  })();
+  /* accounts remembered on this device for one-tap sign-in (name, email, picture only) */
+  var ACCK='uriq:accounts';
+  function accounts(){ try{ var l=JSON.parse(localStorage.getItem(ACCK)); return Array.isArray(l)?l:[]; }catch(e){ return []; } }
+  function remember(p){ if(!p||!p.email) return; var st=(window.URIQ&&URIQ.store)||{}; var l=accounts().filter(function(a){ return a.email!==p.email; }); l.unshift({name:(st.name||'').trim()||p.name||'',email:p.email,pic:p.avatar||'',av:st.avatar||''}); set(ACCK,JSON.stringify(l.slice(0,3))); }
+  function forget(email){ set(ACCK,JSON.stringify(accounts().filter(function(a){ return a.email!==email; }))); }
+  function avOf(a){ var A=window.URIQ_AVATARS||{}; if(a.av&&A[a.av]) return A[a.av].svg; if(a.pic) return '<img src="'+esc(a.pic)+'" alt="" referrerpolicy="no-referrer">'; return esc((a.name||a.email||'?').charAt(0)); }
+  function card(a,attrs,label){ return '<'+(attrs.indexOf('href=')===0?'a ':'button type="button" ')+attrs+' class="acc-card"><span class="av">'+avOf(a)+'</span><span class="acc-t"><b>'+esc(a.name||a.email)+'</b><span>'+esc(a.email)+'</span></span><span class="acc-go">'+label+'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></'+(attrs.indexOf('href=')===0?'a':'button')+'>'; }
+  function head(h,p){ document.getElementById('auth-h').textContent=h; document.getElementById('auth-p').textContent=p; }
   function showUser(p){
     if(!who) return;
-    document.getElementById('auth-h').textContent='מחובר/ת ל־Uri Q';
-    document.getElementById('auth-p').textContent='ההתקדמות שלך נשמרת בחשבון ומסונכרנת בכל מכשיר שבו תתחברו.';
+    var st=(window.URIQ&&URIQ.UID?URIQ.store:null)||{}, nm=(st.name||'').trim()||(p.name||'').split(' ')[0];
+    head(nm?'שלום, '+nm:'את/ה מחובר/ת','בחרו את החשבון כדי להמשיך לאתר.');
     if(gbtn) gbtn.hidden=true;
-    var st=(window.URIQ&&URIQ.UID?URIQ.store:null)||{}, mine=st.avatar&&window.URIQ_AVATARS&&window.URIQ_AVATARS[st.avatar];
-    var av=mine?mine.svg:(p.avatar?'<img src="'+esc(p.avatar)+'" alt="" referrerpolicy="no-referrer">':esc((p.name||p.email||'?').charAt(0)));
     who.hidden=false;
-    who.innerHTML='<div class="who"><span class="av">'+av+'</span><div><b>'+esc(p.name||'')+'</b><span>'+esc(p.email||'')+'</span></div></div><div class="auth-acts"><a class="cta solid" href="dashboard.html">לאזור שלי</a><button type="button" class="cta line" id="logout">התנתקות</button></div>'+(mine?'':'<h2 class="av-h">בחרו דמות לפרופיל</h2><p class="av-p">היא תופיע בפינת המסך ובאזור האישי. אפשר להחליף בכל רגע.</p><div id="av-login"></div>');
-    var box=document.getElementById('av-login'); if(box&&window.URIQ&&URIQ.avatarPicker) URIQ.avatarPicker(box,function(){ showUser(p); });
+    who.innerHTML='<div class="acc-list">'+card({name:(st.name||'').trim()||p.name,email:p.email,pic:p.avatar,av:st.avatar},'href="index.html" aria-label="המשך בתור '+esc(p.name||p.email)+'"','המשך')+'</div>'+
+      '<button type="button" class="acc-other" id="other-acct"><span class="plus" aria-hidden="true">+</span>כניסה עם חשבון Google אחר</button>';
+  }
+  function showChooser(){
+    var l=accounts(); if(!who||!l.length) return;
+    head('בחירת חשבון','לחצו על החשבון שלכם כדי להיכנס מחדש עם Google.');
+    who.hidden=false;
+    who.innerHTML='<div class="acc-list">'+l.map(function(a){ return '<div class="acc-row">'+card(a,'data-hint="'+esc(a.email)+'" aria-label="כניסה בתור '+esc(a.name||a.email)+'"','כניסה')+'<button type="button" class="acc-x" data-forget="'+esc(a.email)+'" aria-label="הסרת '+esc(a.email)+' מהמכשיר הזה" title="הסרה מהמכשיר">×</button></div>'; }).join('')+'</div>';
+    if(gbtn){ gbtn.classList.add('alt'); gbtn.querySelector('span').textContent='חשבון Google אחר'; }
   }
   if(isLogin&&!ON){
     if(gbtn){ gbtn.disabled=true; }
@@ -73,10 +101,10 @@
       if(hasCode&&history.replaceState) history.replaceState(null,'',location.pathname);
       if(!user){
         if(stored){ set(UIDK,null); set(PROF,null); location.reload(); return; }
-        if(isLogin){ busy(false); if(urlErr) say('err','ההתחברות עם Google נכשלה. נסו שוב בעוד רגע, ואם זה חוזר, כתבו ל־urid2502@gmail.com.'); }
+        if(isLogin){ busy(false); showChooser(); if(urlErr) say('err','ההתחברות עם Google נכשלה. נסו שוב בעוד רגע, ואם זה חוזר, כתבו ל־urid2502@gmail.com.'); }
         return;
       }
-      uid=user.id; var prof=profileOf(user); set(PROF,JSON.stringify(prof));
+      uid=user.id; var prof=profileOf(user); set(PROF,JSON.stringify(prof)); remember(prof);
       var mine=BASE+':'+uid;
       return pull().then(function(remote){
         var local=J(mine), merged;
@@ -98,10 +126,17 @@
       });
     }).catch(function(e){ if(isLogin){ busy(false); say('err','שגיאת התחברות: '+esc(e.message||e)); } });
 
-    if(gbtn) gbtn.addEventListener('click',function(){
-      busy(true,'מעביר ל־Google…'); say('','');
-      var back=location.href.split(/[?#]/)[0];
-      sb.auth.signInWithOAuth({provider:'google',options:{redirectTo:back}}).then(function(r){ if(r.error){ busy(false); say('err','לא הצלחתי להתחיל את ההתחברות: '+esc(r.error.message)); } });
+    function google(hint,el){
+      say(''); var back=location.href.split(/[?#]/)[0], q=hint?{login_hint:hint}:{prompt:'select_account'};
+      if(el){ el.classList.add('going'); el.setAttribute('aria-busy','true'); } else busy(true,'מעביר ל־Google…');
+      sb.auth.signInWithOAuth({provider:'google',options:{redirectTo:back,queryParams:q}}).then(function(r){ if(r.error){ busy(false); if(el) el.classList.remove('going'); say('err','לא הצלחתי להתחיל את ההתחברות: '+esc(r.error.message)); } });
+    }
+    if(gbtn) gbtn.addEventListener('click',function(){ google(''); });
+    if(who) who.addEventListener('click',function(e){
+      var x=e.target.closest('[data-forget]'); if(x){ forget(x.dataset.forget); var row=x.closest('.acc-row'); row.classList.add('gone'); setTimeout(function(){ row.remove(); if(!accounts().length){ who.hidden=true; who.innerHTML=''; head('כניסה ל־Uri Q','עם חשבון, ההתקדמות, הציונים והטעויות שלך נשמרים ומסונכרנים בין המחשב לטלפון. רק את/ה רואה אותם.'); if(gbtn){ gbtn.classList.remove('alt'); busy(false); } } },260); return; }
+      var c=e.target.closest('[data-hint]'); if(c){ google(c.dataset.hint,c); return; }
+      if(e.target.closest('#other-acct')){ var b=e.target.closest('#other-acct'); b.disabled=true; var flush=pushT?push():Promise.resolve(); clearTimeout(pushT); pushT=null;
+        flush.catch(function(){}).then(function(){ return sb.auth.signOut(); }).then(function(){ set(BASE+':'+uid,null); set(UIDK,null); set(PROF,null); google(''); }); }
     });
     document.addEventListener('click',function(e){
       if(!e.target.closest('#logout,[data-signout]')) return;

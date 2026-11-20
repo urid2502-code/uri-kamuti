@@ -102,13 +102,40 @@
   if(body.classList.contains('lessonspage')){
     var rr=compute();
     document.querySelectorAll('[data-acc]').forEach(function(p){ var T=rr.topic[p.dataset.acc]; if(T&&T.n) p.textContent='הדיוק שלך בנושא: '+Math.round(100*T.ok/T.n)+'% ('+T.ok+' מתוך '+T.n+')'; });
-    var tabs=[].slice.call(document.querySelectorAll('.ls-tabs a'));
-    /* keep the active chip visible by scrolling only the chip strip sideways, never the page */
+    var tabs=[].slice.call(document.querySelectorAll('.ls-tabs a')), topics=[].slice.call(document.querySelectorAll('.ls-grid .topic'));
     function showTab(a){ var st=a.closest('.ls-tabs'); if(!st) return; var r=a.getBoundingClientRect(), sr=st.getBoundingClientRect(); if(r.left<sr.left+8||r.right>sr.right-8) st.scrollLeft+= (r.left+r.width/2)-(sr.left+sr.width/2); }
-    /* a link like lessons.html#t-solid: land on that topic once fonts and maths have settled the layout */
-    var hashT=location.hash&&document.getElementById(location.hash.slice(1));
-    if(hashT&&hashT.classList.contains('topic')){ var go=function(){ hashT.scrollIntoView({block:'start',behavior:'instant'}); tabs.forEach(function(a){ var on=a.getAttribute('href')==='#'+hashT.id; a.classList.toggle('on',on); if(on) showTab(a); }); }; go(); (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){ requestAnimationFrame(go); }); window.addEventListener('load',function(){ setTimeout(go,50); }); }
-    if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ tabs.forEach(function(a){ var on=a.getAttribute('href')==='#'+e.target.id; a.classList.toggle('on',on); if(on) showTab(a); }); } }); },{rootMargin:'-30% 0px -60% 0px'}); document.querySelectorAll('.topic').forEach(function(t){ io.observe(t); }); }
+    function mark(id){ tabs.forEach(function(a){ var on=!!id&&a.getAttribute('href')==='#'+id; a.classList.toggle('on',on); if(on){ a.setAttribute('aria-current','true'); showTab(a); } else a.removeAttribute('aria-current'); }); }
+    /* ---- a topic opens as a pop-up ---- */
+    var dlg=document.createElement('dialog'); dlg.className='tp-dlg'; dlg.setAttribute('aria-labelledby','tp-dlg-h');
+    dlg.innerHTML='<div class="tp-bar"><button type="button" class="tp-nav" data-step="-1" aria-label="הנושא הקודם"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button><span class="tp-pos" aria-live="polite"></span><button type="button" class="tp-nav" data-step="1" aria-label="הנושא הבא"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" class="tp-x" aria-label="סגירה"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div class="tp-body"></div>';
+    document.body.appendChild(dlg);
+    var cur=-1, opener=null;
+    function fill(i){
+      cur=(i+topics.length)%topics.length; var t=topics[cur], c=t.cloneNode(true);
+      c.removeAttribute('id'); c.classList.add('in-dlg'); var h=c.querySelector('h3'); if(h) h.id='tp-dlg-h';
+      c.querySelectorAll('details').forEach(function(d){ d.open=true; });
+      var body=dlg.querySelector('.tp-body'); body.innerHTML=''; body.appendChild(c); body.scrollTop=0;
+      dlg.querySelector('.tp-pos').textContent=(cur+1)+' / '+topics.length;
+      mark(t.id); if(history.replaceState) history.replaceState(null,'','#'+t.id);
+    }
+    function open(i,from){ opener=from||document.activeElement; fill(i); if(!dlg.open){ if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open',''); document.documentElement.classList.add('dlg-open'); } dlg.querySelector('.tp-x').focus({preventScroll:true}); }
+    function close(){ if(dlg.open){ dlg.classList.add('closing'); setTimeout(function(){ dlg.classList.remove('closing'); if(dlg.close) dlg.close(); else dlg.removeAttribute('open'); },180); } }
+    dlg.addEventListener('close',function(){ document.documentElement.classList.remove('dlg-open'); mark(''); if(history.replaceState) history.replaceState(null,'',location.pathname+location.search); if(opener&&opener.focus) opener.focus({preventScroll:true}); });
+    dlg.addEventListener('click',function(e){
+      if(e.target===dlg){ close(); return; }  // backdrop
+      if(e.target.closest('.tp-x')){ close(); return; }
+      var n=e.target.closest('.tp-nav'); if(n){ fill(cur+(+n.dataset.step)); return; }
+    });
+    dlg.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'){ fill(cur+1); } else if(e.key==='ArrowRight'){ fill(cur-1); } });
+    topics.forEach(function(t,i){
+      t.tabIndex=0; t.setAttribute('role','button'); t.setAttribute('aria-label','פתיחת הנושא '+(t.querySelector('h3')?t.querySelector('h3').firstChild.textContent:''));
+      t.addEventListener('click',function(e){ if(e.target.closest('a,summary,button,details[open] .pits')) return; open(i,t); });
+      t.addEventListener('keydown',function(e){ if(e.target===t&&(e.key==='Enter'||e.key===' ')){ e.preventDefault(); open(i,t); } });
+      t.addEventListener('mouseenter',function(){ mark(t.id); }); t.addEventListener('mouseleave',function(){ if(!dlg.open) mark(''); });
+    });
+    tabs.forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href').slice(1), i=topics.findIndex(function(t){ return t.id===id; }); if(i<0) return; e.preventDefault(); open(i,a); }); });
+    var hashT=location.hash&&document.getElementById(location.hash.slice(1)), hi=topics.indexOf(hashT);
+    if(hi>=0){ hashT.scrollIntoView({block:'start',behavior:'instant'}); open(hi,hashT); }
     if(location.hash){ var t=document.querySelector(location.hash); if(t&&t.tagName==='DETAILS') t.open=true; }
   }
 

@@ -1260,20 +1260,20 @@ body.landing .top.solid{background:rgba(10,10,10,.97)}
 :root[data-accent="orange"]{--acD:#E25F14;--acD-ink:#C24E0B;--acD-soft:#FFEFE4;--acD-line:#F6AF85;--hi:#FF9A5C;--hi-ink:#FFAD7A;--hi-soft:#3A2010;--hi-line:#8A4A22;--on-hi:#2A1204}
 :root[data-accent="ink"]{--acD:#111111;--acD-ink:#111111;--acD-soft:#E9EAE8;--acD-line:#9A9A9A;--hi:#F2F2F0;--hi-ink:#FFFFFF;--hi-soft:#232323;--hi-line:#555555;--on-hi:#0A0A0A}
 
-/* the frame: same dark theme as the home page */
-html{background:#0B0B0B}
-body:not(.landing){
+/* light pages; accents follow the user's colour */
+html{background:#F4F5F3}
+:root:not([data-theme="dark"]) body:not(.landing){--ac:var(--acD);--ac-ink:var(--acD-ink);--ac-soft:var(--acD-soft);--ac-line:var(--acD-line);--on-ac:#fff}
+:root[data-theme="dark"]{background:#0A0A0A}
+:root[data-theme="dark"] body:not(.landing){--ac:var(--hi);--ac-ink:var(--hi-ink);--ac-soft:var(--hi-soft);--ac-line:var(--hi-line);--on-ac:var(--on-hi)}
+/* only the top menu bar is black */
+body:not(.landing) .top{
   --bg:#0B0B0B;--paper:#161616;--ink:#F2F2F0;--ink2:#DCDCDA;--mute:#A8A8A8;--faint:#939393;
   --line:#262626;--line2:#3A3A3A;--hover:#1D1D1D;
   --ac:var(--hi);--ac-ink:var(--hi-ink);--ac-soft:var(--hi-soft);--ac-line:var(--hi-line);--on-ac:var(--on-hi);
-  --ok:#34D399;--ok-bg:#062A1E;--ok-line:#1F6B53;--no:#FB7185;--no-bg:#2E0F18;--no-line:#7A2639;--rv:#FCD34D;--rv-bg:#2B210A;
-  --grid:rgba(255,255,255,.035);--lift:0 0 0 1px #262626;--shadow:none;
-  color:var(--ink);color-scheme:dark;background-color:var(--bg)
+  color:var(--ink);color-scheme:dark;background:rgba(11,11,11,.94);border-bottom-color:#1F1F1F;backdrop-filter:blur(12px)
 }
-body:not(.landing) .top{background:rgba(11,11,11,.9);border-bottom-color:#1F1F1F;backdrop-filter:blur(12px)}
-body:not(.landing) .phead h1::after,body:not(.landing) .hero h1::after{background:var(--hi)}
-body:not(.landing) .dash-banner{background:#161616;border:1px solid #262626}
-
+body:not(.landing) .top .brand{color:#fff}
+body:not(.landing) .top .acct .av{background:var(--hi);color:var(--on-hi)}
 /* bright reading surfaces: question cards, the timer bar, results, panels */
 :root:not([data-theme="dark"]) :is(.q,.exambar,.resultsdash,.modal,.omr,.panel,.kpis,.topic,.setl,.ls-legend,.sq-item,.auth-main,.pn,.results,.rec,.rv-stage){
   --bg:#F4F5F3;--paper:#FFFFFF;--ink:#0F0F0F;--ink2:#2A2A2A;--mute:#525252;--faint:#6B6B6B;
@@ -1284,7 +1284,7 @@ body:not(.landing) .dash-banner{background:#161616;border:1px solid #262626}
   color:var(--ink);color-scheme:light
 }
 :root:not([data-theme="dark"]) .auth-main{background:#F4F5F3}
-:root:not([data-theme="dark"]) .exambar{outline-color:#0B0B0B;box-shadow:0 10px 30px -10px rgba(0,0,0,.6)}
+:root:not([data-theme="dark"]) .exambar{outline-color:#F4F5F3;box-shadow:0 8px 24px -12px rgba(0,0,0,.18)}
 :root:not([data-theme="dark"]) .opt[aria-pressed="true"] .bub{color:#fff}
 :root[data-theme="dark"] .opt[aria-pressed="true"] .bub{color:var(--on-hi)}
 

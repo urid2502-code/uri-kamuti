@@ -111,6 +111,14 @@ class Fig:
         nrm = (-u[1] * side, u[0] * side)
         self.text((m[0] + nrm[0] * off, m[1] + nrm[1] * off), s, size=size, italic=s.isalpha() and len(s) == 1)
 
+    def arrow(self, p, q, w=2.2, s=11, dash=False, at=1.0):
+        """Segment p→q with an arrowhead at fraction `at` of the way (1 = at q)."""
+        self.line(p, q, w=w, dash=dash)
+        ux, uy = unit(p, q)
+        t = (p[0] + (q[0] - p[0]) * at, p[1] + (q[1] - p[1]) * at)
+        self.poly([t, (t[0] - ux * s - uy * s * .42, t[1] - uy * s + ux * s * .42),
+                   (t[0] - ux * s + uy * s * .42, t[1] - uy * s - ux * s * .42)], fill=INK, w=1)
+
     def brace(self, p, q, depth=14, w=2):
         """Curly brace over the horizontal span p..q (opening downward, tip up)."""
         x1, x2, y = p[0], q[0], p[1]

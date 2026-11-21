@@ -457,6 +457,149 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 11
+@fig('11-3')
+def _():
+    f = Fig(400, 410)
+    k = 0.5
+    P = lambda x, y: (x * k + 10, y * k - 25)  # noqa: E731  (the book figure's proportions)
+    A, D, B, C = P(270, 95), P(70, 340), P(455, 340), P(260, 580)
+    E, F = P(700, 520), P(510, 770)
+    f.shade([D, B, C], fill='#9ea29d')
+    f.shade([B, C, F], fill='#9ea29d')
+    f.poly([A, B, C, D])
+    f.poly([B, E, F, C])
+    f.line(D, B)
+    f.line(B, F)
+    f.label(A, 'A', dy=-18)
+    f.label(B, 'B', dx=16, dy=-12)
+    f.label(C, 'C', dx=-16, dy=14)
+    f.label(D, 'D', dx=-18)
+    f.label(E, 'E', dx=18)
+    f.label(F, 'F', dy=20)
+    return f
+
+
+@fig('11-5')
+def _():
+    f = Fig(460, 210)
+    d = 190
+    A = (30, 105)
+    B, C = (A[0] + d, 105), (A[0] + 2 * d, 105)
+    f.poly([(A[0], 105 - d / 2), (C[0], 105 - d / 2), (C[0], 105 + d / 2), (A[0], 105 + d / 2)])
+    f.path('M%.1f %.1f A%.1f %.1f 0 0 0 %.1f %.1f' % (A[0], A[1], d / 2, d / 2, B[0], B[1]))
+    f.path('M%.1f %.1f A%.1f %.1f 0 0 1 %.1f %.1f' % (B[0], B[1], d / 2, d / 2, C[0], C[1]))
+    for p in (A, B, C):
+        f.dot(p, 4.5)
+    f.label(A, 'A', dx=-18)
+    f.label(B, 'B', dx=-18)
+    f.label(C, 'C', dx=18)
+    return f
+
+
+@fig('11-8')
+def _():
+    f = Fig(380, 380)
+    o, d = (30, 30), 320 / 3
+    f.poly([o, (o[0] + 320, o[1]), (o[0] + 320, o[1] + 320), (o[0], o[1] + 320)])
+    centres = [(o[0] + d * (i + .5), o[1] + d * (j + .5)) for j in range(3) for i in range(3)]
+    for c in centres:
+        f.circle(c, d / 2, w=2)
+    f.line(centres[0], centres[8], w=3.6)
+    f.dot(centres[0], 6)
+    f.dot(centres[8], 6)
+    return f
+
+
+@fig('11-10')
+def _():
+    f = Fig(400, 380)
+    s, dx, dy = 210, 110, -90
+    P = lambda x, y: (x, y)  # noqa: E731
+    ftl, ftr, fbr, fbl = (40, 130), (40 + s, 130), (40 + s, 130 + s), (40, 130 + s)
+    b = lambda p: (p[0] + dx, p[1] + dy)  # noqa: E731
+    # the three shaded half-faces meet at the corner ftr
+    f.shade([ftl, ftr, b(ftr)], fill='#b9bdb8')
+    f.shade([ftl, ftr, fbr], fill='#d9dcd8')
+    f.shade([ftr, b(ftr), fbr], fill='#c9ccc8')
+    f.poly([ftl, ftr, fbr, fbl])
+    f.poly([ftl, b(ftl), b(ftr), ftr], close=False)
+    f.poly([ftr, b(ftr), b(fbr), fbr], close=False)
+    f.line(ftl, b(ftr))
+    f.line(ftl, fbr)
+    f.line(b(ftr), fbr)
+    return f
+
+
+# ---------------------------------------------------------------- set 12
+@fig('12-4')
+def _():
+    import math
+    f = Fig(340, 490)
+    a = 220
+    y0 = 335
+    B, C = (60, y0), (60 + a, y0)
+    A = (60 + a / 2, y0 - a * math.sqrt(3) / 2)
+    r = a / 2
+    f.shade([A, B, C], fill='#c9ccc8')
+    mAB, mAC = lerp(A, B, .5), lerp(A, C, .5)
+    # circle around A: the part outside the triangle (300 degrees)
+    f.path('M%.1f %.1f A%.1f %.1f 0 1 0 %.1f %.1f' % (mAC[0], mAC[1], r, r, mAB[0], mAB[1]))
+    # half circle on BC, below it
+    f.path('M%.1f %.1f A%.1f %.1f 0 0 0 %.1f %.1f' % (B[0], B[1], r, r, C[0], C[1]))
+    f.poly([A, B, C])
+    f.label(A, 'A', dy=-20)
+    f.label(B, 'B', dx=-18)
+    f.label(C, 'C', dx=18)
+    return f
+
+
+@fig('12-5')
+def _():
+    f = Fig(440, 420)
+    s, dx, dy = 230, 120, -95
+    A, D = (50, 365), (50 + s, 365)
+    b = lambda p: (p[0] + dx, p[1] + dy)  # noqa: E731
+    E, B = b(A), b(D)
+    tA, tD = (A[0], A[1] - s), (D[0], D[1] - s)
+    C, tB = b(tA), b(tD)
+    # cube edges
+    f.poly([A, D, tD, tA])
+    f.poly([tA, C, tB, tD], close=False)
+    f.poly([D, B, tB], close=False)
+    f.line(A, E, dash=True, w=1.6)
+    f.line(E, B, dash=True, w=1.6)
+    f.line(E, C, dash=True, w=1.6)
+    # the two paths
+    f.arrow(A, B, at=.97)
+    f.arrow(B, C, at=.97)
+    f.arrow(C, A, at=.97)
+    f.arrow(B, D, at=.95)
+    f.arrow(D, E, at=.95)
+    f.arrow(E, A, at=.92)
+    f.label(A, 'A', dx=-16, dy=12)
+    f.label(D, 'D', dx=10, dy=20)
+    f.label(B, 'B', dx=18, dy=6)
+    f.label(E, 'E', dx=-16, dy=-10)
+    f.label(C, 'C', dx=-8, dy=-18)
+    return f
+
+
+@fig('12-8')
+def _():
+    f = Fig(420, 380)
+    c, R = (200, 190), 150
+    V = [polar(c, R, 36 * k) for k in range(10)]   # vertices on the x axis
+    f.line((20, c[1]), (400, c[1]), w=1.8)
+    f.line((c[0], 360), (c[0], 18), w=1.8)
+    f.poly([(400, c[1]), (390, c[1] - 5), (390, c[1] + 5)], fill='#1f2328', w=1)
+    f.poly([(c[0], 18), (c[0] - 5, 28), (c[0] + 5, 28)], fill='#1f2328', w=1)
+    f.text((408, c[1] + 18), 'x', size=19, italic=True)
+    f.text((c[0] - 16, 24), 'y', size=19, italic=True)
+    f.poly(V)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

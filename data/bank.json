@@ -1927,7 +1927,7 @@
       "<bdi dir=\"ltr\" class=\"m\">81</bdi>"
      ],
      "figure": {
-      "src": "fig/11-3.png",
+      "src": "fig/11-3.svg",
       "width": "34%",
       "wide": false
      },
@@ -1971,7 +1971,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/11-5.png",
+      "src": "fig/11-5.svg",
       "width": "58%",
       "wide": true
      },
@@ -2029,7 +2029,7 @@
       "<bdi dir=\"ltr\" class=\"m\">196</bdi>"
      ],
      "figure": {
-      "src": "fig/11-8.png",
+      "src": "fig/11-8.svg",
       "width": "24%",
       "wide": false
      },

@@ -18,6 +18,8 @@
 - `data/questions.json`: 400 השאלות (`status: missing` = לא צולמה). `data/solutions/*.json`: הפתרונות, `v: false` = דורש בדיקה מול הספר.
 - `data/lessons.json`: נוצר מחדש עם `python tools/lessons/lessons.py`. השאלות והמפתח הם מהספר. הכללים, ההסברים והמוקשים נכתבו ב־urIQ ומסומנים כך באתר.
 - `AUDIT.md`: אילו שאלות עוד חסרות.
+- הסברים מפורטים: `data/explain/NN.json` – לכל שאלה רשימת שלבים (שורה שמתחילה ב־`> ` ממשיכה את השלב שלפניה), מוקשים והערות. סימון מתמטי: `[a/b]` שבר, `x^(…)` חזקה, `√(…)` שורש. אחרי עריכה: `python3 tools/solutions/explain.py` (ובדיקה: `python3 tools/solutions/check.py`).
+- סרטוטים: `tools/figs/figures.py` משרטט מחדש את הסרטוטים כ־SVG חד (`fig/N-M.svg`) ומפנה אליהם את הדפים. המקור הוא הצילום `fig/N-M.png`.
 - כיווניות: נוסחאות עטופות ב־`<bdi dir="ltr" class="m">` כדי שלא יתערבבו בעברית. אחרי שינוי בדפים מריצים `python3 tools/bidi/fix_bidi.py` ואז `node scripts/build.mjs`.
 
 **התקדמות**: נשמרת ב־localStorage (`uri-kamuti:v2`). אחרי כניסה היא מסונכרנת לטבלת `progress` ב־Supabase, וכל משתמש רואה רק את השורה שלו (RLS, ראו `supabase/migrations`).

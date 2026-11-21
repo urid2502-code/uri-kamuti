@@ -151,12 +151,43 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 
 Edit `data/bank.json`: find the slot (for example `"id": "6-1"`), fill in `stem`, `options` (4 entries), `figure` if needed, and set `status` to `"clean"`. For sets 6 and 9, also fill in `answer`. Then run `node scripts/build.mjs` to regenerate `data/bank.js`.
 
-## Answer-key conflicts (photos)
+## Answer-key checks (explanations rewrite)
 
-These questions were transcribed from clear photos, but the math gives a different answer from the book key. The site checks answers against the key and shows a note in the solution.
+Every question was solved again from scratch and checked against the book key, the figure and the transcription. The detailed explanations are in `data/explain/NN.json` (see the README).
 
-| Question | Key | Math | Note |
+**Data fixed** – the transcription contradicted the key, and exactly one reading fits both the key and the figure:
+
+| Question | Fix |
+|---|---|
+| 6-6 | The small exponent is −1: x⁻¹ + 1 = y (with x² the answer would be 0). |
+| 7-5 | Both runners start at A; Aviv runs A → B along the arc. |
+| 19-10 | The turtle's path, read from the figure: arc A–D, then D–O–B. |
+| 20-10 | Option 4 is r²(π − 3√3/2) (was read as a copy of option 1). |
+| 26-3 | The first coefficient is 2/3 (with 1/3 no option fits). |
+| 26-7 | The square's radius is 5 (with 3 no option fits). |
+| 27-8 | The divisor is 5 (with 15 no option holds). |
+| 33-7 | The exponent term is ¼ (with ½ there is no solution); the stem was rebuilt. |
+| 38-7 | The answer is in minutes (the team paints 25 m² a minute). |
+| 39-10 | Option 3 is 4 + ⅔π (∢FOG = 60°). |
+
+**Old reasoning corrected** (same answer): 1-7 (the trapezoid's parallel sides), 18-2 (the grey area is the middle band), 19-4 (the squares grow from A), 19-8, 24-2, 31-8, 33-1, 33-5, 37-8, 38-3, 38-4, 39-5, 39-9.
+
+**Still conflicting** – the site follows the key and shows a note under the solution:
+
+| Question | Key | As transcribed | Note |
 |---|---|---|---|
-| 6-6 | 2 | 1 | The exponent may be read slightly differently from the book. |
-| 10-3 | 1 | 3 | 3y ≡ 10 (mod 20) is the only option not divisible by 20. |
-| 21-4 | 3 (1:3) | 1 (1:2) | White : gray in the hexagram is 6 : 12 small triangles. 1:3 is white : whole hexagon. |
+| 4-2 | 3 | option 4 ("20x") can be larger | Option 4 is blurry; probably a different expression. |
+| 6-7 | 1 | 180° or more | The photo does not show which chords form each angle. |
+| 8-8 | 3 (7/36) | 1/6 | 7/36 fits "divisible by 5". |
+| 10-3 | 1 | 3 (3y) | The page is very blurry. |
+| 15-4 | 3 | options 1, 3 and 4 all true | A number in the options was probably misread. |
+| 18-4 | 3 | 1 (two loops) | The key gives the time of one loop. |
+| 21-4 | 3 (1:3) | 1 (1:2) | 1:3 is white : whole hexagon. |
+| 23-2 | 3 (15) | 1 (6) | 15 fits a digit product of 96. |
+| 23-5 | 3 (3:5) | 5:3 | The key is black : white. |
+| 28-10 | 1 (15) | 3 (24) | A number was probably misread. |
+| 32-7 | 1 | no solution | The exponents are blurry. |
+| 33-4 | 3 | not determined | The exponents are blurry. |
+| 40-7 | 3 | options 2 and 3 both fit | The figure places B left of F. |
+
+Unreadable in the source (the explanation gives the method only): 7-10, 10-4, 10-5, 10-6, 17-2, 17-10.

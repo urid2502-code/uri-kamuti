@@ -83,7 +83,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/1-4.png",
+      "src": "fig/1-4.svg",
       "width": "33%",
       "wide": false
      },
@@ -141,7 +141,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/1-7.png",
+      "src": "fig/1-7.svg",
       "width": "45%",
       "wide": false
      },
@@ -285,7 +285,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span><span class=\"sq\">√<span>3</span></span></span><span>2</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/2-4.png",
+      "src": "fig/2-4.svg",
       "width": "44%",
       "wide": false
      },
@@ -325,7 +325,7 @@
       "<bdi dir=\"ltr\" class=\"m\">(7,8)</bdi>"
      ],
      "figure": {
-      "src": "fig/2-6.png",
+      "src": "fig/2-6.svg",
       "width": "55%",
       "wide": true
      },
@@ -481,7 +481,7 @@
       "<bdi dir=\"ltr\" class=\"m\">1 − <span class=\"fr\"><span>π</span><span>4</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/3-4.png",
+      "src": "fig/3-4.svg",
       "width": "33%",
       "wide": false
      },
@@ -559,7 +559,7 @@
       "<bdi dir=\"ltr\" class=\"m\">25:36</bdi>"
      ],
      "figure": {
-      "src": "fig/3-8.png",
+      "src": "fig/3-8.svg",
       "width": "28%",
       "wide": false
      },
@@ -685,7 +685,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>2</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/4-4.png",
+      "src": "fig/4-4.svg",
       "width": "30%",
       "wide": false
      },
@@ -765,7 +765,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/4-8.png",
+      "src": "fig/4-8.svg",
       "width": "34%",
       "wide": false
      },
@@ -839,7 +839,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/5-1.png",
+      "src": "fig/5-1.svg",
       "width": "35%",
       "wide": false
      },
@@ -897,7 +897,7 @@
       "<bdi dir=\"ltr\" class=\"m\">24</bdi> דקות"
      ],
      "figure": {
-      "src": "fig/5-4.png",
+      "src": "fig/5-4.svg",
       "width": "50%",
       "wide": true
      },
@@ -955,7 +955,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>4</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/5-7.png",
+      "src": "fig/5-7.svg",
       "width": "44%",
       "wide": false
      },
@@ -1213,7 +1213,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>π−4</span><span>8−π</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/7-4.png",
+      "src": "fig/7-4.svg",
       "width": "28%",
       "wide": false
      },
@@ -1239,7 +1239,7 @@
       "<bdi dir=\"ltr\" class=\"m\">6 − π</bdi>"
      ],
      "figure": {
-      "src": "fig/7-5.png",
+      "src": "fig/7-5.svg",
       "width": "38%",
       "wide": false
      },
@@ -1297,7 +1297,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/7-8.png",
+      "src": "fig/7-8.svg",
       "width": "37%",
       "wide": false
      },
@@ -1392,7 +1392,7 @@
       "<bdi dir=\"ltr\" class=\"m\">4:π</bdi>"
      ],
      "figure": {
-      "src": "fig/8-2.png",
+      "src": "fig/8-2.svg",
       "width": "34%",
       "wide": false
      },
@@ -1432,7 +1432,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/8-4.png",
+      "src": "fig/8-4.svg",
       "width": "42%",
       "wide": false
      },
@@ -1819,7 +1819,7 @@
       "<bdi dir=\"ltr\" class=\"m\">10</bdi>"
      ],
      "figure": {
-      "src": "fig/10-8.png",
+      "src": "fig/10-8.svg",
       "width": "27%",
       "wide": false
      },
@@ -1927,7 +1927,7 @@
       "<bdi dir=\"ltr\" class=\"m\">81</bdi>"
      ],
      "figure": {
-      "src": "fig/11-3.png",
+      "src": "fig/11-3.svg",
       "width": "34%",
       "wide": false
      },
@@ -1971,7 +1971,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/11-5.png",
+      "src": "fig/11-5.svg",
       "width": "58%",
       "wide": true
      },
@@ -2029,7 +2029,7 @@
       "<bdi dir=\"ltr\" class=\"m\">196</bdi>"
      ],
      "figure": {
-      "src": "fig/11-8.png",
+      "src": "fig/11-8.svg",
       "width": "24%",
       "wide": false
      },
@@ -2359,7 +2359,7 @@
       "אף אחת מהטענות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/13-8.png",
+      "src": "fig/13-8.svg",
       "width": "45%",
       "wide": false
      },
@@ -2443,7 +2443,7 @@
       "<bdi dir=\"ltr\" class=\"m\">¼</bdi>"
      ],
      "figure": {
-      "src": "fig/14-2.png",
+      "src": "fig/14-2.svg",
       "width": "47%",
       "wide": false
      },
@@ -2525,7 +2525,7 @@
       "<bdi dir=\"ltr\" class=\"m\">10<span class=\"sq\">√<span>3</span></span>·r²</bdi>"
      ],
      "figure": {
-      "src": "fig/14-6.png",
+      "src": "fig/14-6.svg",
       "width": "32%",
       "wide": false
      },
@@ -2565,7 +2565,7 @@
       "<bdi dir=\"ltr\" class=\"m\">11</bdi>"
      ],
      "figure": {
-      "src": "fig/14-8.png",
+      "src": "fig/14-8.svg",
       "width": "34%",
       "wide": false
      },
@@ -2605,7 +2605,7 @@
       "<bdi dir=\"ltr\" class=\"m\">2<span class=\"sq\">√<span>3</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/14-10.png",
+      "src": "fig/14-10.svg",
       "width": "27%",
       "wide": false
      },
@@ -2745,7 +2745,7 @@
       "<bdi dir=\"ltr\" class=\"m\">r²(4<span class=\"sq\">√<span>3</span></span> − π)</bdi>"
      ],
      "figure": {
-      "src": "fig/15-7.png",
+      "src": "fig/15-7.svg",
       "width": "38%",
       "wide": false
      },
@@ -3049,7 +3049,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>16</span><span>9π − 18</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/17-4.png",
+      "src": "fig/17-4.svg",
       "width": "32%",
       "wide": false
      },
@@ -3215,7 +3215,7 @@
       "<bdi dir=\"ltr\" class=\"m\">4</bdi>"
      ],
      "figure": {
-      "src": "fig/18-2.png",
+      "src": "fig/18-2.svg",
       "width": "37%",
       "wide": false
      },
@@ -3255,7 +3255,7 @@
       "<bdi dir=\"ltr\" class=\"m\">4<span class=\"sq\">√<span>3</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/18-4.png",
+      "src": "fig/18-4.svg",
       "width": "33%",
       "wide": false
      },
@@ -3295,7 +3295,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/18-6.png",
+      "src": "fig/18-6.svg",
       "width": "33%",
       "wide": false
      },
@@ -3459,7 +3459,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>10</span><span>7</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/19-4.png",
+      "src": "fig/19-4.svg",
       "width": "30%",
       "wide": false
      },
@@ -3543,7 +3543,7 @@
       "<bdi dir=\"ltr\" class=\"m\">12<span class=\"sq\">√<span>3π</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/19-8.png",
+      "src": "fig/19-8.svg",
       "width": "39%",
       "wide": false
      },
@@ -3589,7 +3589,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/19-10.png",
+      "src": "fig/19-10.svg",
       "width": "51%",
       "wide": false
      },
@@ -3789,7 +3789,7 @@
       "<bdi dir=\"ltr\" class=\"m\">r²(π − 2<span class=\"fr\"><span><span class=\"sq\">√<span>3</span></span></span><span>2</span></span>)</bdi>"
      ],
      "figure": {
-      "src": "fig/20-10.png",
+      "src": "fig/20-10.svg",
       "width": "36%",
       "wide": false
      },
@@ -3847,7 +3847,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/21-2.png",
+      "src": "fig/21-2.svg",
       "width": "25%",
       "wide": false
      },
@@ -4010,7 +4010,7 @@
       "<bdi dir=\"ltr\" class=\"m\">6r</bdi>"
      ],
      "figure": {
-      "src": "fig/22-2.png",
+      "src": "fig/22-2.svg",
       "width": "29%",
       "wide": false
      },
@@ -4130,7 +4130,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/22-10.png",
+      "src": "fig/22-10.svg",
       "width": "55%",
       "wide": true
      },
@@ -4232,7 +4232,7 @@
       "<bdi dir=\"ltr\" class=\"m\">3:4</bdi>"
      ],
      "figure": {
-      "src": "fig/23-5.png",
+      "src": "fig/23-5.svg",
       "width": "31%",
       "wide": false
      },
@@ -4296,7 +4296,7 @@
       "אף אחת מהטענות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/23-8.png",
+      "src": "fig/23-8.svg",
       "width": "43%",
       "wide": true
      },
@@ -4336,7 +4336,7 @@
       "<bdi dir=\"ltr\" class=\"m\">40% &lt; x &lt; 50%</bdi>"
      ],
      "figure": {
-      "src": "fig/23-10.png",
+      "src": "fig/23-10.svg",
       "width": "26%",
       "wide": false
      },
@@ -4386,7 +4386,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>π</span></span> + ½</bdi>"
      ],
      "figure": {
-      "src": "fig/24-2.png",
+      "src": "fig/24-2.svg",
       "width": "24%",
       "wide": false
      },
@@ -4466,7 +4466,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>7</span><span>9</span></span></bdi> <span class=\"warn\" title=\"השברים הקטנים נקראו בקירוב\">⚠</span>"
      ],
      "figure": {
-      "src": "fig/24-6.png",
+      "src": "fig/24-6.svg",
       "width": "49%",
       "wide": false
      },
@@ -4572,7 +4572,7 @@
       "<bdi dir=\"ltr\" class=\"m\">20</bdi>"
      ],
      "figure": {
-      "src": "fig/25-1.png",
+      "src": "fig/25-1.svg",
       "width": "34%",
       "wide": false
      },
@@ -4691,7 +4691,7 @@
       "<bdi dir=\"ltr\" class=\"m\">12</bdi>"
      ],
      "figure": {
-      "src": "fig/25-7.png",
+      "src": "fig/25-7.svg",
       "width": "58%",
       "wide": true
      },
@@ -4869,7 +4869,7 @@
       "<bdi dir=\"ltr\" class=\"m\">36</bdi>"
      ],
      "figure": {
-      "src": "fig/26-6.png",
+      "src": "fig/26-6.svg",
       "width": "41%",
       "wide": false
      },
@@ -5014,7 +5014,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"sq\">√<span>2</span></span>·(1 + <span class=\"sq\">√<span>2</span></span>)</bdi>"
      ],
      "figure": {
-      "src": "fig/27-3.png",
+      "src": "fig/27-3.svg",
       "width": "32%",
       "wide": false
      },
@@ -5074,7 +5074,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/27-6.png",
+      "src": "fig/27-6.svg",
       "width": "50%",
       "wide": false
      },
@@ -5256,7 +5256,7 @@
       "<bdi dir=\"ltr\" class=\"m\">8</bdi>"
      ],
      "figure": {
-      "src": "fig/28-5.png",
+      "src": "fig/28-5.svg",
       "width": "35%",
       "wide": false
      },
@@ -5314,7 +5314,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/28-8.png",
+      "src": "fig/28-8.svg",
       "width": "43%",
       "wide": false
      },
@@ -5436,7 +5436,7 @@
       "<bdi dir=\"ltr\" class=\"m\">9:7</bdi>"
      ],
      "figure": {
-      "src": "fig/29-4.png",
+      "src": "fig/29-4.svg",
       "width": "29%",
       "wide": false
      },
@@ -5530,7 +5530,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>4</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/29-9.png",
+      "src": "fig/29-9.svg",
       "width": "32%",
       "wide": false
      },
@@ -5752,7 +5752,7 @@
       "<bdi dir=\"ltr\" class=\"m\">4b²</bdi>"
      ],
      "figure": {
-      "src": "fig/31-1.png",
+      "src": "fig/31-1.svg",
       "width": "43%",
       "wide": false
      },
@@ -5830,7 +5830,7 @@
       "<bdi dir=\"ltr\" class=\"m\">4</bdi>"
      ],
      "figure": {
-      "src": "fig/31-5.png",
+      "src": "fig/31-5.svg",
       "width": "32%",
       "wide": false
      },
@@ -5890,7 +5890,7 @@
       "<bdi dir=\"ltr\" class=\"m\">12:25</bdi>"
      ],
      "figure": {
-      "src": "fig/31-8.png",
+      "src": "fig/31-8.svg",
       "width": "30%",
       "wide": false
      },
@@ -5998,7 +5998,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>4−π</span><span>3π−4</span></span></bdi> <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>"
      ],
      "figure": {
-      "src": "fig/32-3.png",
+      "src": "fig/32-3.svg",
       "width": "28%",
       "wide": false
      },
@@ -6101,7 +6101,7 @@
       "<bdi dir=\"ltr\" class=\"m\">8</bdi>"
      ],
      "figure": {
-      "src": "fig/32-8.png",
+      "src": "fig/32-8.svg",
       "width": "29%",
       "wide": false
      },
@@ -6141,7 +6141,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/32-10.png",
+      "src": "fig/32-10.svg",
       "width": "27%",
       "wide": false
      },
@@ -6177,7 +6177,7 @@
       "<bdi dir=\"ltr\" class=\"m\">64</bdi>"
      ],
      "figure": {
-      "src": "fig/33-1.png",
+      "src": "fig/33-1.svg",
       "width": "57%",
       "wide": true
      },
@@ -6255,7 +6255,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/33-5.png",
+      "src": "fig/33-5.svg",
       "width": "32%",
       "wide": false
      },
@@ -6449,7 +6449,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/34-6.png",
+      "src": "fig/34-6.svg",
       "width": "39%",
       "wide": false
      },
@@ -6734,7 +6734,7 @@
       "<bdi dir=\"ltr\" class=\"m\">1:4</bdi>"
      ],
      "figure": {
-      "src": "fig/36-1.png",
+      "src": "fig/36-1.svg",
       "width": "40%",
       "wide": false
      },
@@ -6988,7 +6988,7 @@
       "<bdi dir=\"ltr\" class=\"m\">¼πr²</bdi>"
      ],
      "figure": {
-      "src": "fig/37-6.png",
+      "src": "fig/37-6.svg",
       "width": "28%",
       "wide": false
      },
@@ -7028,7 +7028,7 @@
       "<bdi dir=\"ltr\" class=\"m\">8</bdi>"
      ],
      "figure": {
-      "src": "fig/37-8.png",
+      "src": "fig/37-8.svg",
       "width": "42%",
       "wide": false
      },
@@ -7132,7 +7132,7 @@
       "<bdi dir=\"ltr\" class=\"m\">⅓(πR² + πr²)</bdi>"
      ],
      "figure": {
-      "src": "fig/38-3.png",
+      "src": "fig/38-3.svg",
       "width": "32%",
       "wide": false
      },
@@ -7154,7 +7154,7 @@
       "<bdi dir=\"ltr\" class=\"m\">360 − (2α + β)</bdi>"
      ],
      "figure": {
-      "src": "fig/38-4.png",
+      "src": "fig/38-4.svg",
       "width": "35%",
       "wide": false
      },
@@ -7194,7 +7194,7 @@
       "<bdi dir=\"ltr\" class=\"m\">1:4</bdi>"
      ],
      "figure": {
-      "src": "fig/38-6.png",
+      "src": "fig/38-6.svg",
       "width": "25%",
       "wide": false
      },
@@ -7274,7 +7274,7 @@
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>"
      ],
      "figure": {
-      "src": "fig/38-10.png",
+      "src": "fig/38-10.svg",
       "width": "24%",
       "wide": false
      },
@@ -7322,7 +7322,7 @@
       "<bdi dir=\"ltr\" class=\"m\">2π − 4<span class=\"sq\">√<span>2</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/39-2.png",
+      "src": "fig/39-2.svg",
       "width": "33%",
       "wide": false
      },
@@ -7380,7 +7380,7 @@
       "<bdi dir=\"ltr\" class=\"m\">⅔</bdi> <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>"
      ],
      "figure": {
-      "src": "fig/39-5.png",
+      "src": "fig/39-5.svg",
       "width": "46%",
       "wide": false
      },
@@ -7460,7 +7460,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/39-9.png",
+      "src": "fig/39-9.svg",
       "width": "28%",
       "wide": false
      },
@@ -7482,7 +7482,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/39-10.png",
+      "src": "fig/39-10.svg",
       "width": "33%",
       "wide": false
      },
@@ -7535,7 +7535,7 @@
       "איתי ; אופק"
      ],
      "figure": {
-      "src": "fig/40-2.png",
+      "src": "fig/40-2.svg",
       "width": "28%",
       "wide": false
      },
@@ -7575,7 +7575,7 @@
       "<bdi dir=\"ltr\" class=\"m\">2 + 6⅔π</bdi> <span class=\"warn\" title=\"השברים נקראו בקירוב\">⚠</span>"
      ],
      "figure": {
-      "src": "fig/40-4.png",
+      "src": "fig/40-4.svg",
       "width": "42%",
       "wide": false
      },
@@ -7635,7 +7635,7 @@
       "<bdi dir=\"ltr\" class=\"m\">(−3,−4)</bdi>"
      ],
      "figure": {
-      "src": "fig/40-7.png",
+      "src": "fig/40-7.svg",
       "width": "46%",
       "wide": false
      },
@@ -7675,7 +7675,7 @@
       "<bdi dir=\"ltr\" class=\"m\">(2α+β+γ)<span class=\"fr\"><span>πR</span><span>180</span></span>°</bdi>"
      ],
      "figure": {
-      "src": "fig/40-9.png",
+      "src": "fig/40-9.svg",
       "width": "36%",
       "wide": false
      },

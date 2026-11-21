@@ -1297,6 +1297,112 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 31
+@fig('31-1')
+def _():
+    f = Fig(400, 380)
+    o, u = (60, 330), 72
+    P = lambda x, y: (o[0] + x * u, o[1] - y * u)  # noqa: E731
+    f.line((20, o[1]), (390, o[1]), w=1.8)
+    f.line((o[0], 365), (o[0], 15), w=1.8)
+    f.poly([(390, o[1]), (380, o[1] - 5), (380, o[1] + 5)], fill='#1f2328', w=1)
+    f.poly([(o[0], 15), (o[0] - 5, 25), (o[0] + 5, 25)], fill='#1f2328', w=1)
+    f.text((392, o[1] + 20), 'x', size=19, italic=True)
+    f.text((o[0] - 16, 22), 'y', size=19, italic=True)
+    A, B, C, D = P(0, 2), P(1, 0), P(3, 1), P(2, 3)
+    f.poly([A, B, C, D])
+    f.dot(A)
+    f.dot(B)
+    f.text((A[0] - 34, A[1]), '(0,a)', size=18)
+    f.text((B[0] + 10, B[1] + 22), 'B(b,0)', size=18)
+    f.label(C, 'C', dx=16, dy=6)
+    f.label(D, 'D', dx=4, dy=-18)
+    return f
+
+
+@fig('31-5')
+def _():
+    f = Fig(340, 340)
+    c = (170, 170)
+    R = 150
+    r = R / 5 ** 0.5
+    f.items.append('<path d="M%.1f %.1f a%d %d 0 1 0 0.1 0 Z M%.1f %.1f a%.1f %.1f 0 1 0 0.1 0 Z" fill="#c9ccc8" fill-rule="evenodd"/>'
+                   % (c[0], c[1] - R, R, R, c[0], c[1] - r, r, r))
+    f.circle(c, R)
+    f.circle(c, r)
+    f.dot(c, 4)
+    return f
+
+
+@fig('31-8')
+def _():
+    f = Fig(380, 380)
+    o, u = (40, 340), 60
+    P = lambda x, y: (o[0] + x * u, o[1] - y * u)  # noqa: E731
+    C, B, A, D = P(0, 0), P(5, 0), P(5, 5), P(0, 5)
+    G, F, H, E = P(2, 0), P(5, 3), P(0, 2), P(3, 5)
+    f.shade([E, F, G, H], fill='#c9ccc8')
+    f.poly([A, B, C, D])
+    f.poly([E, F, G, H])
+    f.angle(G, B, F, r=30, text='45°', tr=50)
+    for p_, n, dx, dy in ((A, 'A', 14, -10), (B, 'B', 14, 10), (C, 'C', -14, 10), (D, 'D', -14, -10),
+                          (E, 'E', 0, -18), (F, 'F', 16, 0), (G, 'G', 0, 20), (H, 'H', -16, 0)):
+        f.label(p_, n, dx, dy)
+    return f
+
+
+# ---------------------------------------------------------------- set 32
+@fig('32-3')
+def _():
+    f = Fig(360, 360)
+    c, r = (180, 180), 105
+    R = r * 2 ** 0.5
+    sq = [(c[0] - r, c[1] - r), (c[0] + r, c[1] - r), (c[0] + r, c[1] + r), (c[0] - r, c[1] + r)]
+    f.items.append('<path d="M%.1f %.1f L%.1f %.1f L%.1f %.1f L%.1f %.1f Z M%.1f %.1f a%d %d 0 1 0 0.1 0 Z" fill="#c9ccc8" fill-rule="evenodd"/>'
+                   % (sq[0] + sq[1] + sq[2] + sq[3] + (c[0], c[1] - r, r, r)))
+    f.circle(c, R)
+    f.poly(sq)
+    f.circle(c, r)
+    f.dot(c, 4)
+    f.line(c, (c[0] + r, c[1]), w=1.8)
+    f.text((c[0] + r / 2, c[1] - 13), 'r', size=19, italic=True)
+    return f
+
+
+@fig('32-8')
+def _():
+    f = Fig(400, 380)
+    s, dx, dy = 210, 100, -85
+    ftl, ftr, fbr, fbl = (40, 130), (40 + s, 130), (40 + s, 130 + s), (40, 130 + s)
+    b = lambda p: (p[0] + dx, p[1] + dy)  # noqa: E731
+    f.items.append('<defs><pattern id="h328" width="8" height="8" patternUnits="userSpaceOnUse">'
+                   '<line x1="0" y1="0" x2="0" y2="8" stroke="#1f2328" stroke-width="1.4"/></pattern></defs>')
+    for tri in ([ftl, ftr, b(ftr)], [ftl, ftr, fbr], [ftr, b(ftr), fbr]):
+        f.items.append('<polygon points="%s" fill="url(#h328)"/>' % ' '.join('%.1f,%.1f' % q for q in tri))
+    f.poly([ftl, ftr, fbr, fbl])
+    f.poly([ftl, b(ftl), b(ftr), ftr], close=False)
+    f.poly([ftr, b(ftr), b(fbr), fbr], close=False)
+    f.line(ftl, b(ftr), w=2.8)
+    f.line(ftl, fbr, w=2.8)
+    f.line(b(ftr), fbr, w=2.8)
+    return f
+
+
+@fig('32-10')
+def _():
+    f = Fig(340, 340)
+    O, R = (160, 170), 140
+    P1, P2 = polar(O, R, 30), polar(O, R, -42)
+    f.circle(O, R, w=1.8)
+    f.path('M%.1f %.1f A%d %d 0 0 1 %.1f %.1f' % (P1[0], P1[1], R, R, P2[0], P2[1]), w=6)
+    f.line(O, P1, w=1.8)
+    f.line(O, P2, w=1.8)
+    f.dot(O, 4.5)
+    f.angle(O, P1, P2, r=34, text='72°', tr=56)
+    f.label(O, 'O', dx=-18)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

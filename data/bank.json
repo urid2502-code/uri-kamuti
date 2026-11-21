@@ -5752,7 +5752,7 @@
       "<bdi dir=\"ltr\" class=\"m\">4b²</bdi>"
      ],
      "figure": {
-      "src": "fig/31-1.png",
+      "src": "fig/31-1.svg",
       "width": "43%",
       "wide": false
      },
@@ -5830,7 +5830,7 @@
       "<bdi dir=\"ltr\" class=\"m\">4</bdi>"
      ],
      "figure": {
-      "src": "fig/31-5.png",
+      "src": "fig/31-5.svg",
       "width": "32%",
       "wide": false
      },
@@ -5890,7 +5890,7 @@
       "<bdi dir=\"ltr\" class=\"m\">12:25</bdi>"
      ],
      "figure": {
-      "src": "fig/31-8.png",
+      "src": "fig/31-8.svg",
       "width": "30%",
       "wide": false
      },
@@ -5998,7 +5998,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>4−π</span><span>3π−4</span></span></bdi> <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>"
      ],
      "figure": {
-      "src": "fig/32-3.png",
+      "src": "fig/32-3.svg",
       "width": "28%",
       "wide": false
      },
@@ -6101,7 +6101,7 @@
       "<bdi dir=\"ltr\" class=\"m\">8</bdi>"
      ],
      "figure": {
-      "src": "fig/32-8.png",
+      "src": "fig/32-8.svg",
       "width": "29%",
       "wide": false
      },
@@ -6141,7 +6141,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/32-10.png",
+      "src": "fig/32-10.svg",
       "width": "27%",
       "wide": false
      },

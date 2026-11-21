@@ -39,7 +39,7 @@ def enc(s):
     return s
 
 
-OPS = '=⇒⇔→–—+−·×≤≥≠≈:' + LT + GT  # binary separators
+OPS = '=⇒⇔→–—+−·×÷±≤≥≠≈:' + LT + GT  # binary separators
 EDGE_OP_LEAD = re.compile(r'^(\s*[' + OPS + r']\s+|\s*[\'"]|\s+)')
 EDGE_OP_TRAIL = re.compile(r'(\s*[.?,;:]|\s+[' + OPS + r']\s*|\s+)$')
 ALNUM = re.compile(r'[A-Za-z0-9²³¹⁰-⁹½⅓⅔¼¾⅕⅙⅛⅑π√∞$]')
@@ -115,7 +115,7 @@ def fix_isolates(html):
 
 
 # ---------- wrapping bare math in explanation text ----------
-MATHCH = r"\^A-Za-z0-9.,'()\[\]=+−\-×·/≤≥≠≈⇒⇔→:!?$%°√π∞½⅓⅔¼¾⅕⅙⅛⅑⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁺∢∠△✓|– "
+MATHCH = r"\^÷±…′″A-Za-z0-9.,'()\[\]=+−\-×·/≤≥≠≈⇒⇔→:!?$%°√π∞½⅓⅔¼¾⅕⅙⅛⅑⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁺∢∠△✓|– "
 RUN = re.compile('[' + MATHCH + ']+')
 CONTAINERS = [('p', 'steps'), ('p', 'pit'), ('p', 'sol-note'), ('span', 'pt'), ('span', 'pit'), ('div', 'tk')]
 VOID = {'br', 'img', 'input', 'meta', 'link', 'hr', 'source', 'wbr'}

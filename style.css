@@ -1580,3 +1580,6 @@ html.anon body.home-page .tally{display:none}
 .steps .mc{display:block}
 .steps .ln .th{margin-top:3px;padding-inline-start:12px;border-inline-start:2px solid var(--line2,#CDD1CB)}
 .steps .ln .th:has(> bdi.m:only-child){font-size:1.04em}
+/* Redrawn (sharp) figures can be shown larger, especially on phones. */
+figure:has(img[src$=".svg"]){width:min(calc(var(--w)*1.25),60%)}
+@media (max-width:640px){figure:has(img[src$=".svg"]){width:min(calc(var(--w)*2.4),92%)}}

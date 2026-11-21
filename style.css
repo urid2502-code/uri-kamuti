@@ -415,7 +415,8 @@ body{font-family:var(--ui);font-feature-settings:"tnum" 0;-webkit-font-smoothing
 /* ---------- brand mark ---------- */
 .mark{display:block;width:auto;height:22px;flex:none}
 .brand{align-items:center;gap:10px;font-weight:700}
-.brand .wm{height:15px;width:auto;display:block}
+.brand .wm{height:16.5px;width:auto;display:block}
+.wm .wq{fill:var(--green,#3DDC97);stroke:var(--green,#3DDC97)}
 .brand span{display:none}
 
 /* ---------- top bar ---------- */

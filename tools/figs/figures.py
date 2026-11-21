@@ -983,6 +983,115 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 23
+@fig('23-5')
+def _():
+    f = Fig(500, 260)
+    R = 115
+    c1, c2 = (130, 130), (130 + 2 * R, 130)
+    f.circle(c1, R)
+    f.circle(c2, R)
+    for k in range(3):
+        f.circle((c1[0] - R + R / 2 * (2 * k + 1), 130), R / 2, fill='#1f2328')
+    return f
+
+
+@fig('23-8')
+def _():
+    f = Fig(460, 220)
+    A, B, C, D = (40, 185), (420, 185), (420, 35), (40, 35)
+    f.poly([A, B, C, D])
+    f.arrow(A, C, dash=True, at=.97, w=2.2)
+    f.arrow(C, D, dash=True, at=.96, w=2.2)
+    f.arrow(D, B, dash=True, at=.97, w=2.2)
+    f.label(A, 'A', dx=-16, dy=10)
+    f.label(B, 'B', dx=16, dy=10)
+    f.label(C, 'C', dx=16, dy=-10)
+    f.label(D, 'D', dx=-16, dy=-10)
+    return f
+
+
+@fig('23-10')
+def _():
+    f = Fig(400, 380)
+    s, dx, dy = 210, 100, -85
+    F0 = (40, 340)
+    u = s / 3
+    v = (dx / 3, dy / 3)
+    # front face grid with the centre square grey
+    fx, fy = F0[0], F0[1] - s
+    f.shade([(fx + u, fy + u), (fx + 2 * u, fy + u), (fx + 2 * u, fy + 2 * u), (fx + u, fy + 2 * u)], fill='#9ea29d')
+    # top face centre
+    tp = lambda i, j: (fx + i * u + j * v[0], fy + j * v[1])  # noqa: E731
+    f.shade([tp(1, 1), tp(2, 1), tp(2, 2), tp(1, 2)], fill='#9ea29d')
+    # right face centre
+    rp = lambda j, k: (fx + s + j * v[0], fy + k * u + j * v[1])  # noqa: E731
+    f.shade([rp(1, 1), rp(2, 1), rp(2, 2), rp(1, 2)], fill='#9ea29d')
+    for k in range(4):
+        f.line((fx, fy + k * u), (fx + s, fy + k * u), w=1.6 if 0 < k < 3 else 2.4)
+        f.line((fx + k * u, fy), (fx + k * u, fy + s), w=1.6 if 0 < k < 3 else 2.4)
+        f.line(tp(k, 0), tp(k, 3), w=1.6 if 0 < k < 3 else 2.4)
+        f.line(tp(0, k), tp(3, k), w=1.6 if 0 < k < 3 else 2.4)
+        f.line(rp(k, 0), rp(k, 3), w=1.6 if 0 < k < 3 else 2.4)
+        f.line(rp(0, k), rp(3, k), w=1.6 if 0 < k < 3 else 2.4)
+    return f
+
+
+# ---------------------------------------------------------------- set 24
+@fig('24-2')
+def _():
+    import math
+    f = Fig(340, 500)
+    r = 125
+    d = r * math.sqrt(2)
+    O1, O2 = (170, 250 - d / 2), (170, 250 + d / 2)
+    P, Q = (170 + d / 2, 250), (170 - d / 2, 250)
+    def pt(c, deg):
+        return polar(c, r, deg)
+    # grey: the square, and the outer quadrant of each circle (top of the upper, bottom of the lower)
+    f.shade([O1, P, O2, Q], fill='#c9ccc8')
+    a1, a2 = pt(O1, 45), pt(O1, 135)
+    f.shade_path('M%.1f %.1f L%.1f %.1f A%d %d 0 0 0 %.1f %.1f Z' % (O1[0], O1[1], a1[0], a1[1], r, r, a2[0], a2[1]), fill='#c9ccc8')
+    b1, b2 = pt(O2, 225), pt(O2, 315)
+    f.shade_path('M%.1f %.1f L%.1f %.1f A%d %d 0 0 0 %.1f %.1f Z' % (O2[0], O2[1], b1[0], b1[1], r, r, b2[0], b2[1]), fill='#c9ccc8')
+    f.circle(O1, r)
+    f.circle(O2, r)
+    f.line(pt(O1, 135), pt(O1, 315))
+    f.line(pt(O1, 45), pt(O1, 225))
+    f.line(pt(O2, 135), pt(O2, 315))
+    f.line(pt(O2, 45), pt(O2, 225))
+    for v, a, b in ((O1, P, Q), (O2, P, Q), (P, O1, O2), (Q, O1, O2)):
+        f.right(v, a, b, s=11)
+    return f
+
+
+@fig('24-6')
+def _():
+    import math
+    f = Fig(480, 250)
+    B, C = (40, 215), (440, 215)
+    BC = C[0] - B[0]
+    AB = BC * math.cos(math.radians(30))
+    A = (B[0] + AB * math.cos(math.radians(30)), B[1] - AB * math.sin(math.radians(30)))
+    D = (A[0], B[1])
+    BD = D[0] - B[0]
+    BE = BD * math.cos(math.radians(30))
+    E = (B[0] + BE * math.cos(math.radians(30)), B[1] - BE * math.sin(math.radians(30)))
+    f.poly([A, B, C])
+    f.line(A, D)
+    f.line(D, E)
+    f.right(A, B, C, s=12)
+    f.right(D, B, A, s=12)
+    f.right(E, B, D, s=12)
+    f.angle(B, C, A, r=34, text='30°', tr=56)
+    f.label(A, 'A', dy=-18)
+    f.label(B, 'B', dx=-16)
+    f.label(C, 'C', dx=16)
+    f.label(D, 'D', dy=20)
+    f.label(E, 'E', dx=-6, dy=-18)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

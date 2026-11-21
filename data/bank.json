@@ -4232,7 +4232,7 @@
       "<bdi dir=\"ltr\" class=\"m\">3:4</bdi>"
      ],
      "figure": {
-      "src": "fig/23-5.png",
+      "src": "fig/23-5.svg",
       "width": "31%",
       "wide": false
      },
@@ -4296,7 +4296,7 @@
       "אף אחת מהטענות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/23-8.png",
+      "src": "fig/23-8.svg",
       "width": "43%",
       "wide": true
      },
@@ -4336,7 +4336,7 @@
       "<bdi dir=\"ltr\" class=\"m\">40% &lt; x &lt; 50%</bdi>"
      ],
      "figure": {
-      "src": "fig/23-10.png",
+      "src": "fig/23-10.svg",
       "width": "26%",
       "wide": false
      },
@@ -4386,7 +4386,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>π</span></span> + ½</bdi>"
      ],
      "figure": {
-      "src": "fig/24-2.png",
+      "src": "fig/24-2.svg",
       "width": "24%",
       "wide": false
      },
@@ -4466,7 +4466,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>7</span><span>9</span></span></bdi> <span class=\"warn\" title=\"השברים הקטנים נקראו בקירוב\">⚠</span>"
      ],
      "figure": {
-      "src": "fig/24-6.png",
+      "src": "fig/24-6.svg",
       "width": "49%",
       "wide": false
      },

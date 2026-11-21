@@ -6177,7 +6177,7 @@
       "<bdi dir=\"ltr\" class=\"m\">64</bdi>"
      ],
      "figure": {
-      "src": "fig/33-1.png",
+      "src": "fig/33-1.svg",
       "width": "57%",
       "wide": true
      },
@@ -6255,7 +6255,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/33-5.png",
+      "src": "fig/33-5.svg",
       "width": "32%",
       "wide": false
      },
@@ -6449,7 +6449,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/34-6.png",
+      "src": "fig/34-6.svg",
       "width": "39%",
       "wide": false
      },

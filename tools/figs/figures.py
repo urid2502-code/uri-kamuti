@@ -1403,6 +1403,79 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 33
+@fig('33-1')
+def _():
+    import math
+    f = Fig(590, 440)
+    u = 52
+    B = (360, 410)
+    A = (B[0], B[1] - 5 * u)          # AB = 5
+    E = (B[0], B[1] - u)              # EB = 1, AE = 4
+    C = (B[0] - 2.5 * u, B[1])        # CB chosen so that the figure is like the book's
+    t = (E[1] - A[1]) / (C[1] - A[1])
+    D = (A[0] + (C[0] - A[0]) * t, E[1])   # D on AC, on the line through E (parallel to CB)
+    F, G = (A[0] + 4 * u, A[1]), (A[0] + 4 * u, E[1])
+    # square ADHK on AD, away from the triangle
+    vx, vy = D[0] - A[0], D[1] - A[1]
+    K, H = (A[0] - vy, A[1] + vx), (D[0] - vy, D[1] + vx)
+    f.poly([A, F, G, E])
+    f.poly([A, D, H, K])
+    f.poly([A, C, B], close=True)
+    f.line(D, E)
+    f.right(B, A, C, s=11)
+    for p_, n, dx, dy in ((A, 'A', 6, -18), (F, 'F', 14, -10), (G, 'G', 14, 12), (E, 'E', 14, 12), (B, 'B', 12, 16),
+                          (C, 'C', -14, 12), (D, 'D', -16, -8), (H, 'H', -16, 4), (K, 'K', -6, -16)):
+        f.label(p_, n, dx, dy)
+    return f
+
+
+@fig('33-5')
+def _():
+    f = Fig(380, 360)
+    c, R = (190, 180), 165
+    V = [polar(c, R, 112.5 - 45 * k) for k in range(8)]   # V0 top-left, clockwise
+    A, C = V[6], V[3]                  # lower ends of the two vertical sides
+    B = (V[1][0], A[1])
+    f.poly(V)
+    f.line(A, C)
+    f.line(V[1], V[4])
+    f.right(A, V[7], C, s=13)
+    f.right(B, V[4], A, s=13)
+    f.label(A, 'A', dx=-18)
+    f.label(C, 'C', dx=18)
+    f.label(B, 'B', dx=-14, dy=-16)
+    return f
+
+
+# ---------------------------------------------------------------- set 34
+@fig('34-1')
+def _():
+    f = Fig(440, 230)
+    P, Q = (40, 170), (400, 170)
+    T = (165, 80)
+    f.poly([P, Q, T])
+    f.angle(T, P, Q, r=24, text='α', tr=40)
+    f.text(((P[0] + Q[0]) / 2, 196), '7 ס"מ', size=19, rtl=True)
+    f.text((70, 112), 'x ס"מ', size=19, rtl=True)
+    f.text((315, 102), 'y ס"מ', size=19, rtl=True)
+    return f
+
+
+@fig('34-6')
+def _():
+    f = Fig(520, 240)
+    R = 105
+    c1, c2 = (125, 120), (395, 120)
+    f.circle(c1, R)
+    f.circle(c2, R)
+    for k in range(3):
+        f.circle((c1[0] - R + R / 3 * (2 * k + 1), c1[1]), R / 3, w=2)
+    for k in range(2):
+        f.circle((c2[0] - R + R / 2 * (2 * k + 1), c2[1]), R / 2, w=2)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

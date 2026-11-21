@@ -7412,7 +7412,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/33-1.png",
+  "figure": "fig/33-1.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -7503,7 +7503,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/33-5.png",
+  "figure": "fig/33-5.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -7538,7 +7538,7 @@
   "answer": 2,
   "status": "extracted",
   "stem": [
-   "נתון: (x^((a²−a+ab)/2 + ½))⁴ / x^((a−1)²) = x^(−b²) , x ≠ 0, 1 (⚠️ המעריך העליון קטן מאוד – נקרא בקירוב)",
+   "נתון: (x^((a²−a+ab)/2 + ¼))⁴ / x^((a−1)²) = x^(−b²) , x ≠ 0, 1",
    "a = ?"
   ],
   "options": [
@@ -7642,7 +7642,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/34-1.png",
+  "figure": "fig/34-1.svg",
   "needsReview": false,
   "source": "photo"
  },
@@ -7758,7 +7758,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/34-6.png",
+  "figure": "fig/34-6.svg",
   "needsReview": false,
   "source": "video"
  },

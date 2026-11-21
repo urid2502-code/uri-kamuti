@@ -371,7 +371,7 @@ a.c:hover{transform:scale(1.18);border-color:var(--ac)}
 @media (max-width:640px){.m{white-space:normal}}
 
 /* =====================================================================
-   Uri Q — brand layer (loaded after the exam base styles)
+   urIQ — brand layer (loaded after the exam base styles)
    Foundation: black & white. Restraint: grading keeps green/red as signals,
    one highlighter tone marks "you are here" moments.
    ===================================================================== */
@@ -921,7 +921,7 @@ body.loginpage{background:var(--bg)}
 .dest .sec{padding-top:0}
 
 /* =====================================================================
-   Uri Q v2 — "exam ink on graph paper"
+   urIQ v2 — "exam ink on graph paper"
    One loud move: ballpoint-blue (the pen of the Israeli exam hall) on a
    faint math-notebook grid. Display: Karantina (condensed poster face).
    ===================================================================== */
@@ -1141,7 +1141,7 @@ body.landing .top{transition:background var(--t2)}
 :root[data-theme="dark"] .acopt .sw{box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
 
 /* =====================================================================
-   Uri Q v3 — calm: black, greys, white, one green.
+   urIQ v3 — calm: black, greys, white, one green.
    (Overrides the v2 colour layer; layout and components unchanged.)
    ===================================================================== */
 :root{
@@ -1245,7 +1245,7 @@ body.landing .top.solid{background:rgba(10,10,10,.97)}
 @media (max-width:760px){ .stage h1.he{font-size:clamp(4rem,19vw,6rem)} }
 
 /* =====================================================================
-   Uri Q v4 — one theme everywhere: a dark frame, bright cards for reading.
+   urIQ v4 — one theme everywhere: a dark frame, bright cards for reading.
    Every accent follows the colour the user picked in "האזור שלי".
    ===================================================================== */
 /* accent families: deep (on white cards) + high (on the dark frame) */

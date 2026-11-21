@@ -1,4 +1,4 @@
-# Master cheat-sheet rules. Each rule is general math knowledge written for Uri Q (marked "generated" in the UI).
+# Master cheat-sheet rules. Each rule is general math knowledge written for urIQ (marked "generated" in the UI).
 # 'rx' is matched against the question + its solution text, so every rule is linked to the actual questions that use it.
 # Rules that match no question are dropped automatically when lessons.py regenerates.
 RULES={

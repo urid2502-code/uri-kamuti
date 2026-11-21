@@ -1,9 +1,9 @@
-"""Regenerate data/lessons.json (Uri Q "לקחים חשובים") from the question bank.
+"""Regenerate data/lessons.json (urIQ "לקחים חשובים") from the question bank.
 
     python tools/lessons/lessons.py
 
 Inputs:  data/questions.json, data/solutions/*.json  (the source content)
-Rules:   tools/lessons/rules.py  (general cheat-sheet rules, written for Uri Q, marked as generated on the site)
+Rules:   tools/lessons/rules.py  (general cheat-sheet rules, written for urIQ, marked as generated on the site)
 Topics:  tools/lessons/topics.py (keyword classifier; first matching topic wins)
 Every rule is linked to the questions it matches; a rule that matches nothing is dropped,
 so the cheat sheet always reflects the questions that actually exist.

@@ -115,7 +115,7 @@ def fix_isolates(html):
 
 
 # ---------- wrapping bare math in explanation text ----------
-MATHCH = r"A-Za-z0-9.,'()\[\]=+−\-×·/≤≥≠≈⇒⇔→:!?$%°√π∞½⅓⅔¼¾⅕⅙⅛⅑⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁺∢∠△✓|– "
+MATHCH = r"\^A-Za-z0-9.,'()\[\]=+−\-×·/≤≥≠≈⇒⇔→:!?$%°√π∞½⅓⅔¼¾⅕⅙⅛⅑⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁺∢∠△✓|– "
 RUN = re.compile('[' + MATHCH + ']+')
 CONTAINERS = [('p', 'steps'), ('p', 'pit'), ('p', 'sol-note'), ('span', 'pt'), ('span', 'pit'), ('div', 'tk')]
 VOID = {'br', 'img', 'input', 'meta', 'link', 'hr', 'source', 'wbr'}

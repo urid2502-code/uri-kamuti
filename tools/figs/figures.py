@@ -718,6 +718,104 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 17
+@fig('17-4')
+def _():
+    f = Fig(380, 380)
+    c, R = (190, 190), 160
+    A, B, C, D = (polar(c, R, a) for a in (225, 135, 45, 315))
+    E, F, G, H = (polar(c, R / 3, a) for a in (225, 135, 45, 315))
+    # grey: the circle outside ABCD, and the small square
+    d = 'M%.1f %.1f' % A
+    for p in (B, C, D, A):
+        d += ' A%d %d 0 0 1 %.1f %.1f' % (R, R, *p)
+    d += ' Z M%.1f %.1f L%.1f %.1f L%.1f %.1f L%.1f %.1f Z' % (A + D + C + B)
+    f.items.insert(0, '<path d="%s" fill="#c9ccc8" fill-rule="evenodd"/>' % d)
+    f.shade([E, F, G, H], fill='#c9ccc8')
+    f.circle(c, R)
+    f.poly([A, B, C, D])
+    f.poly([E, F, G, H])
+    f.line(A, C)
+    f.line(B, D)
+    for p, n, dx, dy in ((A, 'A', -14, 14), (B, 'B', -14, -14), (C, 'C', 14, -14), (D, 'D', 14, 14),
+                         (E, 'E', -4, 20), (F, 'F', -4, -18), (G, 'G', 4, -18), (H, 'H', 4, 20)):
+        f.label(p, n, dx, dy)
+    return f
+
+
+# ---------------------------------------------------------------- set 18
+@fig('18-2')
+def _():
+    f = Fig(380, 380)
+    c, R = (190, 190), 170
+    V = [polar(c, R, 112.5 - 45 * k) for k in range(8)]   # V0 top-left, clockwise
+    x0, x1 = V[0][0], V[1][0]          # the two vertical diagonals
+    y0, y1 = V[7][1], V[6][1]          # the two horizontal diagonals
+    # grey: the middle band; black: the four corner triangles
+    f.shade([(V[7][0], y0), (V[2][0], y0), (V[3][0], y1), (V[6][0], y1)], fill='#c9ccc8')
+    for tri in ([V[7], V[0], (x0, y0)], [V[1], V[2], (x1, y0)], [V[3], V[4], (x1, y1)], [V[5], V[6], (x0, y1)]):
+        f.shade(tri, fill='#1f2328')
+    f.poly(V)
+    f.line(V[0], (x0, y0))
+    f.line((x0, y1), V[5])
+    f.line(V[1], (x1, y0))
+    f.line((x1, y1), V[4])
+    f.line(V[7], V[2])
+    f.line(V[6], V[3])
+    return f
+
+
+@fig('18-4')
+def _():
+    f = Fig(420, 400)
+    s, dx, dy = 230, 110, -100
+    A, D = (50, 360), (50 + s, 360)
+    b = lambda p: (p[0] + dx, p[1] + dy)  # noqa: E731
+    tA, tD = (A[0], A[1] - s), (D[0], D[1] - s)
+    C, B = b(tA), b(tD)
+    f.poly([A, D, tD, tA])
+    f.poly([tA, C, B, tD], close=False)
+    f.poly([D, b(D), B], close=False)
+    f.line(A, b(A), dash=True, w=1.6)
+    f.line(b(A), b(D), dash=True, w=1.6)
+    f.line(b(A), C, dash=True, w=1.6)
+    f.arrow(A, B, at=.97, w=2.6)
+    f.arrow(B, C, at=.95, w=2.6)
+    f.arrow(C, D, at=.97, w=2.6)
+    f.arrow(D, A, at=.95, w=2.6)
+    f.label(A, 'A', dx=-16, dy=12)
+    f.label(D, 'D', dx=10, dy=20)
+    f.label(B, 'B', dx=18, dy=-8)
+    f.label(C, 'C', dx=-12, dy=-16)
+    return f
+
+
+@fig('18-6')
+def _():
+    import math
+    f = Fig(440, 260)
+    O, r = (215, 135), 82
+    # BC tangent at the bottom (F), AD tangent at E, slanted
+    F = (O[0], O[1] + r)
+    t = math.radians(-108)
+    E = (O[0] + r * math.cos(t), O[1] + r * math.sin(t))
+    ux, uy = -math.sin(t), math.cos(t)          # tangent direction at E
+    A = (E[0] - ux * 150, E[1] - uy * 150)
+    D = (E[0] + ux * 175, E[1] + uy * 175)
+    B, C = (A[0] + 30, F[1]), (D[0] + 70, F[1])
+    f.poly([A, D, C, B])
+    f.circle(O, r)
+    f.dot(E)
+    f.dot(F)
+    f.label(A, 'A', dx=-16)
+    f.label(D, 'D', dx=14, dy=-12)
+    f.label(B, 'B', dx=-12, dy=18)
+    f.label(C, 'C', dx=14, dy=16)
+    f.label(E, 'E', dx=-4, dy=-20)
+    f.label(F, 'F', dy=22)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

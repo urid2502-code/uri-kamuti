@@ -1,4 +1,4 @@
-/* Uri Q profile avatars: original flat illustrations, 80×80, one accent colour each. */
+/* urIQ profile avatars: original flat illustrations, 80×80, one accent colour each. */
 (function(){
   var S='<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">';
   var A={

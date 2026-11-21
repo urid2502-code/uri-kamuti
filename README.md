@@ -1,4 +1,4 @@
-# Uri Q — Study Smarter.
+# urIQ — Study Smarter.
 
 אתר תרגול לכמותי בפסיכומטרי: 40 מקבצים × 10 שאלות מהספר. אין שלב בנייה, הכול רץ ישירות ב־GitHub Pages.
 האתר החי: https://urid2502-code.github.io/uri-kamuti/
@@ -16,7 +16,7 @@
 
 **נתונים**
 - `data/questions.json`: 400 השאלות (`status: missing` = לא צולמה). `data/solutions/*.json`: הפתרונות, `v: false` = דורש בדיקה מול הספר.
-- `data/lessons.json`: נוצר מחדש עם `python tools/lessons/lessons.py`. השאלות והמפתח הם מהספר. הכללים, ההסברים והמוקשים נכתבו ב־Uri Q ומסומנים כך באתר.
+- `data/lessons.json`: נוצר מחדש עם `python tools/lessons/lessons.py`. השאלות והמפתח הם מהספר. הכללים, ההסברים והמוקשים נכתבו ב־urIQ ומסומנים כך באתר.
 - `AUDIT.md`: אילו שאלות עוד חסרות.
 - כיווניות: נוסחאות עטופות ב־`<bdi dir="ltr" class="m">` כדי שלא יתערבבו בעברית. אחרי שינוי בדפים מריצים `python3 tools/bidi/fix_bidi.py` ואז `node scripts/build.mjs`.
 

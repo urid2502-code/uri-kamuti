@@ -1,9 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 426 106" role="img" aria-label="Uri Q"><title>Uri Q</title><defs><mask id="hlight" maskUnits="userSpaceOnUse" x="-4" y="-4" width="150" height="110"><rect x="-4" y="-4" width="150" height="110" fill="#fff"/><path d="M89 36 C88 62 74 86 52 104" stroke="#000" stroke-width="7" fill="none"/></mask></defs>
-<g fill="#000" mask="url(#hlight)"><path d="M0 0H22V58A20 20 0 0 0 62 58V0H84V58A42 42 0 0 1 0 58Z"/><path d="M62 0H90A50 50 0 0 1 90 100H62ZM84 22V78H90A28 28 0 0 0 90 22Z" fill-rule="evenodd"/></g><rect x="176" y="-2" width="2.4" height="104" fill="#000"/><g transform="translate(214 17) scale(.68)"><g fill="none" stroke="#000" stroke-width="17" stroke-linecap="butt">
-<path d="M8.5 8V62A33 33 0 0 0 74.5 62V8"/>
-<path d="M106 36V100M106 64A28 28 0 0 1 134 36"/>
-<path d="M156 36V100"/>
-<circle cx="238" cy="54" r="45.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 384 106" role="img" aria-label="urIQ"><title>urIQ</title><g transform="translate(0 14) scale(.86)"><g fill="none" stroke="#000" stroke-width="17"><path d="M8.5 0V65.5A26 26 0 0 0 60.5 65.5V0"/><path d="M84 8.5H104A41.5 41.5 0 0 1 104 91.5H84Z"/></g><g class="ud-crown"><rect x="93" y="-14" width="22" height="9" rx="2.5" fill="#000"/><path d="M104 -5V1" stroke="#000" stroke-width="7"/></g><g class="ud-hand"><g><path d="M104 50L120 68" stroke="#000" stroke-width="11" stroke-linecap="round"/></g></g><circle cx="104" cy="50" r="7" fill="#000"/></g><rect x="176" y="-2" width="2.4" height="104" fill="#000"/><g transform="translate(214 17) scale(.68)"><g fill="none" stroke="#000" stroke-width="17" stroke-linecap="butt">
+<path d="M8.5 36V68A26 26 0 0 0 60.5 68M60.5 36V100"/>
+<path d="M92 36V100M92 64A28 28 0 0 1 120 36"/>
+<path d="M142 22V100"/>
+<circle cx="197.5" cy="61" r="30.5"/>
+<path d="M197.5 16V24" stroke-width="7"/>
 </g>
-<circle cx="156" cy="14" r="10.5" fill="#000"/>
-<path d="M240 66H266L302 102H276Z" fill="#000"/></g></svg>
+<g fill="#3DDC97" stroke="#3DDC97"><rect x="188" y="8" width="19" height="9" rx="2.5" stroke="none"/><path d="M197.5 61L227 91" stroke-width="15" stroke-linecap="round"/><circle cx="197.5" cy="61" r="7.5" stroke="none"/></g></g></svg>

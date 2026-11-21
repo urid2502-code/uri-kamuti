@@ -1,4 +1,4 @@
--- Uri Q: one progress document per signed-in user.
+-- urIQ: one progress document per signed-in user.
 -- Row-level security guarantees a user can only read and write their own row.
 create table if not exists public.progress (
   user_id    uuid primary key references auth.users(id) on delete cascade,

@@ -1,4 +1,4 @@
-/* Uri Q accounts: Google sign-in through Supabase Auth, progress synced to a row-level-secured table.
+/* urIQ accounts: Google sign-in through Supabase Auth, progress synced to a row-level-secured table.
    The Supabase client (vendored, ~57 KB gzipped) is only downloaded on the login page or for signed-in users. */
 (function(){
   'use strict';
@@ -135,7 +135,7 @@
     }
     if(gbtn) gbtn.addEventListener('click',function(){ google(''); });
     if(who) who.addEventListener('click',function(e){
-      var x=e.target.closest('[data-forget]'); if(x){ forget(x.dataset.forget); var row=x.closest('.acc-row'); row.classList.add('gone'); setTimeout(function(){ row.remove(); if(!accounts().length){ who.hidden=true; who.innerHTML=''; head('כניסה ל־Uri Q','עם חשבון, ההתקדמות, הציונים והטעויות שלך נשמרים ומסונכרנים בין המחשב לטלפון. רק את/ה רואה אותם.'); if(gbtn){ gbtn.classList.remove('alt'); busy(false); } } },260); return; }
+      var x=e.target.closest('[data-forget]'); if(x){ forget(x.dataset.forget); var row=x.closest('.acc-row'); row.classList.add('gone'); setTimeout(function(){ row.remove(); if(!accounts().length){ who.hidden=true; who.innerHTML=''; head('כניסה ל־urIQ','עם חשבון, ההתקדמות, הציונים והטעויות שלך נשמרים ומסונכרנים בין המחשב לטלפון. רק את/ה רואה אותם.'); if(gbtn){ gbtn.classList.remove('alt'); busy(false); } } },260); return; }
       var c=e.target.closest('[data-hint]'); if(c){ google(c.dataset.hint,c); return; }
       if(e.target.closest('#other-acct')){ var b=e.target.closest('#other-acct'); b.disabled=true; var flush=pushT?push():Promise.resolve(); clearTimeout(pushT); pushT=null;
         flush.catch(function(){}).then(function(){ return sb.auth.signOut(); }).then(function(){ set(BASE+':'+uid,null); set(UIDK,null); set(PROF,null); google(''); }); }

@@ -371,7 +371,7 @@ a.c:hover{transform:scale(1.18);border-color:var(--ac)}
 @media (max-width:640px){.m{white-space:normal}}
 
 /* =====================================================================
-   Uri Q — brand layer (loaded after the exam base styles)
+   urIQ — brand layer (loaded after the exam base styles)
    Foundation: black & white. Restraint: grading keeps green/red as signals,
    one highlighter tone marks "you are here" moments.
    ===================================================================== */
@@ -413,9 +413,10 @@ body{font-family:var(--ui);font-feature-settings:"tnum" 0;-webkit-font-smoothing
 :root[data-theme="dark"] .opt[aria-pressed="true"] .bub,:root[data-theme="dark"] .tbtn{color:#000}
 
 /* ---------- brand mark ---------- */
-.mark{display:block;width:auto;height:22px;flex:none}
+.mark{display:block;width:auto;height:25px;flex:none}
 .brand{align-items:center;gap:10px;font-weight:700}
 .brand .wm{height:15px;width:auto;display:block}
+.wm .wq{fill:var(--green,#3DDC97);stroke:var(--green,#3DDC97)}
 .brand span{display:none}
 
 /* ---------- top bar ---------- */
@@ -643,7 +644,7 @@ body.landing :focus-visible{outline-color:#fff}
 .sitefoot{border-top:1px solid var(--line);background:var(--paper);color:var(--mute)}
 .sitefoot .in{max-width:1240px;margin:0 auto;padding:36px 28px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center}
 .sitefoot .fb{display:flex;align-items:center;gap:12px;color:var(--ink)}
-.sitefoot .fb .mark{height:20px}
+.sitefoot .fb .mark{height:23px}
 .sitefoot .fb em{font-style:normal;color:var(--mute);font-size:.92rem;direction:ltr}
 .sitefoot nav{display:flex;gap:18px;flex-wrap:wrap}
 .sitefoot nav a{color:var(--mute);text-decoration:none;font-size:.92rem}
@@ -921,7 +922,7 @@ body.loginpage{background:var(--bg)}
 .dest .sec{padding-top:0}
 
 /* =====================================================================
-   Uri Q v2 — "exam ink on graph paper"
+   urIQ v2 — "exam ink on graph paper"
    One loud move: ballpoint-blue (the pen of the Israeli exam hall) on a
    faint math-notebook grid. Display: Karantina (condensed poster face).
    ===================================================================== */
@@ -1141,7 +1142,7 @@ body.landing .top{transition:background var(--t2)}
 :root[data-theme="dark"] .acopt .sw{box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
 
 /* =====================================================================
-   Uri Q v3 — calm: black, greys, white, one green.
+   urIQ v3 — calm: black, greys, white, one green.
    (Overrides the v2 colour layer; layout and components unchanged.)
    ===================================================================== */
 :root{
@@ -1245,7 +1246,7 @@ body.landing .top.solid{background:rgba(10,10,10,.97)}
 @media (max-width:760px){ .stage h1.he{font-size:clamp(4rem,19vw,6rem)} }
 
 /* =====================================================================
-   Uri Q v4 — one theme everywhere: a dark frame, bright cards for reading.
+   urIQ v4 — one theme everywhere: a dark frame, bright cards for reading.
    Every accent follows the colour the user picked in "האזור שלי".
    ===================================================================== */
 /* accent families: deep (on white cards) + high (on the dark frame) */
@@ -1551,3 +1552,17 @@ html.anon body.setpage .cards>.q{filter:blur(6px);opacity:.75}
 .gate-strip .cta{flex:none;background:var(--hi);border-color:var(--hi);color:var(--on-hi);min-height:44px}
 @media (max-width:600px){.gate{padding:24px 18px 22px}.gate-strip{flex-wrap:wrap}.gate-strip .cta{width:100%;justify-content:center}}
 html.anon body.home-page .tally{display:none}
+
+/* UD mark: the D is a stopwatch. The hand turns around the dial's centre. */
+.ud-hand,.ud-hand>g,.ud-crown{transform-box:view-box}
+.ud-hand,.ud-hand>g{transform-origin:104px 50px}
+.ud-crown{transform-origin:104px 1px}
+.brand:hover .mark .ud-hand>g{animation:udSweep .9s cubic-bezier(.3,.7,.2,1)}
+.brand:hover .mark .ud-crown{animation:udPress .3s ease-out}
+.auth-art .mono-big .ud-crown{animation:udPress .35s .45s ease-out both}
+.auth-art .mono-big .ud-hand>g{animation:udSweep 1.5s .55s cubic-bezier(.3,.7,.2,1) both}
+.auth-art .mono-big .ud-hand{animation:udTick 60s 2.1s steps(60) infinite}
+@keyframes udSweep{from{transform:rotate(-360deg)}to{transform:rotate(0)}}
+@keyframes udTick{to{transform:rotate(360deg)}}
+@keyframes udPress{0%,100%{transform:none}45%{transform:translateY(5px) scaleY(.75)}}
+@media (prefers-reduced-motion:reduce){.ud-hand,.ud-hand>g,.ud-crown{animation:none!important}}

@@ -920,6 +920,69 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 21
+@fig('21-2')
+def _():
+    f = Fig(360, 360)
+    O, R = (180, 180), 140
+    a = 72
+    P1, P2 = polar(O, R, a / 2), polar(O, R, -a / 2)            # right bold arc
+    Q1, Q2 = polar(O, R, 180 - a / 2), polar(O, R, 180 + a / 2)  # left bold arc
+    f.circle(O, R, w=1.8)
+    f.line(P1, Q2, w=1.8)
+    f.line(P2, Q1, w=1.8)
+    f.path('M%.1f %.1f A%d %d 0 0 1 %.1f %.1f' % (P1[0], P1[1], R, R, P2[0], P2[1]), w=6)
+    f.path('M%.1f %.1f A%d %d 0 0 0 %.1f %.1f' % (Q1[0], Q1[1], R, R, Q2[0], Q2[1]), w=6)
+    f.dot(O, 4.5)
+    f.angle(O, P1, P2, r=30, text='α', tr=46)
+    f.label(O, 'O', dx=-4, dy=-22)
+    return f
+
+
+# ---------------------------------------------------------------- set 22
+@fig('22-2')
+def _():
+    f = Fig(360, 340)
+    c = (180, 170)
+    r = 120
+    R = r * 2 / 3 ** 0.5
+    V = [polar(c, R, 30 + 60 * k) for k in range(6)]
+    f.poly(V)
+    f.circle(c, r)
+    f.dot(c, 4.5)
+    f.line(c, (c[0] + r, c[1]), w=1.8)
+    f.text((c[0] + r / 2, c[1] - 14), 'r', size=19, italic=True)
+    f.label(c, 'O', dx=-4, dy=-20)
+    return f
+
+
+@fig('22-10')
+def _():
+    f = Fig(520, 330)
+    B, R = (160, 170), 140
+    A, r = (420, 170), 70
+    beta, alpha = 50, 150
+    b1, b2 = polar(B, R, 90 + beta / 2), polar(B, R, 90 - beta / 2)
+    a1, a2 = polar(A, r, 90 + alpha / 2), polar(A, r, 90 - alpha / 2)
+    f.shade_path('M%.1f %.1f L%.1f %.1f A%d %d 0 0 1 %.1f %.1f Z' % (B[0], B[1], b1[0], b1[1], R, R, b2[0], b2[1]))
+    f.shade_path('M%.1f %.1f L%.1f %.1f A%d %d 0 0 1 %.1f %.1f Z' % (A[0], A[1], a1[0], a1[1], r, r, a2[0], a2[1]))
+    f.circle(B, R)
+    f.circle(A, r)
+    f.line(B, b1)
+    f.line(B, b2)
+    f.line(A, a1)
+    f.line(A, a2)
+    f.angle(B, b1, b2, r=26, text='β', tr=42)
+    f.angle(A, a1, a2, r=20, text='α', tr=34)
+    f.seglabel(B, b2, 'R', off=16)
+    f.seglabel(A, a2, 'r', off=14)
+    f.dot(B, 4.5)
+    f.dot(A, 4.5)
+    f.label(B, 'B', dy=22)
+    f.label(A, 'A', dy=22)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

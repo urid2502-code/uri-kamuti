@@ -3847,7 +3847,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/21-2.png",
+      "src": "fig/21-2.svg",
       "width": "25%",
       "wide": false
      },
@@ -4010,7 +4010,7 @@
       "<bdi dir=\"ltr\" class=\"m\">6r</bdi>"
      ],
      "figure": {
-      "src": "fig/22-2.png",
+      "src": "fig/22-2.svg",
       "width": "29%",
       "wide": false
      },
@@ -4130,7 +4130,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/22-10.png",
+      "src": "fig/22-10.svg",
       "width": "55%",
       "wide": true
      },

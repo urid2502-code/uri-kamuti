@@ -390,6 +390,73 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 9
+@fig('9-3')
+def _():
+    f = Fig(400, 330)
+    c, R = (200, 165), 150
+    V = [polar(c, R, a) for a in (180, 120, 60, 0, 300, 240)]   # A=V[0] left, B=V[3] right
+    f.poly(V)
+    for k in range(3):
+        f.line(V[k], V[k + 3])
+    f.dot(c, 4.5)
+    f.label(V[0], 'A', dx=-20)
+    f.label(V[3], 'B', dx=20)
+    return f
+
+
+@fig('9-10')
+def _():
+    f = Fig(520, 240)
+    R = 105
+    c1, c2 = (125, 120), (395, 120)
+    f.circle(c1, R)
+    f.circle(c2, R)
+    for k in range(3):
+        f.circle((c1[0] - R + R / 3 * (2 * k + 1), c1[1]), R / 3, w=2)
+    for k in range(2):
+        f.circle((c2[0] - R + R / 2 * (2 * k + 1), c2[1]), R / 2, w=2)
+    return f
+
+
+# ---------------------------------------------------------------- set 10
+@fig('10-2')
+def _():
+    f = Fig(440, 250)
+    B, C = (40, 205), (320, 205)
+    A, D = (110, 45), (390, 45)
+    E = lerp(B, C, 0.4)
+    f.poly([A, B, C, D])
+    f.line(A, E)
+    f.label(A, 'A', dx=-12, dy=-16)
+    f.label(D, 'D', dx=14, dy=-12)
+    f.label(B, 'B', dx=-12, dy=18)
+    f.label(E, 'E', dy=22)
+    f.label(C, 'C', dx=8, dy=20)
+    return f
+
+
+@fig('10-8')
+def _():
+    f = Fig(420, 420)
+    c = (210, 210)
+    names = {90: 'צפון', 270: 'דרום', 0: 'מזרח', 180: 'מערב',
+             45: 'צפון־מזרח', 135: 'צפון־מערב', 225: 'דרום־מערב', 315: 'דרום־מזרח'}
+    for a, n in names.items():
+        L = 120 if a % 90 == 0 else 105
+        tip = polar(c, L, a)
+        f.line(c, tip, w=2.2)
+        import math
+        ux, uy = math.cos(math.radians(a)), -math.sin(math.radians(a))
+        s = 12
+        f.poly([tip, (tip[0] - ux * s - uy * s * .45, tip[1] - uy * s + ux * s * .45),
+                (tip[0] - ux * s + uy * s * .45, tip[1] - uy * s - ux * s * .45)], fill='#1f2328', w=1)
+        lp = polar(c, L + (30 if a % 90 == 0 else 48), a)
+        f.text(lp, n, size=17, rtl=True)
+    f.dot(c, 5)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

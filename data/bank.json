@@ -839,7 +839,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/5-1.png",
+      "src": "fig/5-1.svg",
       "width": "35%",
       "wide": false
      },
@@ -897,7 +897,7 @@
       "<bdi dir=\"ltr\" class=\"m\">24</bdi> דקות"
      ],
      "figure": {
-      "src": "fig/5-4.png",
+      "src": "fig/5-4.svg",
       "width": "50%",
       "wide": true
      },
@@ -955,7 +955,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>4</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/5-7.png",
+      "src": "fig/5-7.svg",
       "width": "44%",
       "wide": false
      },

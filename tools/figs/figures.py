@@ -204,6 +204,94 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 5
+@fig('5-1')
+def _():
+    f = Fig(400, 400)
+    O, R = (200, 200), 170
+    A, B, D, C = (polar(O, R, a) for a in (110, 18, 186, 266))
+    f.circle(O, R)
+    f.line(A, C)
+    f.line(B, D)
+    f.line(A, B)
+    f.line(D, C)
+    # E = intersection of AC and BD
+    (x1, y1), (x2, y2), (x3, y3), (x4, y4) = A, C, B, D
+    den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
+    t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den
+    E = (x1 + t * (x2 - x1), y1 + t * (y2 - y1))
+    f.label(A, 'A', dx=-12, dy=-16)
+    f.label(B, 'B', dx=18, dy=-6)
+    f.label(D, 'D', dx=-18)
+    f.label(C, 'C', dy=20)
+    f.label(E, 'E', dx=14, dy=18)
+    return f
+
+
+@fig('5-4')
+def _():
+    f = Fig(520, 150)
+    A, B, C = (30, 100), (180, 100), (490, 100)
+    f.line(A, C)
+    for p in (A, B, C):
+        f.line((p[0], p[1] - 7), (p[0], p[1] + 7), w=2.2)
+    f.brace((A[0], 78), (B[0] - 3, 78))
+    f.brace((B[0] + 3, 78), (C[0], 78))
+    f.text(((A[0] + B[0]) / 2, 38), 'x ק"מ', size=20, rtl=True)
+    f.text(((B[0] + C[0]) / 2, 38), '2x ק"מ', size=20, rtl=True)
+    f.label(A, 'A', dy=26)
+    f.label(B, 'B', dy=26)
+    f.label(C, 'C', dy=26)
+    return f
+
+
+@fig('5-7')
+def _():
+    f = Fig(480, 270)
+    D, A = (40, 50), (340, 50)
+    C, B = (40, 223), (340, 223)
+    E, F = (240, 223), (440, 223)
+    f.poly([D, A, B, C])
+    f.line(B, F)
+    f.line(A, E)
+    f.line(A, F)
+    f.right(B, A, F, s=12)
+    f.label(D, 'D', dx=-16, dy=-10)
+    f.label(A, 'A', dx=14, dy=-12)
+    f.label(C, 'C', dx=-14, dy=18)
+    f.label(E, 'E', dy=22)
+    f.label(B, 'B', dy=22)
+    f.label(F, 'F', dx=8, dy=20)
+    return f
+
+
+# ---------------------------------------------------------------- set 6
+@fig('6-4')
+def _():
+    f = Fig(480, 360)
+    r = 125
+    O1, O2 = (178, 180), (178 + r, 180)
+    h = r * 3 ** 0.5 / 2
+    A = ((O1[0] + O2[0]) / 2, 180 + h)
+    D = (A[0], 180 - h)
+    B = (2 * O1[0] - A[0], 2 * O1[1] - A[1])
+    C = (2 * O2[0] - A[0], 2 * O2[1] - A[1])
+    f.circle(O1, r)
+    f.circle(O2, r)
+    f.line(A, B)
+    f.line(A, C)
+    f.dot(O1, 4.5)
+    f.dot(O2, 4.5)
+    f.angle(A, B, C, r=30, text='60°', tr=62)
+    f.text((O1[0] - 22, O1[1] + 8), 'O₁', size=19)
+    f.text((O2[0] + 24, O2[1] + 8), 'O₂', size=19)
+    f.label(A, 'A', dy=22)
+    f.label(D, 'D', dy=-18)
+    f.label(B, 'B', dx=-14, dy=-14)
+    f.label(C, 'C', dx=14, dy=-14)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

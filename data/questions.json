@@ -938,7 +938,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/5-1.png",
+  "figure": "fig/5-1.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -1007,7 +1007,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/5-4.png",
+  "figure": "fig/5-4.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -1077,7 +1077,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/5-7.png",
+  "figure": "fig/5-7.svg",
   "needsReview": true,
   "source": "video"
  },
@@ -1237,7 +1237,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/6-4.png",
+  "figure": "fig/6-4.svg",
   "needsReview": false,
   "source": "photo"
  },
@@ -1271,7 +1271,7 @@
   "answer": 2,
   "status": "extracted",
   "stem": [
-   "נתונה המשוואה x² + 1 = y (⚠️ המעריך קטן בתמונה).",
+   "נתונה המשוואה x^(−1) + 1 = y.",
    "ידוע כי אין ערך של x המקיים את המשוואה. מה מהבאים יכול להיות ערכו של y?"
   ],
   "options": [
@@ -1281,9 +1281,11 @@
    "אף אחת מהתשובות אינה נכונה"
   ],
   "code": [],
-  "notes": [],
+  "notes": [
+   "המעריך קטן בתמונה; −1 היא הקריאה היחידה שמתאימה למפתח הספר."
+  ],
   "figure": null,
-  "needsReview": true,
+  "needsReview": false,
   "source": "photo"
  },
  {

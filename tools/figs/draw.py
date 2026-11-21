@@ -56,8 +56,10 @@ class Fig:
     def shade_path(self, d, fill='#d9dcd8'):
         self.items.insert(0, '<path d="%s" fill="%s"/>' % (d, fill))
 
-    def text(self, p, s, size=20, anchor='middle', italic=False, weight=500):
+    def text(self, p, s, size=20, anchor='middle', italic=False, weight=500, rtl=False):
         st = ' font-style="italic"' if italic else ''
+        if rtl:
+            st += ' direction="rtl" unicode-bidi="embed"'
         s = s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
         self.items.append('<text x="%.1f" y="%.1f" font-size="%s" text-anchor="%s" dominant-baseline="central" font-weight="%s"%s fill="%s">%s</text>'
                           % (p[0], p[1], size, anchor, weight, st, INK, s))
@@ -108,6 +110,16 @@ class Fig:
         u = unit(p, q)
         nrm = (-u[1] * side, u[0] * side)
         self.text((m[0] + nrm[0] * off, m[1] + nrm[1] * off), s, size=size, italic=s.isalpha() and len(s) == 1)
+
+    def brace(self, p, q, depth=14, w=2):
+        """Curly brace over the horizontal span p..q (opening downward, tip up)."""
+        x1, x2, y = p[0], q[0], p[1]
+        m = (x1 + x2) / 2
+        d = ('M%.1f %.1f Q%.1f %.1f %.1f %.1f L%.1f %.1f Q%.1f %.1f %.1f %.1f '
+             'Q%.1f %.1f %.1f %.1f L%.1f %.1f Q%.1f %.1f %.1f %.1f') % (
+            x1, y, x1, y - depth / 2, x1 + depth / 2, y - depth / 2, m - depth / 2, y - depth / 2, m, y - depth / 2, m, y - depth,
+            m, y - depth / 2, m + depth / 2, y - depth / 2, x2 - depth / 2, y - depth / 2, x2, y - depth / 2, x2, y)
+        self.path(d, w=w)
 
     def svg(self):
         return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" font-family="%s">'

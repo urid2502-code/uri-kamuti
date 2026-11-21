@@ -6,6 +6,8 @@ Source: data/explain/NN.json, one file per set:
 Each "steps" line is one numbered step. A line that starts with "> " continues the
 step above it on its own line (a calculation or a reason), without a number.
 "pit" (optional) replaces the common-traps text.
+"note" (optional) sets the note under the solution ("" removes it).
+"resolved": true marks a question whose data was fixed as matching the key.
 
 Light math markup inside a line:
     [a/b]      fraction a over b (a and b may hold more markup)
@@ -122,6 +124,26 @@ def replace_in(page, anchor, cls, body):
     return page[:start] + seg + page[end:], True
 
 
+OK_FLAG = '<p class="flag ok"><span>נבדק</span>הפתרון תואם את מפתח התשובות של הספר.</p>'
+
+
+def set_note(page, anchor, note, resolved):
+    start = page.find('id="%s"' % anchor)
+    if start < 0:
+        return page
+    end = page.find('</article>', start)
+    seg = page[start:end]
+    if resolved:
+        seg = re.sub(r'<p class="flag rv">.*?</p>', OK_FLAG, seg, flags=re.S)
+        seg = seg.replace(' data-review="1"', '', 1)
+    if note is not None:
+        seg = re.sub(r'<p class="sol-note">.*?</p>', '', seg, flags=re.S)
+        if note:
+            html_note = '<p class="sol-note">%s</p>' % ''.join(render_line(x) + ' ' for x in note).strip()
+            seg = re.sub(r'(<p class="flag [a-z]+">.*?</p>)', lambda m: m.group(1) + html_note, seg, count=1, flags=re.S)
+    return page[:start] + seg + page[end:]
+
+
 def main():
     data = {}
     for f in sorted(glob.glob(os.path.join(REPO, 'data', 'explain', '*.json'))):
@@ -140,6 +162,10 @@ def main():
             pit = render_steps(e['pit'])
             page, _ = replace_in(page, 'q' + qid, 'pit', pit)
             sol, _ = replace_in(sol, 'sol' + qid, 'pit', pit)
+        if 'note' in e or e.get('resolved'):
+            note = e.get('note')
+            page = set_note(page, 'q' + qid, note, e.get('resolved'))
+            sol = set_note(sol, 'sol' + qid, note, e.get('resolved'))
         if not (ok1 and ok2):
             print('missing', qid, ok1, ok2)
         pages[path] = page

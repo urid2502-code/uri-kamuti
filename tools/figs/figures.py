@@ -691,6 +691,33 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 15
+@fig('15-7')
+def _():
+    import math
+    f = Fig(400, 470)
+    r = 88
+    B = (200, 150)
+    D = (200, 150 + 2 * r)
+    half = 2 * r / math.sqrt(3)
+    A, C = (B[0] - half, B[1]), (B[0] + half, B[1])
+    f.shade([A, C, D])
+    f.circle(B, r, fill='#fff')
+    f.circle(D, r, fill='#fff')
+    f.poly([A, C, D])
+    f.line(B, D)
+    E, F = (B[0] - r, B[1]), (B[0] + r, B[1])
+    for p in (E, F, B, D):
+        f.dot(p)
+    f.label(A, 'A', dx=-16)
+    f.label(C, 'C', dx=16)
+    f.label(E, 'E', dx=-8, dy=-18)
+    f.label(F, 'F', dx=8, dy=-18)
+    f.label(B, 'B', dy=-18)
+    f.label(D, 'D', dy=22)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

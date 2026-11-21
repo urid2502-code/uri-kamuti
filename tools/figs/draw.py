@@ -30,6 +30,20 @@ class Fig:
         d = ' stroke-dasharray="7 6"' if dash else ''
         self.items.append('<circle cx="%.1f" cy="%.1f" r="%.1f" fill="%s" stroke="%s" stroke-width="%s"%s/>' % (c[0], c[1], r, fill, INK, w, d))
 
+    def ellipse(self, c, u, v, w=2.4, dash=False):
+        """Ellipse c + u·cos t + v·sin t: a circle seen in a slanted face (u, v = half-edges)."""
+        d = ' stroke-dasharray="7 6"' if dash else ''
+        self.items.append('<circle r="1" fill="none" stroke="%s" stroke-width="%s" vector-effect="non-scaling-stroke"%s '
+                          'transform="matrix(%.3f %.3f %.3f %.3f %.1f %.1f)"/>' % (INK, w, d, u[0], u[1], v[0], v[1], c[0], c[1]))
+
+    def arrow2(self, p, q, w=1.8, s=9):
+        """Double-headed dimension arrow from p to q."""
+        self.line(p, q, w=w)
+        for a, b in ((p, q), (q, p)):
+            ux, uy = unit(a, b)
+            self.poly([a, (a[0] + ux * s - uy * s * .5, a[1] + uy * s + ux * s * .5),
+                       (a[0] + ux * s + uy * s * .5, a[1] + uy * s - ux * s * .5)], fill=INK, w=1)
+
     def dot(self, p, r=3.6):
         self.items.append('<circle cx="%.1f" cy="%.1f" r="%s" fill="%s"/>' % (p[0], p[1], r, INK))
 

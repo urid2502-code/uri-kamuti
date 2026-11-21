@@ -481,7 +481,7 @@
       "<bdi dir=\"ltr\" class=\"m\">1 − <span class=\"fr\"><span>π</span><span>4</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/3-4.png",
+      "src": "fig/3-4.svg",
       "width": "33%",
       "wide": false
      },
@@ -559,7 +559,7 @@
       "<bdi dir=\"ltr\" class=\"m\">25:36</bdi>"
      ],
      "figure": {
-      "src": "fig/3-8.png",
+      "src": "fig/3-8.svg",
       "width": "28%",
       "wide": false
      },
@@ -685,7 +685,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>2</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/4-4.png",
+      "src": "fig/4-4.svg",
       "width": "30%",
       "wide": false
      },
@@ -765,7 +765,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/4-8.png",
+      "src": "fig/4-8.svg",
       "width": "34%",
       "wide": false
      },

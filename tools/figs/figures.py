@@ -112,6 +112,98 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 3
+@fig('3-4')
+def _():
+    import math
+    f = Fig(450, 400)
+    s, dx, dy = 250, 110, -105          # cube edge (front face) and depth offset
+    F0 = (30, 380)                       # front bottom-left
+    fbl, fbr = F0, (F0[0] + s, F0[1])
+    ftl, ftr = (F0[0], F0[1] - s), (F0[0] + s, F0[1] - s)
+    b = lambda p: (p[0] + dx, p[1] + dy)  # noqa: E731
+    # visible edges
+    f.poly([fbl, fbr, ftr, ftl])
+    f.poly([ftl, b(ftl), b(ftr), ftr], close=False)
+    f.poly([fbr, b(fbr), b(ftr)], close=False)
+    # hidden edges
+    f.line(fbl, b(fbl), dash=True, w=1.6)
+    f.line(b(fbl), b(fbr), dash=True, w=1.6)
+    f.line(b(fbl), b(ftl), dash=True, w=1.6)
+    # the cylinder: its bases fill the top and bottom faces
+    u, v = (s / 2, 0), (dx / 2, dy / 2)
+    ct = (ftl[0] + s / 2 + dx / 2, ftl[1] + dy / 2)
+    cb = (fbl[0] + s / 2 + dx / 2, fbl[1] + dy / 2)
+    f.ellipse(ct, u, v, w=2.2)
+    f.ellipse(cb, u, v, w=2.2, dash=True)
+    t = math.atan2(v[0], u[0])
+    for k in (0, math.pi):
+        ex = (u[0] * math.cos(t + k) + v[0] * math.sin(t + k), u[1] * math.cos(t + k) + v[1] * math.sin(t + k))
+        f.line((ct[0] + ex[0], ct[1] + ex[1]), (cb[0] + ex[0], cb[1] + ex[1]), w=2.2)
+    # edge length a
+    x = b(fbr)[0] + 22
+    f.arrow2((x, b(ftr)[1]), (x, b(fbr)[1]))
+    f.text((x + 14, (b(ftr)[1] + b(fbr)[1]) / 2), 'a', size=21, italic=True)
+    return f
+
+
+@fig('3-8')
+def _():
+    f = Fig(400, 420)
+    R = 180
+    O = (200, 205)
+    A = (O[0], O[1] + R)
+    B = (O[0], O[1] - R * 2 / 3)
+    c = (O[0], (A[1] + B[1]) / 2)
+    f.circle(O, R)
+    f.circle(c, (A[1] - B[1]) / 2)
+    f.line(A, B, w=2)
+    f.dot(O, 4.5)
+    f.dot(A)
+    f.dot(B)
+    f.label(O, 'O', dx=20)
+    f.label(A, 'A', dy=22)
+    f.label(B, 'B', dy=-18)
+    return f
+
+
+# ---------------------------------------------------------------- set 4
+@fig('4-4')
+def _():
+    f = Fig(400, 400)
+    c, R = (200, 200), 165
+    names = 'ABCDEFGH'
+    V = [polar(c, R, 112.5 - 45 * k) for k in range(8)]   # A top-left, clockwise
+    A, B, C, D, E = V[:5]
+    f.shade([A, B, C, D], fill='#c9ccc8')
+    f.shade([A, D, E], fill='#1f2328')
+    f.poly(V)
+    f.line(A, D)
+    f.line(A, E)
+    off = {'A': (-8, -18), 'B': (8, -18), 'C': (20, -6), 'D': (20, 8), 'E': (10, 20), 'F': (-10, 20), 'G': (-20, 8), 'H': (-20, -6)}
+    for n, p in zip(names, V):
+        f.label(p, n, *off[n])
+    return f
+
+
+@fig('4-8')
+def _():
+    f = Fig(440, 400)
+    c, R = (220, 195), 170
+    E, F, A, B, C, D = (polar(c, R, a) for a in (0, 60, 120, 180, 240, 300))
+    G = lerp(C, D, 0.5)
+    H = lerp(D, E, 0.68)
+    f.poly([A, F, E, D, C, B])
+    f.line(G, H)
+    f.dot(G)
+    f.dot(H)
+    f.angle(G, D, H, r=30, text='α', tr=44)
+    f.angle(H, G, D, r=30, text='β', tr=44)
+    for p, n, dx, dy in ((A, 'A', -10, -18), (F, 'F', 10, -18), (E, 'E', 22, 0), (D, 'D', 10, 20), (C, 'C', -10, 20), (B, 'B', -22, 0), (G, 'G', 0, 22), (H, 'H', 20, 4)):
+        f.label(p, n, dx, dy)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

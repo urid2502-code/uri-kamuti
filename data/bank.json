@@ -5014,7 +5014,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"sq\">√<span>2</span></span>·(1 + <span class=\"sq\">√<span>2</span></span>)</bdi>"
      ],
      "figure": {
-      "src": "fig/27-3.png",
+      "src": "fig/27-3.svg",
       "width": "32%",
       "wide": false
      },
@@ -5074,7 +5074,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/27-6.png",
+      "src": "fig/27-6.svg",
       "width": "50%",
       "wide": false
      },
@@ -5256,7 +5256,7 @@
       "<bdi dir=\"ltr\" class=\"m\">8</bdi>"
      ],
      "figure": {
-      "src": "fig/28-5.png",
+      "src": "fig/28-5.svg",
       "width": "35%",
       "wide": false
      },
@@ -5314,7 +5314,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/28-8.png",
+      "src": "fig/28-8.svg",
       "width": "43%",
       "wide": false
      },

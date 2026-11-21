@@ -1173,6 +1173,90 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 27
+@fig('27-3')
+def _():
+    import math
+    f = Fig(340, 420)
+    O, R = (150, 210), 170
+    r = R / math.sqrt(2)
+    A, B = (O[0], O[1] - R), (O[0], O[1] + R)
+    C, D = (O[0], O[1] - r), (O[0], O[1] + r)
+    # hatched big half circle to the right of AB
+    f.items.append('<defs><pattern id="h273" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">'
+                   '<line x1="0" y1="0" x2="0" y2="9" stroke="#1f2328" stroke-width="1.6"/></pattern></defs>')
+    f.items.append('<path d="M%.1f %.1f A%d %d 0 0 1 %.1f %.1f Z" fill="url(#h273)" stroke="#1f2328" stroke-width="2.4"/>' % (A[0], A[1], R, R, B[0], B[1]))
+    f.path('M%.1f %.1f A%.1f %.1f 0 0 0 %.1f %.1f' % (C[0], C[1], r, r, D[0], D[1]))
+    f.line(A, B, w=2)
+    f.line(A, C, w=6)
+    f.line(D, B, w=6)
+    f.dot(O)
+    f.text((O[0] + 16, O[1] - R / 2), '1', size=19)
+    f.label(A, 'A', dy=-16)
+    f.label(B, 'B', dy=18)
+    f.label(C, 'C', dx=-16, dy=-6)
+    f.label(D, 'D', dx=-16, dy=6)
+    f.label(O, 'O', dx=-14, dy=0)
+    return f
+
+
+@fig('27-6')
+def _():
+    f = Fig(420, 330)
+    o = (40, 285)
+    f.line((15, o[1]), (400, o[1]), w=1.8)
+    f.line((o[0], 315), (o[0], 20), w=1.8)
+    f.poly([(400, o[1]), (390, o[1] - 5), (390, o[1] + 5)], fill='#1f2328', w=1)
+    f.poly([(o[0], 20), (o[0] - 5, 30), (o[0] + 5, 30)], fill='#1f2328', w=1)
+    f.text((406, o[1] + 18), 'x', size=19, italic=True)
+    f.text((o[0] - 16, 26), 'y', size=19, italic=True)
+    A, B, C = (190, 80), (110, 240), (285, 240)
+    D = (A[0], B[1])
+    f.poly([A, B, C])
+    f.line(A, D)
+    f.right(D, A, C, s=11)
+    f.dot(A)
+    f.text((A[0] + 6, A[1] - 20), 'A(3,7)', size=18)
+    f.text((D[0] + 4, D[1] + 22), 'D(x,y)', size=18)
+    f.label(B, 'B', dx=-12, dy=16)
+    f.label(C, 'C', dx=14, dy=16)
+    return f
+
+
+# ---------------------------------------------------------------- set 28
+@fig('28-5')
+def _():
+    f = Fig(380, 380)
+    c, R = (190, 190), 170
+    V = [polar(c, R, 112.5 - 45 * k) for k in range(8)]   # V0 top-left, clockwise
+    f.shade([V[7], V[2], V[3], V[6]], fill='#5f645e')
+    f.poly(V)
+    f.line(V[7], V[2])
+    f.line(V[6], V[3])
+    return f
+
+
+@fig('28-8')
+def _():
+    f = Fig(460, 340)
+    c, R = (230, 185), 120
+    names = 'CDEAB'
+    P = [polar(c, R, 90 - 72 * k) for k in range(5)]   # C top, then D, E, A, B clockwise
+    r = 48
+    # dark: each circle minus the part inside the pentagon (clip by an even-odd path)
+    poly = 'M' + ' L'.join('%.1f %.1f' % p for p in P) + ' Z'
+    f.items.append('<defs><clipPath id="out288"><path clip-rule="evenodd" d="M0 0 H460 V340 H0 Z %s"/></clipPath></defs>' % poly)
+    for p in P:
+        f.items.append('<circle cx="%.1f" cy="%.1f" r="%d" fill="#5f645e" clip-path="url(#out288)"/>' % (p[0], p[1], r))
+    for p in P:
+        f.circle(p, r, w=1.8)
+    f.poly(P, fill='#fff')
+    for p, n in zip(P, names):
+        q = (p[0] + (c[0] - p[0]) * .22, p[1] + (c[1] - p[1]) * .22)
+        f.label(q, n)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

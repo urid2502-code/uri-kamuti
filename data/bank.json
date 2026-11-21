@@ -4572,7 +4572,7 @@
       "<bdi dir=\"ltr\" class=\"m\">20</bdi>"
      ],
      "figure": {
-      "src": "fig/25-1.png",
+      "src": "fig/25-1.svg",
       "width": "34%",
       "wide": false
      },
@@ -4691,7 +4691,7 @@
       "<bdi dir=\"ltr\" class=\"m\">12</bdi>"
      ],
      "figure": {
-      "src": "fig/25-7.png",
+      "src": "fig/25-7.svg",
       "width": "58%",
       "wide": true
      },
@@ -4869,7 +4869,7 @@
       "<bdi dir=\"ltr\" class=\"m\">36</bdi>"
      ],
      "figure": {
-      "src": "fig/26-6.png",
+      "src": "fig/26-6.svg",
       "width": "41%",
       "wide": false
      },

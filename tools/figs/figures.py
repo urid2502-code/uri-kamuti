@@ -1092,6 +1092,87 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 25
+@fig('25-1')
+def _():
+    f = Fig(460, 290)
+    P = (40, 240)
+    Y, O = (420, 40), (190, 240)
+    f.arrow(P, Y, w=2.6, at=1)
+    f.arrow(P, O, w=2.6, at=1)
+    f.line(O, Y, dash=True, w=2)
+    f.text((190, 112), 'יהלי', size=20, rtl=True, weight=600)
+    f.text((110, 272), 'עומר', size=20, rtl=True, weight=600)
+    f.text((362, 150), '40 ק"מ', size=19, rtl=True)
+    return f
+
+
+@fig('25-7')
+def _():
+    f = Fig(560, 300)
+    # the box 2x by 2x by x
+    w, h, dx, dy = 190, 95, 70, -60
+    F0 = (40, 250)
+    a, b = F0, (F0[0] + w, F0[1])
+    c, d = (F0[0] + w, F0[1] - h), (F0[0], F0[1] - h)
+    bk = lambda p: (p[0] + dx, p[1] + dy)  # noqa: E731
+    f.poly([a, b, c, d])
+    f.poly([d, bk(d), bk(c), c], close=False)
+    f.poly([b, bk(b), bk(c)], close=False)
+    f.line(a, bk(a), dash=True, w=1.6)
+    f.line(bk(a), bk(b), dash=True, w=1.6)
+    f.line(bk(a), bk(d), dash=True, w=1.6)
+    f.text(((a[0] + b[0]) / 2, a[1] + 26), '2x', size=20, italic=True)
+    f.text((b[0] + 50, b[1] - 18), '2x', size=20, italic=True)
+    f.text((a[0] - 18, (a[1] + d[1]) / 2), 'x', size=20, italic=True)
+    # two pyramids on a common square base of side x, each of height x
+    cx, cy = 450, 165
+    s, ddx, ddy = 95, 55, -40
+    q1, q2 = (cx - s / 2 - ddx / 2, cy - ddy / 2), (cx + s / 2 - ddx / 2, cy - ddy / 2)
+    q3, q4 = (q2[0] + ddx, q2[1] + ddy), (q1[0] + ddx, q1[1] + ddy)
+    top, bot = (cx, cy - 115), (cx, cy + 115)
+    f.line(q1, q2)
+    f.line(q2, q3)
+    f.line(q3, q4, dash=True, w=1.6)
+    f.line(q4, q1, dash=True, w=1.6)
+    for q in (q1, q2, q3):
+        f.line(top, q)
+        f.line(bot, q)
+    f.line(top, q4, dash=True, w=1.6)
+    f.line(bot, q4, dash=True, w=1.6)
+    f.line(top, bot, dash=True, w=1.4)
+    f.text(((q1[0] + q2[0]) / 2, q1[1] + 20), 'x', size=20, italic=True)
+    return f
+
+
+# ---------------------------------------------------------------- set 26
+@fig('26-6')
+def _():
+    import math
+    f = Fig(480, 260)
+    h = 170
+    DE = h / math.sqrt(3)
+    EC = 220
+    D = (40, 220)
+    E, C = (D[0] + DE, D[1]), (D[0] + DE + EC, D[1])
+    A, F = (E[0], E[1] - h), (C[0], C[1] - h)
+    B = (F[0] + DE, F[1])
+    f.shade([F, B, C], fill='#c9ccc8')
+    f.poly([A, B, C, D])
+    f.line(A, E)
+    f.line(F, C)
+    f.right(E, A, C, s=12)
+    f.right(F, A, C, s=12)
+    f.angle(A, D, E, r=40, text='30°', tr=60)
+    f.label(A, 'A', dx=-14, dy=-12)
+    f.label(B, 'B', dx=14, dy=-12)
+    f.label(C, 'C', dx=10, dy=18)
+    f.label(D, 'D', dx=-14, dy=14)
+    f.label(E, 'E', dy=20)
+    f.label(F, 'F', dy=-18)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

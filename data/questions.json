@@ -8817,7 +8817,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/39-2.png",
+  "figure": "fig/39-2.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -8885,7 +8885,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/39-5.png",
+  "figure": "fig/39-5.svg",
   "needsReview": true,
   "source": "video"
  },
@@ -8976,7 +8976,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/39-9.png",
+  "figure": "fig/39-9.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -8994,14 +8994,14 @@
   "options": [
    "6 + 1⅓π (⚠️)",
    "3 + ⅘π (⚠️)",
-   "4 + ⁸⁄₉π (⚠️)",
+   "4 + ⅔π",
    "לא ניתן לדעת"
   ],
   "code": [],
   "notes": [
    "השברים בתשובות קטנים – נקראו בקירוב."
   ],
-  "figure": "fig/39-10.png",
+  "figure": "fig/39-10.svg",
   "needsReview": true,
   "source": "video"
  },
@@ -9048,7 +9048,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/40-2.png",
+  "figure": "fig/40-2.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -9093,7 +9093,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/40-4.png",
+  "figure": "fig/40-4.svg",
   "needsReview": true,
   "source": "video"
  },
@@ -9161,7 +9161,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/40-7.png",
+  "figure": "fig/40-7.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -9207,7 +9207,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/40-9.png",
+  "figure": "fig/40-9.svg",
   "needsReview": false,
   "source": "video"
  },

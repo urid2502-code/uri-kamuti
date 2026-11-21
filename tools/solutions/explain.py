@@ -136,6 +136,8 @@ def set_note(page, anchor, note, resolved):
     if resolved:
         seg = re.sub(r'<p class="flag rv">.*?</p>', OK_FLAG, seg, flags=re.S)
         seg = seg.replace(' data-review="1"', '', 1)
+        if note is None:
+            seg = re.sub(r'<p class="sol-note">.*?</p>', '', seg, flags=re.S)
     if note is not None:
         seg = re.sub(r'<p class="sol-note">.*?</p>', '', seg, flags=re.S)
         if note:

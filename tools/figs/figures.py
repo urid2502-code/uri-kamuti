@@ -1606,6 +1606,208 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 39
+@fig('39-2')
+def _():
+    f = Fig(360, 360)
+    O, R = (180, 185), 150
+    A, B, C = polar(O, R, 100), polar(O, R, 55), polar(O, R, 10)
+    for p, q in ((A, B), (B, C)):
+        f.shade_path('M%.1f %.1f A%d %d 0 0 1 %.1f %.1f Z' % (p[0], p[1], R, R, q[0], q[1]), fill='#9ea29d')
+    f.circle(O, R)
+    f.line(A, B)
+    f.line(B, C)
+    f.dot(O, 4.5)
+    f.label(O, 'O', dx=-14, dy=14)
+    f.label(A, 'A', dx=-6, dy=-18)
+    f.label(B, 'B', dx=16, dy=-10)
+    f.label(C, 'C', dx=18, dy=4)
+    return f
+
+
+@fig('39-5')
+def _():
+    import math
+    f = Fig(520, 380)
+    s = 70
+    h = s * math.sqrt(3) / 2
+    cx, cy = 260, 190
+    def hexagon(c, rot):
+        return [(c[0] + s * math.cos(math.radians(rot + 60 * k)), c[1] - s * math.sin(math.radians(rot + 60 * k))) for k in range(6)]
+    # left/right hexagons point sideways; top/bottom hexagons too (all with horizontal top edges)
+    P, Q = (cx - s / 2, cy), (cx + s / 2, cy)
+    left, right = (P[0] - s, cy), (Q[0] + s, cy)
+    top, bot = (cx, cy - h), (cx, cy + h)
+    hexes = [hexagon(c, 0) for c in (left, right, top, bot)]
+    A, B = (P[0] - s / 2, cy - h), (Q[0] + s / 2, cy - h)
+    D, C = (P[0] - s / 2, cy + h), (Q[0] + s / 2, cy + h)
+    f.shade([A, B, C, D], fill='#c9ccc8')
+    for hx in hexes:
+        f.poly(hx)
+    f.poly([A, B, C, D], w=2.6)
+    f.label(A, 'A', dx=-8, dy=-16)
+    f.label(B, 'B', dx=10, dy=-16)
+    f.label(C, 'C', dx=10, dy=16)
+    f.label(D, 'D', dx=-10, dy=16)
+    return f
+
+
+@fig('39-9')
+def _():
+    f = Fig(300, 460)
+    u = 95
+    o = (60, 420)
+    P = lambda x, y: (o[0] + x * u, o[1] - y * u)  # noqa: E731
+    A, B, C = P(2, 4), P(0, 2), P(0, 0)
+    D, E = P(1, 2), P(1, 3)
+    f.shade([B, D, E])
+    f.poly([P(0, 0), P(2, 0), P(2, 4), P(0, 4)])
+    f.line(P(0, 2), P(2, 2))
+    f.line(A, B)
+    f.line(A, C)
+    f.line(E, D)
+    f.label(A, 'A', dx=16, dy=-6)
+    f.label(B, 'B', dx=-16)
+    f.label(C, 'C', dx=-16, dy=8)
+    f.label(D, 'D', dx=6, dy=20)
+    f.label(E, 'E', dx=-4, dy=-18)
+    return f
+
+
+@fig('39-10')
+def _():
+    import math
+    f = Fig(400, 340)
+    r = 115
+    O = (40 + r, 40 + r)
+    A, D = (40, 40), (40, 40 + 2 * r)
+    # angle C = 60 degrees: the leg BC is tangent to the circle
+    t = math.radians(30)            # the tangent point G is at angle 30 deg (from the x axis, upwards)
+    G = (O[0] + r * math.cos(t), O[1] - r * math.sin(t))
+    # line BC: through G, perpendicular to OG
+    dx, dy = math.sin(t), math.cos(t)          # direction along the tangent (down-right)
+    B = (G[0] - dx * (G[1] - 40) / dy, 40)
+    C = (G[0] + dx * (D[1] - G[1]) / dy, D[1])
+    F, E, H = (O[0], 40), (40, O[1]), (O[0], D[1])
+    f.shade_path('M%.1f %.1f L%.1f %.1f A%d %d 0 0 1 %.1f %.1f Z' % (O[0], O[1], F[0], F[1], r, r, G[0], G[1]), fill='#d9dcd8')
+    f.poly([A, B, C, D])
+    f.circle(O, r)
+    f.line(O, F)
+    f.line(O, G)
+    f.dot(O, 4.5)
+    f.angle(C, D, B, r=30, text='60°', tr=52)
+    for p_, n, dx_, dy_ in ((A, 'A', -14, -12), (B, 'B', 12, -12), (C, 'C', 14, 10), (D, 'D', -14, 12),
+                            (F, 'F', 0, -16), (G, 'G', 16, -4), (E, 'E', -16, 0), (H, 'H', 0, 18), (O, 'O', -14, 14)):
+        f.label(p_, n, dx_, dy_)
+    return f
+
+
+# ---------------------------------------------------------------- set 40
+@fig('40-2')
+def _():
+    f = Fig(400, 380)
+    s, dx, dy = 230, 105, -90
+    fx, fy = 40, 130
+    u = s / 3
+    v = (dx / 3, dy / 3)
+    tp = lambda i, j: (fx + i * u + j * v[0], fy + j * v[1])  # noqa: E731
+    rp = lambda j, k: (fx + s + j * v[0], fy + k * u + j * v[1])  # noqa: E731
+    for k in range(4):
+        w = 1.6 if 0 < k < 3 else 2.4
+        f.line((fx, fy + k * u), (fx + s, fy + k * u), w=w)
+        f.line((fx + k * u, fy), (fx + k * u, fy + s), w=w)
+        f.line(tp(k, 0), tp(k, 3), w=w)
+        f.line(tp(0, k), tp(3, k), w=w)
+        f.line(rp(k, 0), rp(k, 3), w=w)
+        f.line(rp(0, k), rp(3, k), w=w)
+    for n, (i, j) in (('1', (0, 0)), ('2', (1, 0)), ('4', (0, 1)), ('3', (1, 1))):
+        f.text((fx + (i + .5) * u, fy + (j + .5) * u), n, size=24, weight=600)
+    return f
+
+
+@fig('40-4')
+def _():
+    import math
+    f = Fig(440, 300)
+    c, rx, ry, hgt = (230, 200), 170, 70, 60
+    O, P = c, (c[0], c[1] - hgt)
+    # the slice removed: 120 degrees, facing the viewer on the left (from 200 to 320 degrees)
+    def pt(cen, deg):
+        t = math.radians(deg)
+        return (cen[0] + rx * math.cos(t), cen[1] - ry * math.sin(t))
+    a0, a1 = 200, 320
+    # top face: the remaining 240 degrees
+    t0, t1 = pt(P, a1), pt(P, a0)
+    f.path('M%.1f %.1f L%.1f %.1f A%d %d 0 1 0 %.1f %.1f Z' % (P[0], P[1], t0[0], t0[1], rx, ry, t1[0], t1[1]), fill='#fff')
+    # visible part of the bottom rim: from 320 to 360 and from 180 to 200
+    for deg_from, deg_to in ((320, 360), (180, 200)):
+        q0, q1 = pt(O, deg_from), pt(O, deg_to)
+        f.path('M%.1f %.1f A%d %d 0 0 0 %.1f %.1f' % (q0[0], q0[1], rx, ry, q1[0], q1[1]))
+    for deg in (0, 180):
+        f.line(pt(P, deg), pt(O, deg))
+    # the cut faces (rectangles)
+    for deg in (a0, a1):
+        f.poly([P, pt(P, deg), pt(O, deg), O], fill='#fff')
+    f.line(P, O, dash=True, w=1.4)
+    f.dot(P, 4)
+    f.dot(O, 4)
+    f.label(P, 'P', dx=14, dy=-6)
+    f.label(O, 'O', dx=14, dy=8)
+    f.seglabel(O, pt(O, a0), '2', off=16)
+    f.text((pt(P, a0)[0] - 18, (P[1] + O[1]) / 2 + 30), '½', size=20)
+    return f
+
+
+@fig('40-7')
+def _():
+    f = Fig(480, 340)
+    o, u = (240, 190), 30
+    P = lambda x, y: (o[0] + x * u, o[1] - y * u)  # noqa: E731
+    f.line((20, o[1]), (460, o[1]), w=1.8)
+    f.line((o[0], 330), (o[0], 10), w=1.8)
+    f.poly([(460, o[1]), (450, o[1] - 5), (450, o[1] + 5)], fill='#1f2328', w=1)
+    f.poly([(o[0], 10), (o[0] - 5, 20), (o[0] + 5, 20)], fill='#1f2328', w=1)
+    f.text((466, o[1] + 18), 'x', size=19, italic=True)
+    f.text((o[0] - 16, 16), 'y', size=19, italic=True)
+    A, F, G, E = P(-5, 0), P(-1, 0), P(3, 0), P(7, 0)
+    C, B, D = P(0, 6), P(-4, -3), P(4, -3)
+    f.poly([A, B, F, C, G, D, E], close=False)
+    for p_ in (A, F, G, E, C, B, D):
+        f.dot(p_, 3)
+    f.text((A[0] - 4, A[1] - 16), 'A(−5,0)', size=17)
+    f.text((E[0] + 4, E[1] - 16), 'E(7,0)', size=17)
+    f.text((C[0] + 38, C[1]), 'C(0,6)', size=17)
+    f.label(F, 'F', dx=-4, dy=18, size=18)
+    f.label(G, 'G', dx=4, dy=18, size=18)
+    f.label(B, 'B', dy=20, size=18)
+    f.label(D, 'D', dy=20, size=18)
+    return f
+
+
+@fig('40-9')
+def _():
+    f = Fig(380, 380)
+    O, R = (190, 190), 160
+    V1, P1, P2 = polar(O, R, 60), polar(O, R, 165), polar(O, R, 205)
+    V2, Q1, Q2 = polar(O, R, -15), polar(O, R, 235), polar(O, R, 270)
+    S1, S2 = polar(O, R, 0), polar(O, R, 40)
+    f.circle(O, R, w=1.8)
+    for a, b in ((P1, P2), (Q1, Q2), (S2, S1)):
+        f.path('M%.1f %.1f A%d %d 0 0 0 %.1f %.1f' % (a[0], a[1], R, R, b[0], b[1]) if a is not S2 else
+               'M%.1f %.1f A%d %d 0 0 1 %.1f %.1f' % (a[0], a[1], R, R, b[0], b[1]), w=6)
+    for v, a, b in ((V1, P1, P2), (V2, Q1, Q2)):
+        f.line(v, a, w=1.8)
+        f.line(v, b, w=1.8)
+    f.line(O, S1, w=1.8)
+    f.line(O, S2, w=1.8)
+    f.angle(V1, P1, P2, r=40, text='γ', tr=56)
+    f.angle(V2, Q1, Q2, r=40, text='β', tr=56)
+    f.angle(O, S1, S2, r=30, text='α', tr=44)
+    f.dot(O, 4.5)
+    f.label(O, 'O', dx=-14, dy=14)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

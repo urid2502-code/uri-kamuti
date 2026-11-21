@@ -7322,7 +7322,7 @@
       "<bdi dir=\"ltr\" class=\"m\">2π − 4<span class=\"sq\">√<span>2</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/39-2.png",
+      "src": "fig/39-2.svg",
       "width": "33%",
       "wide": false
      },
@@ -7380,7 +7380,7 @@
       "<bdi dir=\"ltr\" class=\"m\">⅔</bdi> <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>"
      ],
      "figure": {
-      "src": "fig/39-5.png",
+      "src": "fig/39-5.svg",
       "width": "46%",
       "wide": false
      },
@@ -7460,7 +7460,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/39-9.png",
+      "src": "fig/39-9.svg",
       "width": "28%",
       "wide": false
      },
@@ -7482,7 +7482,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/39-10.png",
+      "src": "fig/39-10.svg",
       "width": "33%",
       "wide": false
      },
@@ -7535,7 +7535,7 @@
       "איתי ; אופק"
      ],
      "figure": {
-      "src": "fig/40-2.png",
+      "src": "fig/40-2.svg",
       "width": "28%",
       "wide": false
      },
@@ -7575,7 +7575,7 @@
       "<bdi dir=\"ltr\" class=\"m\">2 + 6⅔π</bdi> <span class=\"warn\" title=\"השברים נקראו בקירוב\">⚠</span>"
      ],
      "figure": {
-      "src": "fig/40-4.png",
+      "src": "fig/40-4.svg",
       "width": "42%",
       "wide": false
      },
@@ -7635,7 +7635,7 @@
       "<bdi dir=\"ltr\" class=\"m\">(−3,−4)</bdi>"
      ],
      "figure": {
-      "src": "fig/40-7.png",
+      "src": "fig/40-7.svg",
       "width": "46%",
       "wide": false
      },
@@ -7675,7 +7675,7 @@
       "<bdi dir=\"ltr\" class=\"m\">(2α+β+γ)<span class=\"fr\"><span>πR</span><span>180</span></span>°</bdi>"
      ],
      "figure": {
-      "src": "fig/40-9.png",
+      "src": "fig/40-9.svg",
       "width": "36%",
       "wide": false
      },

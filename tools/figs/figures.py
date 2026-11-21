@@ -816,6 +816,110 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 19
+@fig('19-4')
+def _():
+    f = Fig(380, 380)
+    o, u = (40, 40), 34          # A at the top-left; AE = 6u, AF = 8u, AB = 9u
+    sq = lambda n: [o, (o[0] + n * u, o[1]), (o[0] + n * u, o[1] + n * u), (o[0], o[1] + n * u)]  # noqa: E731
+    # dotted (grey): the L between AEKI and AFGH
+    for n, fill in ((8, '#c9ccc8'), (6, '#fff')):
+        f.items.append('<polygon points="%s" fill="%s"/>' % (' '.join('%.1f,%.1f' % q for q in sq(n)), fill))
+    for n in (9, 8, 6):
+        f.poly(sq(n))
+    A = o
+    E, F, B = (o[0] + 6 * u, o[1]), (o[0] + 8 * u, o[1]), (o[0] + 9 * u, o[1])
+    I, H, D = (o[0], o[1] + 6 * u), (o[0], o[1] + 8 * u), (o[0], o[1] + 9 * u)
+    K, G, C = (o[0] + 6 * u, o[1] + 6 * u), (o[0] + 8 * u, o[1] + 8 * u), (o[0] + 9 * u, o[1] + 9 * u)
+    f.label(A, 'A', dx=-16, dy=-14)
+    for p_, n in ((E, 'E'), (F, 'F'), (B, 'B')):
+        f.label(p_, n, dy=-16)
+    for p_, n in ((I, 'I'), (H, 'H'), (D, 'D')):
+        f.label(p_, n, dx=-16)
+    f.label(K, 'K', dx=-14, dy=-14)
+    f.label(G, 'G', dx=-14, dy=-14)
+    f.label(C, 'C', dx=14, dy=14)
+    return f
+
+
+@fig('19-8')
+def _():
+    import math
+    f = Fig(460, 360)
+    O, r = (150, 180), 110
+    s = 280
+    B = (O[0] + s * math.cos(math.radians(30)), O[1] - s * math.sin(math.radians(30)))
+    C = (B[0], O[1] + s * math.sin(math.radians(30)))
+    A = (O[0] + r * math.cos(math.radians(30)), O[1] - r * math.sin(math.radians(30)))
+    D = (A[0], O[1] + r * math.sin(math.radians(30)))
+    # dark: the part of the circle outside the triangle (a 300 degree sector)
+    f.shade_path('M%.1f %.1f L%.1f %.1f A%d %d 0 1 0 %.1f %.1f Z' % (O[0], O[1], A[0], A[1], r, r, D[0], D[1]), fill='#9ea29d')
+    f.path('M%.1f %.1f A%d %d 0 1 0 %.1f %.1f' % (A[0], A[1], r, r, D[0], D[1]))
+    f.path('M%.1f %.1f A%d %d 0 0 1 %.1f %.1f' % (A[0], A[1], r, r, D[0], D[1]), w=1.6)
+    f.poly([O, B, C])
+    f.dot(O)
+    f.label(O, 'O', dx=-16)
+    f.label(A, 'A', dx=-4, dy=-18)
+    f.label(D, 'D', dx=-4, dy=20)
+    f.label(B, 'B', dx=14, dy=-10)
+    f.label(C, 'C', dx=14, dy=12)
+    return f
+
+
+@fig('19-10')
+def _():
+    import math
+    f = Fig(560, 300)
+    R = 95
+
+    def base(c, title):
+        A, B = (c[0], c[1] - R), (c[0], c[1] + R)
+        D, C = (c[0] - R, c[1]), (c[0] + R, c[1])
+        f.circle(c, R, w=1.6)
+        f.line(A, B, w=1.4)
+        f.line(D, C, w=1.4)
+        f.text((c[0], 22), title, size=19, rtl=True, weight=600)
+        f.label(A, 'A', dy=-16, size=18)
+        f.label(B, 'B', dy=18, size=18)
+        f.label(D, 'D', dx=-16, size=18)
+        f.label(C, 'C', dx=16, size=18)
+        f.label(c, 'O', dx=13, dy=-13, size=16)
+        return A, B, C, D
+
+    def arc(c, p, q, sweep):
+        f.path('M%.1f %.1f A%d %d 0 0 %d %.1f %.1f' % (p[0], p[1], R, R, sweep, q[0], q[1]), w=3.2)
+        # arrowhead at q, along the tangent
+        ang = math.atan2(q[1] - c[1], q[0] - c[0])
+        tx, ty = (-math.sin(ang), math.cos(ang)) if sweep else (math.sin(ang), -math.cos(ang))
+        s = 12
+        f.poly([q, (q[0] - tx * s - ty * s * .42, q[1] - ty * s + tx * s * .42),
+                (q[0] - tx * s + ty * s * .42, q[1] - ty * s - tx * s * .42)], fill='#1f2328', w=1)
+
+    c1 = (140, 160)
+    A, B, C, D = base(c1, 'מסלול הארנב')
+    arc(c1, A, D, 0)
+    f.arrow(D, C, w=3.2, at=.97)
+    arc(c1, C, B, 1)
+    c2 = (420, 160)
+    A, B, C, D = base(c2, 'מסלול הצב')
+    arc(c2, A, D, 0)
+    f.arrow(D, c2, w=3.2, at=.93)
+    f.arrow(c2, B, w=3.2, at=.97)
+    return f
+
+
+# ---------------------------------------------------------------- set 20
+@fig('20-10')
+def _():
+    f = Fig(380, 380)
+    c, R = (190, 190), 165
+    V = [polar(c, R, 90 + 60 * k) for k in range(6)]
+    f.poly(V)
+    f.poly([V[0], V[2], V[4]])
+    f.circle(c, R)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

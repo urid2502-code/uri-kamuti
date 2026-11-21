@@ -3459,7 +3459,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>10</span><span>7</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/19-4.png",
+      "src": "fig/19-4.svg",
       "width": "30%",
       "wide": false
      },
@@ -3543,7 +3543,7 @@
       "<bdi dir=\"ltr\" class=\"m\">12<span class=\"sq\">√<span>3π</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/19-8.png",
+      "src": "fig/19-8.svg",
       "width": "39%",
       "wide": false
      },
@@ -3589,7 +3589,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/19-10.png",
+      "src": "fig/19-10.svg",
       "width": "51%",
       "wide": false
      },
@@ -3789,7 +3789,7 @@
       "<bdi dir=\"ltr\" class=\"m\">r²(π − 2<span class=\"fr\"><span><span class=\"sq\">√<span>3</span></span></span><span>2</span></span>)</bdi>"
      ],
      "figure": {
-      "src": "fig/20-10.png",
+      "src": "fig/20-10.svg",
       "width": "36%",
       "wide": false
      },

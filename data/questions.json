@@ -4240,7 +4240,7 @@
   "notes": [
    "השברים בנתון ובתשובות קטנים – נקראו בקירוב (ונבדקו מול חישוב שמתאים לתשובה 1)."
   ],
-  "figure": "fig/19-4.png",
+  "figure": "fig/19-4.svg",
   "needsReview": true,
   "source": "video"
  },
@@ -4334,7 +4334,7 @@
   "notes": [
    "התשובות קטנות – נקראו בקירוב."
   ],
-  "figure": "fig/19-8.png",
+  "figure": "fig/19-8.svg",
   "needsReview": true,
   "source": "video"
  },
@@ -4385,7 +4385,7 @@
   "notes": [
    "פרטי המסלולים בסרטוט קטנים – תוארו בקירוב."
   ],
-  "figure": "fig/19-10.png",
+  "figure": "fig/19-10.svg",
   "needsReview": true,
   "source": "video"
  },
@@ -4610,13 +4610,13 @@
    "r²(π − √3)",
    "r²(π − √3/2)",
    "r²(π − 2√3/3)",
-   "r²(π − 2√3/2)"
+   "r²(π − 3√3/2)"
   ],
   "code": [],
   "notes": [
    "התשובות קטנות – נקראו בקירוב; לא ברור מהסרטון אילו אזורים אפורים."
   ],
-  "figure": "fig/20-10.png",
+  "figure": "fig/20-10.svg",
   "needsReview": true,
   "source": "video"
  },

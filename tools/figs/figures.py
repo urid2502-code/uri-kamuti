@@ -600,6 +600,97 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 13
+@fig('13-8')
+def _():
+    f = Fig(400, 460)
+    o = (200, 190)
+    f.line((20, o[1]), (380, o[1]), w=1.8)
+    f.line((o[0], 445), (o[0], 20), w=1.8)
+    f.poly([(380, o[1]), (370, o[1] - 5), (370, o[1] + 5)], fill='#1f2328', w=1)
+    f.poly([(o[0], 20), (o[0] - 5, 30), (o[0] + 5, 30)], fill='#1f2328', w=1)
+    f.text((386, o[1] + 18), 'x', size=19, italic=True)
+    f.text((o[0] - 16, 24), 'y', size=19, italic=True)
+    A, C = (o[0] + 105, o[1]), (o[0] - 105, o[1])
+    D, B = (o[0], o[1] - 85), (o[0], o[1] + 150)
+    f.poly([A, D, C, B])
+    for p in (A, B, C, D):
+        f.dot(p)
+    f.text((A[0] + 8, A[1] + 22), 'A(a,0)', size=18)
+    f.text((C[0] - 8, C[1] + 22), 'C(c,0)', size=18)
+    f.text((D[0] + 44, D[1] - 14), 'D(0,d)', size=18)
+    f.text((B[0] + 44, B[1] + 18), 'B(0,b)', size=18)
+    return f
+
+
+# ---------------------------------------------------------------- set 14
+@fig('14-2')
+def _():
+    f = Fig(480, 250)
+    A, B, C = (40, 30), (150, 215), (440, 215)
+    D = lerp(A, C, 0.62)
+    E = lerp(B, D, 0.5)
+    f.shade([A, B, E])
+    f.shade([E, D, C])
+    f.poly([A, B, C])
+    f.line(B, D)
+    f.line(A, E)
+    f.line(E, C)
+    f.label(A, 'A', dx=-14, dy=-10)
+    f.label(B, 'B', dx=-10, dy=20)
+    f.label(C, 'C', dx=16, dy=8)
+    f.label(D, 'D', dx=8, dy=-18)
+    f.label(E, 'E', dx=2, dy=-20)
+    return f
+
+
+@fig('14-6')
+def _():
+    f = Fig(360, 460)
+    r = 62
+    A, D = (40, 40), (40, 40 + 6 * r)
+    w = r + 5 * r / 3 ** 0.5
+    B, C = (A[0] + w, 40), (A[0] + w, 40 + 6 * r)
+    f.poly([A, B, C, D])
+    for k in range(3):
+        f.circle((A[0] + r, A[1] + r * (2 * k + 1)), r, w=2)
+    P = (A[0] + r, A[1] + 5 * r)
+    f.line(B, P)
+    f.dot(P, 4.5)
+    f.angle(B, A, P, r=34, text='60°', tr=52)
+    f.label(A, 'A', dx=-16, dy=-10)
+    f.label(B, 'B', dx=16, dy=-10)
+    f.label(C, 'C', dx=16, dy=10)
+    f.label(D, 'D', dx=-16, dy=10)
+    return f
+
+
+@fig('14-8')
+def _():
+    f = Fig(360, 360)
+    O, R = (180, 180), 145
+    A, B, D, C = (O[0], O[1] - R), (O[0], O[1] + R), (O[0] - R, O[1]), (O[0] + R, O[1])
+    f.circle(O, R)
+    f.line(A, B)
+    f.line(D, C)
+    f.label(O, 'O', dx=16, dy=-16)
+    f.label(A, 'A', dy=-18)
+    f.label(B, 'B', dy=20)
+    f.label(D, 'D', dx=-18)
+    f.label(C, 'C', dx=18)
+    return f
+
+
+@fig('14-10')
+def _():
+    f = Fig(360, 380)
+    c, R = (180, 190), 165
+    V = [polar(c, R, 90 + 60 * k) for k in range(6)]
+    f.poly(V)
+    f.poly([V[0], V[2], V[4]])
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

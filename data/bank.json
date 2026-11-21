@@ -2359,7 +2359,7 @@
       "אף אחת מהטענות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/13-8.png",
+      "src": "fig/13-8.svg",
       "width": "45%",
       "wide": false
      },
@@ -2443,7 +2443,7 @@
       "<bdi dir=\"ltr\" class=\"m\">¼</bdi>"
      ],
      "figure": {
-      "src": "fig/14-2.png",
+      "src": "fig/14-2.svg",
       "width": "47%",
       "wide": false
      },
@@ -2525,7 +2525,7 @@
       "<bdi dir=\"ltr\" class=\"m\">10<span class=\"sq\">√<span>3</span></span>·r²</bdi>"
      ],
      "figure": {
-      "src": "fig/14-6.png",
+      "src": "fig/14-6.svg",
       "width": "32%",
       "wide": false
      },
@@ -2565,7 +2565,7 @@
       "<bdi dir=\"ltr\" class=\"m\">11</bdi>"
      ],
      "figure": {
-      "src": "fig/14-8.png",
+      "src": "fig/14-8.svg",
       "width": "34%",
       "wide": false
      },
@@ -2605,7 +2605,7 @@
       "<bdi dir=\"ltr\" class=\"m\">2<span class=\"sq\">√<span>3</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/14-10.png",
+      "src": "fig/14-10.svg",
       "width": "27%",
       "wide": false
      },

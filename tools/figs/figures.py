@@ -1476,6 +1476,20 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 36
+@fig('36-1')
+def _():
+    f = Fig(360, 380)
+    c, R = (180, 190), 170
+    V = [polar(c, R, 90 + 60 * k) for k in range(6)]
+    inner = [polar(c, R / 3 ** 0.5, 60 * k) for k in range(6)]   # vertices of the small hexagon
+    f.shade(inner, fill='#c9ccc8')
+    f.poly(V)
+    f.poly([V[0], V[2], V[4]])
+    f.poly([V[1], V[3], V[5]])
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

@@ -6988,7 +6988,7 @@
       "<bdi dir=\"ltr\" class=\"m\">¼πr²</bdi>"
      ],
      "figure": {
-      "src": "fig/37-6.png",
+      "src": "fig/37-6.svg",
       "width": "28%",
       "wide": false
      },
@@ -7028,7 +7028,7 @@
       "<bdi dir=\"ltr\" class=\"m\">8</bdi>"
      ],
      "figure": {
-      "src": "fig/37-8.png",
+      "src": "fig/37-8.svg",
       "width": "42%",
       "wide": false
      },
@@ -7132,7 +7132,7 @@
       "<bdi dir=\"ltr\" class=\"m\">⅓(πR² + πr²)</bdi>"
      ],
      "figure": {
-      "src": "fig/38-3.png",
+      "src": "fig/38-3.svg",
       "width": "32%",
       "wide": false
      },
@@ -7154,7 +7154,7 @@
       "<bdi dir=\"ltr\" class=\"m\">360 − (2α + β)</bdi>"
      ],
      "figure": {
-      "src": "fig/38-4.png",
+      "src": "fig/38-4.svg",
       "width": "35%",
       "wide": false
      },
@@ -7194,7 +7194,7 @@
       "<bdi dir=\"ltr\" class=\"m\">1:4</bdi>"
      ],
      "figure": {
-      "src": "fig/38-6.png",
+      "src": "fig/38-6.svg",
       "width": "25%",
       "wide": false
      },
@@ -7274,7 +7274,7 @@
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>"
      ],
      "figure": {
-      "src": "fig/38-10.png",
+      "src": "fig/38-10.svg",
       "width": "24%",
       "wide": false
      },

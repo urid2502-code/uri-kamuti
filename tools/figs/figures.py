@@ -1490,6 +1490,122 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 37
+@fig('37-6')
+def _():
+    f = Fig(360, 360)
+    O, R = (180, 180), 150
+    for a, b in ((0, 90), (120, 180), (234, 306)):
+        p, q = polar(O, R, a), polar(O, R, b)
+        f.shade_path('M%.1f %.1f L%.1f %.1f A%d %d 0 0 0 %.1f %.1f Z' % (O[0], O[1], p[0], p[1], R, R, q[0], q[1]))
+    f.circle(O, R)
+    for a in (0, 90, 120, 180, 234, 306):
+        f.line(O, polar(O, R, a))
+    f.right(O, polar(O, R, 0), polar(O, R, 90), s=14)
+    f.text(polar(O, 48, 150), '60°', size=17)
+    f.text(polar(O, 52, 270), '72°', size=17)
+    f.dot(O, 4.5)
+    f.label(O, 'O', dx=14, dy=16)
+    return f
+
+
+@fig('37-8')
+def _():
+    f = Fig(480, 320)
+    D, C = (40, 280), (400, 280)
+    A = (275, 50)
+    B = (440, 75)
+    f.poly([A, B, C, D])
+    f.line(A, C)
+    f.angle(A, D, C, r=26, text='α', tr=40)
+    f.angle(A, C, B, r=46, text='β+10°', tr=74)
+    f.angle(C, D, A, r=26, text='α', tr=40)
+    f.angle(C, A, B, r=46, text='β', tr=60)
+    f.seglabel(A, D, '8', off=18)
+    f.seglabel(B, C, '5', off=-18)
+    f.label(A, 'A', dy=-18)
+    f.label(B, 'B', dx=16, dy=-6)
+    f.label(C, 'C', dx=12, dy=16)
+    f.label(D, 'D', dx=-14, dy=12)
+    return f
+
+
+# ---------------------------------------------------------------- set 38
+@fig('38-3')
+def _():
+    f = Fig(380, 380)
+    O, R, r = (190, 190), 165, 95
+    def sector(rad, a, b):
+        p, q = polar(O, rad, a), polar(O, rad, b)
+        return 'M%.1f %.1f L%.1f %.1f A%d %d 0 0 0 %.1f %.1f Z' % (O[0], O[1], p[0], p[1], rad, rad, q[0], q[1])
+    # ring sector of 60 degrees (between 15 and 75), and two small-circle sectors filling the rest of the half-plane
+    p1, p2, q1, q2 = polar(O, R, 15), polar(O, R, 75), polar(O, r, 15), polar(O, r, 75)
+    f.shade_path('M%.1f %.1f A%d %d 0 0 0 %.1f %.1f L%.1f %.1f A%d %d 0 0 1 %.1f %.1f Z'
+                 % (p1[0], p1[1], R, R, p2[0], p2[1], q2[0], q2[1], r, r, q1[0], q1[1]))
+    f.shade_path(sector(r, 75, 135))
+    f.shade_path(sector(r, -45, 15))
+    f.circle(O, R)
+    f.circle(O, r)
+    f.line(polar(O, R, 135), polar(O, R, 315))
+    f.line(O, polar(O, R, 75))
+    f.line(O, polar(O, R, 15))
+    f.text(polar(O, 62, 45), '60°', size=17)
+    f.dot(O, 4.5)
+    f.label(O, 'O', dx=-16, dy=14)
+    return f
+
+
+@fig('38-4')
+def _():
+    import math
+    f = Fig(420, 420)
+    O, R = (215, 210), 185
+    A, B, C, E = polar(O, R, 205), polar(O, R, 148), polar(O, R, 92), polar(O, R, -18)
+    D = (A[0] + C[0] - B[0], A[1] + C[1] - B[1])         # rhombus-like ABCD (as in the book)
+    F = (B[0] + E[0] - C[0], B[1] + E[1] - C[1])         # parallelogram BCEF
+    f.circle(O, R)
+    f.poly([A, B, C, D])
+    f.poly([B, C, E, F])
+    f.angle(A, B, D, r=24, text='α', tr=38)
+    f.angle(B, A, F, r=26, text='β', tr=42)
+    f.angle(C, D, E, r=26, text='?', tr=42)
+    for p_, n, dx, dy in ((A, 'A', -16, 10), (B, 'B', -16, -8), (C, 'C', 0, -18), (D, 'D', 16, 6), (E, 'E', 16, 8), (F, 'F', 4, 20)):
+        f.label(p_, n, dx, dy)
+    return f
+
+
+@fig('38-6')
+def _():
+    f = Fig(380, 360)
+    c = (190, 180)
+    s = 95
+    h = s * 3 ** 0.5 / 2
+    V = [(c[0] - s, c[1]), (c[0] - s / 2, c[1] - h), (c[0] + s / 2, c[1] - h), (c[0] + s, c[1]), (c[0] + s / 2, c[1] + h), (c[0] - s / 2, c[1] + h)]
+    TL, TR, BR, BL = (c[0] - s, c[1] - h), (c[0] + s, c[1] - h), (c[0] + s, c[1] + h), (c[0] - s, c[1] + h)
+    for tri in ((V[0], TL, V[1]), (V[2], TR, V[3]), (V[3], BR, V[4]), (V[5], BL, V[0])):
+        f.shade(list(tri), fill='#5f645e')
+    f.poly([TL, TR, BR, BL])
+    f.poly(V)
+    return f
+
+
+@fig('38-10')
+def _():
+    f = Fig(320, 440)
+    c, rx, ry = (160, 360), 120, 34
+    hgt = 130
+    top = (c[0], c[1] - hgt)
+    apex = (c[0], c[1] - 2 * hgt - 30)
+    f.ellipse(top, (rx, 0), (0, ry), w=2.2)
+    f.path('M%.1f %.1f A%d %d 0 0 0 %.1f %.1f' % (c[0] - rx, c[1], rx, ry, c[0] + rx, c[1]), w=2.4)
+    f.path('M%.1f %.1f A%d %d 0 0 1 %.1f %.1f' % (c[0] - rx, c[1], rx, ry, c[0] + rx, c[1]), w=1.6)
+    f.line((c[0] - rx, c[1]), (c[0] - rx, top[1]))
+    f.line((c[0] + rx, c[1]), (c[0] + rx, top[1]))
+    f.line(apex, (c[0] - rx, c[1]))
+    f.line(apex, (c[0] + rx, c[1]))
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

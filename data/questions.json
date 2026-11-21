@@ -8450,7 +8450,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/37-6.png",
+  "figure": "fig/37-6.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -8496,7 +8496,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/37-8.png",
+  "figure": "fig/37-8.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -8611,7 +8611,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/38-3.png",
+  "figure": "fig/38-3.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -8634,7 +8634,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/38-4.png",
+  "figure": "fig/38-4.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -8680,7 +8680,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/38-6.png",
+  "figure": "fig/38-6.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -8693,7 +8693,7 @@
   "status": "extracted",
   "stem": [
    "תות הנח המון החליט לצבוע מחדש את קירותיה של הפירמידה המשולשת שלו. כל מקצועותיה של הפירמידה שווים, ובסיסה של הפירמידה הוא משולש שווה צלעות שאורך צלעו הוא 20 מטרים. לשם כך הוא שכר צוות של 10 צבעים, בעלי הספק זהה, שכל אחד מהם צובע 10 מטרים רבועים ב־4 דקות.",
-   "לכמה זמן (בשעות) זקוקים צוות הצבעים כדי לצבוע את הפירמידה כולה?"
+   "לכמה זמן (בדקות) זקוקים צוות הצבעים כדי לצבוע את הפירמידה כולה?"
   ],
   "options": [
    "6√3",
@@ -8702,9 +8702,7 @@
    "120√3"
   ],
   "code": [],
-  "notes": [
-   "ייתכן שהתשובות הן בדקות ולא בשעות."
-  ],
+  "notes": [],
   "figure": null,
   "needsReview": true,
   "source": "video"
@@ -8773,7 +8771,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/38-10.png",
+  "figure": "fig/38-10.svg",
   "needsReview": false,
   "source": "video"
  },

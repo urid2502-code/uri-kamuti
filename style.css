@@ -1566,3 +1566,15 @@ html.anon body.home-page .tally{display:none}
 @keyframes udTick{to{transform:rotate(360deg)}}
 @keyframes udPress{0%,100%{transform:none}45%{transform:translateY(5px) scaleY(.75)}}
 @media (prefers-reduced-motion:reduce){.ud-hand,.ud-hand>g,.ud-crown{animation:none!important}}
+
+/* Solutions and givens: one sentence per line; numbered steps when there are several. */
+.steps .ln,.pit .ln,.qb .ln{display:block}
+.pit .ln+.ln,.qb .ln+.ln{margin-top:2px}
+.steps .ln+.ln{margin-top:8px}
+.steps:has(.ln+.ln){counter-reset:st}
+.steps:has(.ln+.ln) .ln{counter-increment:st;position:relative;padding-inline-start:32px}
+.steps:has(.ln+.ln) .ln::before{content:counter(st);position:absolute;inset-inline-start:0;top:calc((1.9em - 22px)/2);width:22px;height:22px;border-radius:50%;
+  background:var(--ac-soft);color:var(--ac-ink);font:700 .75rem/22px var(--mono,monospace);text-align:center}
+.steps .th{display:block;color:var(--ink2,inherit)}
+.steps bdi.m:has(> .mc){display:block;width:fit-content}
+.steps .mc{display:block}

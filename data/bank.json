@@ -5436,7 +5436,7 @@
       "<bdi dir=\"ltr\" class=\"m\">9:7</bdi>"
      ],
      "figure": {
-      "src": "fig/29-4.png",
+      "src": "fig/29-4.svg",
       "width": "29%",
       "wide": false
      },
@@ -5530,7 +5530,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>4</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/29-9.png",
+      "src": "fig/29-9.svg",
       "width": "32%",
       "wide": false
      },

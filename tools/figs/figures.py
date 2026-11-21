@@ -1257,6 +1257,46 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 29
+@fig('29-4')
+def _():
+    f = Fig(400, 420)
+    R = 180
+    O = (200, 200)
+    A = (O[0], O[1] + R)
+    B = (O[0], O[1] - R / 2)
+    c = (O[0], (A[1] + B[1]) / 2)
+    r = (A[1] - B[1]) / 2
+    f.items.append('<path d="M%.1f %.1f a%d %d 0 1 0 0.1 0 Z M%.1f %.1f a%.1f %.1f 0 1 0 0.1 0 Z" fill="#c9ccc8" fill-rule="evenodd"/>'
+                   % (O[0], O[1] - R, R, R, c[0], c[1] - r, r, r))
+    f.circle(O, R)
+    f.circle(c, r, fill='#fff')
+    f.line(A, B, w=2)
+    f.dot(O, 4.5)
+    f.dot(A)
+    f.dot(B)
+    f.label(O, 'O', dx=20)
+    f.label(A, 'A', dy=22)
+    f.label(B, 'B', dx=-18, dy=-4)
+    return f
+
+
+@fig('29-9')
+def _():
+    f = Fig(400, 340)
+    c, R = (200, 170), 150
+    V = [polar(c, R, a) for a in (180, 120, 60, 0, 300, 240)]   # A left, B top-left, …
+    A, B, _, D, C, _ = V
+    f.poly(V, w=1.6)
+    for p, q in ((A, B), (B, C), (C, D), (D, A)):
+        f.line(p, q, w=4.2)
+    f.label(A, 'A', dx=-18)
+    f.label(B, 'B', dx=-10, dy=-18)
+    f.label(D, 'D', dx=18)
+    f.label(C, 'C', dx=8, dy=20)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

@@ -18,6 +18,7 @@
 - `data/questions.json`: 400 השאלות (`status: missing` = לא צולמה). `data/solutions/*.json`: הפתרונות, `v: false` = דורש בדיקה מול הספר.
 - `data/lessons.json`: נוצר מחדש עם `python tools/lessons/lessons.py`. השאלות והמפתח הם מהספר. הכללים, ההסברים והמוקשים נכתבו ב־Uri Q ומסומנים כך באתר.
 - `AUDIT.md`: אילו שאלות עוד חסרות.
+- כיווניות: נוסחאות עטופות ב־`<bdi dir="ltr" class="m">` כדי שלא יתערבבו בעברית. אחרי שינוי בדפים מריצים `python3 tools/bidi/fix_bidi.py` ואז `node scripts/build.mjs`.
 
 **התקדמות**: נשמרת ב־localStorage (`uri-kamuti:v2`). אחרי כניסה היא מסונכרנת לטבלת `progress` ב־Supabase, וכל משתמש רואה רק את השורה שלו (RLS, ראו `supabase/migrations`).
 

@@ -57,7 +57,7 @@
      "n": 3,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">5<sup>x</sup> · 8<sup>y</sup> = (<span class=\"fr\"><span>25</span><span>64</span></span>) · 0.2<sup>−y</sup> · 0.125<sup>−x</sup></bdi></p><p><bdi dir=\"ltr\" class=\"m\">x − y = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">5<sup>x</sup> · 8<sup>y</sup> = (<span class=\"fr\"><span>25</span><span>64</span></span>) · 0.2<sup>−y</sup> · 0.125<sup>−x</sup></bdi></p><p><bdi dir=\"ltr\" class=\"m\">x − y</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -75,7 +75,7 @@
      "n": 4,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם מעגל שמרכזו <bdi dir=\"ltr\" class=\"m\">O</bdi>.</p><p>נתון: היחס בין אורך הקשת <bdi dir=\"ltr\" class=\"m\">AB</bdi> הקצרה לשאר היקף המעגל הוא <bdi dir=\"ltr\" class=\"m\">1:5. AB = 2</bdi> ס\"מ.</p><p>בהסתמך על נתון זה ונתוני הסרטוט, מה היקף המעגל (בס\"מ)?</p>",
+     "stem": "<p>בסרטוט שלפניכם מעגל שמרכזו <bdi dir=\"ltr\" class=\"m\">O</bdi>.</p><p>נתון: היחס בין אורך הקשת <bdi dir=\"ltr\" class=\"m\">AB</bdi> הקצרה לשאר היקף המעגל הוא <bdi dir=\"ltr\" class=\"m\">1:5</bdi>. <bdi dir=\"ltr\" class=\"m\">AB = 2</bdi> ס\"מ.</p><p>בהסתמך על נתון זה ונתוני הסרטוט, מה היקף המעגל (בס\"מ)?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">2π</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2<span class=\"sq\">√<span>2π</span></span></bdi>",
@@ -97,7 +97,7 @@
      "n": 5,
      "status": "clean",
      "answer": 2,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">55.5² − 45.5² = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">55.5² − 45.5²</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1000</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">1010</bdi>",
@@ -133,7 +133,7 @@
      "n": 7,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABDG</bdi> מקבילית, <bdi dir=\"ltr\" class=\"m\">DEFG</bdi> טרפז שווה־שוקיים ו־<bdi dir=\"ltr\" class=\"m\">BCD</bdi> משולש שווה צלעות.</p><p>על פי נתונים אלו ונתוני הסרטוט, <bdi dir=\"ltr\" class=\"m\">∢CDE = ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABDG</bdi> מקבילית, <bdi dir=\"ltr\" class=\"m\">DEFG</bdi> טרפז שווה־שוקיים ו־<bdi dir=\"ltr\" class=\"m\">BCD</bdi> משולש שווה צלעות.</p><p>על פי נתונים אלו ונתוני הסרטוט, <bdi dir=\"ltr\" class=\"m\">∢CDE</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">120 + x − y</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">140 + x − y</bdi>",
@@ -173,7 +173,7 @@
      "n": 9,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">4<sup>2x+1</sup> + 4<sup>2x−1</sup> = 17</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">4<sup>2x+1</sup> + 4<sup>2x−1</sup> = 17</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -191,7 +191,7 @@
      "n": 10,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x = (<span class=\"fr\"><span>y</span><span>4</span></span>)² · z² + (<span class=\"fr\"><span>z</span><span>3</span></span>)² · y²</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x, y</bdi> ו־z מספרים טבעיים. <bdi dir=\"ltr\" class=\"m\">y</bdi> מספר המתחלק ב־6 ללא שארית, <bdi dir=\"ltr\" class=\"m\">z</bdi> מספר זוגי.</p><p>מה המספר הגדול ביותר ש־x מתחלק בו בוודאות ללא שארית?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x = (<span class=\"fr\"><span>y</span><span>4</span></span>)² · z² + (<span class=\"fr\"><span>z</span><span>3</span></span>)² · y²</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x</bdi>, <bdi dir=\"ltr\" class=\"m\">y</bdi> ו־z מספרים טבעיים. <bdi dir=\"ltr\" class=\"m\">y</bdi> מספר המתחלק ב־6 ללא שארית, <bdi dir=\"ltr\" class=\"m\">z</bdi> מספר זוגי.</p><p>מה המספר הגדול ביותר ש־x מתחלק בו בוודאות ללא שארית?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">6</bdi>",
@@ -221,7 +221,7 @@
      "n": 1,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a, b</bdi> ו־c הם מספרים טבעיים. איזה מהביטויים הבאים <u class=\"em\">אינו</u> שווה לביטוי <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>a</span><span>b</span></span> + <span class=\"fr\"><span>b</span><span>c</span></span> + <span class=\"fr\"><span>c</span><span>a</span></span> ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a</bdi>, <bdi dir=\"ltr\" class=\"m\">b</bdi> ו־c הם מספרים טבעיים. איזה מהביטויים הבאים <u class=\"em\">אינו</u> שווה לביטוי <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>a</span><span>b</span></span> + <span class=\"fr\"><span>b</span><span>c</span></span> + <span class=\"fr\"><span>c</span><span>a</span></span></bdi> ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>a</span><span><span class=\"fr\"><span>bc²</span><span>ac</span></span></span></span> + <span class=\"fr\"><span>c² + ab</span><span>ac</span></span></bdi>   מטושטש <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>ca² + bc² + ab²</span><span>abc</span></span></bdi>",
@@ -241,7 +241,7 @@
      "n": 2,
      "status": "clean",
      "answer": 3,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x, y</bdi> ו־z הם מספרים טבעיים. נתון: <bdi dir=\"ltr\" class=\"m\">x<sup>y−1</sup> + 3y = z·(z+1)</bdi></p><p>איזו מהטענות הבאות תיתכן?</p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x</bdi>, <bdi dir=\"ltr\" class=\"m\">y</bdi> ו־z הם מספרים טבעיים. נתון: <bdi dir=\"ltr\" class=\"m\">x<sup>y−1</sup> + 3y = z·(z+1)</bdi></p><p>איזו מהטענות הבאות תיתכן?</p>",
      "options": [
       "x ו־z זוגיים, <bdi dir=\"ltr\" class=\"m\">y</bdi> אי־זוגי",
       "x ו־z אי־זוגיים, <bdi dir=\"ltr\" class=\"m\">y</bdi> זוגי",
@@ -277,7 +277,7 @@
      "n": 4,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> מלבן. הישר <bdi dir=\"ltr\" class=\"m\">EF</bdi> יוצר יחד עם הישרים <bdi dir=\"ltr\" class=\"m\">BE</bdi> ו־<bdi dir=\"ltr\" class=\"m\">DF</bdi> שני משולשים ישרי זווית <bdi dir=\"ltr\" class=\"m\">BEC</bdi> ו־<bdi dir=\"ltr\" class=\"m\">CFD</bdi>.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\">⅓AD = AB , CF = ½CD</bdi></p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>סכום שטחי המשולשים</span><span>שטח המלבן</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> מלבן. הישר <bdi dir=\"ltr\" class=\"m\">EF</bdi> יוצר יחד עם הישרים <bdi dir=\"ltr\" class=\"m\">BE</bdi> ו־<bdi dir=\"ltr\" class=\"m\">DF</bdi> שני משולשים ישרי זווית <bdi dir=\"ltr\" class=\"m\">BEC</bdi> ו־<bdi dir=\"ltr\" class=\"m\">CFD</bdi>.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\">⅓AD = AB , CF = ½CD</bdi></p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>סכום שטחי המשולשים</span><span>שטח המלבן</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>5</span><span>4<span class=\"sq\">√<span>3</span></span></span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\">5<span class=\"fr\"><span><span class=\"sq\">√<span>3</span></span></span><span>4</span></span></bdi>",
@@ -317,7 +317,7 @@
      "n": 6,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>בסרטוט שלפניכם מערכת צירים בה מועבר הקטע <bdi dir=\"ltr\" class=\"m\">AB</bdi>.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\">BC = 2AC</bdi></p><p>על פי נתונים אלו ונתוני הסרטוט, מה שיעורי הנקודה <bdi dir=\"ltr\" class=\"m\">B?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם מערכת צירים בה מועבר הקטע <bdi dir=\"ltr\" class=\"m\">AB</bdi>.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\">BC = 2AC</bdi></p><p>על פי נתונים אלו ונתוני הסרטוט, מה שיעורי הנקודה <bdi dir=\"ltr\" class=\"m\">B</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">(4,8)</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">(5,9)</bdi>",
@@ -455,7 +455,7 @@
      "n": 3,
      "status": "clean",
      "answer": 3,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">(x⁶ + y⁶) × (x³ + y³) × (x³ − y³) = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">(x⁶ + y⁶) × (x³ + y³) × (x³ − y³)</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">x¹² + y¹²</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">(x⁶ − y⁶)²</bdi>",
@@ -473,7 +473,7 @@
      "n": 4,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>בסרטוט שלפניכם קובייה שמקצועה a ובתוכה חסום גליל.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>נפח הגליל</span><span>הנפח הכלוא בין הקובייה והגליל</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם קובייה שמקצועה a ובתוכה חסום גליל.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>נפח הגליל</span><span>הנפח הכלוא בין הקובייה והגליל</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>π</span><span>2−π</span></span></bdi>  המכנה מטושטש <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>π</span><span>4−π</span></span></bdi>",
@@ -515,7 +515,7 @@
      "n": 6,
      "status": "clean",
      "answer": 1,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a, b</bdi> ו־c הם שלושה מספרים טבעיים עוקבים. <bdi dir=\"ltr\" class=\"m\">a &lt; b &lt; c</bdi></p><p>איזה מהביטויים הבאים הוא הקטן ביותר?</p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a</bdi>, <bdi dir=\"ltr\" class=\"m\">b</bdi> ו־c הם שלושה מספרים טבעיים עוקבים. <bdi dir=\"ltr\" class=\"m\">a &lt; b &lt; c</bdi></p><p>איזה מהביטויים הבאים הוא הקטן ביותר?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">−<span class=\"fr\"><span>a</span><span>−b−c</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\">−<span class=\"fr\"><span>b</span><span>−a−c</span></span></bdi>",
@@ -573,7 +573,7 @@
      "n": 9,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>לכל מספר שלם x הוגדרה הפעולה <bdi dir=\"ltr\" class=\"m\">$(x)</bdi> כך: <bdi dir=\"ltr\" class=\"m\">$(x) =</bdi> סכום הספרות של <bdi dir=\"ltr\" class=\"m\">x</bdi>.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x</span><span>8</span></span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>$(x)</span><span>6</span></span></bdi> הם מספרים שלמים. מה מהבאים יכול להיות <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p>לכל מספר שלם x הוגדרה הפעולה <bdi dir=\"ltr\" class=\"m\">$(x)</bdi> כך: <bdi dir=\"ltr\" class=\"m\">$(x)</bdi> = סכום הספרות של <bdi dir=\"ltr\" class=\"m\">x</bdi>.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x</span><span>8</span></span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>$(x)</span><span>6</span></span></bdi> הם מספרים שלמים. מה מהבאים יכול להיות <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">341,476,120</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">345,496,160</bdi>",
@@ -591,7 +591,7 @@
      "n": 10,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> מספר שלם הגדול מ־<bdi dir=\"ltr\" class=\"m\">10</bdi>.</p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x²</span><span>(x+2)!</span></span> + <span class=\"fr\"><span>1</span><span>(x+1)!</span></span> − <span class=\"fr\"><span>1</span><span>x!</span></span> = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> מספר שלם הגדול מ־<bdi dir=\"ltr\" class=\"m\">10</bdi>.</p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x²</span><span>(x+2)!</span></span> + <span class=\"fr\"><span>1</span><span>(x+1)!</span></span> − <span class=\"fr\"><span>1</span><span>x!</span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">−<span class=\"fr\"><span>1</span><span>?·x!</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x²</span><span>(x+2)(x+1)</span></span></bdi>",
@@ -621,7 +621,7 @@
      "n": 1,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x + y ≠ 3 , <span class=\"fr\"><span>9 − (x+y)²</span><span>3 − y − x</span></span> = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x + y ≠ 3 , <span class=\"fr\"><span>9 − (x+y)²</span><span>3 − y − x</span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">3 − y − x</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">3 − <span class=\"fr\"><span>x² + y²</span><span>y − x</span></span></bdi>",
@@ -677,7 +677,7 @@
      "n": 4,
      "status": "approximate",
      "answer": 1,
-     "stem": "<p>בסרטוט שלפניכם מתומן משוכלל, שצלעו 2 ס\"מ, בו העבירו שני אלכסונים.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>שטח אפור</span><span>שטח שחור</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם מתומן משוכלל, שצלעו 2 ס\"מ, בו העבירו שני אלכסונים.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>שטח אפור</span><span>שטח שחור</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -703,7 +703,7 @@
      "n": 5,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>x ו־y הם מספרים טבעיים ועוקבים. נתון: <bdi dir=\"ltr\" class=\"m\">z = <span class=\"fr\"><span>x² − y² + x − y</span><span>4</span></span></bdi></p><p>מה מהבאים נכון בהכרח לגבי <bdi dir=\"ltr\" class=\"m\">z?</bdi></p>",
+     "stem": "<p>x ו־y הם מספרים טבעיים ועוקבים. נתון: <bdi dir=\"ltr\" class=\"m\">z = <span class=\"fr\"><span>x² − y² + x − y</span><span>4</span></span></bdi></p><p>מה מהבאים נכון בהכרח לגבי <bdi dir=\"ltr\" class=\"m\">z</bdi>?</p>",
      "options": [
       "זוגי",
       "אי־זוגי",
@@ -739,7 +739,7 @@
      "n": 7,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x, y</bdi> ו־z הם מספרים עוקבים, <bdi dir=\"ltr\" class=\"m\">x &lt; y &lt; z. 4x − y² + z² = −27</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x · y · z = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi>, <bdi dir=\"ltr\" class=\"m\">y</bdi> ו־z הם מספרים עוקבים, <bdi dir=\"ltr\" class=\"m\">x &lt; y &lt; z</bdi>. <bdi dir=\"ltr\" class=\"m\">4x − y² + z² = −27</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x · y · z</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">−6</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">−24</bdi>",
@@ -759,9 +759,9 @@
      "answer": 1,
      "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABCEFD</bdi> משושה משוכלל. הנקודה G היא אמצע הצלע <bdi dir=\"ltr\" class=\"m\">CD</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">HE &lt; GD</bdi>.</p><p>על פי נתונים אלו והנתונים שבסרטוט, מה מהבאים נכון בהכרח?</p>",
      "options": [
-      "<bdi dir=\"ltr\" class=\"m\">α &gt; β</bdi>",
-      "<bdi dir=\"ltr\" class=\"m\">α = β</bdi>",
-      "<bdi dir=\"ltr\" class=\"m\">α &lt; β</bdi>",
+      "α &gt; β",
+      "α = β",
+      "α &lt; β",
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
@@ -779,7 +779,7 @@
      "n": 9,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x &lt; 0 &lt; y</bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>|yˣ · y<sup>−|x|</sup>|</span><span>y<sup>|2x|</sup></span></span> = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x &lt; 0 &lt; y</bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>|yˣ · y<sup>−|x|</sup>|</span><span>y<sup>|2x|</sup></span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>y<sup>−2x</sup></span></span></bdi> <span class=\"warn\" title=\"מטושטש\">⚠</span>",
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
@@ -799,7 +799,7 @@
      "n": 10,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>מהי ספרת האחדות של <bdi dir=\"ltr\" class=\"m\">7¹²?</bdi></p>",
+     "stem": "<p>מהי ספרת האחדות של <bdi dir=\"ltr\" class=\"m\">7¹²</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">3</bdi>",
@@ -831,7 +831,7 @@
      "n": 1,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם מעגל בו הועברו 4 מיתרים.</p><p>נתון: שטח המשולש <bdi dir=\"ltr\" class=\"m\">DEC</bdi> גדול פי <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>4</span><span>3</span></span></bdi> משטח משולש <bdi dir=\"ltr\" class=\"m\">AEB. AE = 6</bdi> ס\"מ.</p><p>לאור נתונים אלו ונתוני הסרטוט, מה אורכה של הצלע DE (בס\"מ)?</p>",
+     "stem": "<p>בסרטוט שלפניכם מעגל בו הועברו 4 מיתרים.</p><p>נתון: שטח המשולש <bdi dir=\"ltr\" class=\"m\">DEC</bdi> גדול פי <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>4</span><span>3</span></span></bdi> משטח משולש <bdi dir=\"ltr\" class=\"m\">AEB</bdi>. <bdi dir=\"ltr\" class=\"m\">AE = 6</bdi> ס\"מ.</p><p>לאור נתונים אלו ונתוני הסרטוט, מה אורכה של הצלע DE (בס\"מ)?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">4½</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">12</bdi>",
@@ -853,7 +853,7 @@
      "n": 2,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x ≠ ±<span class=\"sq\">√<span>5</span></span> , <span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> + x</span></span> + <span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> − x</span></span> = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x ≠ ±<span class=\"sq\">√<span>5</span></span> , <span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> + x</span></span> + <span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> − x</span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>2</span><span><span class=\"sq\">√<span>5</span></span></span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>5 − x²</span></span></bdi>",
@@ -871,7 +871,7 @@
      "n": 3,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">|x| = |x − 4| , |y| = |y + 3|</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x − y = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">|x| = |x − 4| , |y| = |y + 3|</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x − y</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">½</bdi>",
@@ -889,7 +889,7 @@
      "n": 4,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>המרחק בין A ל־B הוא x ק\"מ, והמרחק בין B ל־C הוא <bdi dir=\"ltr\" class=\"m\">2x</bdi> ק\"מ.</p><p>איתן רץ מ־A ל־B במהירות של <bdi dir=\"ltr\" class=\"m\">10</bdi> קמ\"ש. לאחר מכן המשיך ללא הפסקה ל־C במהירות של 5 קמ\"ש. זמן הריצה הכולל של איתן היה שעה וחצי.</p><p>כמה זמן נמשכה ריצתו של איתן מ־A ל־<bdi dir=\"ltr\" class=\"m\">B?</bdi></p>",
+     "stem": "<p>המרחק בין A ל־B הוא x ק\"מ, והמרחק בין B ל־C הוא <bdi dir=\"ltr\" class=\"m\">2x</bdi> ק\"מ.</p><p>איתן רץ מ־A ל־B במהירות של <bdi dir=\"ltr\" class=\"m\">10</bdi> קמ\"ש. לאחר מכן המשיך ללא הפסקה ל־C במהירות של 5 קמ\"ש. זמן הריצה הכולל של איתן היה שעה וחצי.</p><p>כמה זמן נמשכה ריצתו של איתן מ־A ל־<bdi dir=\"ltr\" class=\"m\">B</bdi>?</p>",
      "options": [
       "6 דקות",
       "<bdi dir=\"ltr\" class=\"m\">12</bdi> דקות",
@@ -911,7 +911,7 @@
      "n": 5,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>a ו־b הם מספרים ראשוניים. נתון: <bdi dir=\"ltr\" class=\"m\">a·b·(a·b − 7) = 120</bdi></p><p><bdi dir=\"ltr\" class=\"m\">a + b = ?</bdi></p>",
+     "stem": "<p>a ו־b הם מספרים ראשוניים. נתון: <bdi dir=\"ltr\" class=\"m\">a·b·(a·b − 7) = 120</bdi></p><p><bdi dir=\"ltr\" class=\"m\">a + b</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">7</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">8</bdi>",
@@ -929,7 +929,7 @@
      "n": 6,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>A ו־B הן אותיות המייצגות מספרים עוקבים מ־1 עד <bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">B &lt; A</bdi></p><p><bdi dir=\"ltr\" class=\"m\">ABB − BBA = ?</bdi></p>",
+     "stem": "<p>A ו־B הן אותיות המייצגות מספרים עוקבים מ־1 עד <bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">B &lt; A</bdi></p><p><bdi dir=\"ltr\" class=\"m\">ABB − BBA</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">109</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">89</bdi>",
@@ -947,7 +947,7 @@
      "n": 7,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> מלבן ו־<bdi dir=\"ltr\" class=\"m\">AEF</bdi> משולש שווה צלעות.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\">BE = ⅓AD</bdi></p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">AEF</bdi></span><span>שטח מלבן <bdi dir=\"ltr\" class=\"m\">ABCD</bdi></span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> מלבן ו־<bdi dir=\"ltr\" class=\"m\">AEF</bdi> משולש שווה צלעות.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\">BE = ⅓AD</bdi></p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">AEF</bdi></span><span>שטח מלבן <bdi dir=\"ltr\" class=\"m\">ABCD</bdi></span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>5</span></span></bdi> <span class=\"warn\" title=\"מטושטש\">⚠</span>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>2</span></span></bdi>",
@@ -989,7 +989,7 @@
      "n": 9,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>x הוא מספר טבעי המתחלק ב־6 עם שארית <bdi dir=\"ltr\" class=\"m\">4. y</bdi> הוא מספר טבעי המתחלק ב־6 עם שארית <bdi dir=\"ltr\" class=\"m\">3</bdi>.</p><p>איזה מהביטויים הבאים מתחלק ב־6 ללא שארית?</p>",
+     "stem": "<p>x הוא מספר טבעי המתחלק ב־6 עם שארית <bdi dir=\"ltr\" class=\"m\">4</bdi>. <bdi dir=\"ltr\" class=\"m\">y</bdi> הוא מספר טבעי המתחלק ב־6 עם שארית <bdi dir=\"ltr\" class=\"m\">3</bdi>.</p><p>איזה מהביטויים הבאים מתחלק ב־6 ללא שארית?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">xy − 7</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">x²y + 1</bdi>",
@@ -1205,7 +1205,7 @@
      "n": 4,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>בסרטוט שלפניכם ריבוע החסום במעגל החסום בריבוע. נתון כי רדיוסו של המעגל הוא <bdi dir=\"ltr\" class=\"m\">r</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>השטח האפור</span><span>השטח הלבן</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם ריבוע החסום במעגל החסום בריבוע. נתון כי רדיוסו של המעגל הוא <bdi dir=\"ltr\" class=\"m\">r</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>השטח האפור</span><span>השטח הלבן</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>π−1</span><span>4−π</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>π−2</span><span>6−π</span></span></bdi>",
@@ -1271,7 +1271,7 @@
      "n": 7,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>לכל שלושה מספרים <bdi dir=\"ltr\" class=\"m\">x, y</bdi> ו־z הוגדרה הפעולה <bdi dir=\"ltr\" class=\"m\">$(x, y, z)</bdi> כך: ההפרש בין שורש המספר הגדול מבין השלושה לבין ריבוע המספר הקטן מבין השלושה.</p><p><bdi dir=\"ltr\" class=\"m\">$( $(81,49,3) , $(16,121,<span class=\"sq\">√<span>10</span></span>) , $(<span class=\"sq\">√<span>3</span></span>,4,144) ) = ?</bdi></p>",
+     "stem": "<p>לכל שלושה מספרים <bdi dir=\"ltr\" class=\"m\">x</bdi>, <bdi dir=\"ltr\" class=\"m\">y</bdi> ו־z הוגדרה הפעולה <bdi dir=\"ltr\" class=\"m\">$(x, y, z)</bdi> כך: ההפרש בין שורש המספר הגדול מבין השלושה לבין ריבוע המספר הקטן מבין השלושה.</p><p><bdi dir=\"ltr\" class=\"m\">$( $(81,49,3) , $(16,121,<span class=\"sq\">√<span>10</span></span>) , $(<span class=\"sq\">√<span>3</span></span>,4,144) )</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -1289,7 +1289,7 @@
      "n": 8,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>בסרטוט שלפניכם מעגל שמרכזו O ורדיוסו <bdi dir=\"ltr\" class=\"m\">1</bdi>. בתוך המעגל נמצא ריבוע שקודקוד אחד שלו (קודקוד <bdi dir=\"ltr\" class=\"m\">C</bdi>) מונח על היקף המעגל, והקודקוד הנגדי שלו מונח על מרכז המעגל. הנקודה B נמצאת על המשך הצלע <bdi dir=\"ltr\" class=\"m\">AO</bdi> והיא מונחת על היקפו של המעגל.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\">AB = ½BC</bdi></p><p>לאור נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">ABC</bdi></span><span>שטח הריבוע</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם מעגל שמרכזו O ורדיוסו <bdi dir=\"ltr\" class=\"m\">1</bdi>. בתוך המעגל נמצא ריבוע שקודקוד אחד שלו (קודקוד <bdi dir=\"ltr\" class=\"m\">C</bdi>) מונח על היקף המעגל, והקודקוד הנגדי שלו מונח על מרכז המעגל. הנקודה B נמצאת על המשך הצלע <bdi dir=\"ltr\" class=\"m\">AO</bdi> והיא מונחת על היקפו של המעגל.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\">AB = ½BC</bdi></p><p>לאור נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">ABC</bdi></span><span>שטח הריבוע</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>2</span><span><span class=\"sq\">√<span>3</span></span></span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>2<span class=\"sq\">√<span>3</span></span></span></span></bdi>",
@@ -1311,7 +1311,7 @@
      "n": 9,
      "status": "clean",
      "answer": 3,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a, x</bdi> ו־y הם מספרים שלמים, <bdi dir=\"ltr\" class=\"m\">1 &lt; a</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">(aˣ · a²ʸ)ˣ = (<span class=\"fr\"><span>1</span><span>aʸ</span></span>)ʸ</bdi></p><p>איזו מהטענות הבאות נובעת בהכרח מהנתונים?</p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a</bdi>, <bdi dir=\"ltr\" class=\"m\">x</bdi> ו־y הם מספרים שלמים, <bdi dir=\"ltr\" class=\"m\">1 &lt; a</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">(aˣ · a²ʸ)ˣ = (<span class=\"fr\"><span>1</span><span>aʸ</span></span>)ʸ</bdi></p><p>איזו מהטענות הבאות נובעת בהכרח מהנתונים?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">x · y = 0</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">x − y = 1</bdi>",
@@ -1333,7 +1333,7 @@
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">0.01</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">0.07</bdi>",
-      "<bdi dir=\"ltr\" class=\"m\">0.0?</bdi> <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>",
+      "<bdi dir=\"ltr\" class=\"m\">0.0</bdi>? <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>",
       "<bdi dir=\"ltr\" class=\"m\">0.7</bdi>"
      ],
      "figure": null,
@@ -1406,7 +1406,7 @@
      "n": 3,
      "status": "clean",
      "answer": 2,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>21! × 20</span><span>21! − 20!</span></span> = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>21! × 20</span><span>21! − 20!</span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">20</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">21</bdi>",
@@ -1449,7 +1449,7 @@
      "stem": "<p>עבור כל שני מספרים a ו־b השונים מ־0 הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">$(a,b) = a<sup>a·b</sup><span class=\"warn\" title=\"המעריך קטן – נקרא בקירוב\">⚠</span></bdi></p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
       "אם <bdi dir=\"ltr\" class=\"m\">a &lt; 0 &lt; b</bdi> אז <bdi dir=\"ltr\" class=\"m\">$(a,b) = $(b,a)</bdi>",
-      "אם <bdi dir=\"ltr\" class=\"m\">0 &lt; a, b</bdi> אז <bdi dir=\"ltr\" class=\"m\">$(a,b) = $(b,a)</bdi>",
+      "אם <bdi dir=\"ltr\" class=\"m\">0 &lt; a</bdi>, <bdi dir=\"ltr\" class=\"m\">b</bdi> אז <bdi dir=\"ltr\" class=\"m\">$(a,b) = $(b,a)</bdi>",
       "אם <bdi dir=\"ltr\" class=\"m\">a = −b</bdi> אז <bdi dir=\"ltr\" class=\"m\">$(a,b) = $(b,a)</bdi>",
       "אם <bdi dir=\"ltr\" class=\"m\">a = <span class=\"fr\"><span>1</span><span>b</span></span></bdi> אז <bdi dir=\"ltr\" class=\"m\">$(a,b) = <span class=\"fr\"><span>1</span><span>$(b,a)</span></span></bdi>"
      ],
@@ -1484,7 +1484,7 @@
      "n": 7,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x + y = 3 , xy = ¼</bdi></p><p><bdi dir=\"ltr\" class=\"m\">|x − y| = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x + y = 3 , xy = ¼</bdi></p><p><bdi dir=\"ltr\" class=\"m\">|x − y|</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"sq\">√<span>2</span></span></bdi>",
@@ -1502,7 +1502,7 @@
      "n": 8,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>מטילים קובייה הוגנת פעמיים. מה ההסתברות שסכום התוצאות יניב תוצאה שמתחלקת ב־<bdi dir=\"ltr\" class=\"m\">7?</bdi></p>",
+     "stem": "<p>מטילים קובייה הוגנת פעמיים. מה ההסתברות שסכום התוצאות יניב תוצאה שמתחלקת ב־<bdi dir=\"ltr\" class=\"m\">7</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>5</span><span>36</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>6</span></span></bdi>",
@@ -1793,7 +1793,7 @@
      "n": 7,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> ו־b הם מספרים טבעיים. <bdi dir=\"ltr\" class=\"m\">a = b + 1 , a² − b² = 23</bdi></p><p><bdi dir=\"ltr\" class=\"m\">a × b = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> ו־b הם מספרים טבעיים. <bdi dir=\"ltr\" class=\"m\">a = b + 1 , a² − b² = 23</bdi></p><p><bdi dir=\"ltr\" class=\"m\">a × b</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">90</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">110</bdi>",
@@ -1901,7 +1901,7 @@
      "n": 2,
      "status": "clean",
      "answer": 3,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span><span class=\"sq\">√<span>5</span></span> + 1</span><span><span class=\"sq\">√<span>5</span></span> − 1</span></span> = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span><span class=\"sq\">√<span>5</span></span> + 1</span><span><span class=\"sq\">√<span>5</span></span> − 1</span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"sq\">√<span>5</span></span></bdi>",
@@ -1941,7 +1941,7 @@
      "n": 4,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">4 &lt; x</bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>4 − x</span><span>−7 + <span class=\"fr\"><span>1</span><span>(<span class=\"fr\"><span>1</span><span>x−3</span></span>) · (<span class=\"fr\"><span>1</span><span>x+3</span></span>)</span></span></span></span> = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">4 &lt; x</bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>4 − x</span><span>−7 + <span class=\"fr\"><span>1</span><span>(<span class=\"fr\"><span>1</span><span>x−3</span></span>) · (<span class=\"fr\"><span>1</span><span>x+3</span></span>)</span></span></span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>x−4</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>x+4</span></span></bdi>",
@@ -1985,7 +1985,7 @@
      "n": 6,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">9<sup><span class=\"fr\"><span>x</span><span>2</span></span></sup> + 27<sup><span class=\"fr\"><span>x</span><span>3</span></span></sup> + 243<sup><span class=\"fr\"><span>x</span><span>5</span></span></sup> = 3<sup>|x|</sup></bdi></p><p><bdi dir=\"ltr\" class=\"m\">x = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">9<sup><span class=\"fr\"><span>x</span><span>2</span></span></sup> + 27<sup><span class=\"fr\"><span>x</span><span>3</span></span></sup> + 243<sup><span class=\"fr\"><span>x</span><span>5</span></span></sup> = 3<sup>|x|</sup></bdi></p><p><bdi dir=\"ltr\" class=\"m\">x</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">−1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">−½</bdi>",
@@ -2003,7 +2003,7 @@
      "n": 7,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>בכמה אחוזים גדול <bdi dir=\"ltr\" class=\"m\">(300 + 3a)</bdi> מ־<bdi dir=\"ltr\" class=\"m\">300?</bdi></p>",
+     "stem": "<p>בכמה אחוזים גדול <bdi dir=\"ltr\" class=\"m\">(300 + 3a)</bdi> מ־<bdi dir=\"ltr\" class=\"m\">300</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">⅓a %</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">a %</bdi>",
@@ -2199,7 +2199,7 @@
      "n": 10,
      "status": "clean",
      "answer": 1,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x, y, z</bdi> ו־w מספרים שלמים. נתון: <bdi dir=\"ltr\" class=\"m\">y(x − 7)(z + 8) = 6w − 5</bdi></p><p>איזה מהמספרים הבאים בהכרח זוגי?</p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x</bdi>, <bdi dir=\"ltr\" class=\"m\">y</bdi>, <bdi dir=\"ltr\" class=\"m\">z</bdi> ו־w מספרים שלמים. נתון: <bdi dir=\"ltr\" class=\"m\">y(x − 7)(z + 8) = 6w − 5</bdi></p><p>איזה מהמספרים הבאים בהכרח זוגי?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">x</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">y</bdi>",
@@ -2261,7 +2261,7 @@
      "n": 3,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">$(x) = x² · (x² + 1) · (x² − 4)</bdi></p><p>מהו תחום הערכים של x שעבורו מתקיים <bdi dir=\"ltr\" class=\"m\">$(x) &gt; 0 ?</bdi></p>",
+     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">$(x) = x² · (x² + 1) · (x² − 4)</bdi></p><p>מהו תחום הערכים של x שעבורו מתקיים <bdi dir=\"ltr\" class=\"m\">$(x) &gt; 0</bdi> ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">x &lt; 2</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2 &lt; x</bdi>",
@@ -2315,7 +2315,7 @@
      "n": 6,
      "status": "clean",
      "answer": 2,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A, B</bdi> ו־C הן אותיות המייצגות ספרות שונות זו מזו בין 1 ל־<bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">B = 2A</bdi> ,</p><pre dir=\"ltr\">  AB\n×  B\n-----\n 2CB</pre><p><bdi dir=\"ltr\" class=\"m\">B − C − A = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A</bdi>, <bdi dir=\"ltr\" class=\"m\">B</bdi> ו־C הן אותיות המייצגות ספרות שונות זו מזו בין 1 ל־<bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">B = 2A</bdi> ,</p><pre dir=\"ltr\">  AB\n×  B\n-----\n 2CB</pre><p><bdi dir=\"ltr\" class=\"m\">B − C − A</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -2333,7 +2333,7 @@
      "n": 7,
      "status": "clean",
      "answer": 1,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>3<span class=\"sq\">√<span>5</span></span></span></span> + <span class=\"fr\"><span>4</span><span><span class=\"sq\">√<span>180</span></span></span></span> = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>3<span class=\"sq\">√<span>5</span></span></span></span> + <span class=\"fr\"><span>4</span><span><span class=\"sq\">√<span>180</span></span></span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span></span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>2</span><span><span class=\"sq\">√<span>5</span></span></span></span></bdi>",
@@ -2354,7 +2354,7 @@
      "stem": "<p>במערכת הצירים שלפניכם מסורטט דלתון <bdi dir=\"ltr\" class=\"m\">(BA = BC , DA = DC)</bdi> שקודקודיו מונחים על הצירים.</p><p>לפי הנתונים שבסרטוט, איזו מהטענות הבאות נכונה בהכרח?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">|d| = |b|</bdi> וגם <bdi dir=\"ltr\" class=\"m\">|a| = |c|</bdi>",
-      "שטח הדלתון <bdi dir=\"ltr\" class=\"m\">&gt; 2 × <span class=\"fr\"><span>(|a| + |c|)·|b|</span><span>2</span></span></bdi>",
+      "שטח הדלתון &gt; <bdi dir=\"ltr\" class=\"m\">2 × <span class=\"fr\"><span>(|a| + |c|)·|b|</span><span>2</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\">|a| + |c| &lt; |d| + |b|</bdi>",
       "אף אחת מהטענות אינה נכונה בהכרח"
      ],
@@ -2417,7 +2417,7 @@
      "n": 1,
      "status": "clean",
      "answer": 1,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">8ˣ − 4⁻ˣ = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">8ˣ − 4⁻ˣ</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>2⁵ˣ − 1</span><span>2²ˣ</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2⁵ˣ</bdi>",
@@ -2435,7 +2435,7 @@
      "n": 2,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>בסרטוט שלפניכם משולש <bdi dir=\"ltr\" class=\"m\">ABC. D</bdi> נקודה על הצלע <bdi dir=\"ltr\" class=\"m\">AC</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">BD = 2BE</bdi>.</p><p>על נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>השטח האפור</span><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">ABC</bdi></span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם משולש <bdi dir=\"ltr\" class=\"m\">ABC</bdi>. <bdi dir=\"ltr\" class=\"m\">D</bdi> נקודה על הצלע <bdi dir=\"ltr\" class=\"m\">AC</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">BD = 2BE</bdi>.</p><p>על נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>השטח האפור</span><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">ABC</bdi></span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">½</bdi>",
@@ -2539,7 +2539,7 @@
      "n": 7,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">ᵃ<span class=\"sq\">√<span>8</span></span> · ᵃ<span class=\"sq\">√<span>8</span></span> · ᵃ<span class=\"sq\">√<span>8</span></span> = 2ᵃ , a ≠ 0</bdi></p><p>מה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">a?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">ᵃ<span class=\"sq\">√<span>8</span></span> · ᵃ<span class=\"sq\">√<span>8</span></span> · ᵃ<span class=\"sq\">√<span>8</span></span> = 2ᵃ , a ≠ 0</bdi></p><p>מה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">a</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">⅓</bdi>",
@@ -2645,7 +2645,7 @@
      "n": 2,
      "status": "clean",
      "answer": 2,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">(x + 20)</bdi> אחוזים מ־<bdi dir=\"ltr\" class=\"m\">80</bdi> גדול פי 4 מ־<bdi dir=\"ltr\" class=\"m\">8%</bdi> מ־<bdi dir=\"ltr\" class=\"m\">(y + 50)</bdi>.</p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x</span><span>y</span></span> = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">(x + 20)</bdi> אחוזים מ־<bdi dir=\"ltr\" class=\"m\">80</bdi> גדול פי 4 מ־<bdi dir=\"ltr\" class=\"m\">8%</bdi> מ־<bdi dir=\"ltr\" class=\"m\">(y + 50)</bdi>.</p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x</span><span>y</span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>5</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>2</span><span>5</span></span></bdi>",
@@ -2663,7 +2663,7 @@
      "n": 3,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">172,190,714</bdi> מתחלק ב־7 עם שארית <bdi dir=\"ltr\" class=\"m\">3</bdi>. איזה מהבאים מתחלק ב־7 עם שארית <bdi dir=\"ltr\" class=\"m\">1?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">172,190,714</bdi> מתחלק ב־7 עם שארית <bdi dir=\"ltr\" class=\"m\">3</bdi>. איזה מהבאים מתחלק ב־7 עם שארית <bdi dir=\"ltr\" class=\"m\">1</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">172,190,711</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">172,190,703</bdi>",
@@ -2717,7 +2717,7 @@
      "n": 6,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> ו־y מספרים ראשוניים דו־ספרתיים, <bdi dir=\"ltr\" class=\"m\">y &lt; x. x − y = z</bdi></p><p>מה מהבאים נכון בהכרח לגבי ערכו של הביטוי <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>z<sup>x−y</sup></span><span>4</span></span> ?<span class=\"warn\" title=\"המעריך קטן – נקרא בקירוב\">⚠</span></bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> ו־y מספרים ראשוניים דו־ספרתיים, <bdi dir=\"ltr\" class=\"m\">y &lt; x</bdi>. <bdi dir=\"ltr\" class=\"m\">x − y = z</bdi></p><p>מה מהבאים נכון בהכרח לגבי ערכו של הביטוי <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>z<sup>x−y</sup></span><span>4</span></span> ?<span class=\"warn\" title=\"המעריך קטן – נקרא בקירוב\">⚠</span></bdi></p>",
      "options": [
       "שבר",
       "שלם",
@@ -2759,7 +2759,7 @@
      "n": 8,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a, b</bdi> ו־c הם מספרים טבעיים ושונים זה מזה. נתון: <bdi dir=\"ltr\" class=\"m\">1 &lt; a, b, c , x = a³ · b² · c</bdi></p><p>איזה מהמספרים הבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a</bdi>, <bdi dir=\"ltr\" class=\"m\">b</bdi> ו־c הם מספרים טבעיים ושונים זה מזה. נתון: <bdi dir=\"ltr\" class=\"m\">1 &lt; a</bdi>, <bdi dir=\"ltr\" class=\"m\">b</bdi>, <bdi dir=\"ltr\" class=\"m\">c , x = a³ · b² · c</bdi></p><p>איזה מהמספרים הבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">270</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">700</bdi>",
@@ -2863,7 +2863,7 @@
      "n": 3,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> ו־y מספרים שלמים השונים מ־<bdi dir=\"ltr\" class=\"m\">0. y³ &lt; y⁵ &lt; 243 , x³ &lt; x² &lt; 16</bdi></p><p>מה מהבאים <u class=\"em\">אינו</u> יכול להיות ערכו של הביטוי <bdi dir=\"ltr\" class=\"m\">y − x ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> ו־y מספרים שלמים השונים מ־<bdi dir=\"ltr\" class=\"m\">0</bdi>. <bdi dir=\"ltr\" class=\"m\">y³ &lt; y⁵ &lt; 243 , x³ &lt; x² &lt; 16</bdi></p><p>מה מהבאים <u class=\"em\">אינו</u> יכול להיות ערכו של הביטוי <bdi dir=\"ltr\" class=\"m\">y − x</bdi> ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">5</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -2959,7 +2959,7 @@
      "n": 10,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>לעידן 4 שקי חול במשקלים שונים <bdi dir=\"ltr\" class=\"m\">– 21</bdi> קילוגרם, <bdi dir=\"ltr\" class=\"m\">12</bdi> קילוגרם, <bdi dir=\"ltr\" class=\"m\">5</bdi> קילוגרם, <bdi dir=\"ltr\" class=\"m\">2</bdi> קילוגרם. מכל אחד מהשקים יכול עידן פעם אחת לשפוך מחצית מהתכולה שלו. כמו כן, עידן יכול לאחד מספר שקים יחדיו לשק אחד גדול, אבל לאחר מכן הוא אינו יכול לשפוך מתוכנו החוצה.</p><p>לאיזה מהמשקלים הבאים (בקילוגרמים) <u class=\"em\">לא</u> יכול עידן להגיע?</p>",
+     "stem": "<p>לעידן 4 שקי חול במשקלים שונים – <bdi dir=\"ltr\" class=\"m\">21</bdi> קילוגרם, <bdi dir=\"ltr\" class=\"m\">12</bdi> קילוגרם, <bdi dir=\"ltr\" class=\"m\">5</bdi> קילוגרם, <bdi dir=\"ltr\" class=\"m\">2</bdi> קילוגרם. מכל אחד מהשקים יכול עידן פעם אחת לשפוך מחצית מהתכולה שלו. כמו כן, עידן יכול לאחד מספר שקים יחדיו לשק אחד גדול, אבל לאחר מכן הוא אינו יכול לשפוך מתוכנו החוצה.</p><p>לאיזה מהמשקלים הבאים (בקילוגרמים) <u class=\"em\">לא</u> יכול עידן להגיע?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">6½</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">9½</bdi>",
@@ -3003,7 +3003,7 @@
      "n": 2,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> הוא מספר שלם. מה מהבאים נכון בהכרח לגבי הביטוי <bdi dir=\"ltr\" class=\"m\">(<span class=\"fr\"><span>ⁿ<span class=\"sq\">√<span>6</span></span></span><span>ᵐ<span class=\"sq\">√<span>2</span></span></span></span>)ᵃ ?</bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"סדרי השורשים במונה ובמכנה לא קריאים בסרטון\">⚠</span></bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> הוא מספר שלם. מה מהבאים נכון בהכרח לגבי הביטוי <bdi dir=\"ltr\" class=\"m\">(<span class=\"fr\"><span>ⁿ<span class=\"sq\">√<span>6</span></span></span><span>ᵐ<span class=\"sq\">√<span>2</span></span></span></span>)ᵃ</bdi> ?</p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"סדרי השורשים במונה ובמכנה לא קריאים בסרטון\">⚠</span></bdi></p>",
      "options": [
       "אם a מתחלק ב־<bdi dir=\"ltr\" class=\"m\">12</bdi> ללא שארית אז הביטוי הינו מספר שלם",
       "אם a מתחלק ב־6 ללא שארית אז הביטוי הינו מספר שלם",
@@ -3041,7 +3041,7 @@
      "n": 4,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>ריבוע <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> חסום במעגל שרדיוסו 3 ס\"מ. על אלכסוני הריבוע <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> מונח ריבוע <bdi dir=\"ltr\" class=\"m\">EFGH</bdi> המקיים <bdi dir=\"ltr\" class=\"m\">FH = ⅓AC</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>השטח הלבן</span><span>השטח האפור</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>ריבוע <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> חסום במעגל שרדיוסו 3 ס\"מ. על אלכסוני הריבוע <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> מונח ריבוע <bdi dir=\"ltr\" class=\"m\">EFGH</bdi> המקיים <bdi dir=\"ltr\" class=\"m\">FH = ⅓AC</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>השטח הלבן</span><span>השטח האפור</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>18</span><span>9π − 18</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>16</span><span>9π − 16</span></span></bdi>",
@@ -3161,7 +3161,7 @@
      "n": 10,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"תחילת השאלה מטושטשת\">⚠</span></bdi> ידוע כי תופרת מכינה <bdi dir=\"ltr\" class=\"m\">10</bdi> זוגות מכנסיים בשעה. כמו כן, נתון כי כל תופרת נוספת [שמצטרפת] מגדילה לכל תופרת קיימת (ולעצמה) את התפוקה ב־2 זוגות בשעה. <bdi dir=\"ltr\" class=\"m\">4</bdi> תופרות החלו את יום עבודתן בשעה <bdi dir=\"ltr\" class=\"m\">9:00</bdi> בבוקר.</p><p>כמה זוגות מכנסיים הן תפרו עד השעה <bdi dir=\"ltr\" class=\"m\">10:00?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"תחילת השאלה מטושטשת\">⚠</span></bdi> ידוע כי תופרת מכינה <bdi dir=\"ltr\" class=\"m\">10</bdi> זוגות מכנסיים בשעה. כמו כן, נתון כי כל תופרת נוספת [שמצטרפת] מגדילה לכל תופרת קיימת (ולעצמה) את התפוקה ב־2 זוגות בשעה. <bdi dir=\"ltr\" class=\"m\">4</bdi> תופרות החלו את יום עבודתן בשעה <bdi dir=\"ltr\" class=\"m\">9:00</bdi> בבוקר.</p><p>כמה זוגות מכנסיים הן תפרו עד השעה <bdi dir=\"ltr\" class=\"m\">10:00</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">80</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">90</bdi>",
@@ -3207,7 +3207,7 @@
      "n": 2,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>בסרטוט שלפניכם מתומן משוכלל, שצלעו 4 ס\"מ, בו הועברו כמה אלכסונים שיוצרים את המשולשים שבסרטוט.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>שטח אפור</span><span>שטח שחור</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם מתומן משוכלל, שצלעו 4 ס\"מ, בו הועברו כמה אלכסונים שיוצרים את המשולשים שבסרטוט.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>שטח אפור</span><span>שטח שחור</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"sq\">√<span>2</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"sq\">√<span>2</span></span> + 1</bdi>",
@@ -3229,7 +3229,7 @@
      "n": 3,
      "status": "clean",
      "answer": 2,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x, y</bdi> ו־z הם שלושה מספרים עוקבים. נתון: <bdi dir=\"ltr\" class=\"m\">z &lt; y &lt; x</bdi></p><p>מה מהבאים נכון בהכרח לגבי הביטוי <bdi dir=\"ltr\" class=\"m\">|(y − z)| − |(y + x)| + |(z − x)| ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x</bdi>, <bdi dir=\"ltr\" class=\"m\">y</bdi> ו־z הם שלושה מספרים עוקבים. נתון: <bdi dir=\"ltr\" class=\"m\">z &lt; y &lt; x</bdi></p><p>מה מהבאים נכון בהכרח לגבי הביטוי <bdi dir=\"ltr\" class=\"m\">|(y − z)| − |(y + x)| + |(z − x)|</bdi> ?</p>",
      "options": [
       "אי־זוגי",
       "זוגי",
@@ -3287,7 +3287,7 @@
      "n": 6,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם טרפז <bdi dir=\"ltr\" class=\"m\">ABCD (AB ∥ CD)</bdi> בו מעגל. הנקודות E ו־F הן נקודות ההשקה של המעגל לצלעות הטרפז.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span><bdi dir=\"ltr\" class=\"m\">EF</bdi></span><span>קוטר המעגל</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם טרפז <bdi dir=\"ltr\" class=\"m\">ABCD (AB ∥ CD)</bdi> בו מעגל. הנקודות E ו־F הן נקודות ההשקה של המעגל לצלעות הטרפז.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span><bdi dir=\"ltr\" class=\"m\">EF</bdi></span><span>קוטר המעגל</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "גדול מ־1",
@@ -3327,7 +3327,7 @@
      "n": 8,
      "status": "clean",
      "answer": 2,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A, B</bdi> ו־C הן אותיות המייצגות ספרות מ־1 עד <bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">ABC = CBA</bdi></p><p>במידה ונבחרים 3 ספרות באקראי, מה הסיכוי ששלושת הספרות שנבחרו יקיימו את הנתון?</p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A</bdi>, <bdi dir=\"ltr\" class=\"m\">B</bdi> ו־C הן אותיות המייצגות ספרות מ־1 עד <bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">ABC = CBA</bdi></p><p>במידה ונבחרים 3 ספרות באקראי, מה הסיכוי ששלושת הספרות שנבחרו יקיימו את הנתון?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>9</span></span></bdi>",
@@ -3345,7 +3345,7 @@
      "n": 9,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x &lt; −1</bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x¹¹</span><span>|x|</span></span> − x¹⁰ = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x &lt; −1</bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x¹¹</span><span>|x|</span></span> − x¹⁰</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">0</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2x¹⁰</bdi>",
@@ -3363,7 +3363,7 @@
      "n": 10,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>שטחו של מתומן משוכלל שאורך צלעו a ס\"מ הוא x סמ\"ר.</p><p>מה אורכה (בס\"מ) של צלעו של מתומן משוכלל אחר ששטחו <bdi dir=\"ltr\" class=\"m\">4x?</bdi></p>",
+     "stem": "<p>שטחו של מתומן משוכלל שאורך צלעו a ס\"מ הוא x סמ\"ר.</p><p>מה אורכה (בס\"מ) של צלעו של מתומן משוכלל אחר ששטחו <bdi dir=\"ltr\" class=\"m\">4x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">½a</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2a</bdi>",
@@ -3429,7 +3429,7 @@
      "n": 3,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>xⁿ − x<sup><span class=\"fr\"><span>n</span><span>5</span></span></sup></span><span>x<sup><span class=\"fr\"><span>4n</span><span>5</span></span></sup> − 1</span></span> = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>xⁿ − x<sup><span class=\"fr\"><span>n</span><span>5</span></span></sup></span><span>x<sup><span class=\"fr\"><span>4n</span><span>5</span></span></sup> − 1</span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">x<sup><span class=\"fr\"><span>n</span><span>5</span></span></sup></bdi>",
@@ -3451,7 +3451,7 @@
      "n": 4,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם שלושה ריבועים <bdi dir=\"ltr\" class=\"m\">– ABCD, AFGH</bdi> ו־<bdi dir=\"ltr\" class=\"m\">AEKI</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">EF = ⅓AE , FB = ½EF</bdi>.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>השטח הלבן</span><span>השטח המנוקד</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם שלושה ריבועים – <bdi dir=\"ltr\" class=\"m\">ABCD</bdi>, <bdi dir=\"ltr\" class=\"m\">AFGH</bdi> ו־<bdi dir=\"ltr\" class=\"m\">AEKI</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">EF = ⅓AE , FB = ½EF</bdi>.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>השטח הלבן</span><span>השטח המנוקד</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>53</span><span>28</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>17</span><span>28</span></span></bdi>",
@@ -3477,7 +3477,7 @@
      "n": 5,
      "status": "clean",
      "answer": 2,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x(y + z)(y² + z²)(y⁴ + z⁴) = y⁸ − z⁸</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x(y + z)(y² + z²)(y⁴ + z⁴) = y⁸ − z⁸</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">y − z</bdi>",
@@ -3517,7 +3517,7 @@
      "n": 7,
      "status": "clean",
      "answer": 3,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a, b</bdi> ו־c הם מספרים שלמים. <bdi dir=\"ltr\" class=\"m\">a · b + c</bdi> מתחלק ב־4 ללא שארית.</p><p>איזו מהטענות הבאות בהכרח <u class=\"em\">אינה</u> נכונה?</p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">a</bdi>, <bdi dir=\"ltr\" class=\"m\">b</bdi> ו־c הם מספרים שלמים. <bdi dir=\"ltr\" class=\"m\">a · b + c</bdi> מתחלק ב־4 ללא שארית.</p><p>איזו מהטענות הבאות בהכרח <u class=\"em\">אינה</u> נכונה?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">a · b</bdi> מתחלק ב־3 ללא שארית",
       "<bdi dir=\"ltr\" class=\"m\">a + b + c</bdi> מתחלק ב־2 ללא שארית",
@@ -3535,7 +3535,7 @@
      "n": 8,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם מעגל שמרכזו O ורדיוסו <bdi dir=\"ltr\" class=\"m\">6. A</bdi> ו־D נקודות על היקף המעגל. <bdi dir=\"ltr\" class=\"m\">OBC</bdi> הוא משולש שווה צלעות. נתון: השטח הכהה שווה לשטח הצורה שקודקודיה הם <bdi dir=\"ltr\" class=\"m\">D, C, B</bdi> ו־<bdi dir=\"ltr\" class=\"m\">A</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <bdi dir=\"ltr\" class=\"m\">BC = ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם מעגל שמרכזו O ורדיוסו <bdi dir=\"ltr\" class=\"m\">6</bdi>. <bdi dir=\"ltr\" class=\"m\">A</bdi> ו־D נקודות על היקף המעגל. <bdi dir=\"ltr\" class=\"m\">OBC</bdi> הוא משולש שווה צלעות. נתון: השטח הכהה שווה לשטח הצורה שקודקודיה הם <bdi dir=\"ltr\" class=\"m\">D</bdi>, <bdi dir=\"ltr\" class=\"m\">C</bdi>, <bdi dir=\"ltr\" class=\"m\">B</bdi> ו־<bdi dir=\"ltr\" class=\"m\">A</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <bdi dir=\"ltr\" class=\"m\">BC</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">4<span class=\"sq\">√<span>3π</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\">12·⁴<span class=\"sq\">√<span>3π</span></span></bdi>",
@@ -3561,7 +3561,7 @@
      "n": 9,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>לכל מספר x הוגדרו הפעולות #, @ ו־$ כך:</p><p><bdi dir=\"ltr\" class=\"m\">#(x) = <span class=\"fr\"><span>@(2x) + 4</span><span>2</span></span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">@(x) = 2$(x) + 5x − 10</bdi></p><p><bdi dir=\"ltr\" class=\"m\">$(x) = ⁴<span class=\"sq\">√<span>x⁸</span></span> + 1<span class=\"warn\" title=\"נקרא בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">#(1) = ?</bdi></p>",
+     "stem": "<p>לכל מספר x הוגדרו הפעולות #, @ ו־$ כך:</p><p><bdi dir=\"ltr\" class=\"m\">#(x) = <span class=\"fr\"><span>@(2x) + 4</span><span>2</span></span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">@(x) = 2$(x) + 5x − 10</bdi></p><p><bdi dir=\"ltr\" class=\"m\">$(x) = ⁴<span class=\"sq\">√<span>x⁸</span></span> + 1<span class=\"warn\" title=\"נקרא בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">#(1)</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">7</bdi>",
@@ -3633,7 +3633,7 @@
      "n": 2,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">$(x) = ½ · $(x − 2)</bdi></p><p><bdi dir=\"ltr\" class=\"m\">$(2) = 16 , $(10) = ?</bdi></p>",
+     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">$(x) = ½ · $(x − 2)</bdi></p><p><bdi dir=\"ltr\" class=\"m\">$(2) = 16 , $(10)</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -3651,7 +3651,7 @@
      "n": 3,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">3a = <span class=\"fr\"><span>6</span><span>x</span></span> + <span class=\"fr\"><span>y</span><span>x</span></span> , x, a ≠ 0<span class=\"warn\" title=\"המונה הראשון קטן – נקרא בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">b = a + y + 6</bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>b</span><span>a</span></span> = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">3a = <span class=\"fr\"><span>6</span><span>x</span></span> + <span class=\"fr\"><span>y</span><span>x</span></span> , x</bdi>, <bdi dir=\"ltr\" class=\"m\">a ≠ 0<span class=\"warn\" title=\"המונה הראשון קטן – נקרא בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">b = a + y + 6</bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>b</span><span>a</span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">x + y</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">1 + x + y</bdi>",
@@ -3671,7 +3671,7 @@
      "n": 4,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> הוא מספר ראשוני דו־ספרתי שספרת העשרות שלו מהווה <bdi dir=\"ltr\" class=\"m\">80%</bdi> מסכום ספרותיו.</p><p>מה סכום הספרות של <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> הוא מספר ראשוני דו־ספרתי שספרת העשרות שלו מהווה <bdi dir=\"ltr\" class=\"m\">80%</bdi> מסכום ספרותיו.</p><p>מה סכום הספרות של <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">10</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">5</bdi>",
@@ -3763,7 +3763,7 @@
      "n": 9,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">y = x · 2x · 3x · 4x · 5x · … · 24x · 25x</bdi></p><p><bdi dir=\"ltr\" class=\"m\">y = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">y = x · 2x · 3x · 4x · 5x · … · 24x · 25x</bdi></p><p><bdi dir=\"ltr\" class=\"m\">y</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">(25x)!</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">25! · x!</bdi>",
@@ -3821,7 +3821,7 @@
      "n": 1,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x − 7</span><span>9 − x</span></span> &lt; 0 ; x ≠ 9</bdi></p><p>מהו תחום הערכים של <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>x − 7</span><span>9 − x</span></span> &lt; 0 ; x ≠ 9</bdi></p><p>מהו תחום הערכים של <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">x &gt; 7</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">x &lt; 9</bdi>",
@@ -3839,7 +3839,7 @@
      "n": 2,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם מסילה מעגלית שמרכזה <bdi dir=\"ltr\" class=\"m\">O</bdi>. כדור מסתובב, במהירות קבועה, ללא הפסקה על גבי המסילה. הסיכוי שברגע כלשהו הכדור ימצא בחלקה המודגש של המסילה קטן פי <bdi dir=\"ltr\" class=\"m\">1.5</bdi> מהסיכוי שהכדור ימצא בחלקה הלא מודגש של המסילה.</p><p>לאור נתונים אלו והנתונים שבסרטוט, <bdi dir=\"ltr\" class=\"m\">α = ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם מסילה מעגלית שמרכזה <bdi dir=\"ltr\" class=\"m\">O</bdi>. כדור מסתובב, במהירות קבועה, ללא הפסקה על גבי המסילה. הסיכוי שברגע כלשהו הכדור ימצא בחלקה המודגש של המסילה קטן פי <bdi dir=\"ltr\" class=\"m\">1.5</bdi> מהסיכוי שהכדור ימצא בחלקה הלא מודגש של המסילה.</p><p>לאור נתונים אלו והנתונים שבסרטוט, α = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">45°</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">60°</bdi>",
@@ -3984,7 +3984,7 @@
      "n": 1,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>לכל מספר x שהוא חיובי ושלם הוגדרה הפעולה $ כך:</p><p>אם <bdi dir=\"ltr\" class=\"m\">x = 2</bdi> אז <bdi dir=\"ltr\" class=\"m\">$(x) = 4</bdi></p><p>אם <bdi dir=\"ltr\" class=\"m\">x &gt; 2</bdi> אז <bdi dir=\"ltr\" class=\"m\">$(x) = $(∛x) + 1</bdi></p><p><bdi dir=\"ltr\" class=\"m\">$(512) = ?</bdi></p>",
+     "stem": "<p>לכל מספר x שהוא חיובי ושלם הוגדרה הפעולה $ כך:</p><p>אם <bdi dir=\"ltr\" class=\"m\">x = 2</bdi> אז <bdi dir=\"ltr\" class=\"m\">$(x) = 4</bdi></p><p>אם <bdi dir=\"ltr\" class=\"m\">x &gt; 2</bdi> אז <bdi dir=\"ltr\" class=\"m\">$(x) = $(∛x) + 1</bdi></p><p><bdi dir=\"ltr\" class=\"m\">$(512)</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">4</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">6</bdi>",
@@ -4170,7 +4170,7 @@
      "n": 2,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בכמה מספרים תלת־ספרתיים מכפלת הספרות שווה ל־<bdi dir=\"ltr\" class=\"m\">128?</bdi></p>",
+     "stem": "<p>בכמה מספרים תלת־ספרתיים מכפלת הספרות שווה ל־<bdi dir=\"ltr\" class=\"m\">128</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">6</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">12</bdi>",
@@ -4206,7 +4206,7 @@
      "n": 4,
      "status": "clean",
      "answer": 3,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A, B</bdi> ו־C מייצגות ספרות שונות בין 0 ל־<bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון:</p><pre dir=\"ltr\">   AA\n×  AA\n-----\n BBC4</pre><p><bdi dir=\"ltr\" class=\"m\">B × C = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A</bdi>, <bdi dir=\"ltr\" class=\"m\">B</bdi> ו־C מייצגות ספרות שונות בין 0 ל־<bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון:</p><pre dir=\"ltr\">   AA\n×  AA\n-----\n BBC4</pre><p><bdi dir=\"ltr\" class=\"m\">B × C</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">12</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">16</bdi>",
@@ -4268,7 +4268,7 @@
      "n": 7,
      "status": "approximate",
      "answer": 1,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">(x<sup><span class=\"fr\"><span>1</span><span>2</span></span></sup> · x<sup><span class=\"fr\"><span>1</span><span>3</span></span></sup> · x<sup><span class=\"fr\"><span>1</span><span>6</span></span></sup>)⁴ = 625<span class=\"warn\" title=\"המעריכים הקטנים נקראו בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">x = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">(x<sup><span class=\"fr\"><span>1</span><span>2</span></span></sup> · x<sup><span class=\"fr\"><span>1</span><span>3</span></span></sup> · x<sup><span class=\"fr\"><span>1</span><span>6</span></span></sup>)⁴ = 625<span class=\"warn\" title=\"המעריכים הקטנים נקראו בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">x</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">−5</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">4</bdi>",
@@ -4328,7 +4328,7 @@
      "n": 10,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>קובייה גדולה מורכבת מקוביות קטנות זהות כבסרטוט. אופק הוציא את הקובייה המרכזית בכל פאה. שטח הפנים של הצורה שנוצרה גדל ב־<bdi dir=\"ltr\" class=\"m\">x%</bdi> משטח הפנים של הקובייה הגדולה.</p><p>מה מהבאים מייצג נכונה את ערכו של <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p>קובייה גדולה מורכבת מקוביות קטנות זהות כבסרטוט. אופק הוציא את הקובייה המרכזית בכל פאה. שטח הפנים של הצורה שנוצרה גדל ב־<bdi dir=\"ltr\" class=\"m\">x%</bdi> משטח הפנים של הקובייה הגדולה.</p><p>מה מהבאים מייצג נכונה את ערכו של <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">10% &lt; x &lt; 20%</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">20% &lt; x &lt; 30%</bdi>",
@@ -4358,7 +4358,7 @@
      "n": 1,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> ו־b הם מספרים טבעיים. <bdi dir=\"ltr\" class=\"m\">1½a &lt; b , a + ab = 72<span class=\"warn\" title=\"השבר הקטן נקרא בקירוב\">⚠</span></bdi></p><p>איזה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">b?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> ו־b הם מספרים טבעיים. <bdi dir=\"ltr\" class=\"m\">1½a &lt; b , a + ab = 72<span class=\"warn\" title=\"השבר הקטן נקרא בקירוב\">⚠</span></bdi></p><p>איזה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">b</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">7</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">8</bdi>",
@@ -4378,7 +4378,7 @@
      "n": 2,
      "status": "approximate",
      "answer": 1,
-     "stem": "<p>שני מעגלים חופפים שרדיוסם r הונחו זה על גבי זה ויצרו את הצורה שבסרטוט.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>השטח הלבן</span><span>השטח האפור</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>שני מעגלים חופפים שרדיוסם r הונחו זה על גבי זה ויצרו את הצורה שבסרטוט.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>השטח הלבן</span><span>השטח האפור</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>2π</span><span>2+π</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>π</span><span>1+π</span></span></bdi>",
@@ -4404,7 +4404,7 @@
      "n": 3,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך שמתקיים: <bdi dir=\"ltr\" class=\"m\">$(x) + 6x = 8x² + 18 − $(x)</bdi></p><p><bdi dir=\"ltr\" class=\"m\">$(3) = ?</bdi></p>",
+     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך שמתקיים: <bdi dir=\"ltr\" class=\"m\">$(x) + 6x = 8x² + 18 − $(x)</bdi></p><p><bdi dir=\"ltr\" class=\"m\">$(3)</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">18</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">30</bdi>",
@@ -4458,7 +4458,7 @@
      "n": 6,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>בסרטוט שלפניכם משולש <bdi dir=\"ltr\" class=\"m\">ABC. D</bdi> ו־E נקודות על הצלעות <bdi dir=\"ltr\" class=\"m\">BC</bdi> ו־<bdi dir=\"ltr\" class=\"m\">AB</bdi> בהתאמה.</p><p>לאור נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח טרפז <bdi dir=\"ltr\" class=\"m\">EACD</bdi></span><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">BED</bdi></span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם משולש <bdi dir=\"ltr\" class=\"m\">ABC</bdi>. <bdi dir=\"ltr\" class=\"m\">D</bdi> ו־E נקודות על הצלעות <bdi dir=\"ltr\" class=\"m\">BC</bdi> ו־<bdi dir=\"ltr\" class=\"m\">AB</bdi> בהתאמה.</p><p>לאור נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח טרפז <bdi dir=\"ltr\" class=\"m\">EACD</bdi></span><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">BED</bdi></span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">½</bdi>",
@@ -4482,7 +4482,7 @@
      "n": 7,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">(<span class=\"sq\">√<span>x</span></span> − <span class=\"sq\">√<span>y</span></span>) · <span class=\"sq\">√<span>x</span></span> &gt; (<span class=\"sq\">√<span>x</span></span> + <span class=\"sq\">√<span>y</span></span>) · <span class=\"sq\">√<span>y</span></span> , 0 &lt; x, y</bdi></p><p>מה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">(<span class=\"sq\">√<span>x</span></span> − <span class=\"sq\">√<span>y</span></span>) · <span class=\"sq\">√<span>x</span></span> &gt; (<span class=\"sq\">√<span>x</span></span> + <span class=\"sq\">√<span>y</span></span>) · <span class=\"sq\">√<span>y</span></span> , 0 &lt; x</bdi>, <bdi dir=\"ltr\" class=\"m\">y</bdi></p><p>מה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">½y</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">y</bdi>",
@@ -4520,7 +4520,7 @@
      "n": 9,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> הוא מספר שבעת חלוקתו ב־7 מתקבלת שארית <bdi dir=\"ltr\" class=\"m\">1</bdi>. בהנחה ש־y הוא מספר טבעי, איזה מהביטויים הבאים <u class=\"em\">אינו</u> יכול להיות שווה ל־<bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> הוא מספר שבעת חלוקתו ב־7 מתקבלת שארית <bdi dir=\"ltr\" class=\"m\">1</bdi>. בהנחה ש־y הוא מספר טבעי, איזה מהביטויים הבאים <u class=\"em\">אינו</u> יכול להיות שווה ל־<bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">(7y + 1)²</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">(7y + 5)²</bdi>",
@@ -4604,7 +4604,7 @@
      "n": 3,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> ו־b הם מספרים ראשוניים השונים זה מזה. <bdi dir=\"ltr\" class=\"m\">x = a · b</bdi></p><p>כמה מחלקים שונים יש ל־<bdi dir=\"ltr\" class=\"m\">x³?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> ו־b הם מספרים ראשוניים השונים זה מזה. <bdi dir=\"ltr\" class=\"m\">x = a · b</bdi></p><p>כמה מחלקים שונים יש ל־<bdi dir=\"ltr\" class=\"m\">x³</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">16</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">12</bdi>",
@@ -4645,7 +4645,7 @@
      "n": 5,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a, b</bdi> ו־c הם מספרים טבעיים. <bdi dir=\"ltr\" class=\"m\">a = 8b , a = 3c</bdi></p><p>איזה מהערכים הבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">a?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi>, <bdi dir=\"ltr\" class=\"m\">b</bdi> ו־c הם מספרים טבעיים. <bdi dir=\"ltr\" class=\"m\">a = 8b , a = 3c</bdi></p><p>איזה מהערכים הבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">a</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">3784</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">4575</bdi>",
@@ -4663,7 +4663,7 @@
      "n": 6,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>השעון של ניר מאחר: בכל 5 דקות שחולפות הוא מתקדם 4 דקות. בשעה <bdi dir=\"ltr\" class=\"m\">12:00</bdi> כיוון ניר את שעונו לשעה הנכונה. כעבור כמה זמן (בשעות) יראה השעון שוב בשעה שלמה<bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"סוף השאלה מטושטש – כנראה &quot;שוב את השעה הנכונה&quot;\">⚠</span>?</bdi></p>",
+     "stem": "<p>השעון של ניר מאחר: בכל 5 דקות שחולפות הוא מתקדם 4 דקות. בשעה <bdi dir=\"ltr\" class=\"m\">12:00</bdi> כיוון ניר את שעונו לשעה הנכונה. כעבור כמה זמן (בשעות) יראה השעון שוב בשעה שלמה<bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"סוף השאלה מטושטש – כנראה &quot;שוב את השעה הנכונה&quot;\">⚠</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">5</bdi>",
@@ -4683,7 +4683,7 @@
      "n": 7,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם שני גופים. תיבה וגוף הבנוי משתי פירמידות זהות בעלות בסיס משותף בצורת ריבוע כך שגובה כל אחת מהן הוא <bdi dir=\"ltr\" class=\"m\">x</bdi>.</p><p>בהסתמך על נתונים אלו ונתוני הסרטוט – <span class=\"fr hf\"><span>נפח התיבה</span><span>נפח שתי הפירמידות</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם שני גופים. תיבה וגוף הבנוי משתי פירמידות זהות בעלות בסיס משותף בצורת ריבוע כך שגובה כל אחת מהן הוא <bdi dir=\"ltr\" class=\"m\">x</bdi>.</p><p>בהסתמך על נתונים אלו ונתוני הסרטוט – <span class=\"fr hf\"><span>נפח התיבה</span><span>נפח שתי הפירמידות</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>3</span><span>2</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\">4</bdi>",
@@ -4805,7 +4805,7 @@
      "n": 3,
      "status": "approximate",
      "answer": 1,
-     "stem": "<p>לכל שני מספרים x ו־y הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">x $ y = (<span class=\"fr\"><span>1</span><span>3</span></span>)x + (<span class=\"fr\"><span>3</span><span>2</span></span>)y<span class=\"warn\" title=\"המקדמים קטנים – נקראו בקירוב\">⚠</span></bdi></p><p>נתון כי: <bdi dir=\"ltr\" class=\"m\">x $ 6 &gt; 12 $ x</bdi></p><p>מהו תחום הערכים של <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p>לכל שני מספרים x ו־y הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">x $ y = (<span class=\"fr\"><span>1</span><span>3</span></span>)x + (<span class=\"fr\"><span>3</span><span>2</span></span>)y<span class=\"warn\" title=\"המקדמים קטנים – נקראו בקירוב\">⚠</span></bdi></p><p>נתון כי: <bdi dir=\"ltr\" class=\"m\">x $ 6 &gt; 12 $ x</bdi></p><p>מהו תחום הערכים של <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">x &lt; <span class=\"fr\"><span>6</span><span>5</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\">x &gt; <span class=\"fr\"><span>5</span><span>6</span></span></bdi>",
@@ -4843,7 +4843,7 @@
      "n": 5,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>x הוא המספר הארבע־ספרתי הגדול ביותר שמתחלק ב־<bdi dir=\"ltr\" class=\"m\">7</bdi>. מהו סכום הספרות של <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p>x הוא המספר הארבע־ספרתי הגדול ביותר שמתחלק ב־<bdi dir=\"ltr\" class=\"m\">7</bdi>. מהו סכום הספרות של <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">30</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">31</bdi>",
@@ -4861,7 +4861,7 @@
      "n": 6,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> מקבילית. נתון: גודל השטח המקווקו הוא <bdi dir=\"ltr\" class=\"m\">8. <span class=\"fr\"><span>CE</span><span>AE</span></span> = <span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>3</span></span></span></span><span class=\"warn\" title=\"נקרא בקירוב\">⚠</span></bdi></p><p>בהסתמך על נתונים אלו ונתוני הסרטוט, מה שטח מקבילית <bdi dir=\"ltr\" class=\"m\">ABCD?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> מקבילית. נתון: גודל השטח המקווקו הוא <bdi dir=\"ltr\" class=\"m\">8</bdi>. <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>CE</span><span>AE</span></span> = <span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>3</span></span></span></span><span class=\"warn\" title=\"נקרא בקירוב\">⚠</span></bdi></p><p>בהסתמך על נתונים אלו ונתוני הסרטוט, מה שטח מקבילית <bdi dir=\"ltr\" class=\"m\">ABCD</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">24</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">28</bdi>",
@@ -4908,7 +4908,7 @@
      "n": 8,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> הוא מספר שלם השונה מ־<bdi dir=\"ltr\" class=\"m\">0. y = |x − 2| − |x + 2|</bdi></p><p>מה מהבאים נכון בהכרח?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> הוא מספר שלם השונה מ־<bdi dir=\"ltr\" class=\"m\">0</bdi>. <bdi dir=\"ltr\" class=\"m\">y = |x − 2| − |x + 2|</bdi></p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
       "y הוא מספר שלילי",
       "y הוא מספר חיובי",
@@ -4926,7 +4926,7 @@
      "n": 9,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">87² − 85² − 87 − 85 = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">87² − 85² − 87 − 85</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">85</bdi>",
@@ -5030,7 +5030,7 @@
      "n": 4,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x, y</bdi> ו־z הם מספרים טבעיים השונים זה מזה. נתון: <bdi dir=\"ltr\" class=\"m\">x³ · y⁴ · z = 25 · 63 · 65 · 99</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x · y = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">x</bdi>, <bdi dir=\"ltr\" class=\"m\">y</bdi> ו־z הם מספרים טבעיים השונים זה מזה. נתון: <bdi dir=\"ltr\" class=\"m\">x³ · y⁴ · z = 25 · 63 · 65 · 99</bdi></p><p><bdi dir=\"ltr\" class=\"m\">x · y</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">6</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">10</bdi>",
@@ -5066,7 +5066,7 @@
      "n": 6,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>בסרטוט שלפניכם משולש <bdi dir=\"ltr\" class=\"m\">ABC</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">AD ⊥ BC</bdi>.</p><p>לאור נתונים אלו ונתוני הסרטוט, מהם שיעורי ה־x של הנקודה <bdi dir=\"ltr\" class=\"m\">D?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם משולש <bdi dir=\"ltr\" class=\"m\">ABC</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">AD ⊥ BC</bdi>.</p><p>לאור נתונים אלו ונתוני הסרטוט, מהם שיעורי ה־x של הנקודה <bdi dir=\"ltr\" class=\"m\">D</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">3</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">4</bdi>",
@@ -5088,7 +5088,7 @@
      "n": 7,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>לכל מספר שלם וחיובי x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">$(x) =</bdi> מספר הפעמים שהמספר הראשוני 2 מופיע בפירוק של x לגורמים ראשוניים<bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"ההגדרה מטושטשת – נקראה בקירוב\">⚠</span></bdi>.</p><p>מה מהבאים נכון בהכרח?</p>",
+     "stem": "<p>לכל מספר שלם וחיובי x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">$(x)</bdi> = מספר הפעמים שהמספר הראשוני 2 מופיע בפירוק של x לגורמים ראשוניים<bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"ההגדרה מטושטשת – נקראה בקירוב\">⚠</span></bdi>.</p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">($(x))² &gt; 2 · $(x)</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">($(x))² &gt; $(2x)</bdi>",
@@ -5130,7 +5130,7 @@
      "n": 9,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> הוא מספר טבעי הגדול מ־<bdi dir=\"ltr\" class=\"m\">1. x</bdi> הוא מספר ראשוני. <bdi dir=\"ltr\" class=\"m\">y = xᵃ</bdi></p><p>כמה מחלקים שונים יש ל־<bdi dir=\"ltr\" class=\"m\">y?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">a</bdi> הוא מספר טבעי הגדול מ־<bdi dir=\"ltr\" class=\"m\">1</bdi>. <bdi dir=\"ltr\" class=\"m\">x</bdi> הוא מספר ראשוני. <bdi dir=\"ltr\" class=\"m\">y = xᵃ</bdi></p><p>כמה מחלקים שונים יש ל־<bdi dir=\"ltr\" class=\"m\">y</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">a</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">a + 1</bdi>",
@@ -5194,7 +5194,7 @@
      "n": 2,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>נתונות 2 קבוצות של מספרים:</p><p>קבוצה ראשונה <bdi dir=\"ltr\" class=\"m\">– 78 , 87 , 95</bdi></p><p>קבוצה שנייה <bdi dir=\"ltr\" class=\"m\">– 66 , 105 , 130</bdi></p><p>a מייצג את מספר הגורמים הראשוניים שמופיעים רק פעם אחת במספרים שבקבוצה הראשונה.</p><p>b מייצג את מספר הגורמים הראשוניים שמופיעים פעמיים במספרים שבקבוצה השנייה.</p><p><bdi dir=\"ltr\" class=\"m\">a − b = ?</bdi></p>",
+     "stem": "<p>נתונות 2 קבוצות של מספרים:</p><p>קבוצה ראשונה – <bdi dir=\"ltr\" class=\"m\">78 , 87 , 95</bdi></p><p>קבוצה שנייה – <bdi dir=\"ltr\" class=\"m\">66 , 105 , 130</bdi></p><p>a מייצג את מספר הגורמים הראשוניים שמופיעים רק פעם אחת במספרים שבקבוצה הראשונה.</p><p>b מייצג את מספר הגורמים הראשוניים שמופיעים פעמיים במספרים שבקבוצה השנייה.</p><p><bdi dir=\"ltr\" class=\"m\">a − b</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -5288,7 +5288,7 @@
      "n": 7,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A, B</bdi> ו־C הן אותיות המייצגות ספרות שונות בין 0 ל־<bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">AA + CB = CBA</bdi></p><p><bdi dir=\"ltr\" class=\"m\">A = ?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A</bdi>, <bdi dir=\"ltr\" class=\"m\">B</bdi> ו־C הן אותיות המייצגות ספרות שונות בין 0 ל־<bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">AA + CB = CBA</bdi></p><p><bdi dir=\"ltr\" class=\"m\">A</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -5372,7 +5372,7 @@
      "n": 1,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בכמה מספרים תלת־ספרתיים מכפלת שלוש הספרות שווה ל־<bdi dir=\"ltr\" class=\"m\">120?</bdi></p>",
+     "stem": "<p>בכמה מספרים תלת־ספרתיים מכפלת שלוש הספרות שווה ל־<bdi dir=\"ltr\" class=\"m\">120</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">3</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">6</bdi>",
@@ -5468,7 +5468,7 @@
      "n": 6,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>a ו־b הם מספרים שלמים בין 1 ל־<bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">a · b · (a + b − 10) = 70</bdi></p><p><bdi dir=\"ltr\" class=\"m\">|a − b| = ?</bdi></p>",
+     "stem": "<p>a ו־b הם מספרים שלמים בין 1 ל־<bdi dir=\"ltr\" class=\"m\">9</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">a · b · (a + b − 10) = 70</bdi></p><p><bdi dir=\"ltr\" class=\"m\">|a − b|</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">5</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -5504,7 +5504,7 @@
      "n": 8,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">0 &lt; a &lt; 1. x = <span class=\"fr\"><span>1</span><span>a</span></span> ; y = <span class=\"fr\"><span>1</span><span>a⁻²</span></span> ; z = a⁻⁴</bdi></p><p>מה מהבאים נכון בהכרח?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">0 &lt; a &lt; 1</bdi>. <bdi dir=\"ltr\" class=\"m\">x = <span class=\"fr\"><span>1</span><span>a</span></span> ; y = <span class=\"fr\"><span>1</span><span>a⁻²</span></span> ; z = a⁻⁴</bdi></p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">x &lt; y &lt; z</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">z &lt; y &lt; x</bdi>",
@@ -5522,7 +5522,7 @@
      "n": 9,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם משושה משוכלל. עידו נוסע על אופניו במהירות קבועה לאורך המסלול המודגש.</p><p>מה הסיכוי שאם נעצור את עידו בנקודת זמן כלשהי הוא יהיה במהלכו של קטע <bdi dir=\"ltr\" class=\"m\">BC?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם משושה משוכלל. עידו נוסע על אופניו במהירות קבועה לאורך המסלול המודגש.</p><p>מה הסיכוי שאם נעצור את עידו בנקודת זמן כלשהי הוא יהיה במהלכו של קטע <bdi dir=\"ltr\" class=\"m\">BC</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>6</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>1</span><span>2</span></span></bdi>",
@@ -5544,7 +5544,7 @@
      "n": 10,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x = <span class=\"sq\">√<span>3</span></span>·<span class=\"fr\"><span>y</span><span>4</span></span><span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>, x</bdi> מספר טבעי המתחלק ב־6 ללא שארית.</p><p>איזה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">y²?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x = <span class=\"sq\">√<span>3</span></span>·<span class=\"fr\"><span>y</span><span>4</span></span><span class=\"warn\" title=\"נקרא בקירוב\">⚠</span></bdi>, <bdi dir=\"ltr\" class=\"m\">x</bdi> מספר טבעי המתחלק ב־6 ללא שארית.</p><p>איזה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">y²</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">36</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">144</bdi>",
@@ -5766,7 +5766,7 @@
      "n": 2,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>לכל מספר טבעי a הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">$(a) = <span class=\"fr\"><span>a</span><span>a − 2</span></span></bdi></p><p>איזו מהטענות הבאות נכונה בהכרח לכל x ו־y השונים מ־<bdi dir=\"ltr\" class=\"m\">2?</bdi></p>",
+     "stem": "<p>לכל מספר טבעי a הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\">$(a) = <span class=\"fr\"><span>a</span><span>a − 2</span></span></bdi></p><p>איזו מהטענות הבאות נכונה בהכרח לכל x ו־y השונים מ־<bdi dir=\"ltr\" class=\"m\">2</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>$(x)</span><span>$(y)</span></span> &lt; 1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">($(xy))² = $(x²y²)</bdi>",
@@ -5784,7 +5784,7 @@
      "n": 3,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>איזה מהביטויים הבאים <u class=\"em\">אינו</u> בהכרח חיובי, בעבור כל שני מספרים שלמים השונים מ־<bdi dir=\"ltr\" class=\"m\">0?</bdi></p>",
+     "stem": "<p>איזה מהביטויים הבאים <u class=\"em\">אינו</u> בהכרח חיובי, בעבור כל שני מספרים שלמים השונים מ־<bdi dir=\"ltr\" class=\"m\">0</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">|x + y|</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">(x − y)²</bdi>",
@@ -5862,7 +5862,7 @@
      "n": 7,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>כמה מספרים המתחלקים ללא שארית ב־<bdi dir=\"ltr\" class=\"m\">2</bdi>, ב־<bdi dir=\"ltr\" class=\"m\">3</bdi>, ב־<bdi dir=\"ltr\" class=\"m\">5<span class=\"warn\" title=\"\">⚠</span></bdi> וב־6 ישנם בין 0 ל־<bdi dir=\"ltr\" class=\"m\">1000?</bdi></p>",
+     "stem": "<p>כמה מספרים המתחלקים ללא שארית ב־<bdi dir=\"ltr\" class=\"m\">2</bdi>, ב־<bdi dir=\"ltr\" class=\"m\">3</bdi>, ב־<bdi dir=\"ltr\" class=\"m\">5<span class=\"warn\" title=\"\">⚠</span></bdi> וב־6 ישנם בין 0 ל־<bdi dir=\"ltr\" class=\"m\">1000</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">5</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">15</bdi>",
@@ -5882,7 +5882,7 @@
      "n": 8,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>בסרטוט שלפניכם ריבוע <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> בו חסום מלבן <bdi dir=\"ltr\" class=\"m\">EFGH</bdi>. שטחו של המשולש <bdi dir=\"ltr\" class=\"m\">GBF</bdi> גדול פי <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>9</span><span>4</span></span></bdi> משטחו של משולש <bdi dir=\"ltr\" class=\"m\">CHG</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, מה היחס בין שטחו של המלבן האפור וריבוע <bdi dir=\"ltr\" class=\"m\">ABCD?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם ריבוע <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> בו חסום מלבן <bdi dir=\"ltr\" class=\"m\">EFGH</bdi>. שטחו של המשולש <bdi dir=\"ltr\" class=\"m\">GBF</bdi> גדול פי <bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>9</span><span>4</span></span></bdi> משטחו של משולש <bdi dir=\"ltr\" class=\"m\">CHG</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, מה היחס בין שטחו של המלבן האפור וריבוע <bdi dir=\"ltr\" class=\"m\">ABCD</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1:2</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2:3</bdi>",
@@ -5904,7 +5904,7 @@
      "n": 9,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>סייד מסייד <bdi dir=\"ltr\" class=\"m\">10</bdi> מ\"ר ב־5 דקות. כמה זמן (בדקות) יידרש לסייד תיבה שמקצועותיה הם 3 ס\"מ, <bdi dir=\"ltr\" class=\"m\">4</bdi> ס\"מ ו־5 ס\"מ<bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"כנראה מטר\">⚠</span>?</bdi></p>",
+     "stem": "<p>סייד מסייד <bdi dir=\"ltr\" class=\"m\">10</bdi> מ\"ר ב־5 דקות. כמה זמן (בדקות) יידרש לסייד תיבה שמקצועותיה הם 3 ס\"מ, <bdi dir=\"ltr\" class=\"m\">4</bdi> ס\"מ ו־5 ס\"מ<bdi dir=\"ltr\" class=\"m\"><span class=\"warn\" title=\"כנראה מטר\">⚠</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">41</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">42</bdi>",
@@ -5972,7 +5972,7 @@
      "n": 2,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>כמה מספרים תלת־ספרתיים קיימים בהם ספרת המאות קטנה מ־<bdi dir=\"ltr\" class=\"m\">5</bdi>, ספרת העשרות גדולה מ־5 והם מתחלקים ב־<bdi dir=\"ltr\" class=\"m\">2?</bdi></p>",
+     "stem": "<p>כמה מספרים תלת־ספרתיים קיימים בהם ספרת המאות קטנה מ־<bdi dir=\"ltr\" class=\"m\">5</bdi>, ספרת העשרות גדולה מ־5 והם מתחלקים ב־<bdi dir=\"ltr\" class=\"m\">2</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">20</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">40</bdi>",
@@ -5990,7 +5990,7 @@
      "n": 3,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>בסרטוט שלפניכם מעגל החסום בריבוע החסום במעגל. נתון כי רדיוסו של המעגל הקטן הוא <bdi dir=\"ltr\" class=\"m\">r</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>השטח האפור</span><span>השטח הלבן</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם מעגל החסום בריבוע החסום במעגל. נתון כי רדיוסו של המעגל הקטן הוא <bdi dir=\"ltr\" class=\"m\">r</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>השטח האפור</span><span>השטח הלבן</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>3−π</span><span>3π−1</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>4−π</span><span>3π−4</span></span></bdi>",
@@ -6017,7 +6017,7 @@
      "n": 4,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">6x − 3 ≤ 0 , 4y − 8 ≥ 0</bdi></p><p>מהו ערכו המינימלי של הביטוי <bdi dir=\"ltr\" class=\"m\">(xy)²?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">6x − 3 ≤ 0 , 4y − 8 ≥ 0</bdi></p><p>מהו ערכו המינימלי של הביטוי <bdi dir=\"ltr\" class=\"m\">(xy)²</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">½</bdi>",
@@ -6115,7 +6115,7 @@
      "n": 9,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>לכל מספר n הגדול מ־2 הוגדרה הפעולה $ כך: ההפרש בין גודלה של הזווית הפנימית במצולע משוכלל בעל n צלעות לבין הזווית המרכזית באותו המצולע.</p><p>איזה מהביטויים הבאים מתאר נכונה את הפעולה <bdi dir=\"ltr\" class=\"m\">$(n)?</bdi></p>",
+     "stem": "<p>לכל מספר n הגדול מ־2 הוגדרה הפעולה $ כך: ההפרש בין גודלה של הזווית הפנימית במצולע משוכלל בעל n צלעות לבין הזווית המרכזית באותו המצולע.</p><p>איזה מהביטויים הבאים מתאר נכונה את הפעולה <bdi dir=\"ltr\" class=\"m\">$(n)</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">180<span class=\"fr\"><span>n−1</span><span>n</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\">180<span class=\"fr\"><span>n−2</span><span>n</span></span></bdi>",
@@ -6169,7 +6169,7 @@
      "n": 1,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>בסרטוט שלפניכם משולש ישר זווית <bdi dir=\"ltr\" class=\"m\">ABC. ADHK</bdi> ו־<bdi dir=\"ltr\" class=\"m\">AFGE</bdi> הם ריבועים. הנקודה D נמצאת על המשכה של הצלע <bdi dir=\"ltr\" class=\"m\">EG</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">EB = 1</bdi> ס\"מ, <bdi dir=\"ltr\" class=\"m\">CD = 2</bdi> ס\"מ, <bdi dir=\"ltr\" class=\"m\">AF = 4</bdi> ס\"מ.</p><p>על פי נתונים אלו ונתוני הסרטוט, מהו שטחו של הריבוע ADHK (בסמ\"ר)?</p>",
+     "stem": "<p>בסרטוט שלפניכם משולש ישר זווית <bdi dir=\"ltr\" class=\"m\">ABC</bdi>. <bdi dir=\"ltr\" class=\"m\">ADHK</bdi> ו־<bdi dir=\"ltr\" class=\"m\">AFGE</bdi> הם ריבועים. הנקודה D נמצאת על המשכה של הצלע <bdi dir=\"ltr\" class=\"m\">EG</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">EB = 1</bdi> ס\"מ, <bdi dir=\"ltr\" class=\"m\">CD = 2</bdi> ס\"מ, <bdi dir=\"ltr\" class=\"m\">AF = 4</bdi> ס\"מ.</p><p>על פי נתונים אלו ונתוני הסרטוט, מהו שטחו של הריבוע ADHK (בסמ\"ר)?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">25</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">36</bdi>",
@@ -6209,7 +6209,7 @@
      "n": 3,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>לכל מספר שלם וחיובי n הגדול מ־6 הוגדרה הפעולה $ כך: מספר הזוויות המרכזיות הנוצרות במצולע משוכלל בעל n צלעות בעת חלוקתו למשולשים שווי שוקיים.</p><p>איזה מהביטויים הבאים מתאר נכונה את הפעולה <bdi dir=\"ltr\" class=\"m\">$(n)?</bdi></p>",
+     "stem": "<p>לכל מספר שלם וחיובי n הגדול מ־6 הוגדרה הפעולה $ כך: מספר הזוויות המרכזיות הנוצרות במצולע משוכלל בעל n צלעות בעת חלוקתו למשולשים שווי שוקיים.</p><p>איזה מהביטויים הבאים מתאר נכונה את הפעולה <bdi dir=\"ltr\" class=\"m\">$(n)</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">n</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">n²</bdi>",
@@ -6227,7 +6227,7 @@
      "n": 4,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">ᵃ<span class=\"sq\">√<span>3²</span></span> · (⁴<span class=\"sq\">√<span>3</span></span>)ᵇ = 9<span class=\"warn\" title=\"סדר השורש והמעריכים קטנים – נקראו בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">a − b = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">ᵃ<span class=\"sq\">√<span>3²</span></span> · (⁴<span class=\"sq\">√<span>3</span></span>)ᵇ = 9<span class=\"warn\" title=\"סדר השורש והמעריכים קטנים – נקראו בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">a − b</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -6287,7 +6287,7 @@
      "n": 7,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">(x<sup><span class=\"fr\"><span>a²−a+ab</span><span>2</span></span> + ½</sup>)<span class=\"fr\"><span>⁴</span><span>x<sup>(a−1)²</sup></span></span> = x<sup>−b²</sup> , x ≠ 0, 1<span class=\"warn\" title=\"המעריך העליון קטן מאוד – נקרא בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">a = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">(x<sup><span class=\"fr\"><span>a²−a+ab</span><span>2</span></span> + ½</sup>)<span class=\"fr\"><span>⁴</span><span>x<sup>(a−1)²</sup></span></span> = x<sup>−b²</sup> , x ≠ 0</bdi>, <bdi dir=\"ltr\" class=\"m\">1<span class=\"warn\" title=\"המעריך העליון קטן מאוד – נקרא בקירוב\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">a</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">b</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">−b</bdi>",
@@ -6590,7 +6590,7 @@
      "n": 3,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">3y + 5x = a<span class=\"warn\" title=\"\">⚠</span> , 6y + 7x = b<span class=\"warn\" title=\"\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">y − x = ?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">3y + 5x = a<span class=\"warn\" title=\"\">⚠</span> , 6y + 7x = b<span class=\"warn\" title=\"\">⚠</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\">y − x</bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">a − b</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2a − b</bdi>",
@@ -6691,7 +6691,7 @@
      "n": 10,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x³ &lt; x²<span class=\"warn\" title=\"המעריכים קטנים – נקראו בקירוב\">⚠</span></bdi></p><p>איזה מהנתונים הבאים יש להוסיף לנתון בשאלה כדי לקבוע בוודאות כי <bdi dir=\"ltr\" class=\"m\">−1 &lt; x &lt; 0?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x³ &lt; x²<span class=\"warn\" title=\"המעריכים קטנים – נקראו בקירוב\">⚠</span></bdi></p><p>איזה מהנתונים הבאים יש להוסיף לנתון בשאלה כדי לקבוע בוודאות כי <bdi dir=\"ltr\" class=\"m\">−1 &lt; x &lt; 0</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">x⁴ &lt; x³</bdi> <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>",
       "<bdi dir=\"ltr\" class=\"m\">x³ &lt; x⁵</bdi>",
@@ -6888,7 +6888,7 @@
      "n": 1,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A, B</bdi> ו־C הן שלוש ספרות עוקבות כך ש־<bdi dir=\"ltr\" class=\"m\">A &lt; B &lt; C</bdi>. נתון:</p><pre dir=\"ltr\">   ABC\n + CBA\n ------\n  EEE0</pre><p>(הערה: ספרת האחדות בתוצאה היא אפס <bdi dir=\"ltr\" class=\"m\">(0)</bdi> ולא האות <bdi dir=\"ltr\" class=\"m\">O.</bdi>)</p><p>מה מהבאים נכון בהכרח?</p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">A</bdi>, <bdi dir=\"ltr\" class=\"m\">B</bdi> ו־C הן שלוש ספרות עוקבות כך ש־<bdi dir=\"ltr\" class=\"m\">A &lt; B &lt; C</bdi>. נתון:</p><pre dir=\"ltr\">   ABC\n + CBA\n ------\n  EEE0</pre><p>(הערה: ספרת האחדות בתוצאה היא אפס <bdi dir=\"ltr\" class=\"m\">(0)</bdi> ולא האות <bdi dir=\"ltr\" class=\"m\">O</bdi>.)</p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">CCC − BBB = EEE</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">BBB − AAA = EEE</bdi>",
@@ -6960,7 +6960,7 @@
      "n": 5,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>בשק <bdi dir=\"ltr\" class=\"m\">21</bdi> כדורים <bdi dir=\"ltr\" class=\"m\">– 7</bdi> כחולים, <bdi dir=\"ltr\" class=\"m\">7</bdi> אדומים ו־7 ירוקים. החל מהשעה <bdi dir=\"ltr\" class=\"m\">12:00</bdi>, אחת ל־<bdi dir=\"ltr\" class=\"m\">20</bdi> דקות ניגשת דפנה לשק, מוציאה כדור אחד ורושמת את צבעו בטרם היא מחזירה אותו לשק. החל מהשעה <bdi dir=\"ltr\" class=\"m\">12:01</bdi> ניגש גם יונתן, אחת ל־<bdi dir=\"ltr\" class=\"m\">25</bdi> דקות, ומוציא כדור אחד רושם את צבעו ומחזיר אותו לשק.</p><p>מה הסיכוי שעד השעה <bdi dir=\"ltr\" class=\"m\">14:00</bdi> גם דפנה וגם יונתן הוציאו את אותו הצבע, ורק אותו?</p>",
+     "stem": "<p>בשק <bdi dir=\"ltr\" class=\"m\">21</bdi> כדורים – <bdi dir=\"ltr\" class=\"m\">7</bdi> כחולים, <bdi dir=\"ltr\" class=\"m\">7</bdi> אדומים ו־7 ירוקים. החל מהשעה <bdi dir=\"ltr\" class=\"m\">12:00</bdi>, אחת ל־<bdi dir=\"ltr\" class=\"m\">20</bdi> דקות ניגשת דפנה לשק, מוציאה כדור אחד ורושמת את צבעו בטרם היא מחזירה אותו לשק. החל מהשעה <bdi dir=\"ltr\" class=\"m\">12:01</bdi> ניגש גם יונתן, אחת ל־<bdi dir=\"ltr\" class=\"m\">25</bdi> דקות, ומוציא כדור אחד רושם את צבעו ומחזיר אותו לשק.</p><p>מה הסיכוי שעד השעה <bdi dir=\"ltr\" class=\"m\">14:00</bdi> גם דפנה וגם יונתן הוציאו את אותו הצבע, ורק אותו?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">(⅓)⁵ + (⅓)⁶</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">(⅓)¹⁰</bdi>",
@@ -7004,9 +7004,9 @@
      "answer": 3,
      "stem": "<p>a ו־b מספרים שלמים. נתון: <bdi dir=\"ltr\" class=\"m\">b &lt; a</bdi></p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
-      "אם <bdi dir=\"ltr\" class=\"m\">b, a &lt; 0</bdi> אזי <bdi dir=\"ltr\" class=\"m\">|a| + b &gt; |b| + a</bdi>",
-      "אם <bdi dir=\"ltr\" class=\"m\">b, a &gt; 0</bdi> אזי <bdi dir=\"ltr\" class=\"m\">|a| + b &lt; |b| + a</bdi>",
-      "אם <bdi dir=\"ltr\" class=\"m\">b, a &lt; 0</bdi> אזי <bdi dir=\"ltr\" class=\"m\">|a| + b &lt; |b| + a</bdi>",
+      "אם <bdi dir=\"ltr\" class=\"m\">b</bdi>, <bdi dir=\"ltr\" class=\"m\">a &lt; 0</bdi> אזי <bdi dir=\"ltr\" class=\"m\">|a| + b &gt; |b| + a</bdi>",
+      "אם <bdi dir=\"ltr\" class=\"m\">b</bdi>, <bdi dir=\"ltr\" class=\"m\">a &gt; 0</bdi> אזי <bdi dir=\"ltr\" class=\"m\">|a| + b &lt; |b| + a</bdi>",
+      "אם <bdi dir=\"ltr\" class=\"m\">b</bdi>, <bdi dir=\"ltr\" class=\"m\">a &lt; 0</bdi> אזי <bdi dir=\"ltr\" class=\"m\">|a| + b &lt; |b| + a</bdi>",
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": null,
@@ -7020,7 +7020,7 @@
      "n": 8,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">α &gt; 60° , β &lt; 50°</bdi>.</p><p>בהסתמך על נתונים אלו ועל נתוני הסרטוט, מה מבין האפשרויות הבאות יכול להיות אורכה של צלע <bdi dir=\"ltr\" class=\"m\">AC?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">α &gt; 60° , β &lt; 50°</bdi>.</p><p>בהסתמך על נתונים אלו ועל נתוני הסרטוט, מה מבין האפשרויות הבאות יכול להיות אורכה של צלע <bdi dir=\"ltr\" class=\"m\">AC</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">4½</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">5</bdi>",
@@ -7042,7 +7042,7 @@
      "n": 9,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>עמית יצאה לרכיבה על אופניה במסלול מעגלי שרדיוסו <bdi dir=\"ltr\" class=\"m\">r</bdi>. שעה לאחר שיצאה, בעת שעברה שליש מהדרך, יצא איתי, במהירות גבוהה משל עמית, בעקבותיה על אופניו. שניהם נפגשו לראשונה בנקודת היציאה שלהם לאחר שאיתי הקיף את המעגל כולו פעמיים.</p><p><span class=\"fr hf\"><span>מהירותה של עמית</span><span>מהירותו של איתי</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>עמית יצאה לרכיבה על אופניה במסלול מעגלי שרדיוסו <bdi dir=\"ltr\" class=\"m\">r</bdi>. שעה לאחר שיצאה, בעת שעברה שליש מהדרך, יצא איתי, במהירות גבוהה משל עמית, בעקבותיה על אופניו. שניהם נפגשו לראשונה בנקודת היציאה שלהם לאחר שאיתי הקיף את המעגל כולו פעמיים.</p><p><span class=\"fr hf\"><span>מהירותה של עמית</span><span>מהירותו של איתי</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>3</span><span>5</span></span></bdi> <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>5</span><span>6</span></span></bdi>",
@@ -7088,7 +7088,7 @@
      "n": 1,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">0 &lt; a, b, c ; <span class=\"fr\"><span>a − 1</span><span>c</span></span> = <span class=\"fr\"><span>c</span><span>a + 1</span></span> ; <span class=\"fr\"><span>b − 1</span><span>a</span></span> = <span class=\"fr\"><span>a</span><span>b + 1</span></span></bdi></p><p>מה מהבאים נכון בהכרח?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">0 &lt; a</bdi>, <bdi dir=\"ltr\" class=\"m\">b</bdi>, <bdi dir=\"ltr\" class=\"m\">c ; <span class=\"fr\"><span>a − 1</span><span>c</span></span> = <span class=\"fr\"><span>c</span><span>a + 1</span></span> ; <span class=\"fr\"><span>b − 1</span><span>a</span></span> = <span class=\"fr\"><span>a</span><span>b + 1</span></span></bdi></p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
       "אם c זוגי אז b אי־זוגי",
       "אם c אי־זוגי אז b זוגי",
@@ -7146,9 +7146,9 @@
      "n": 4,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> הוא מעוין ו־<bdi dir=\"ltr\" class=\"m\">BCEF</bdi> מקבילית. הקודקודים <bdi dir=\"ltr\" class=\"m\">A, B, C</bdi> ו־E מונחים על היקפו של המעגל.</p><p>על פי נתונים אלו ונתוני הסרטוט, <bdi dir=\"ltr\" class=\"m\">∢DCE = ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\">ABCD</bdi> הוא מעוין ו־<bdi dir=\"ltr\" class=\"m\">BCEF</bdi> מקבילית. הקודקודים <bdi dir=\"ltr\" class=\"m\">A</bdi>, <bdi dir=\"ltr\" class=\"m\">B</bdi>, <bdi dir=\"ltr\" class=\"m\">C</bdi> ו־E מונחים על היקפו של המעגל.</p><p>על פי נתונים אלו ונתוני הסרטוט, <bdi dir=\"ltr\" class=\"m\">∢DCE</bdi> = ?</p>",
      "options": [
-      "<bdi dir=\"ltr\" class=\"m\">β</bdi>",
+      "β",
       "<bdi dir=\"ltr\" class=\"m\">2α + β</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">180 − α − β</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">360 − (2α + β)</bdi>"
@@ -7168,7 +7168,7 @@
      "n": 5,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> מתחלק ללא שארית ב־<bdi dir=\"ltr\" class=\"m\">12. x</bdi> מתחלק ללא שארית ב־<bdi dir=\"ltr\" class=\"m\">15</bdi>.</p><p>במה מהבאים מתחלק x בהכרח?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x</bdi> מתחלק ללא שארית ב־<bdi dir=\"ltr\" class=\"m\">12</bdi>. <bdi dir=\"ltr\" class=\"m\">x</bdi> מתחלק ללא שארית ב־<bdi dir=\"ltr\" class=\"m\">15</bdi>.</p><p>במה מהבאים מתחלק x בהכרח?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">9</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">18</bdi>",
@@ -7266,7 +7266,7 @@
      "n": 10,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>בסרטוט שלפניכם חרוט המונח בתוך גליל. נתון: גובהו של החרוט גדול פי 2 מגובהו של הגליל.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>נפח החרוט</span><span>נפח הגליל</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם חרוט המונח בתוך גליל. נתון: גובהו של החרוט גדול פי 2 מגובהו של הגליל.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>נפח החרוט</span><span>נפח הגליל</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>2</span><span>3</span></span></bdi>",
@@ -7336,7 +7336,7 @@
      "n": 3,
      "status": "clean",
      "answer": 1,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\">||x² − 1| + 6| = 10</bdi></p><p>מה יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\">||x² − 1| + 6| = 10</bdi></p><p>מה יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">−<span class=\"sq\">√<span>5</span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\">5</bdi>",
@@ -7372,7 +7372,7 @@
      "n": 5,
      "status": "approximate",
      "answer": 2,
-     "stem": "<p>בסרטוט שלפניכם ארבעה משושים משוכללים חופפים שאורך צלעם 2 ס\"מ שהוצמדו זה לזה.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח המלבן האפור</span><span>השטח הלבן</span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם ארבעה משושים משוכללים חופפים שאורך צלעם 2 ס\"מ שהוצמדו זה לזה.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח המלבן האפור</span><span>השטח הלבן</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">½</bdi>",
@@ -7452,7 +7452,7 @@
      "n": 9,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם שני ריבועים בעלי צלע משותפת. נתון: <bdi dir=\"ltr\" class=\"m\">BE = EA</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">BDE</bdi></span><span>סכום שטחי המשולשים <bdi dir=\"ltr\" class=\"m\">ADE</bdi> ו־<bdi dir=\"ltr\" class=\"m\">BCD</bdi></span></span> <bdi dir=\"ltr\" class=\"m\">= ?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם שני ריבועים בעלי צלע משותפת. נתון: <bdi dir=\"ltr\" class=\"m\">BE = EA</bdi>.</p><p>על פי נתונים אלו ונתוני הסרטוט, <span class=\"fr hf\"><span>שטח משולש <bdi dir=\"ltr\" class=\"m\">BDE</bdi></span><span>סכום שטחי המשולשים <bdi dir=\"ltr\" class=\"m\">ADE</bdi> ו־<bdi dir=\"ltr\" class=\"m\">BCD</bdi></span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">¼</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">½</bdi>",
@@ -7474,7 +7474,7 @@
      "n": 10,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם טרפז ישר זווית <bdi dir=\"ltr\" class=\"m\">ABCD (AB ∥ CD , AD ⊥ DC)</bdi>. בטרפז חסום מעגל שמרכזו <bdi dir=\"ltr\" class=\"m\">O</bdi>. המעגל משיק לטרפז בנקודות <bdi dir=\"ltr\" class=\"m\">H, G, F</bdi> ו־<bdi dir=\"ltr\" class=\"m\">E</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">AF = 2</bdi> ס\"מ.</p><p>על פי נתונים אלו ונתוני הסרטוט, מה היקפה של הגזרה OFG (בס\"מ)?</p>",
+     "stem": "<p>בסרטוט שלפניכם טרפז ישר זווית <bdi dir=\"ltr\" class=\"m\">ABCD (AB ∥ CD , AD ⊥ DC)</bdi>. בטרפז חסום מעגל שמרכזו <bdi dir=\"ltr\" class=\"m\">O</bdi>. המעגל משיק לטרפז בנקודות <bdi dir=\"ltr\" class=\"m\">H</bdi>, <bdi dir=\"ltr\" class=\"m\">G</bdi>, <bdi dir=\"ltr\" class=\"m\">F</bdi> ו־<bdi dir=\"ltr\" class=\"m\">E</bdi>. נתון: <bdi dir=\"ltr\" class=\"m\">AF = 2</bdi> ס\"מ.</p><p>על פי נתונים אלו ונתוני הסרטוט, מה היקפה של הגזרה OFG (בס\"מ)?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">6 + 1⅓π</bdi> <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>",
       "<bdi dir=\"ltr\" class=\"m\">3 + ⅘π</bdi> <span class=\"warn\" title=\"נקרא בקירוב\">⚠</span>",
@@ -7509,7 +7509,7 @@
      "n": 1,
      "status": "clean",
      "answer": 2,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x + 36,254,980 = 77,777,777</bdi></p><p>מהי ספרת האלפים של <bdi dir=\"ltr\" class=\"m\">x?</bdi></p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\">x + 36,254,980 = 77,777,777</bdi></p><p>מהי ספרת האלפים של <bdi dir=\"ltr\" class=\"m\">x</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">1</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">2</bdi>",
@@ -7567,7 +7567,7 @@
      "n": 4,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>מגליל שגובהו ½ ס\"מ ורדיוסו 2 ס\"מ הוציאו פרוסה בת <bdi dir=\"ltr\" class=\"m\">120°. P</bdi> ו־O הם מרכזי המעגלים המהווים את בסיסי הגליל. לפי נתונים אלו ונתוני הסרטוט, מה שטח הפנים של הגוף שלפניכם (בסמ\"ר)?</p>",
+     "stem": "<p>מגליל שגובהו ½ ס\"מ ורדיוסו 2 ס\"מ הוציאו פרוסה בת <bdi dir=\"ltr\" class=\"m\">120°</bdi>. <bdi dir=\"ltr\" class=\"m\">P</bdi> ו־O הם מרכזי המעגלים המהווים את בסיסי הגליל. לפי נתונים אלו ונתוני הסרטוט, מה שטח הפנים של הגוף שלפניכם (בסמ\"ר)?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">2 + 3⅔π</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">4 + 3⅓π</bdi>",
@@ -7627,7 +7627,7 @@
      "n": 7,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם מערכת צירים בה הועברו 3 ישרים. המשולשים <bdi dir=\"ltr\" class=\"m\">GED</bdi> ו־<bdi dir=\"ltr\" class=\"m\">AFB</bdi> חופפים. נתון: <bdi dir=\"ltr\" class=\"m\">AF = FG = GE</bdi>. סכום שטחי המשולשים <bdi dir=\"ltr\" class=\"m\">GDE, FCG</bdi> ו־<bdi dir=\"ltr\" class=\"m\">ABF</bdi> הוא <bdi dir=\"ltr\" class=\"m\">24</bdi> סמ\"ר.</p><p>לאור נתונים אלו ונתוני הסרטוט, מה מהבאים יכול להיות שיעורי הנקודה <bdi dir=\"ltr\" class=\"m\">B?</bdi></p>",
+     "stem": "<p>בסרטוט שלפניכם מערכת צירים בה הועברו 3 ישרים. המשולשים <bdi dir=\"ltr\" class=\"m\">GED</bdi> ו־<bdi dir=\"ltr\" class=\"m\">AFB</bdi> חופפים. נתון: <bdi dir=\"ltr\" class=\"m\">AF = FG = GE</bdi>. סכום שטחי המשולשים <bdi dir=\"ltr\" class=\"m\">GDE</bdi>, <bdi dir=\"ltr\" class=\"m\">FCG</bdi> ו־<bdi dir=\"ltr\" class=\"m\">ABF</bdi> הוא <bdi dir=\"ltr\" class=\"m\">24</bdi> סמ\"ר.</p><p>לאור נתונים אלו ונתוני הסרטוט, מה מהבאים יכול להיות שיעורי הנקודה <bdi dir=\"ltr\" class=\"m\">B</bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\">(−5,−2)</bdi>",
       "<bdi dir=\"ltr\" class=\"m\">(−1,−3)</bdi>",

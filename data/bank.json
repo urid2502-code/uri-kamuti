@@ -1213,7 +1213,7 @@
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"fr\"><span>π−4</span><span>8−π</span></span></bdi>"
      ],
      "figure": {
-      "src": "fig/7-4.png",
+      "src": "fig/7-4.svg",
       "width": "28%",
       "wide": false
      },
@@ -1239,7 +1239,7 @@
       "<bdi dir=\"ltr\" class=\"m\">6 − π</bdi>"
      ],
      "figure": {
-      "src": "fig/7-5.png",
+      "src": "fig/7-5.svg",
       "width": "38%",
       "wide": false
      },
@@ -1297,7 +1297,7 @@
       "לא ניתן לדעת"
      ],
      "figure": {
-      "src": "fig/7-8.png",
+      "src": "fig/7-8.svg",
       "width": "37%",
       "wide": false
      },
@@ -1392,7 +1392,7 @@
       "<bdi dir=\"ltr\" class=\"m\">4:π</bdi>"
      ],
      "figure": {
-      "src": "fig/8-2.png",
+      "src": "fig/8-2.svg",
       "width": "34%",
       "wide": false
      },
@@ -1432,7 +1432,7 @@
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": {
-      "src": "fig/8-4.png",
+      "src": "fig/8-4.svg",
       "width": "42%",
       "wide": false
      },

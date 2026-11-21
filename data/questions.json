@@ -1472,7 +1472,7 @@
   "notes": [
    "התשובות קטנות ומטושטשות – נקראו בקירוב."
   ],
-  "figure": "fig/7-4.png",
+  "figure": "fig/7-4.svg",
   "needsReview": true,
   "source": "video"
  },
@@ -1484,7 +1484,7 @@
   "answer": 2,
   "status": "extracted",
   "stem": [
-   "אביב ומשה יוצאים לריצת לילה. אביב רץ מנקודה B לנקודה A לאורך הקשת המסומנת. משה רץ מנקודה A לנקודה C ומשם לנקודה D.",
+   "אביב ומשה יוצאים לריצת לילה. אביב רץ מנקודה A לנקודה B לאורך הקשת המסומנת. משה רץ מנקודה A לנקודה C ומשם לנקודה D.",
    "[סרטוט: מערכת צירים; O בראשית, A על ציר x, B על ציר y בגובה 4; OACB ריבוע; קשת מ־B ל־A; D נקודה על הצלע BC.]",
    "אם נתון כי אביב ומשה עברו את אותו המרחק, מה המרחק כעת בין אביב למשה?"
   ],
@@ -1496,7 +1496,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/7-5.png",
+  "figure": "fig/7-5.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -1566,7 +1566,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/7-8.png",
+  "figure": "fig/7-8.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -1661,7 +1661,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/8-2.png",
+  "figure": "fig/8-2.svg",
   "needsReview": false,
   "source": "video"
  },
@@ -1706,7 +1706,7 @@
   ],
   "code": [],
   "notes": [],
-  "figure": "fig/8-4.png",
+  "figure": "fig/8-4.svg",
   "needsReview": false,
   "source": "video"
  },

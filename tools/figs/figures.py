@@ -292,6 +292,104 @@ def _():
     return f
 
 
+# ---------------------------------------------------------------- set 7
+@fig('7-4')
+def _():
+    f = Fig(380, 380)
+    c, r = (190, 190), 150
+    sq = [polar(c, r, a) for a in (45, 135, 225, 315)]
+    # grey: the four circle segments between the circle and the inner square
+    d = 'M%.1f %.1f' % sq[0]
+    for k in range(4):
+        d += ' A%d %d 0 0 0 %.1f %.1f' % (r, r, *sq[(k + 1) % 4])
+    d += ' Z M%.1f %.1f L%.1f %.1f L%.1f %.1f L%.1f %.1f Z' % (sq[0] + sq[3] + sq[2] + sq[1])
+    f.items.insert(0, '<path d="%s" fill="#c9ccc8" fill-rule="evenodd"/>' % d)
+    f.poly([(c[0] - r, c[1] - r), (c[0] + r, c[1] - r), (c[0] + r, c[1] + r), (c[0] - r, c[1] + r)])
+    f.circle(c, r)
+    f.poly(sq)
+    return f
+
+
+@fig('7-5')
+def _():
+    f = Fig(420, 330)
+    o, u = (70, 260), 42      # origin, one unit
+    P = lambda x, y: (o[0] + x * u, o[1] - y * u)  # noqa: E731
+    f.line((20, o[1]), (400, o[1]), w=1.8)
+    f.line((o[0], 310), (o[0], 20), w=1.8)
+    f.poly([(400, o[1]), (390, o[1] - 5), (390, o[1] + 5)], fill='#1f2328', w=1)
+    f.poly([(o[0], 20), (o[0] - 5, 30), (o[0] + 5, 30)], fill='#1f2328', w=1)
+    f.text((406, o[1] + 18), 'x', size=19, italic=True)
+    f.text((o[0] - 16, 26), 'y', size=19, italic=True)
+    O, A, C, B = P(0, 0), P(4, 0), P(4, 4), P(0, 4)
+    D = P(8 - 2 * 3.14159, 4)
+    f.poly([O, A, C, B])
+    f.path('M%.1f %.1f A%d %d 0 0 1 %.1f %.1f' % (B[0], B[1], 4 * u, 4 * u, A[0], A[1]))
+    f.dot(D)
+    f.label(O, 'O', dx=-16, dy=18)
+    f.label(A, 'A', dx=4, dy=22)
+    f.label(C, 'C', dx=18, dy=-6)
+    f.label(B, 'B', dx=-18, dy=-10)
+    f.label(D, 'D', dy=-18)
+    f.text((o[0] - 18, (O[1] + B[1]) / 2), '4', size=19)
+    return f
+
+
+@fig('7-8')
+def _():
+    f = Fig(400, 400)
+    O, R = (230, 200), 165
+    C = (O[0] - R, O[1])
+    M = ((O[0] + C[0]) / 2, O[1])
+    d = R / 2
+    T, A = (M[0], M[1] - d), (M[0], M[1] + d)
+    # B: ray O->A continued to the circle
+    ux, uy = A[0] - O[0], A[1] - O[1]
+    n = (ux * ux + uy * uy) ** 0.5
+    B = (O[0] + ux / n * R, O[1] + uy / n * R)
+    f.circle(O, R)
+    f.poly([C, T, O, A])
+    f.line(A, B)
+    f.line(C, B)
+    f.dot(O, 4.5)
+    f.label(O, 'O', dx=20)
+    f.label(C, 'C', dx=-18)
+    f.label(A, 'A', dx=14, dy=14)
+    f.label(B, 'B', dx=-10, dy=20)
+    return f
+
+
+# ---------------------------------------------------------------- set 8
+@fig('8-2')
+def _():
+    f = Fig(400, 360)
+    O, R = (200, 180), 165
+    A, B = (O[0] - R, O[1]), (O[0] + R, O[1])
+    h = R / 2
+    f.circle(O, R)
+    f.poly([A, (O[0] - h, O[1] - h), O, (O[0] - h, O[1] + h)])
+    f.poly([O, (O[0] + h, O[1] - h), B, (O[0] + h, O[1] + h)])
+    f.dot(O, 4.5)
+    f.label(O, 'O', dy=-22)
+    f.label(A, 'A', dx=-18)
+    f.label(B, 'B', dx=18)
+    return f
+
+
+@fig('8-4')
+def _():
+    f = Fig(420, 230)
+    A, B, C, D = (40, 35), (380, 35), (380, 195), (40, 195)
+    f.poly([A, B, C, D])
+    f.line(A, C)
+    f.line(B, D)
+    f.label(A, 'A', dx=-16, dy=-8)
+    f.label(B, 'B', dx=16, dy=-8)
+    f.label(C, 'C', dx=16, dy=10)
+    f.label(D, 'D', dx=-16, dy=10)
+    return f
+
+
 # ---------------------------------------------------------------- writer
 def main():
     only = set(sys.argv[1:])

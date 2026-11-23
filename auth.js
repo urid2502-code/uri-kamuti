@@ -95,18 +95,6 @@
     function profileOf(u){ var m=u.user_metadata||{}; return {name:m.full_name||m.name||'',email:u.email||'',avatar:m.avatar_url||m.picture||''}; }
     function pull(){ return sb.from('progress').select('data').eq('user_id',uid).maybeSingle().then(function(r){ if(r.error) throw r.error; return r.data?r.data.data:null; }); }
     function push(){ if(!uid) return Promise.resolve(); var data=J(BASE+':'+uid)||{sets:{}}; return sb.from('progress').upsert({user_id:uid,data:data,updated_at:new Date().toISOString()}).then(function(r){ if(r.error) throw r.error; }); }
-    /* new accounts wait for the site owner's approval (public.members, see supabase/migrations/002_members.sql) */
-    function approved(){ return sb.from('members').select('approved').eq('user_id',uid).maybeSingle().then(function(r){ if(r.error) throw r.error; return !!(r.data&&r.data.approved); }); }
-    function pending(p){
-      if(stored){ set(UIDK,null); set(PROF,null); location.reload(); return; }
-      if(!isLogin) return;
-      busy(false); if(gbtn) gbtn.hidden=true;
-      head('ההרשמה ממתינה לאישור','נרשמת בהצלחה. החשבון יאושר בקרוב, ואז תוכל/י לפתור את המקבצים ולשמור את ההתקדמות.');
-      if(who){ who.hidden=false; who.innerHTML='<div class="acc-list"><div class="acc-card pend"><span class="av">'+avOf({name:p.name,email:p.email,pic:p.avatar})+'</span><span class="acc-t"><b>'+esc(p.name||p.email)+'</b><span>'+esc(p.email)+'</span></span><span class="acc-go">ממתין</span></div></div>'+
-        '<button type="button" class="acc-other" id="other-acct"><span class="plus" aria-hidden="true">+</span>כניסה עם חשבון Google אחר</button>'; }
-      say('info','אחרי האישור פשוט חוזרים לדף הזה (או מרעננים אותו), והכניסה תושלם.');
-      sb.functions.invoke('signup-notify',{body:{}}).catch(function(){});
-    }
     window.addEventListener('uriq:save',function(){ clearTimeout(pushT); pushT=setTimeout(function(){ push().catch(function(){}); },1200); });
     window.addEventListener('pagehide',function(){ if(pushT){ clearTimeout(pushT); push().catch(function(){}); } });
 
@@ -118,14 +106,9 @@
         if(isLogin){ busy(false); showChooser(); if(urlErr) say('err','ההתחברות עם Google נכשלה. נסו שוב בעוד רגע, ואם זה חוזר, כתבו ל־urid2502@gmail.com.'); }
         return;
       }
-      uid=user.id; var prof=profileOf(user);
+      uid=user.id; var prof=profileOf(user); set(PROF,JSON.stringify(prof)); remember(prof);
       var mine=BASE+':'+uid;
-      return approved().then(function(ok){
-        if(!ok){ uid=null; pending(prof); return; }
-        set(PROF,JSON.stringify(prof)); remember(prof);
-        return sync();
-      });
-      function sync(){ return pull().then(function(remote){
+      return pull().then(function(remote){
         var local=J(mine), merged;
         if(stored!==uid){ merged=merge(merge(local,J(BASE)),remote); }   // first sign-in on this device: bring anonymous progress along
         else merged=merge(local,remote);
@@ -142,7 +125,7 @@
       }).catch(function(e){
         if(stored!==uid) set(UIDK,uid);
         if(isLogin){ busy(false); showUser(prof); say('err','התחברת, אבל הסנכרון נכשל ('+esc(e.message||e)+'). ההתקדמות נשמרת בינתיים בדפדפן וננסה שוב בפעם הבאה.'); }
-      }); }
+      });
     }).catch(function(e){ if(isLogin){ busy(false); say('err','שגיאת התחברות: '+esc(e.message||e)); } });
 
     function google(hint,el){

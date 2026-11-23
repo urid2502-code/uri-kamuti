@@ -1583,3 +1583,12 @@ html.anon body.home-page .tally{display:none}
 /* Redrawn (sharp) figures can be shown larger, especially on phones. */
 figure:has(img[src$=".svg"]){width:min(calc(var(--w)*1.25),60%)}
 @media (max-width:640px){figure:has(img[src$=".svg"]){width:min(calc(var(--w)*2.4),92%)}}
+
+/* ---------- printable PDF button ---------- */
+.setact{display:flex;align-items:center;gap:10px}
+.pdfbtn{display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--line2);background:var(--paper);color:var(--ink);font:600 .92rem var(--ui);text-decoration:none;white-space:nowrap;transition:border-color .15s,background .15s}
+.pdfbtn:hover{background:var(--hover);border-color:var(--faint)}
+.pdfbtn:focus-visible{outline:2px solid var(--green,#12805C);outline-offset:2px}
+.pdfbtn svg{flex:none}
+@media (max-width:560px){.pdfbtn span{display:none}.pdfbtn{padding:0 11px}}
+@media print{.pdfbtn{display:none}}

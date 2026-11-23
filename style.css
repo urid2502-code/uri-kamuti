@@ -1613,3 +1613,6 @@ body.landing .f-install:hover{color:#fff}
 .installdlg .modal-act{justify-content:stretch}
 .installdlg .modal-act .btn{flex:1;justify-content:center;background:var(--ink);color:var(--paper);border-color:var(--ink)}
 html.app [data-install]{display:none!important}
+
+/* math pieces never break inside; breaks only at the spaces between them */
+.m .nw{white-space:nowrap}

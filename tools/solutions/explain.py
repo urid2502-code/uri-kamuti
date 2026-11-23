@@ -30,6 +30,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 sys.path.insert(0, os.path.join(REPO, 'tools', 'bidi'))
 import fix_bidi  # noqa: E402
 import layout  # noqa: E402
+import chunks  # noqa: E402
 
 BDI = re.compile(r'(<bdi dir="ltr" class="m">)(.*?)(</bdi>)', re.S)
 
@@ -96,7 +97,7 @@ def markup(s):
 def render_line(line):
     text = html.escape(line, quote=False)
     text = fix_bidi.wrap_text(text)
-    text = BDI.sub(lambda m: m.group(1) + layout.keep_math_together(markup(m.group(2))) + m.group(3), text)
+    text = BDI.sub(lambda m: m.group(1) + chunks.chunk(layout.keep_math_together(markup(m.group(2)))) + m.group(3), text)
     return layout.nowrap_parens(text)
 
 

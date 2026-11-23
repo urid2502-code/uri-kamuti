@@ -1592,3 +1592,10 @@ figure:has(img[src$=".svg"]){width:min(calc(var(--w)*1.25),60%)}
 .pdfbtn svg{flex:none}
 @media (max-width:560px){.pdfbtn span{display:none}.pdfbtn{padding:0 11px}}
 @media print{.pdfbtn{display:none}}
+
+/* ---------- account waiting for approval / approve page ---------- */
+.acc-card.pend{cursor:default}
+.acc-card.pend .acc-go{color:var(--mute);font-weight:600}
+.approve .auth-main{min-height:calc(100vh - 200px)}
+.approve .acc-list{margin-top:18px}
+.approve .acc-card{cursor:default}

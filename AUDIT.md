@@ -86,9 +86,9 @@ Source: the book, sets 1–40, 10 questions per set (**400 questions**). The que
 | 7-4 | approximate | התשובות קטנות ומטושטשות – נקראו בקירוב. |
 | 7-10 | partial | נקרא בקירוב; הביטוי עצמו מטושטש לחלוטין בסרטון – יש לבדוק בספר (עמוד 34). |
 | 8-5 | approximate | המעריך קטן – נקרא בקירוב |
-| 10-4 | partial | נקרא בקירוב |
-| 10-5 | approximate | מעריכים לא קריאים |
-| 10-6 | partial | נקרא בקירוב |
+| 10-4 | clean | תוקן מצילום הספר |
+| 10-5 | clean | תוקן מצילום הספר (b³/a < b²/a) |
+| 10-6 | clean | תוקן מצילום הספר |
 | 11-4 | approximate | הפעולה בין 1x−3 ל־1x+3 במכנה קטנה בסרטון; נקראה ככפל (זה מה שמתיישב עם התשובות). |
 | 14-4 | approximate | הטקסט מטושטש חלקית |
 | 14-5 | partial | סדרי השורשים (המספרים הקטנים) לא קריאים בסרטון – אלה הסדרים הסבירים לפי המספרים (243=3⁵, 81=3⁴, 128=2⁷, 64=2⁶). יש לבדוק בספר. |
@@ -190,4 +190,4 @@ Every question was solved again from scratch and checked against the book key, t
 | 33-4 | 3 | not determined | The exponents are blurry. |
 | 40-7 | 3 | options 2 and 3 both fit | The figure places B left of F. |
 
-Unreadable in the source (the explanation gives the method only): 7-10, 10-4, 10-5, 10-6, 17-2, 17-10.
+Unreadable in the source (the explanation gives the method only): 7-10, 17-2, 17-10. (10-4, 10-5, 10-6 were completed from photos of the book; all three match the key.)

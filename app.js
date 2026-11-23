@@ -353,6 +353,41 @@
       acct.querySelector('.an').textContent=displayName()||nm||'החשבון שלי';
       if(store.avatar&&AV[store.avatar]){ /* painted below */ } else if(pf.avatar){ var im=new Image(); im.alt=''; im.referrerPolicy='no-referrer'; im.src=pf.avatar; im.onerror=function(){ av.textContent=(nm||'?').charAt(0); }; av.innerHTML=''; av.appendChild(im); } else av.textContent=(nm||'?').charAt(0);
     } paintChip(); }
+
+  /* ---- add to home screen: open urIQ like an app ---- */
+  (function(){
+    var standalone=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
+    if(standalone){ document.documentElement.classList.add('app'); return; }
+    var ua=navigator.userAgent||'', ios=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1), android=/Android/.test(ua), phone=ios||android;
+    var deferred=null;
+    window.addEventListener('beforeinstallprompt',function(e){ e.preventDefault(); deferred=e; });
+    window.addEventListener('appinstalled',function(){ document.querySelectorAll('[data-install]').forEach(function(b){ b.remove(); }); });
+    var I={share:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4M7 10H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1"/></svg>',
+      plus:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.5v7M8.5 12h7"/></svg>',
+      dots:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="12" cy="19" r="1.3"/></svg>',
+      phone:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 8.5v6M9.5 12l2.5 2.5 2.5-2.5"/></svg>'};
+    function steps(){
+      var ext=/CriOS|FxiOS|EdgiOS/.test(ua);
+      if(ios) return [[I.share,'לוחצים על כפתור השיתוף '+(ext?'בשורת הכתובת':'בסרגל התחתון של Safari')+'.'],[I.plus,'גוללים ובוחרים <b>"הוספה למסך הבית"</b>.'],[I.phone,'לוחצים <b>"הוסף"</b> – האייקון של urIQ יופיע במסך הבית, והאתר ייפתח כמו אפליקציה.']];
+      if(android) return [[I.dots,'פותחים את תפריט הדפדפן (שלוש הנקודות למעלה).'],[I.plus,'בוחרים <b>"הוספה למסך הבית"</b> או <b>"התקנת אפליקציה"</b>.'],[I.phone,'מאשרים – האייקון של urIQ יופיע במסך הבית.']];
+      return [[I.plus,'בשורת הכתובת של Chrome או Edge לוחצים על סמל ההתקנה (מסך עם חץ), או בתפריט: <b>"התקנת urIQ"</b>.'],[I.phone,'בטלפון: פותחים את האתר ב־Safari (אייפון) או ב־Chrome (אנדרואיד) ולוחצים על הכפתור הזה שוב.']];
+    }
+    var dlg;
+    function open(){
+      if(deferred){ deferred.prompt(); deferred.userChoice.then(function(){ deferred=null; }); return; }
+      if(!dlg){ dlg=document.createElement('dialog'); dlg.className='modal installdlg'; dlg.setAttribute('aria-labelledby','in-t'); document.body.appendChild(dlg);
+        dlg.addEventListener('click',function(e){ if(e.target===dlg||e.target.closest('[data-close]')) dlg.close(); }); }
+      dlg.innerHTML='<div class="in-box"><span class="in-ic" aria-hidden="true"><img src="'+root+'apple-touch-icon.png" alt=""></span><h2 id="in-t">urIQ במסך הבית</h2><p>פותחים בלחיצה אחת, במסך מלא – בדיוק כמו אפליקציה.</p><ol class="in-steps">'+steps().map(function(s){ return '<li><span class="in-si">'+s[0]+'</span><span>'+s[1]+'</span></li>'; }).join('')+'</ol>'+(ios?'<p class="in-arrow" aria-hidden="true">כפתור השיתוף נמצא כאן למטה ↓</p>':'')+'<div class="modal-act"><button type="button" class="btn" data-close>הבנתי</button></div></div>';
+      if(typeof dlg.showModal==='function') dlg.showModal(); else dlg.setAttribute('open','');
+    }
+    document.addEventListener('click',function(e){ if(e.target.closest('[data-install]')){ e.preventDefault(); open(); } });
+    var btn='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 8.5v6M9.5 12l2.5 2.5 2.5-2.5"/></svg><span>הוספה למסך הבית</span>';
+    document.querySelectorAll('.sitefoot nav').forEach(function(n){ n.insertAdjacentHTML('beforeend','<button type="button" class="f-install" data-install>'+btn+'</button>'); });
+    if(phone){
+      var acts=document.querySelector('.stage .acts'); if(acts) acts.insertAdjacentHTML('beforeend','<button type="button" class="cta line in-hero" data-install>'+btn+'</button>');
+      var dh=document.querySelector('.dashpage .phead, body.dash .phead'); if(dh) dh.insertAdjacentHTML('afterend','<button type="button" class="in-chip" data-install>'+btn+'</button>');
+    }
+  })();
   window.URIQ={displayName:displayName, accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

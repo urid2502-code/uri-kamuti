@@ -615,7 +615,7 @@
      "n": 1,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span> <span class=\"nw\">+</span> <span class=\"nw\">y</span> <span class=\"nw\">≠</span> <span class=\"nw\">3</span> <span class=\"nw\">,</span> <span class=\"nw\"><span class=\"fr\"><span>9 − (x+y)²</span><span>3 − y − x</span></span></span></bdi> = ?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x + y ≠ 3</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>9 − (x+y)²</span><span>3 − y − x</span></span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">3</span> <span class=\"nw\">−</span> <span class=\"nw\">y</span> <span class=\"nw\">−</span> <span class=\"nw\">x</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">3</span> <span class=\"nw\">−</span> <span class=\"nw\"><span class=\"fr\"><span>x² + y²</span><span>y − x</span></span></span></bdi>",
@@ -845,7 +845,7 @@
      "n": 2,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span> <span class=\"nw\">≠</span> <span class=\"nw\">±<span class=\"sq\">√<span>5</span></span></span> <span class=\"nw\">,</span> <span class=\"nw\"><span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> + x</span></span></span> <span class=\"nw\">+</span> <span class=\"nw\"><span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> − x</span></span></span></bdi> = ?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x ≠ ±<span class=\"sq\">√<span>5</span></span></span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> + x</span></span> + <span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> − x</span></span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>2</span><span><span class=\"sq\">√<span>5</span></span></span></span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>1</span><span>5 − x²</span></span></span></bdi>",

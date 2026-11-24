@@ -357,11 +357,11 @@
   if(UID) document.querySelectorAll('a.f-login').forEach(function(a){ a.remove(); });
   /* ---- account chip ---- */
   var acct=document.getElementById('acct');
-  function paintChip(){ if(!acct) return; var av=acct.querySelector('.av'), an=acct.querySelector('.an'), dn=displayName(); if(an&&dn) an.textContent=dn; if(store.avatar&&AV[store.avatar]){ av.innerHTML=avatarHTML(store.avatar); av.classList.add('has-av'); } }
+  function paintChip(){ if(!acct) return; var av=acct.querySelector('.av'), an=acct.querySelector('.an'), dn=displayName(); if(store.avatar&&AV[store.avatar]){ av.innerHTML=avatarHTML(store.avatar); av.classList.add('has-av'); } }
   if(acct){ var pf=UID?load('uriq:profile',null):null;
     if(pf){ var av=acct.querySelector('.av'), nm=(pf.name||pf.email||'').split(' ')[0];
       acct.href=root+'dashboard.html'; acct.setAttribute('aria-label','האזור שלי – '+(pf.name||pf.email||''));
-      acct.querySelector('.an').textContent=displayName()||nm||'החשבון שלי';
+      acct.querySelector('.an').textContent='האזור שלי';
       if(store.avatar&&AV[store.avatar]){ /* painted below */ } else if(pf.avatar){ var im=new Image(); im.alt=''; im.referrerPolicy='no-referrer'; im.src=pf.avatar; im.onerror=function(){ av.textContent=(nm||'?').charAt(0); }; av.innerHTML=''; av.appendChild(im); } else av.textContent=(nm||'?').charAt(0);
     } paintChip(); }
 

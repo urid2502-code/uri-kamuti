@@ -432,7 +432,7 @@ body{font-family:var(--ui);font-feature-settings:"tnum" 0;-webkit-font-smoothing
 .acct .av{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:.75rem;font-weight:700;overflow:hidden}
 .acct .av img{width:100%;height:100%;object-fit:cover}
 .toplink{display:none}
-@media (max-width:980px){ .mainnav a{padding:8px 9px} .acct .an{display:none} .acct{padding:0 5px} }
+@media (max-width:980px){ .mainnav a{padding:8px 9px} }
 @media (max-width:860px){
   .top{height:auto}
   .top-in{flex-wrap:wrap;height:auto;padding-top:8px;padding-bottom:0}
@@ -1656,3 +1656,6 @@ html.app [data-install]{display:none!important}
 .tset h2 small{font-family:var(--ui);font-size:.9rem;font-weight:500;color:var(--mute)}
 .jump a.tj{min-width:0;padding:0 10px;font:600 .82rem var(--ui)}
 .by-topic .jump{position:static}
+.acct .an{white-space:nowrap}
+.dashpage .top .acct{border-color:var(--ac)}
+@media (max-width:440px){.mainnav a{padding:8px 9px;font-size:.92rem}.acct{padding:0 10px 0 5px;gap:6px}.acct .an{font-size:.85rem}}

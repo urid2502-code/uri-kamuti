@@ -1676,3 +1676,21 @@ html.app [data-install]{display:none!important}
 .lesson .lsn-h{display:block;font-size:.85rem;font-weight:800;color:var(--ac-ink,#0B5D42);margin-bottom:4px}
 .lesson p{margin:0;line-height:1.7;color:var(--ink)}
 .lsn-d{margin-bottom:8px}
+
+/* ---------- recurring tricks ---------- */
+.trk{margin-top:10px;padding-top:10px;border-top:1px dashed color-mix(in srgb,var(--ac,#12805C) 35%,transparent)}
+.trk-h{margin:0;font-size:.92rem;line-height:1.65}
+.trk-h b{color:var(--ac-ink,#0B5D42);margin-inline-end:4px}
+.seen{margin:6px 0 0;font-size:.85rem;line-height:2}
+.seen-l{color:var(--mute)}
+.sq-chip,.tq{display:inline-block;padding:0 8px;border-radius:999px;border:1px solid var(--line2);background:var(--paper);color:var(--ink2);font:600 .78rem var(--mono);text-decoration:none;line-height:1.9;margin:0 1px}
+.sq-chip.ok,.tq.ok{border-color:var(--ok-line,#9fd8bd);background:var(--ok-bg,#E8F7EF);color:var(--ok,#12805C)}
+.sq-chip.no,.tq.no{border-color:var(--no-line,#f1b5b5);background:var(--no-bg,#FDECEC);color:var(--no,#B42318)}
+.seen-more{margin-top:4px}
+.seen-more summary{cursor:pointer;color:var(--mute);font-size:.82rem}
+.trk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.trk-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.trk-card h3{margin:0 0 4px;font-size:1.02rem;display:flex;justify-content:space-between;gap:8px}
+.trk-card h3 small{color:var(--mute);font-weight:500;font-size:.8rem}
+.trk-card p{margin:0 0 8px;color:var(--ink2);font-size:.9rem;line-height:1.6}
+.trk-qs{display:flex;flex-wrap:wrap;gap:4px}

@@ -1646,3 +1646,13 @@ html.app [data-install]{display:none!important}
 .sl.tl b{font-size:.9rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:640px){.topicpage .sethead{flex-direction:column;align-items:stretch;gap:12px}.topicpage .setact,.topicpage .setsel,.topicpage .setsel select{width:100%}}
 @media (max-width:440px){.mainnav{justify-content:space-between}.mainnav a{padding:8px 6px;font-size:.88rem}}
+
+/* ---------- solutions: by set / by topic ---------- */
+.solview{display:inline-flex;gap:4px;padding:4px;margin:0 0 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
+.sv-btn{border:0;background:none;padding:8px 16px;border-radius:999px;font:600 .92rem var(--ui);color:var(--mute);cursor:pointer}
+.sv-btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.solpage .qsrc{display:none}
+.solpage.by-topic .qsrc{display:inline-block}
+.tset h2 small{font-family:var(--ui);font-size:.9rem;font-weight:500;color:var(--mute)}
+.jump a.tj{min-width:0;padding:0 10px;font:600 .82rem var(--ui)}
+.by-topic .jump{position:static}

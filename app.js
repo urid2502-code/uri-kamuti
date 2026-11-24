@@ -399,6 +399,34 @@
       var dh=document.querySelector('.dashpage .phead, body.dash .phead'); if(dh) dh.insertAdjacentHTML('afterend','<button type="button" class="in-chip" data-install>'+btn+'</button>');
     }
   })();
+
+  /* ---- solutions: by set or by topic ---- */
+  if(body.classList.contains('solpage')&&document.querySelector('.solview')){
+    (function(){
+      var main=document.getElementById('main'), jump=document.querySelector('.jump'), setSecs=[].slice.call(document.querySelectorAll('.sset'));
+      var arts=[].slice.call(document.querySelectorAll('.sq-item')), home=arts.map(function(a){ return a.parentNode; });
+      var ORDER=['numth','alg','pow','ineq','func','pct','motion','stats','prob','tri','poly','circle','solid','coord','graph'];
+      var names=D.tnames||{}, topicOf=D.topic||{}, built=null, setJump=jump?jump.innerHTML:'';
+      function build(){
+        var by={}; arts.forEach(function(a){ var id=a.id.slice(3), t=topicOf[id]; if(t) (by[t]=by[t]||[]).push(a); });
+        var ts=ORDER.filter(function(t){ return by[t]; }).concat(Object.keys(by).filter(function(t){ return ORDER.indexOf(t)<0; }));
+        built=ts.map(function(t){ var sec=document.createElement('section'); sec.className='sset tset'; sec.id='t-'+t; sec.hidden=true;
+          sec.innerHTML='<h2>'+(names[t]||t)+' <small>'+by[t].length+' שאלות</small></h2>'; sec._arts=by[t]; main.appendChild(sec); return sec; });
+        built.jump=ts.map(function(t){ return '<a class="tj" href="#t-'+t+'">'+(names[t]||t)+'</a>'; }).join('');
+      }
+      function show(v){
+        if(v==='topics'&&!built) build();
+        document.querySelectorAll('.sv-btn').forEach(function(b){ b.setAttribute('aria-pressed',b.dataset.view===v?'true':'false'); });
+        body.classList.toggle('by-topic',v==='topics');
+        if(v==='topics'){ built.forEach(function(sec){ sec._arts.forEach(function(a){ sec.appendChild(a); }); sec.hidden=false; }); setSecs.forEach(function(s){ s.hidden=true; }); if(jump){ jump.innerHTML=built.jump; jump.setAttribute('aria-label','מעבר לנושא'); } }
+        else { arts.forEach(function(a,i){ home[i].appendChild(a); }); setSecs.forEach(function(s){ s.hidden=false; }); if(built) built.forEach(function(sec){ sec.hidden=true; }); if(jump){ jump.innerHTML=setJump; jump.setAttribute('aria-label','מעבר למקבץ'); } }
+        try{ localStorage.setItem('uriq:solview',v); }catch(e){}
+      }
+      document.querySelectorAll('.sv-btn').forEach(function(b){ b.addEventListener('click',function(){ show(b.dataset.view); }); });
+      var want=/view=topics/.test(location.search)?'topics':(load('uriq:solview',null)==='topics'||(function(){ try{ return localStorage.getItem('uriq:solview')==='topics'; }catch(e){ return false; } })())?'topics':'sets';
+      if(want==='topics'&&!/^#sol/.test(location.hash)) show('topics');
+    })();
+  }
   window.URIQ={displayName:displayName, accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

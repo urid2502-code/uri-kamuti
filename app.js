@@ -18,10 +18,12 @@
   function save(){ store.u=Date.now(); put(KEY,store); try{ window.dispatchEvent(new CustomEvent('uriq:save')); }catch(e){} }
   store.hist=store.hist||[]; store.m=store.m||{}; store.bm=store.bm||{};
   function emit(t,d){ try{ window.dispatchEvent(new CustomEvent('uriq:'+t,{detail:d||{}})); }catch(e){} }
-  function summarize(n,st){ var ok=0, wr=[], sk=[], ex=D.exist[n]||[]; ex.forEach(function(q){ var id=n+'-'+q, p=st.a[id], k=+keyOf(id); if(!p) sk.push(id); else if(p===k) ok++; else wr.push(id); }); return {ok:ok,tot:ex.length,wr:wr,sk:sk}; }
-  function logAttempt(n,st){ var r=summarize(n,st); store.hist.push({n:+n,at:st.at||Date.now(),ok:r.ok,tot:r.tot,el:st.t.el||0,wr:r.wr,sk:r.sk}); }
+  var TP=(window.TOPICS||{}).parts||{};
+  function idsOf(n){ n=String(n); return /^t-/.test(n) ? (TP[n.slice(2)]||[]) : (D.exist[n]||[]).map(function(q){ return n+'-'+q; }); }
+  function summarize(n,st){ var ok=0, wr=[], sk=[], ex=idsOf(n); ex.forEach(function(id){ var p=st.a[id], k=+keyOf(id); if(!p) sk.push(id); else if(p===k) ok++; else wr.push(id); }); return {ok:ok,tot:ex.length,wr:wr,sk:sk}; }
+  function logAttempt(n,st){ if(!/^\d+$/.test(n)) return; var r=summarize(n,st); store.hist.push({n:+n,at:st.at||Date.now(),ok:r.ok,tot:r.tot,el:st.t.el||0,wr:r.wr,sk:r.sk}); }
   // older submissions (before the history log existed) become history entries from their saved answers
-  Object.keys(store.sets).forEach(function(n){ var st=store.sets[n]; if(st&&st.sub&&!store.hist.some(function(h){ return h.n===+n&&h.at===st.at; })) logAttempt(n,st); });
+  Object.keys(store.sets).forEach(function(n){ var st=store.sets[n]; if(/^\d+$/.test(n)&&st&&st.sub&&!store.hist.some(function(h){ return h.n===+n&&h.at===st.at; })) logAttempt(n,st); });
   store.hist.sort(function(a,b){ return a.at-b.at; });
   var REV={}, NEW={};
   (D.review||[]).forEach(function(i){REV[i]=1;}); (D.fresh||[]).forEach(function(i){NEW[i]=1;});
@@ -38,6 +40,13 @@
 
   /* ---- sidebar progress + drawer ---- */
   function sideProgress(){
+    document.querySelectorAll('[data-tp]').forEach(function(a){
+      var k='t-'+a.dataset.tp, ids=TP[a.dataset.tp]||[], st=store.sets[k], done=0, ok=0;
+      if(st) ids.forEach(function(id){ if(st.a[id]){ done++; if(st.a[id]===+keyOf(id)) ok++; } });
+      var sm=a.querySelector('small'); if(sm&&a.classList.contains('tl')) sm.textContent= done ? done+'/'+ids.length : String(ids.length);
+      if(a.classList.contains('tp')){ var bar=a.querySelector('i'); if(bar) bar.style.width=(ids.length?100*done/ids.length:0)+'%'; if(st&&st.sub&&sm) sm.textContent='הוגש · '+ok+'/'+ids.length+' נכונות'; else if(done&&sm) sm.textContent=done+'/'+ids.length+' נענו'; }
+      a.classList.toggle('full',!!(st&&st.sub));
+    });
     Object.keys(D.exist).forEach(function(s){
       var ex=D.exist[s]; if(!ex.length) return;
       var st=store.sets[s], done=0; if(st) ex.forEach(function(q){ if(st.a[s+'-'+q]) done++; });
@@ -176,17 +185,19 @@
       cards.forEach(function(c){ var id=c.dataset.q, q=id.split('-')[1], p=st.a[id], k=+keyOf(id), cls=!p?'skip':p===k?'ok':'no'; if(cls==='ok') ok++;
         pills+='<a class="pill '+cls+'" href="#q'+id+'">'+q+'<span class="vh"> – '+(cls==='ok'?'נכונה':cls==='no'?'שגויה':'לא נענתה')+'</span></a>'; });
       var ms=st.t.el, pct=total?Math.round(100*ok/total):0;
-      var nx=+n<40?'<a class="btn" href="'+pad(+n+1)+'.html">למקבץ '+(+n+1)+'</a>':'<a class="btn" href="../sets.html">לכל המקבצים</a>';
-      box.innerHTML='<div class="rd-top"><div><h2 class="rd-h" id="res-h">תוצאות מקבץ '+n+'</h2><p class="rd-sub">המקבץ הוגש והתשובות נעולות. הפתרון המלא מופיע מתחת לכל שאלה.</p></div></div>'+
+      var isT=/^t-/.test(n), tnext=document.querySelector('.pager .nx');
+      var nx=isT ? (tnext?'<a class="btn" href="'+tnext.getAttribute('href')+'">'+tnext.lastChild.textContent+'</a>':'') : +n<40?'<a class="btn" href="'+pad(+n+1)+'.html">למקבץ '+(+n+1)+'</a>':'<a class="btn" href="../sets.html">לכל המקבצים</a>';
+      var title=isT?(document.querySelector('.sethead h1')||{}).textContent:'מקבץ '+n;
+      box.innerHTML='<div class="rd-top"><div><h2 class="rd-h" id="res-h">תוצאות – '+title+'</h2><p class="rd-sub">'+(isT?'התרגול הוגש':'המקבץ הוגש')+' והתשובות נעולות. הפתרון המלא מופיע מתחת לכל שאלה.</p></div></div>'+
         '<div class="rd-stats"><div class="stat"><b><bdi dir="ltr">'+ok+' / '+total+'</bdi></b><span>ציון<small>'+pct+'%</small></span></div>'+
         '<div class="stat"><b>'+(ms?fmt(ms):'—')+'</b><span>'+(ms?'זמן כולל':'הטיימר לא הופעל')+'</span></div>'+
         '<div class="stat"><b>'+(ms&&total?fmtShort(ms/total):'—')+'</b><span>ממוצע לשאלה</span></div></div>'+
         '<nav class="rd-map" aria-label="מפת שאלות">'+pills+'</nav>'+
         '<ul class="rd-legend"><li><i style="background:var(--ok)"></i>נכונה</li><li><i style="background:var(--no)"></i>שגויה</li><li><i style="border:1.5px dashed var(--line2)"></i>לא נענתה</li></ul>'+
-        '<div class="rd-act"><button type="button" class="btn primary" id="retake">איפוס מקבץ ופתרון מחדש</button>'+nx+'</div>';
+        '<div class="rd-act"><button type="button" class="btn primary" id="retake">'+(isT?'איפוס ופתרון מחדש':'איפוס מקבץ ופתרון מחדש')+'</button>'+nx+'</div>';
       box.hidden=false;
       document.getElementById('retake').addEventListener('click',function(){
-        ask('לאפס את המקבץ?','כל התשובות, הסימונים והזמן של מקבץ '+n+' יימחקו, ותוכלו לפתור אותו מחדש.','איפוס',function(){ store.sets[n]=fresh(); store.sets[n].u=Date.now(); save(); location.replace(location.pathname); });
+        ask(isT?'לאפס את התרגול?':'לאפס את המקבץ?','כל התשובות, הסימונים והזמן של '+title+' יימחקו, ותוכלו לפתור מחדש.','איפוס',function(){ store.sets[n]=fresh(); store.sets[n].u=Date.now(); save(); location.replace(location.pathname); });
       });
     }
     function drawAll(){ body.classList.toggle('is-review',!!st.sub); cards.forEach(drawCard); drawCounts(); drawResults(); drawStartBtn(); drawTimer(); }
@@ -230,7 +241,7 @@
     function doSubmit(){
       if(st.t.run){ st.t.el+=Date.now()-st.t.st; st.t.run=false; } loop(false);
       st.sub=true; st.at=Date.now(); logAttempt(n,st); save(); drawAll();
-      var last=store.hist[store.hist.length-1]; emit('submit',{set:n,ok:last.ok,tot:last.tot});
+      var last=summarize(n,st); emit('submit',{set:n,ok:last.ok,tot:last.tot});
       var box=document.getElementById('results'); if(box){ box.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); box.focus({preventScroll:true}); }
     }
     document.querySelectorAll('[data-submit]').forEach(function(b){ b.addEventListener('click',function(){

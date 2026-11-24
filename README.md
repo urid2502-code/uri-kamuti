@@ -27,3 +27,11 @@
 **נכסים**: הלוגו והפביקון ב־`brand/`. הגופנים IBM Plex Sans Hebrew ו־IBM Plex Mono בקבצים מקומיים (`fonts/`, רישיון OFL). `vendor/supabase-2.119.2.js` (MIT) נטען רק בעמוד הכניסה או למשתמש מחובר.
 
 Designed & built by Uri Deutsch.
+
+## Practice by topic
+
+`topics.html` and `topics/<topic>-<part>.html` are generated from the set pages and the
+topic of each question (`KAMUTI.topic` in `data/site.js`). Topics larger than 12 questions
+are split into parts. Re-run after changing a set page:
+
+    python3 tools/topics/build_topics.py

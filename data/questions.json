@@ -1268,10 +1268,10 @@
   "set": 6,
   "q": 6,
   "page": 28,
-  "answer": 2,
+  "answer": 1,
   "status": "extracted",
   "stem": [
-   "נתונה המשוואה x^(−1) + 1 = y.",
+   "נתונה המשוואה x² + 1 = y.",
    "ידוע כי אין ערך של x המקיים את המשוואה. מה מהבאים יכול להיות ערכו של y?"
   ],
   "options": [
@@ -1281,19 +1281,17 @@
    "אף אחת מהתשובות אינה נכונה"
   ],
   "code": [],
-  "notes": [
-   "המעריך קטן בתמונה; −1 היא הקריאה היחידה שמתאימה למפתח הספר."
-  ],
+  "notes": [],
   "figure": null,
   "needsReview": false,
-  "source": "photo"
+  "source": "book-key"
  },
  {
   "id": "6-7",
   "set": 6,
   "q": 7,
   "page": 29,
-  "answer": 1,
+  "answer": 2,
   "status": "extracted",
   "stem": [
    "בסרטוט שלפניכם מעגל שעל היקפו הנקודות A, B, C, D, E ו־F. הקשתות שנוצרו בסרטוט הן בעלות אורך שווה.",
@@ -1309,7 +1307,7 @@
   "notes": [],
   "figure": "fig/6-7.png",
   "needsReview": false,
-  "source": "photo"
+  "source": "book-key"
  },
  {
   "id": "6-8",
@@ -2130,7 +2128,7 @@
   "set": 10,
   "q": 3,
   "page": 43,
-  "answer": 1,
+  "answer": 3,
   "status": "extracted",
   "stem": [
    "נתון: x מספר שלם המתחלק ב־4 וב־5 ללא שארית.",
@@ -2144,12 +2142,10 @@
    "4y"
   ],
   "code": [],
-  "notes": [
-   "עמוד 44 (שאלות 4–6) מטושטש מאוד בסרטון. מה שאפשר היה לקרוא:"
-  ],
+  "notes": [],
   "figure": null,
-  "needsReview": true,
-  "source": "photo"
+  "needsReview": false,
+  "source": "book-key"
  },
  {
   "id": "10-4",
@@ -3995,7 +3991,7 @@
   "set": 18,
   "q": 4,
   "page": 76,
-  "answer": 3,
+  "answer": 1,
   "status": "extracted",
   "stem": [
    "בסרטוט שלפניכם קובייה שאורך צלעה הוא 3 ס\"מ. עכבר יוצא מנקודה A לטייל במסלול המתואר בציור (A → B → C → D → A). [סרטוט: A ו־D קודקודים תחתוניים קדמיים, B ו־C קודקודים עליונים אחוריים; AB ו־CD אלכסונים מרחביים של הקובייה, BC ו־DA מקצועות.]",
@@ -4011,7 +4007,7 @@
   "notes": [],
   "figure": "fig/18-4.svg",
   "needsReview": false,
-  "source": "video"
+  "source": "book-key"
  },
  {
   "id": "18-5",
@@ -4227,7 +4223,7 @@
   "set": 19,
   "q": 4,
   "page": 80,
-  "answer": 3,
+  "answer": 1,
   "status": "extracted",
   "stem": [
    "בסרטוט שלפניכם שלושה ריבועים – ABCD, AFGH ו־AEKI. נתון: EF = ⅓AE , FB = ½EF. [סרטוט: שלושת הריבועים חולקים את הקודקוד A; האזור שבין AEKI ל־AFGH (צורת L) מנוקד/אפור.]",
@@ -4240,12 +4236,10 @@
    "10/7"
   ],
   "code": [],
-  "notes": [
-   "השברים בנתון ובתשובות קטנים – נקראו בקירוב (ונבדקו מול חישוב שמתאים לתשובה 1)."
-  ],
+  "notes": [],
   "figure": "fig/19-4.svg",
-  "needsReview": true,
-  "source": "video"
+  "needsReview": false,
+  "source": "book-key"
  },
  {
   "id": "19-5",
@@ -4697,7 +4691,7 @@
   "set": 21,
   "q": 4,
   "page": 88,
-  "answer": 3,
+  "answer": 1,
   "status": "extracted",
   "stem": [
    "בסרטוט שלפניכם משושה משוכלל, בו הועברו שישה אלכסונים שיצרו את הצורה שלפניכם. [סרטוט: ששת האלכסונים יוצרים מגן דוד בתוך המשושה; המגן צבוע אפור, וששת המשולשים שבין המגן לצלעות המשושה לבנים.]",
@@ -4713,7 +4707,7 @@
   "notes": [],
   "figure": "fig/21-4.png",
   "needsReview": false,
-  "source": "photo"
+  "source": "book-key"
  },
  {
   "id": "21-5",

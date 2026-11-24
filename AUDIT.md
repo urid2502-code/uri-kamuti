@@ -191,3 +191,20 @@ Every question was solved again from scratch and checked against the book key, t
 | 40-7 | 3 | options 2 and 3 both fit | The figure places B left of F. |
 
 Unreadable in the source (the explanation gives the method only): 7-10, 17-2, 17-10. (10-4, 10-5, 10-6 were completed from photos of the book; all three match the key.)
+
+## Answer key checked against the book's answer index (pp. 167–169)
+
+All 400 keys were compared with photos of the book's answer index. Six keys on the
+site were wrong; in every one of them the book's key is the answer the math gives:
+
+| Question | Was | Book | Note |
+|---|---|---|---|
+| 6-6 | 2 | 1 | The equation is x² + 1 = y (the earlier "x⁻¹" reading was a guess to fit the wrong key). |
+| 6-7 | 1 | 2 | α, δ rest on two arcs (60°), β, γ on one (30°): 180°. |
+| 10-3 | 1 | 3 | 3y is the one not divisible by 20. |
+| 18-4 | 3 | 1 | "Twice": 2(1 + √3). |
+| 19-4 | 3 | 1 | White includes the outer L: 53/28. |
+| 21-4 | 3 | 1 | White : grey = 1 : 2. |
+
+Still conflicting after the check (book key confirmed, text as read gives another answer):
+8-8, 15-4, 23-2, 23-5, 28-10, 32-7, 33-4, 40-7, 4-2.

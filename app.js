@@ -427,6 +427,24 @@
       if(want==='topics'&&!/^#sol/.test(location.hash)) show('topics');
     })();
   }
+
+  /* ---- recurring tricks: where you already met this one ---- */
+  (function(){
+    var seen=document.querySelectorAll('.seen[data-ids]'), chips=document.querySelectorAll('.tq[data-q]');
+    if(!seen.length&&!chips.length) return;
+    // a question counts as done when it was answered in a submitted set or topic practice
+    var done={};
+    Object.keys(store.sets||{}).forEach(function(k){ var st=store.sets[k]; if(!st||!st.sub) return; Object.keys(st.a||{}).forEach(function(id){ done[id]=st.a[id]===+keyOf(id)?'ok':'no'; }); });
+    function href(id){ var p=id.split('-'); return root+'sets/'+pad(+p[0])+'.html#q'+id; }
+    function chip(id){ var d=done[id]; return '<a class="sq-chip'+(d?' '+d:'')+'" href="'+href(id)+'">'+id+(d==='ok'?' ✓':d==='no'?' ✗':'')+'</a>'; }
+    seen.forEach(function(p){
+      var ids=p.dataset.ids?p.dataset.ids.split(','):[], met=ids.filter(function(i){ return done[i]; }), rest=ids.filter(function(i){ return !done[i]; });
+      var h=met.length?'<span class="seen-l">כבר פגשת אותו ב:</span> '+met.map(chip).join(' '):'<span class="seen-l">עוד לא פגשת את הדפוס הזה בשאלות שהגשת.</span>';
+      if(rest.length) h+='<details class="seen-more"><summary>עוד '+rest.length+' שאלות עם הדפוס</summary>'+rest.map(chip).join(' ')+'</details>';
+      p.innerHTML=h;
+    });
+    chips.forEach(function(a){ var d=done[a.dataset.q]; if(d){ a.classList.add(d); a.title=d==='ok'?'פתרת נכון':'טעית בשאלה הזאת'; } });
+  })();
   window.URIQ={displayName:displayName, accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

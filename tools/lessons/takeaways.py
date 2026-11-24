@@ -19,18 +19,31 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 sys.path.insert(0, os.path.join(REPO, 'tools', 'solutions'))
 import explain  # noqa: E402  (render_line: bidi-safe math)
 
-BOX = re.compile(r'<div class="lesson">.*?</div>', re.S)
+BOX = re.compile(r'<div class="lesson">(?:(?!<div).)*?</div>|<div class="lesson">(?:(?!<div class="lesson").)*?</p></div></div>', re.S)
 
 
 def load():
     L = {}
-    for f in sorted(glob.glob(os.path.join(REPO, 'data', 'lessons', '*.json'))):
+    for f in sorted(glob.glob(os.path.join(REPO, 'data', 'lessons', '[0-9]*.json'))):
         L.update(json.load(open(f, encoding='utf-8')))
     return L
 
 
-def box(text):
-    return '<div class="lesson"><b class="lsn-h">💡 הלקח</b><p>%s</p></div>' % explain.render_line(text)
+TR = json.load(open(os.path.join(REPO, 'data', 'lessons', 'tricks.json'), encoding='utf-8'))
+
+
+def tricks_html(qid):
+    out = ''
+    for t in TR['q'].get(qid, []):
+        tr = TR['tricks'][t]
+        others = [i for i in tr['ids'] if i != qid]
+        out += ('<div class="trk" data-trick="%s"><p class="trk-h"><b>🔁 דפוס חוזר: %s</b> %s</p><p class="seen" data-ids="%s"></p></div>'
+                % (t, tr['name'], explain.render_line(tr['rule']), ','.join(others)))
+    return out
+
+
+def box(text, qid=''):
+    return '<div class="lesson"><b class="lsn-h">💡 הלקח</b><p>%s</p>%s</div>' % (explain.render_line(text), tricks_html(qid))
 
 
 def put(page, anchor, html):
@@ -62,6 +75,14 @@ def lessons_page(L):
         m = re.search(r'(<article class="topic" id="t-%s".*?)(<details><summary>מוקשים)' % re.escape(k), s, re.S)
         if m:
             s = s[:m.start(2)] + block + s[m.start(2):]
+    s = re.sub(r'<section class="ls-sec" id="ls-tricks".*?</section>', '', s, flags=re.S)
+    cards = ''.join('<article class="trk-card"><h3>%s<small>%d שאלות</small></h3><p>%s</p><div class="trk-qs">%s</div></article>'
+                    % (v['name'], len(v['ids']), explain.render_line(v['rule']),
+                       ''.join('<a class="tq" data-q="%s" href="sets/%02d.html#q%s">%s</a>' % (i, int(i.split('-')[0]), i, i) for i in v['ids']))
+                    for t, v in sorted(TR['tricks'].items(), key=lambda kv: -len(kv[1]['ids'])))
+    sec = ('<section class="ls-sec" id="ls-tricks" aria-labelledby="h-tricks"><h2 id="h-tricks">דפוסים חוזרים</h2>'
+           '<p>הטריקים שחוזרים שוב ושוב בשאלות. שאלות שכבר פתרת מסומנות בירוק (נכון) או באדום (טעית).</p><div class="trk-grid">%s</div></section>' % cards)
+    s = s.replace('<section class="ls-sec" style="margin-top:8px" aria-labelledby="h-master">', sec + '<section class="ls-sec" style="margin-top:8px" aria-labelledby="h-master">', 1)
     open(p, 'w', encoding='utf-8').write(s)
 
 
@@ -74,7 +95,7 @@ def main():
         st = int(qid.split('-')[0])
         p = os.path.join(REPO, 'sets', '%02d.html' % st)
         page = pages.get(p) or open(p, encoding='utf-8').read()
-        html = box(text)
+        html = box(text, qid)
         page, a = put(page, 'q' + qid, html)
         sol, b = put(sol, 'sol' + qid, html)
         pages[p] = page

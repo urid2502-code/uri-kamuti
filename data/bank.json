@@ -1083,12 +1083,12 @@
      "n": 6,
      "status": "missing",
      "answer": 1,
-     "stem": null,
+     "stem": "<p>נתונה המשוואה <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x² + 1 = y</span></bdi>.</p><p>ידוע כי אין ערך של <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span></bdi> המקיים את המשוואה. מה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">y</span></bdi>?</p>",
      "options": null,
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": ""
+     "text": "נתונה המשוואה x² + 1 = y. ידוע כי אין ערך של x המקיים את המשוואה. מה מהבאים יכול להיות ערכו של y?"
     },
     {
      "id": "6-7",
@@ -1437,7 +1437,7 @@
      "stem": "<p>עבור כל שני מספרים a ו־b השונים מ־0 הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(a,b)</span> <span class=\"nw\">=</span> <span class=\"nw\">a<sup>a·b</sup></span></bdi></p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
       "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">0</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">b</span></bdi> אז <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(a,b)</span> <span class=\"nw\">=</span> <span class=\"nw\">$(b,a)</span></bdi>",
-      "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">0</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">a</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi> אז <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(a,b)</span> <span class=\"nw\">=</span> <span class=\"nw\">$(b,a)</span></bdi>",
+      "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi> חיוביים, אז <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(a,b) = $(b,a)</span></bdi>",
       "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span> <span class=\"nw\">=</span> <span class=\"nw\">−b</span></bdi> אז <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(a,b)</span> <span class=\"nw\">=</span> <span class=\"nw\">$(b,a)</span></bdi>",
       "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span> <span class=\"nw\">=</span> <span class=\"nw\"><span class=\"fr\"><span>1</span><span>b</span></span></span></bdi> אז <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(a,b)</span> <span class=\"nw\">=</span> <span class=\"nw\"><span class=\"fr\"><span>1</span><span>$(b,a)</span></span></span></bdi>"
      ],
@@ -1610,12 +1610,12 @@
      "n": 6,
      "status": "missing",
      "answer": null,
-     "stem": null,
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x²y⁴ + 10 = (xy² + 3)²</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span><span class=\"sq\">√<span>6</span></span></span><span>6</span></span> &lt; y</span></bdi></p><p>מה מהבאים מתאר נכונה את תחום הערכים של <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span></bdi>?</p>",
      "options": null,
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": ""
+     "text": "נתון: x²y⁴ + 10 = (xy² + 3)² √(6)/6 < y מה מהבאים מתאר נכונה את תחום הערכים של x?"
     },
     {
      "id": "9-7",
@@ -3608,7 +3608,7 @@
      "n": 3,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">3a</span> <span class=\"nw\">=</span> <span class=\"nw\"><span class=\"fr\"><span>6</span><span>x</span></span></span> <span class=\"nw\">+</span> <span class=\"nw\"><span class=\"fr\"><span>y</span><span>x</span></span></span> <span class=\"nw\">,</span> <span class=\"nw\">x</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span> <span class=\"nw\">≠</span> <span class=\"nw\">0</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span> <span class=\"nw\">=</span> <span class=\"nw\">a</span> <span class=\"nw\">+</span> <span class=\"nw\">y</span> <span class=\"nw\">+</span> <span class=\"nw\">6</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>b</span><span>a</span></span></span></bdi> = ?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">3a = <span class=\"fr\"><span>6</span><span>x</span></span> + <span class=\"fr\"><span>y</span><span>x</span></span></span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b = a + y + 6</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x ≠ 0</span></bdi> , <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a ≠ 0</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>b</span><span>a</span></span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span> <span class=\"nw\">+</span> <span class=\"nw\">y</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">1</span> <span class=\"nw\">+</span> <span class=\"nw\">x</span> <span class=\"nw\">+</span> <span class=\"nw\">y</span></bdi>",
@@ -3618,7 +3618,7 @@
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": "נתון: 3a = 6x + yx , x, a ≠ 0b = a + y + 6ba = ? x + y 1 + x + y 1 + 6x 1 + 3x"
+     "text": "נתון: 3a = 6/x + y/x b = a + y + 6 x ≠ 0 , a ≠ 0 b/a = ?"
     },
     {
      "id": "20-4",
@@ -4060,12 +4060,12 @@
      "n": 9,
      "status": "missing",
      "answer": 1,
-     "stem": null,
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span></bdi> מספר שלם, ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi> מספרים חיוביים.</p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b<sup>3a</sup> = b<sup>2a</sup></span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a<sup>b</sup></span></bdi> = ?</p>",
      "options": null,
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": ""
+     "text": "נתון: a מספר שלם, ו־a ו־b מספרים חיוביים. b^(3a) = b^(2a) a^b = ?"
     },
     {
      "id": "22-10",
@@ -4423,7 +4423,7 @@
      "n": 7,
      "status": "clean",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(<span class=\"sq\">√<span>x</span></span></span> <span class=\"nw\">−</span> <span class=\"nw\"><span class=\"sq\">√<span>y</span></span>)</span> <span class=\"nw\">·</span> <span class=\"nw\"><span class=\"sq\">√<span>x</span></span></span> <span class=\"nw\">&gt;</span> <span class=\"nw\">(<span class=\"sq\">√<span>x</span></span></span> <span class=\"nw\">+</span> <span class=\"nw\"><span class=\"sq\">√<span>y</span></span>)</span> <span class=\"nw\">·</span> <span class=\"nw\"><span class=\"sq\">√<span>y</span></span></span> <span class=\"nw\">,</span> <span class=\"nw\">0</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">x</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">y</span></bdi></p><p>מה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span></bdi>?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(<span class=\"sq\">√<span>x</span></span> − <span class=\"sq\">√<span>y</span></span>) · <span class=\"sq\">√<span>x</span></span> &gt; (<span class=\"sq\">√<span>x</span></span> + <span class=\"sq\">√<span>y</span></span>) · <span class=\"sq\">√<span>y</span></span></span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">y</span></bdi> מספרים חיוביים.</p><p>מה מהבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">½y</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">y</span></bdi>",
@@ -4433,7 +4433,7 @@
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": "נתון: (√x − √y) · √x > (√x + √y) · √y , 0 < x, yמה מהבאים יכול להיות ערכו של x? ½y y 2y כל התשובות לא יתכנו"
+     "text": "נתון: (√(x) − √(y)) · √(x) > (√(x) + √(y)) · √(y) x ו־y מספרים חיוביים. מה מהבאים יכול להיות ערכו של x?"
     },
     {
      "id": "24-8",
@@ -6490,7 +6490,7 @@
      "n": 3,
      "status": "approximate",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">3y</span> <span class=\"nw\">+</span> <span class=\"nw\">5x</span> <span class=\"nw\">=</span> <span class=\"nw\">a<span class=\"warn\" title=\"\">⚠</span></span> <span class=\"nw\">,</span> <span class=\"nw\">6y</span> <span class=\"nw\">+</span> <span class=\"nw\">7x</span> <span class=\"nw\">=</span> <span class=\"nw\">b<span class=\"warn\" title=\"\">⚠</span></span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">y</span> <span class=\"nw\">−</span> <span class=\"nw\">x</span></bdi> = ?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">13y + 13x = a</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">6y + 7x = b</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">y − x</span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span> <span class=\"nw\">−</span> <span class=\"nw\">b</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">2a</span> <span class=\"nw\">−</span> <span class=\"nw\">b</span></bdi>",
@@ -6505,7 +6505,7 @@
       "נקרא בקירוב",
       "נקרא בקירוב – לבדוק בספר"
      ],
-     "text": "נתון: 3y + 5x = a⚠ , 6y + 7x = b⚠y − x = ? a − b 2a − b a − 2b b − 2a"
+     "text": "נתון: 13y + 13x = a 6y + 7x = b y − x = ?"
     },
     {
      "id": "35-4",
@@ -6902,9 +6902,9 @@
      "answer": 3,
      "stem": "<p>a ו־b מספרים שלמים. נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">a</span></bdi></p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
-      "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">0</span></bdi> אזי <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">|a|</span> <span class=\"nw\">+</span> <span class=\"nw\">b</span> <span class=\"nw\">&gt;</span> <span class=\"nw\">|b|</span> <span class=\"nw\">+</span> <span class=\"nw\">a</span></bdi>",
-      "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span> <span class=\"nw\">&gt;</span> <span class=\"nw\">0</span></bdi> אזי <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">|a|</span> <span class=\"nw\">+</span> <span class=\"nw\">b</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">|b|</span> <span class=\"nw\">+</span> <span class=\"nw\">a</span></bdi>",
-      "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">0</span></bdi> אזי <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">|a|</span> <span class=\"nw\">+</span> <span class=\"nw\">b</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">|b|</span> <span class=\"nw\">+</span> <span class=\"nw\">a</span></bdi>",
+      "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi> שליליים, אזי <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">|a| + b &gt; |b| + a</span></bdi>",
+      "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi> חיוביים, אזי <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">|a| + b &lt; |b| + a</span></bdi>",
+      "אם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi> שליליים, אזי <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">|a| + b &lt; |b| + a</span></bdi>",
       "אף אחת מהתשובות אינה נכונה בהכרח"
      ],
      "figure": null,
@@ -6984,7 +6984,7 @@
      "n": 1,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">0</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">a</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">c</span> <span class=\"nw\">;</span> <span class=\"nw\"><span class=\"fr\"><span>a − 1</span><span>c</span></span></span> <span class=\"nw\">=</span> <span class=\"nw\"><span class=\"fr\"><span>c</span><span>a + 1</span></span></span> <span class=\"nw\">;</span> <span class=\"nw\"><span class=\"fr\"><span>b − 1</span><span>a</span></span></span> <span class=\"nw\">=</span> <span class=\"nw\"><span class=\"fr\"><span>a</span><span>b + 1</span></span></span></bdi></p><p>מה מהבאים נכון בהכרח?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">c</span></bdi> מספרים חיוביים.</p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>a − 1</span><span>c</span></span> = <span class=\"fr\"><span>c</span><span>a + 1</span></span></span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>b − 1</span><span>a</span></span> = <span class=\"fr\"><span>a</span><span>b + 1</span></span></span></bdi></p><p>מה מהבאים נכון בהכרח?</p>",
      "options": [
       "אם c זוגי אז b אי־זוגי",
       "אם c אי־זוגי אז b זוגי",
@@ -6994,7 +6994,7 @@
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": "נתון: 0 < a, b, c ; a − 1c = ca + 1 ; b − 1a = ab + 1מה מהבאים נכון בהכרח? אם c זוגי אז b אי־זוגי אם c אי־זוגי אז b זוגי √2 < b |b| = |c|"
+     "text": "נתון: a, b ו־c מספרים חיוביים. (a − 1)/c = c/(a + 1) (b − 1)/a = a/(b + 1) מה מהבאים נכון בהכרח?"
     },
     {
      "id": "38-2",
@@ -7288,7 +7288,7 @@
      "n": 6,
      "status": "approximate",
      "answer": 4,
-     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">1</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">x</span> <span class=\"nw\">,</span> <span class=\"nw\">y</span></bdi> מספר טבעי.</p><p>איזה מהאי־שוויונות הבאים בהכרח <u class=\"em\">אינו</u> נכון?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">1 &lt; x</span></bdi>, ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">y</span></bdi> מספר טבעי.</p><p>איזה מהאי־שוויונות הבאים בהכרח <u class=\"em\">אינו</u> נכון?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">xʸ</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">x<sup>y+1</sup></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x<sup><span class=\"fr\"><span>1</span><span>y</span></span></sup></span> <span class=\"nw\">&lt;</span> <span class=\"nw\">(<span class=\"fr\"><span>1</span><span>x</span></span>)<sup>−y</sup></span></bdi>",
@@ -7298,7 +7298,7 @@
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": "נתון: 1 < x , y מספר טבעי.איזה מהאי־שוויונות הבאים בהכרח אינו נכון? xʸ < xy+1 x1y < (1x)−y x1y+1 < x1y x1y < 1 "
+     "text": "נתון: 1 < x, ו־y מספר טבעי. איזה מהאי־שוויונות הבאים בהכרח אינו נכון?"
     },
     {
      "id": "39-7",
@@ -7554,10 +7554,10 @@
      "answer": 3,
      "stem": "<p>בסרטוט שלפניכם מעגל שמרכזו O ורדיוסו R ס\"מ.</p><p>על פי נתונים אלו והנתונים שבסרטוט, מה סכום אורכי הקשתות המודגשות?</p>",
      "options": [
-      "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(α+β+γ)<span class=\"fr\"><span>πR</span><span>180</span></span>°</span></bdi>",
-      "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(α+2β+2γ)<span class=\"fr\"><span>πR</span><span>360</span></span>°</span></bdi>",
-      "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(α+2β+2γ)<span class=\"fr\"><span>πR</span><span>180</span></span>°</span></bdi>",
-      "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(2α+β+γ)<span class=\"fr\"><span>πR</span><span>180</span></span>°</span></bdi>"
+      "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(α+β+γ)<span class=\"fr\"><span>πR</span><span>180°</span></span></span></bdi>",
+      "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(α+2β+2γ)<span class=\"fr\"><span>πR</span><span>360°</span></span></span></bdi>",
+      "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(α+2β+2γ)<span class=\"fr\"><span>πR</span><span>180°</span></span></span></bdi>",
+      "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(2α+β+γ)<span class=\"fr\"><span>πR</span><span>180°</span></span></span></bdi>"
      ],
      "figure": {
       "src": "fig/40-9.svg",

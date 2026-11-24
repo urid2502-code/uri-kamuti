@@ -2736,7 +2736,7 @@
      "n": 8,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi> ו־c הם מספרים טבעיים ושונים זה מזה. נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">1</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">a</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">c</span> <span class=\"nw\">,</span> <span class=\"nw\">x</span> <span class=\"nw\">=</span> <span class=\"nw\">a³</span> <span class=\"nw\">·</span> <span class=\"nw\">b²</span> <span class=\"nw\">·</span> <span class=\"nw\">c</span></bdi></p><p>איזה מהמספרים הבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span></bdi>?</p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">a</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">b</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">c</span></bdi> הם מספרים טבעיים, שונים זה מזה וגדולים מ־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">1</span></bdi>.</p><p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x = a³ · b² · c</span></bdi></p><p>איזה מהמספרים הבאים יכול להיות ערכו של <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">270</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">700</span></bdi>",
@@ -2746,7 +2746,7 @@
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": "a, b ו־c הם מספרים טבעיים ושונים זה מזה. נתון: 1 < a, b, c , x = a³ · b² · cאיזה מהמספרים הבאים יכול להיות ערכו של x? 270 700 750 1400"
+     "text": "a, b ו־c הם מספרים טבעיים, שונים זה מזה וגדולים מ־1. נתון: x = a³ · b² · c. איזה מהמספרים הבאים יכול להיות ערכו של x?"
     },
     {
      "id": "15-9",

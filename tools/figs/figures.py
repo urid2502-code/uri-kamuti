@@ -914,6 +914,10 @@ def _():
     f = Fig(380, 380)
     c, R = (190, 190), 165
     V = [polar(c, R, 90 + 60 * k) for k in range(6)]
+    # grey: everything inside the circle outside the big triangle (6 segments + 3 small
+    # triangles); white: the big triangle. Grey − white = the 6 segments = the key.
+    f.shade([V[0], V[2], V[4]], fill='#ffffff')
+    f.shade_path('M%.1f %.1f a%d %d 0 1 0 0.1 0 Z' % (c[0], c[1] - R, R, R), fill='#cfd2ce')
     f.poly(V)
     f.poly([V[0], V[2], V[4]])
     f.circle(c, R)

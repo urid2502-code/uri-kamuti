@@ -35,3 +35,9 @@ topic of each question (`KAMUTI.topic` in `data/site.js`). Topics larger than 12
 are split into parts. Re-run after changing a set page:
 
     python3 tools/topics/build_topics.py
+
+## Takeaways ("הלקח")
+
+`data/lessons/*.json` holds one takeaway per question – the trick or lesson of the
+question. `python3 tools/lessons/takeaways.py` puts it under every explanation (set pages
+and solutions.html) and lists them per topic on lessons.html; then rebuild the topic pages.

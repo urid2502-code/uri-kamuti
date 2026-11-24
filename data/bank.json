@@ -3,8 +3,8 @@
  "generated": "2026-11-19",
  "totals": {
   "slots": 400,
-  "clean": 256,
-  "approximate": 64,
+  "clean": 257,
+  "approximate": 63,
   "partial": 1,
   "missing": 79
  },
@@ -1488,7 +1488,7 @@
      "n": 8,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>מטילים קובייה הוגנת פעמיים. מה ההסתברות שסכום התוצאות יניב תוצאה שמתחלקת ב־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">7</span></bdi>?</p>",
+     "stem": "<p>מטילים קובייה הוגנת פעמיים. מה ההסתברות שסכום התוצאות יניב תוצאה שמתחלקת ב־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">5</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>5</span><span>36</span></span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>1</span><span>6</span></span></span></bdi>",
@@ -3132,9 +3132,9 @@
      "id": "17-10",
      "set": 17,
      "n": 10,
-     "status": "approximate",
+     "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"warn\" title=\"תחילת השאלה מטושטשת\">⚠</span></span></bdi> ידוע כי תופרת מכינה <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">10</span></bdi> זוגות מכנסיים בשעה. כמו כן, נתון כי כל תופרת נוספת [שמצטרפת] מגדילה לכל תופרת קיימת (ולעצמה) את התפוקה ב־2 זוגות בשעה. <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">4</span></bdi> תופרות החלו את יום עבודתן בשעה <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">9:00</span></bdi> בבוקר.</p><p>כמה זוגות מכנסיים הן תפרו עד השעה <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">10:00</span></bdi>?</p>",
+     "stem": "<p>ידוע כי תופרת מכינה <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">10</span></bdi> זוגות מכנסיים בשעה. כמו כן, נתון כי כל תופרת נוספת שמצטרפת מגדילה לכל תופרת קיימת (ולעצמה) את התפוקה ב־2 זוגות בשעה. <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">6</span></bdi> תופרות החלו את יום עבודתן בשעה <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">9:00</span></bdi> בבוקר.</p><p>כמה זוגות מכנסיים הן תפרו עד השעה <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">10:00</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">80</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">90</span></bdi>",
@@ -3143,9 +3143,7 @@
      ],
      "figure": null,
      "notes": [],
-     "flags": [
-      "תחילת השאלה מטושטשת"
-     ],
+     "flags": [],
      "text": "⚠ ידוע כי תופרת מכינה 10 זוגות מכנסיים בשעה. כמו כן, נתון כי כל תופרת נוספת [שמצטרפת] מגדילה לכל תופרת קיימת (ולעצמה) את התפוקה ב־2 זוגות בשעה. 4 תופרות החלו את יום עבודתן בשעה 9:00 בבוקר.כמה זוגות מכנסיים הן תפרו עד השעה 10:00? 80 90 100 120"
     }
    ]

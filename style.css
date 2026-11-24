@@ -1659,3 +1659,14 @@ html.app [data-install]{display:none!important}
 .acct .an{white-space:nowrap}
 .dashpage .top .acct{border-color:var(--ac)}
 @media (max-width:440px){.mainnav a{padding:8px 9px;font-size:.92rem}.acct{padding:0 10px 0 5px;gap:6px}.acct .an{font-size:.85rem}}
+
+/* roots next to fraction lines: keep the root's bar apart from the fraction bar */
+.fr>span:last-child:has(.sq){padding-top:5px}
+.fr .sq>span{padding-top:1px}
+/* a root over fractions: brackets instead of a bar floating above them */
+.sq>span:has(.fr){border-top:0;padding:0}
+.sq>span:has(.fr)::before{content:"("}
+.sq>span:has(.fr)::after{content:")"}
+.fr .sq>span:not(:has(.fr)){display:inline-block;line-height:1.05;padding-top:2px}
+.fr>span:last-child:has(.sq){padding-top:4px}
+.fr>span:last-child:has(.sq){padding-top:7px}

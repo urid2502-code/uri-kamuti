@@ -615,7 +615,7 @@
      "n": 1,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span> <span class=\"nw\">+</span> <span class=\"nw\">y</span> <span class=\"nw\">≠</span> <span class=\"nw\">3</span> <span class=\"nw\">,</span> <span class=\"nw\"><span class=\"fr\"><span>9 − (x+y)²</span><span>3 − y − x</span></span></span></bdi> = ?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x + y ≠ 3</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>9 − (x+y)²</span><span>3 − y − x</span></span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">3</span> <span class=\"nw\">−</span> <span class=\"nw\">y</span> <span class=\"nw\">−</span> <span class=\"nw\">x</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">3</span> <span class=\"nw\">−</span> <span class=\"nw\"><span class=\"fr\"><span>x² + y²</span><span>y − x</span></span></span></bdi>",
@@ -845,7 +845,7 @@
      "n": 2,
      "status": "clean",
      "answer": 4,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span> <span class=\"nw\">≠</span> <span class=\"nw\">±<span class=\"sq\">√<span>5</span></span></span> <span class=\"nw\">,</span> <span class=\"nw\"><span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> + x</span></span></span> <span class=\"nw\">+</span> <span class=\"nw\"><span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> − x</span></span></span></bdi> = ?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x ≠ ±<span class=\"sq\">√<span>5</span></span></span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> + x</span></span> + <span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>5</span></span> − x</span></span></span></bdi> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>2</span><span><span class=\"sq\">√<span>5</span></span></span></span></span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>1</span><span>5 − x²</span></span></span></bdi>",
@@ -3590,7 +3590,7 @@
      "n": 2,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(x)</span> <span class=\"nw\">=</span> <span class=\"nw\">½</span> <span class=\"nw\">·</span> <span class=\"nw\">$(x</span> <span class=\"nw\">−</span> <span class=\"nw\">2)</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(2)</span> <span class=\"nw\">=</span> <span class=\"nw\">16</span> <span class=\"nw\">,</span> <span class=\"nw\">$(10)</span></bdi> = ?</p>",
+     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(x) = ½ · $(x − 2)</span></bdi></p><p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(2) = 16</span></bdi></p><p>מה ערכו של <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(10)</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">1</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">2</span></bdi>",
@@ -3600,7 +3600,7 @@
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": "לכל מספר x הוגדרה הפעולה $ כך: $(x) = ½ · $(x − 2)$(2) = 16 , $(10) = ? 1 2 ½ 4"
+     "text": "לכל מספר x הוגדרה הפעולה $ כך: $(x) = ½ · $(x − 2). נתון: $(2) = 16. מה ערכו של $(10)?"
     },
     {
      "id": "20-3",

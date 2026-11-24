@@ -355,7 +355,7 @@
      "n": 8,
      "status": "clean",
      "answer": 3,
-     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">!20</span></bdi> אינו מתחלק ב־</p>",
+     "stem": "<p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">20!</span></bdi> אינו מתחלק ב־</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">625</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">5625</span></bdi>",
@@ -365,7 +365,7 @@
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": "!20 אינו מתחלק ב־ 625 5625 6900 15000"
+     "text": "20! אינו מתחלק ב־ 625 5625 6900 15000"
     },
     {
      "id": "2-9",
@@ -2558,7 +2558,7 @@
      "n": 9,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>איזו מהטענות הבאות נכונה בהכרח?</p>",
+     "stem": "<p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">x</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">y</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">z</span></bdi> הם מספרים כלשהם.</p><p>איזו מהטענות הבאות נכונה בהכרח?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">|x</span> <span class=\"nw\">−</span> <span class=\"nw\">y</span> <span class=\"nw\">−</span> <span class=\"nw\">z|</span> <span class=\"nw\">&lt;</span> <span class=\"nw\">|y</span> <span class=\"nw\">−</span> <span class=\"nw\">x</span> <span class=\"nw\">+</span> <span class=\"nw\">z|</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">|x</span> <span class=\"nw\">−</span> <span class=\"nw\">y</span> <span class=\"nw\">−</span> <span class=\"nw\">z|</span> <span class=\"nw\">&gt;</span> <span class=\"nw\">|y</span> <span class=\"nw\">−</span> <span class=\"nw\">x</span> <span class=\"nw\">+</span> <span class=\"nw\">z|</span></bdi>",
@@ -2568,7 +2568,7 @@
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": "איזו מהטענות הבאות נכונה בהכרח? |x − y − z| < |y − x + z| |x − y − z| > |y − x + z| |x − y − z| = |y − x + z| אף אחת מהתשובות אינה נכונה בהכרח"
+     "text": "נתון: x, y ו־z הם מספרים כלשהם. איזו מהטענות הבאות נכונה בהכרח? |x − y − z| < |y − x + z| |x − y − z| > |y − x + z| |x − y − z| = |y − x + z| אף אחת מהתשובות אינה נכונה בהכרח"
     },
     {
      "id": "14-10",

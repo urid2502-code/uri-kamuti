@@ -1622,3 +1622,27 @@ html.app [data-install]{display:none!important}
 .approve .auth-main{min-height:calc(100vh - 200px)}
 .approve .acc-list{margin-top:18px}
 .approve .acc-card{cursor:default}
+
+/* ---------- practice by topic ---------- */
+.topicgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin:8px 0 60px}
+.topic{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px}
+.topic-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px}
+.topic-h h2{margin:0;font-size:1.15rem;font-weight:800}
+.topic-n{color:var(--mute);font-size:.86rem;white-space:nowrap}
+.topic-parts{display:flex;flex-wrap:wrap;gap:8px}
+.tp{position:relative;display:flex;flex-direction:column;gap:2px;min-width:96px;flex:1 1 96px;padding:10px 12px 12px;border:1px solid var(--line2);border-radius:12px;text-decoration:none;color:var(--ink);overflow:hidden;transition:border-color .15s,transform .15s}
+.tp:hover{border-color:var(--ac);transform:translateY(-1px)}
+.tp span{font-weight:700}
+.tp small{color:var(--mute);font-size:.8rem}
+.tp i{position:absolute;inset-inline-start:0;bottom:0;height:3px;width:0;background:var(--ac);transition:width .3s}
+.tp.full{border-color:var(--ok-line,var(--line2))}
+.tp.full i{background:var(--ok,#12805C);width:100%!important}
+.eyebrow{margin:0 0 6px;font-size:.88rem}
+.eyebrow a{color:var(--mute);text-decoration:none}
+.eyebrow a:hover{color:var(--ink)}
+.qsrc{margin-inline-start:8px;padding:2px 8px;border-radius:999px;background:var(--hover);color:var(--mute);font-size:.78rem;font-weight:600;text-decoration:none;vertical-align:middle}
+.qsrc:hover{color:var(--ink)}
+.sl.tl{grid-template-columns:1fr auto}
+.sl.tl b{font-size:.9rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:640px){.topicpage .sethead{flex-direction:column;align-items:stretch;gap:12px}.topicpage .setact,.topicpage .setsel,.topicpage .setsel select{width:100%}}
+@media (max-width:440px){.mainnav{justify-content:space-between}.mainnav a{padding:8px 6px;font-size:.88rem}}

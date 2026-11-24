@@ -3590,7 +3590,7 @@
      "n": 2,
      "status": "clean",
      "answer": 1,
-     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(x)</span> <span class=\"nw\">=</span> <span class=\"nw\">½</span> <span class=\"nw\">·</span> <span class=\"nw\">$(x</span> <span class=\"nw\">−</span> <span class=\"nw\">2)</span></bdi></p><p><bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(2)</span> <span class=\"nw\">=</span> <span class=\"nw\">16</span> <span class=\"nw\">,</span> <span class=\"nw\">$(10)</span></bdi> = ?</p>",
+     "stem": "<p>לכל מספר x הוגדרה הפעולה $ כך: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(x) = ½ · $(x − 2)</span></bdi></p><p>נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(2) = 16</span></bdi></p><p>מה ערכו של <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">$(10)</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">1</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">2</span></bdi>",
@@ -3600,7 +3600,7 @@
      "figure": null,
      "notes": [],
      "flags": [],
-     "text": "לכל מספר x הוגדרה הפעולה $ כך: $(x) = ½ · $(x − 2)$(2) = 16 , $(10) = ? 1 2 ½ 4"
+     "text": "לכל מספר x הוגדרה הפעולה $ כך: $(x) = ½ · $(x − 2). נתון: $(2) = 16. מה ערכו של $(10)?"
     },
     {
      "id": "20-3",

@@ -3,8 +3,8 @@
  "generated": "2026-11-19",
  "totals": {
   "slots": 400,
-  "clean": 257,
-  "approximate": 63,
+  "clean": 259,
+  "approximate": 61,
   "partial": 1,
   "missing": 79
  },
@@ -4121,7 +4121,7 @@
      "n": 2,
      "status": "clean",
      "answer": 3,
-     "stem": "<p>בכמה מספרים תלת־ספרתיים מכפלת הספרות שווה ל־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">128</span></bdi>?</p>",
+     "stem": "<p>בכמה מספרים תלת־ספרתיים מכפלת הספרות שווה ל־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">18</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">6</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">12</span></bdi>",
@@ -4187,12 +4187,8 @@
       "width": "31%",
       "wide": false
      },
-     "notes": [
-      "<span class=\"warn\" title=\"נקרא בקירוב – לבדוק בספר\">⚠</span> התשובות קטנות – נקראו בקירוב."
-     ],
-     "flags": [
-      "נקרא בקירוב – לבדוק בספר"
-     ],
+     "notes": [],
+     "flags": [],
      "text": "בסרטוט שלפניכם 2 מעגלים זהים המשיקים זה לזה ובתוכם 3 מעגלים זהים (המעגלים המשחורים) המשיקים זה לזה.על פי הנתונים הללו ונתוני הסרטוט, מהו היחס בין השטח הלבן שבסרטוט לשטח השחור? 1:4 3:8 3:5 3:4"
     },
     {
@@ -4601,9 +4597,9 @@
      "id": "25-6",
      "set": 25,
      "n": 6,
-     "status": "approximate",
+     "status": "clean",
      "answer": 2,
-     "stem": "<p>השעון של ניר מאחר: בכל 5 דקות שחולפות הוא מתקדם 4 דקות. בשעה <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">12:00</span></bdi> כיוון ניר את שעונו לשעה הנכונה. כעבור כמה זמן (בשעות) יראה השעון שוב בשעה שלמה<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"warn\" title=\"סוף השאלה מטושטש – כנראה &quot;שוב את השעה הנכונה&quot;\">⚠</span></span></bdi>?</p>",
+     "stem": "<p>השעון של ניר מאחר: בכל 5 דקות שחולפות הוא מתקדם 4 דקות. בשעה <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">12:00</span></bdi> כיוון ניר את שעונו לשעה הנכונה. כעבור כמה זמן (בשעות) יראה השעון שוב בשעה שלמה?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">1</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">5</span></bdi>",
@@ -4612,9 +4608,7 @@
      ],
      "figure": null,
      "notes": [],
-     "flags": [
-      "סוף השאלה מטושטש – כנראה &quot;שוב את השעה הנכונה&quot;"
-     ],
+     "flags": [],
      "text": "השעון של ניר מאחר: בכל 5 דקות שחולפות הוא מתקדם 4 דקות. בשעה 12:00 כיוון ניר את שעונו לשעה הנכונה. כעבור כמה זמן (בשעות) יראה השעון שוב בשעה שלמה⚠? 1 5 6 12"
     },
     {
@@ -4797,9 +4791,9 @@
      "id": "26-6",
      "set": 26,
      "n": 6,
-     "status": "approximate",
+     "status": "clean",
      "answer": 3,
-     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">ABCD</span></bdi> מקבילית. נתון: גודל השטח המקווקו הוא <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">8</span></bdi>. <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>CE</span><span>AE</span></span></span> <span class=\"nw\">=</span> <span class=\"nw\"><span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>3</span></span></span></span><span class=\"warn\" title=\"נקרא בקירוב\">⚠</span></span></bdi></p><p>בהסתמך על נתונים אלו ונתוני הסרטוט, מה שטח מקבילית <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">ABCD</span></bdi>?</p>",
+     "stem": "<p>בסרטוט שלפניכם <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">ABCD</span></bdi> מקבילית. נתון: גודל השטח המקווקו הוא <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">8</span></bdi>. <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>CE</span><span>AE</span></span></span> <span class=\"nw\">=</span> <span class=\"nw\"><span class=\"fr\"><span>1</span><span><span class=\"sq\">√<span>3</span></span></span></span></p><p>בהסתמך על נתונים אלו ונתוני הסרטוט, מה שטח מקבילית <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">ABCD</span></bdi>?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">24</span></bdi>",
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">28</span></bdi>",
@@ -4812,9 +4806,7 @@
       "wide": false
      },
      "notes": [],
-     "flags": [
-      "נקרא בקירוב"
-     ],
+     "flags": [],
      "text": "בסרטוט שלפניכם ABCD מקבילית. נתון: גודל השטח המקווקו הוא 8. CEAE = 1√3⚠בהסתמך על נתונים אלו ונתוני הסרטוט, מה שטח מקבילית ABCD? 24 28 32 36"
     },
     {

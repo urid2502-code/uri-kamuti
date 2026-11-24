@@ -3,8 +3,8 @@
  "generated": "2026-11-19",
  "totals": {
   "slots": 400,
-  "clean": 255,
-  "approximate": 65,
+  "clean": 256,
+  "approximate": 64,
   "partial": 1,
   "missing": 79
  },
@@ -1082,7 +1082,7 @@
      "set": 6,
      "n": 6,
      "status": "missing",
-     "answer": null,
+     "answer": 1,
      "stem": null,
      "options": null,
      "figure": null,
@@ -1095,7 +1095,7 @@
      "set": 6,
      "n": 7,
      "status": "missing",
-     "answer": null,
+     "answer": 2,
      "stem": null,
      "options": null,
      "figure": null,
@@ -1714,7 +1714,7 @@
      "set": 10,
      "n": 3,
      "status": "missing",
-     "answer": 1,
+     "answer": 3,
      "stem": null,
      "options": null,
      "figure": null,
@@ -3219,7 +3219,7 @@
      "set": 18,
      "n": 4,
      "status": "clean",
-     "answer": 3,
+     "answer": 1,
      "stem": "<p>בסרטוט שלפניכם קובייה שאורך צלעה הוא 3 ס\"מ. עכבר יוצא מנקודה A לטייל במסלול המתואר בציור <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">(A</span> <span class=\"nw\">→</span> <span class=\"nw\">B</span> <span class=\"nw\">→</span> <span class=\"nw\">C</span> <span class=\"nw\">→</span> <span class=\"nw\">D</span> <span class=\"nw\">→</span> <span class=\"nw\">A)</span></bdi>.</p><p>אם מהירותו של העכבר היא 6 ס\"מ לשנייה, תוך כמה זמן (בשניות) יעבור העכבר את המסלול פעמיים?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">2·(1</span> <span class=\"nw\">+</span> <span class=\"nw\"><span class=\"sq\">√<span>3</span></span>)</span></bdi>",
@@ -3418,8 +3418,8 @@
      "id": "19-4",
      "set": 19,
      "n": 4,
-     "status": "approximate",
-     "answer": 3,
+     "status": "clean",
+     "answer": 1,
      "stem": "<p>בסרטוט שלפניכם שלושה ריבועים – <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">ABCD</span></bdi>, <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">AFGH</span></bdi> ו־<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">AEKI</span></bdi>. נתון: <bdi dir=\"ltr\" class=\"m\"><span class=\"nw\">EF</span> <span class=\"nw\">=</span> <span class=\"nw\">⅓AE</span> <span class=\"nw\">,</span> <span class=\"nw\">FB</span> <span class=\"nw\">=</span> <span class=\"nw\">½EF</span></bdi>.</p><p>על פי נתונים אלו והנתונים שבסרטוט, <span class=\"fr hf\"><span>השטח הלבן</span><span>השטח המנוקד</span></span> = ?</p>",
      "options": [
       "<bdi dir=\"ltr\" class=\"m\"><span class=\"nw\"><span class=\"fr\"><span>53</span><span>28</span></span></span></bdi>",
@@ -3432,12 +3432,8 @@
       "width": "30%",
       "wide": false
      },
-     "notes": [
-      "<span class=\"warn\" title=\"נקרא בקירוב – לבדוק בספר\">⚠</span> השברים בנתון ובתשובות קטנים – נקראו בקירוב (ונבדקו מול חישוב שמתאים לתשובה <bdi dir=\"ltr\" class=\"m\">1</bdi>)."
-     ],
-     "flags": [
-      "נקרא בקירוב – לבדוק בספר"
-     ],
+     "notes": [],
+     "flags": [],
      "text": "בסרטוט שלפניכם שלושה ריבועים – ABCD, AFGH ו־AEKI. נתון: EF = ⅓AE , FB = ½EF.על פי נתונים אלו והנתונים שבסרטוט, השטח הלבןהשטח המנוקד = ? 5328 1728 97 107"
     },
     {
@@ -3837,7 +3833,7 @@
      "set": 21,
      "n": 4,
      "status": "missing",
-     "answer": 3,
+     "answer": 1,
      "stem": null,
      "options": null,
      "figure": null,

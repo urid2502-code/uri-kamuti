@@ -21,7 +21,7 @@ def fracs(s):
 bad = []
 for f in sorted(glob.glob(os.path.join(REPO, 'data', 'explain', '*.json'))):
     for k, v in json.load(open(f, encoding='utf-8')).items():
-        for line in v['steps'] + v.get('pit', []) + v.get('note', []):
+        for line in v['steps'] + v.get('pit', []) + (v.get('note') or []):
             for fr in fracs(line):
                 if '/' in fr and re.search('[א-ת]', fr):
                     bad.append((k, fr))

@@ -1670,3 +1670,9 @@ html.app [data-install]{display:none!important}
 .fr .sq>span:not(:has(.fr)){display:inline-block;line-height:1.05;padding-top:2px}
 .fr>span:last-child:has(.sq){padding-top:4px}
 .fr>span:last-child:has(.sq){padding-top:7px}
+
+/* ---------- the takeaway of each question ---------- */
+.lesson{margin:14px 0 6px;padding:12px 14px;border-radius:12px;background:var(--ac-soft,#E8F5EE);border:1px solid color-mix(in srgb,var(--ac,#12805C) 30%,transparent)}
+.lesson .lsn-h{display:block;font-size:.85rem;font-weight:800;color:var(--ac-ink,#0B5D42);margin-bottom:4px}
+.lesson p{margin:0;line-height:1.7;color:var(--ink)}
+.lsn-d{margin-bottom:8px}

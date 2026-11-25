@@ -1059,8 +1059,9 @@ def _():
     f.shade_path('M%.1f %.1f L%.1f %.1f A%d %d 0 0 0 %.1f %.1f Z' % (O1[0], O1[1], a1[0], a1[1], r, r, a2[0], a2[1]), fill='#c9ccc8')
     b1, b2 = pt(O2, 225), pt(O2, 315)
     f.shade_path('M%.1f %.1f L%.1f %.1f A%d %d 0 0 0 %.1f %.1f Z' % (O2[0], O2[1], b1[0], b1[1], r, r, b2[0], b2[1]), fill='#c9ccc8')
-    f.circle(O1, r)
-    f.circle(O2, r)
+    # only the outer outline of the two circles (a figure 8) – no arcs inside the square
+    f.path('M%.1f %.1f A%d %d 0 1 0 %.1f %.1f' % (P[0], P[1], r, r, Q[0], Q[1]))
+    f.path('M%.1f %.1f A%d %d 0 1 0 %.1f %.1f' % (Q[0], Q[1], r, r, P[0], P[1]))
     f.line(pt(O1, 135), pt(O1, 315))
     f.line(pt(O1, 45), pt(O1, 225))
     f.line(pt(O2, 135), pt(O2, 315))

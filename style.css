@@ -1697,3 +1697,11 @@ html.app [data-install]{display:none!important}
 /* set picker: one group at a time, switched by the arrows/dots (no horizontal scroll) */
 .setpages{overflow:visible;scroll-snap-type:none}
 .setgroup[hidden]{display:none}
+/* desktop: all 40 sets at once, in groups of 10 (the arrows are for phones) */
+@media (min-width:900px){
+  .setnav{display:none!important}
+  .setpages{display:block}
+  .setgroup[hidden]{display:block!important}
+  .setgroup{margin-bottom:22px}
+  .setgroup::before{content:attr(aria-label);display:block;margin:0 2px 10px;font-family:var(--display);font-weight:700;font-size:1.6rem;line-height:1}
+}

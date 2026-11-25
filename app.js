@@ -302,7 +302,7 @@
       function mark(g){ if(g===cur) return; cur=g; label.innerHTML='מקבצים <bdi dir="ltr">'+(g*10+1)+'–'+(g*10+10)+'</bdi>';
         dots.forEach(function(d,i){ d.setAttribute('aria-current',i===g?'true':'false'); });
         prev.disabled=g===0; next.disabled=g===groups.length-1;
-        groups.forEach(function(el,i){ el.setAttribute('aria-hidden',i===g?'false':'true'); el.querySelectorAll('a').forEach(function(a){ a.tabIndex=i===g?0:-1; }); }); }
+        var all=matchMedia('(min-width:900px)').matches; groups.forEach(function(el,i){ var on=all||i===g; el.setAttribute('aria-hidden',on?'false':'true'); el.querySelectorAll('a').forEach(function(a){ a.tabIndex=on?0:-1; }); }); }
       // switch groups directly (no horizontal scrolling – it behaves differently across browsers)
       function go(g){ g=Math.max(0,Math.min(groups.length-1,g)); groups.forEach(function(el,i){ el.hidden=i!==g; }); mark(g); }
       prev.addEventListener('click',function(){ go(cur-1); }); next.addEventListener('click',function(){ go(cur+1); });

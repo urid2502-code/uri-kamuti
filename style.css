@@ -1694,3 +1694,6 @@ html.app [data-install]{display:none!important}
 .trk-card h3 small{color:var(--mute);font-weight:500;font-size:.8rem}
 .trk-card p{margin:0 0 8px;color:var(--ink2);font-size:.9rem;line-height:1.6}
 .trk-qs{display:flex;flex-wrap:wrap;gap:4px}
+/* set picker: one group at a time, switched by the arrows/dots (no horizontal scroll) */
+.setpages{overflow:visible;scroll-snap-type:none}
+.setgroup[hidden]{display:none}

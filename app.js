@@ -302,16 +302,29 @@
       function mark(g){ if(g===cur) return; cur=g; label.innerHTML='מקבצים <bdi dir="ltr">'+(g*10+1)+'–'+(g*10+10)+'</bdi>';
         dots.forEach(function(d,i){ d.setAttribute('aria-current',i===g?'true':'false'); });
         prev.disabled=g===0; next.disabled=g===groups.length-1;
-        var all=matchMedia('(min-width:900px)').matches; groups.forEach(function(el,i){ var on=all||i===g; el.setAttribute('aria-hidden',on?'false':'true'); el.querySelectorAll('a').forEach(function(a){ a.tabIndex=on?0:-1; }); }); }
-      // switch groups directly (no horizontal scrolling – it behaves differently across browsers)
-      function go(g){ g=Math.max(0,Math.min(groups.length-1,g)); groups.forEach(function(el,i){ el.hidden=i!==g; }); mark(g); }
+        groups.forEach(function(el,i){ var on=i===g; el.setAttribute('aria-hidden',on?'false':'true'); el.querySelectorAll('a').forEach(function(a){ a.tabIndex=on?0:-1; }); }); }
+      // switch groups directly, with a short slide (no native scrolling – it differs between browsers)
+      function go(g){ g=Math.max(0,Math.min(groups.length-1,g)); var dir=cur<0?0:g>cur?1:g<cur?-1:0;
+        groups.forEach(function(el,i){ el.hidden=i!==g; el.classList.remove('in-next','in-prev'); });
+        if(dir){ void groups[g].offsetWidth; groups[g].classList.add(dir>0?'in-next':'in-prev'); }
+        mark(g); }
       prev.addEventListener('click',function(){ go(cur-1); }); next.addEventListener('click',function(){ go(cur+1); });
       dots.forEach(function(d,i){ d.addEventListener('click',function(){ go(i); }); });
       track.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'){ e.preventDefault(); go(cur+1); } if(e.key==='ArrowRight'){ e.preventDefault(); go(cur-1); } });
-      // swipe on touch screens (right-to-left: swipe left = next)
-      var sx=null, sy=0;
-      track.addEventListener('touchstart',function(e){ sx=e.touches[0].clientX; sy=e.touches[0].clientY; },{passive:true});
-      track.addEventListener('touchend',function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy; sx=null; if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)) go(dx<0?cur+1:cur-1); },{passive:true});
+      // trackpad / mouse wheel sideways (or shift + wheel): one group per gesture
+      var wheelAcc=0, wheelLock=0;
+      track.addEventListener('wheel',function(e){ var dx=e.deltaX||(e.shiftKey?e.deltaY:0); if(!dx||Math.abs(dx)<Math.abs(e.deltaY)&&!e.shiftKey) return;
+        e.preventDefault(); var now=Date.now(); if(now<wheelLock) return; wheelAcc+=dx;
+        if(Math.abs(wheelAcc)>40){ go(wheelAcc<0?cur+1:cur-1); wheelAcc=0; wheelLock=now+450; } },{passive:false});
+      // drag with the mouse or swipe with a finger (right-to-left: drag left = next)
+      var sx=null, sy=0, moved=false;
+      track.addEventListener('pointerdown',function(e){ if(e.button) return; sx=e.clientX; sy=e.clientY; moved=false; });
+      track.addEventListener('pointermove',function(e){ if(sx===null) return; if(Math.abs(e.clientX-sx)>8){ moved=true; track.classList.add('dragging'); } });
+      function end(e){ if(sx===null) return; var dx=e.clientX-sx, dy=e.clientY-sy; sx=null; track.classList.remove('dragging');
+        if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)) go(dx<0?cur+1:cur-1); }
+      track.addEventListener('pointerup',end); track.addEventListener('pointercancel',function(){ sx=null; track.classList.remove('dragging'); });
+      track.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; } },true);
+      track.addEventListener('dragstart',function(e){ e.preventDefault(); });
       var start=nextSet?Math.floor((+nextSet.dataset.set-1)/10):0; go(start);
     })();
     document.getElementById('t-done').textContent=done;

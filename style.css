@@ -1726,18 +1726,3 @@ html.app [data-install]{display:none!important}
 .fm-nav a{padding:8px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--paper);color:var(--ink);font-weight:700;font-size:.9rem;text-decoration:none}
 .fm-nav a:hover{border-color:var(--ac)}
 #ls-formulas,#ls-formulas-alg{scroll-margin-top:90px}
-
-/* ---------- announcement ---------- */
-.notice{max-width:1240px;margin:12px auto 0;padding:0 28px}
-.notice-in{position:relative;padding:12px 44px 12px 16px;border-radius:14px;background:var(--ac-soft,#E8F5EE);border:1px solid color-mix(in srgb,var(--ac,#12805C) 35%,transparent);color:var(--ink)}
-.notice-t{display:block;font-size:.95rem;margin-bottom:2px;color:var(--ac-ink,#0B5D42)}
-.notice p{margin:0;font-size:.93rem;line-height:1.65}
-.notice a{color:var(--ac-ink,#0B5D42);font-weight:700;white-space:nowrap}
-.notice-x{position:absolute;top:8px;inset-inline-end:8px;width:30px;height:30px;border:0;border-radius:50%;background:transparent;color:var(--mute);font-size:1.3rem;cursor:pointer}
-.notice-x:hover{background:var(--hover)}
-@media (max-width:640px){.notice{padding:0 14px}}
-body.landing .notice-in{background:#0f2a20;border-color:#1d5a42;color:#fff}
-body.landing .notice-t,body.landing .notice a{color:#3DDC97}
-body.landing .notice{position:fixed;inset:auto 0 16px;z-index:60;margin:0 auto;animation:notice-up .35s ease both}
-body.landing .notice-in{box-shadow:0 10px 30px rgba(0,0,0,.5)}
-@keyframes notice-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}

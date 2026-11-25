@@ -5364,12 +5364,10 @@
    "1/π + ½"
   ],
   "code": [],
-  "notes": [
-   "התשובות קטנות – נקראו בקירוב; לא ברור מהסרטון אילו אזורים אפורים."
-  ],
+  "notes": [],
   "figure": "fig/24-2.svg",
-  "needsReview": true,
-  "source": "video"
+  "needsReview": false,
+  "source": "photo"
  },
  {
   "id": "24-3",

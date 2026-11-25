@@ -1707,3 +1707,17 @@ html.app [data-install]{display:none!important}
 @media (prefers-reduced-motion:reduce){.setgroup.in-next,.setgroup.in-prev{animation:none}}
 .sn-btn{width:48px;height:48px}
 
+
+/* ---------- formula sheet ---------- */
+.fm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;align-items:start}
+.fm-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.fm-card summary{cursor:pointer;list-style:none;padding:12px 16px;font-weight:800;font-size:1.02rem;display:flex;justify-content:space-between;align-items:center}
+.fm-card summary::-webkit-details-marker{display:none}
+.fm-card summary small{color:var(--mute);font-weight:500;font-size:.8rem}
+.fm-card[open] summary{border-bottom:1px solid var(--line)}
+.fm-rows{padding:4px 0}
+.fm-r{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:10px;padding:8px 16px;border-bottom:1px solid var(--line);font-size:.9rem;line-height:1.6;align-items:center}
+.fm-r:last-child{border-bottom:0}
+.fm-k{color:var(--ink2)}
+.fm-v{font-weight:600;color:var(--ink)}
+@media (max-width:520px){.fm-grid{grid-template-columns:1fr}.fm-r{grid-template-columns:1fr;gap:2px}}

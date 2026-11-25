@@ -460,6 +460,16 @@
     });
     chips.forEach(function(a){ var d=done[a.dataset.q]; if(d){ a.classList.add(d); a.title=d==='ok'?'פתרת נכון':'טעית בשאלה הזאת'; } });
   })();
+
+  /* ---- announcement (data/notice.js): shown once per visitor until closed ---- */
+  (function(){
+    var N=window.URIQ_NOTICE; if(!N||!N.id) return;
+    try{ if(localStorage.getItem('uriq:notice')===N.id) return; }catch(e){}
+    var el=document.createElement('aside'); el.className='notice'; el.setAttribute('role','status');
+    el.innerHTML='<div class="notice-in"><b class="notice-t">'+N.title+'</b><p>'+N.html+(N.link?' <a href="'+root+N.link+'">'+(N.linkText||'עוד')+' ←</a>':'')+'</p><button type="button" class="notice-x" aria-label="סגירת ההודעה">×</button></div>';
+    var top=document.querySelector('header.top'); (top&&top.parentNode?top.parentNode.insertBefore(el,top.nextSibling):document.body.insertBefore(el,document.body.firstChild));
+    el.querySelector('.notice-x').addEventListener('click',function(){ try{ localStorage.setItem('uriq:notice',N.id); }catch(e){} el.remove(); });
+  })();
   window.URIQ={displayName:displayName, accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

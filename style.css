@@ -1722,3 +1722,7 @@ html.app [data-install]{display:none!important}
 .fm-v{font-weight:600;color:var(--ink)}
 @media (max-width:520px){.fm-grid{grid-template-columns:1fr}.fm-r{grid-template-columns:1fr;gap:2px}}
 .fm-link{margin-inline-start:6px;font-size:.82rem;font-weight:700;color:var(--ac-ink,#0B5D42);text-decoration:none;white-space:nowrap}.fm-link:hover{text-decoration:underline}
+.fm-nav{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}
+.fm-nav a{padding:8px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--paper);color:var(--ink);font-weight:700;font-size:.9rem;text-decoration:none}
+.fm-nav a:hover{border-color:var(--ac)}
+#ls-formulas,#ls-formulas-alg{scroll-margin-top:90px}

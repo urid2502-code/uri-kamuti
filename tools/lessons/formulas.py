@@ -25,25 +25,42 @@ def val(v):
 
 
 
-def main():
-    data = json.load(open(os.path.join(REPO, 'data', 'lessons', 'formulas.json'), encoding='utf-8'))
+SHEETS = [
+    ('formulas.json', 'ls-formulas', 'דף נוסחאות – גאומטריה'),
+    ('formulas_alg.json', 'ls-formulas-alg', 'דף נוסחאות – אלגברה וציר המספרים'),
+]
+
+
+def section(fname, sid, title):
+    data = json.load(open(os.path.join(REPO, 'data', 'lessons', fname), encoding='utf-8'))
     cards = ''
     for i, g in enumerate(data):
         rows = ''.join('<div class="fm-r"><span class="fm-k">%s</span><span class="fm-v">%s</span></div>'
                        % (explain.render_line(k), val(v)) for k, v in g['rows'])
         cards += '<details class="fm-card"%s><summary>%s<small>%d</small></summary><div class="fm-rows">%s</div></details>' % (
             ' open' if i < 2 else '', g['h'], len(g['rows']), rows)
-    sec = ('<section class="ls-sec" id="ls-formulas" aria-labelledby="h-formulas"><h2 id="h-formulas">דף נוסחאות – גאומטריה</h2>'
-           '<p>כל הנוסחאות והיחסים בקיצור, מסודרים לפי נושא. לחצו על כותרת כדי לפתוח או לסגור.</p>'
-           '<div class="fm-grid">%s</div></section>' % cards)
+    return ('<section class="ls-sec" id="%s" aria-labelledby="h-%s"><h2 id="h-%s">%s</h2>'
+            '<p>בקיצור, מסודר לפי נושא. לחצו על כותרת כדי לפתוח או לסגור.</p>'
+            '<div class="fm-grid">%s</div></section>' % (sid, sid, sid, title, cards)), sum(len(g['rows']) for g in data)
+
+
+def main():
     p = os.path.join(REPO, 'lessons.html')
     s = open(p, encoding='utf-8').read()
-    s = re.sub(r'<section class="ls-sec" id="ls-formulas".*?</section>', '', s, flags=re.S)
+    secs, n = '', 0
+    for f, sid, title in SHEETS:
+        s = re.sub(r'<section class="ls-sec" id="%s".*?</section>' % sid, '', s, flags=re.S)
+        html, k = section(f, sid, title)
+        secs += html
+        n += k
+    nav = ('<nav class="fm-nav" aria-label="דפי נוסחאות"><a href="#ls-formulas">📐 גאומטריה</a>'
+           '<a href="#ls-formulas-alg">🔢 אלגברה וציר המספרים</a></nav>')
+    s = re.sub(r'<nav class="fm-nav".*?</nav>', '', s, flags=re.S)
     anchor = '<div class="pbody">'
     i = s.index(anchor) + len(anchor)
-    s = s[:i] + '\n' + sec + s[i:]
+    s = s[:i] + '\n' + nav + secs + s[i:]
     open(p, 'w', encoding='utf-8').write(s)
-    print('formula groups:', len(data), 'rows:', sum(len(g['rows']) for g in data))
+    print('formula rows:', n)
 
 
 if __name__ == '__main__':

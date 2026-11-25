@@ -32,13 +32,18 @@ def load():
 TR = json.load(open(os.path.join(REPO, 'data', 'lessons', 'tricks.json'), encoding='utf-8'))
 
 
+GEO = {'insc', 'regpoly', 'circles', 'tri3060', 'sector', 'arcs', 'areasq', 'solid', 'coord', 'trineq'}
+
+
 def tricks_html(qid):
     out = ''
     for t in TR['q'].get(qid, []):
         tr = TR['tricks'][t]
         others = [i for i in tr['ids'] if i != qid]
-        out += ('<div class="trk" data-trick="%s"><p class="trk-h"><b>🔁 דפוס חוזר: %s</b> %s</p><p class="seen" data-ids="%s"></p></div>'
-                % (t, tr['name'], explain.render_line(tr['rule']), ','.join(others)))
+        geo = t in GEO
+        link = ' <a class="fm-link" href="%slessons.html#ls-formulas">📐 לדף הנוסחאות</a>' % ('{ROOT}') if geo else ''
+        out += ('<div class="trk" data-trick="%s"><p class="trk-h"><b>🔁 דפוס חוזר: %s</b> %s%s</p><p class="seen" data-ids="%s"></p></div>'
+                % (t, tr['name'], explain.render_line(tr['rule']), link, ','.join(others)))
     return out
 
 
@@ -96,8 +101,8 @@ def main():
         p = os.path.join(REPO, 'sets', '%02d.html' % st)
         page = pages.get(p) or open(p, encoding='utf-8').read()
         html = box(text, qid)
-        page, a = put(page, 'q' + qid, html)
-        sol, b = put(sol, 'sol' + qid, html)
+        page, a = put(page, 'q' + qid, html.replace('{ROOT}', '../'))
+        sol, b = put(sol, 'sol' + qid, html.replace('{ROOT}', ''))
         pages[p] = page
         n += a and b
         if not (a and b):

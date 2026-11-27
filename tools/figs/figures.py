@@ -1155,10 +1155,10 @@ def _():
 @fig('26-6')
 def _():
     import math
-    f = Fig(480, 260)
+    f = Fig(380, 260)
     h = 170
     DE = h / math.sqrt(3)
-    EC = 220
+    EC = DE  # CE : AE = 1 : √3, so CE = DE (drawn to scale)
     D = (40, 220)
     E, C = (D[0] + DE, D[1]), (D[0] + DE + EC, D[1])
     A, F = (E[0], E[1] - h), (C[0], C[1] - h)

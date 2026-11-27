@@ -79,7 +79,7 @@
     var rs={}; (a.rl||[]).concat(b.rl||[]).forEach(function(r){ var key=r.id+'@'+r.at; if(!rs[key]){ rs[key]=1; out.rl.push(r); } });
     out.rl.sort(function(x,y){ return x.at-y.at; }); if(out.rl.length>500) out.rl=out.rl.slice(-500);
     var newer=(a.u||0)>=(b.u||0)?a:b, older=newer===a?b:a;
-    out.bm=newer.bm||older.bm||{}; out.avatar=newer.avatar||older.avatar||''; out.accent=newer.accent||older.accent||''; out.name=newer.name||older.name||'';
+    out.bm=newer.bm||older.bm||{}; out.avatar=newer.avatar||older.avatar||''; out.look=newer.look||older.look||{}; out.lookSeen=newer.lookSeen||older.lookSeen; out.accent=newer.accent||older.accent||''; out.name=newer.name||older.name||'';
     out.imp=a.imp&&b.imp?((a.imp.u||0)>=(b.imp.u||0)?a.imp:b.imp):(a.imp||b.imp||undefined);
     return out;
   }

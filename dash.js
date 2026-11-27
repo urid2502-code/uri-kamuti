@@ -113,7 +113,7 @@
     function fill(i){
       cur=(i+topics.length)%topics.length; var t=topics[cur], c=t.cloneNode(true);
       c.removeAttribute('id'); c.classList.add('in-dlg'); var h=c.querySelector('h3'); if(h) h.id='tp-dlg-h';
-      c.querySelectorAll('details').forEach(function(d){ d.open=true; });
+      c.querySelectorAll('details').forEach(function(d){ d.open=false; });   // inner lists open only on a click
       var body=dlg.querySelector('.tp-body'); body.innerHTML=''; body.appendChild(c); body.scrollTop=0;
       dlg.querySelector('.tp-pos').textContent=(cur+1)+' / '+topics.length;
       mark(t.id); if(history.replaceState) history.replaceState(null,'','#'+t.id);

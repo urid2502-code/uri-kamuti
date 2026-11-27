@@ -76,18 +76,19 @@ def lessons_page(L):
         ids = [i for i in t['ids'] if i in L]
         items = ''.join('<li><a href="sets/%02d.html#q%s" title="מקבץ %s, שאלה %s">%s</a><span class="pt">%s</span></li>'
                         % (int(i.split('-')[0]), i, i.split('-')[0], i.split('-')[1], i, explain.render_line(L[i])) for i in ids)
-        block = '<details class="lsn-d" open><summary>הלקח מכל שאלה (%d)</summary><ul class="pits lsn">%s</ul></details>' % (len(ids), items)
+        block = '<details class="lsn-d"><summary>הלקח מכל שאלה (%d)</summary><ul class="pits lsn">%s</ul></details>' % (len(ids), items)
         m = re.search(r'(<article class="topic" id="t-%s".*?)(<details><summary>מוקשים)' % re.escape(k), s, re.S)
         if m:
             s = s[:m.start(2)] + block + s[m.start(2):]
     s = re.sub(r'<section class="ls-sec" id="ls-tricks".*?</section>', '', s, flags=re.S)
-    cards = ''.join('<article class="trk-card"><h3>%s<small>%d שאלות</small></h3><p>%s</p><div class="trk-qs">%s</div></article>'
-                    % (v['name'], len(v['ids']), explain.render_line(v['rule']),
+    cards = ''.join('<details class="trk-card"><summary><h3>%s<small>%d שאלות</small></h3></summary><p>%s</p><p class="ex"><b>דוגמה</b> %s</p><div class="trk-qs">%s</div></details>'
+                    % (v['name'], len(v['ids']), explain.render_line(v['rule']), explain.render_line(v.get('ex', '')),
                        ''.join('<a class="tq" data-q="%s" href="sets/%02d.html#q%s">%s</a>' % (i, int(i.split('-')[0]), i, i) for i in v['ids']))
                     for t, v in sorted(TR['tricks'].items(), key=lambda kv: -len(kv[1]['ids'])))
     sec = ('<section class="ls-sec" id="ls-tricks" aria-labelledby="h-tricks"><h2 id="h-tricks">דפוסים חוזרים</h2>'
-           '<p>הטריקים שחוזרים שוב ושוב בשאלות. שאלות שכבר פתרת מסומנות בירוק (נכון) או באדום (טעית).</p><div class="trk-grid">%s</div></section>' % cards)
-    s = s.replace('<section class="ls-sec" style="margin-top:8px" aria-labelledby="h-master">', sec + '<section class="ls-sec" style="margin-top:8px" aria-labelledby="h-master">', 1)
+           '<p>הטריקים שחוזרים שוב ושוב בשאלות. לחצו על טריק כדי לראות אותו עם דוגמה ואת השאלות שבהן הוא מופיע – שאלות שכבר פתרת מסומנות בירוק (נכון) או באדום (טעית).</p><div class="trk-grid">%s</div></section>' % cards)
+    i = s.index('</section>', s.index('id="ls-topics"')) + len('</section>')
+    s = s[:i] + '\n' + sec + s[i:]
     open(p, 'w', encoding='utf-8').write(s)
 
 

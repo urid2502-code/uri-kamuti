@@ -18,8 +18,9 @@
   function save(){ store.u=Date.now(); put(KEY,store); try{ window.dispatchEvent(new CustomEvent('uriq:save')); }catch(e){} }
   store.hist=store.hist||[]; store.m=store.m||{}; store.bm=store.bm||{};
   function emit(t,d){ try{ window.dispatchEvent(new CustomEvent('uriq:'+t,{detail:d||{}})); }catch(e){} }
-  var TP=(window.TOPICS||{}).parts||{};
-  function idsOf(n){ n=String(n); return /^t-/.test(n) ? (TP[n.slice(2)]||[]) : (D.exist[n]||[]).map(function(q){ return n+'-'+q; }); }
+  var TP=(window.TOPICS||{}).parts||{}, X=window.KAMUTI_X||{key:{},exist:{},topic:{},names:{}};
+  function impOf(n){ var m=/^i(\d+)$/.exec(n), l=store.imp&&store.imp.sets||[]; if(!m) return null; for(var i=0;i<l.length;i++) if(l[i].n===+m[1]) return l[i]; return null; }
+  function idsOf(n){ n=String(n); if(/^t-/.test(n)) return TP[n.slice(2)]||[]; if(/^i\d/.test(n)){ var im=impOf(n); return im?im.ids.slice():[]; } return (D.exist[n]||X.exist[n]||[]).map(function(q){ return n+'-'+q; }); }
   function summarize(n,st){ var ok=0, wr=[], sk=[], ex=idsOf(n); ex.forEach(function(id){ var p=st.a[id], k=+keyOf(id); if(!p) sk.push(id); else if(p===k) ok++; else wr.push(id); }); return {ok:ok,tot:ex.length,wr:wr,sk:sk}; }
   function logAttempt(n,st){ if(!/^\d+$/.test(n)) return; var r=summarize(n,st); store.hist.push({n:+n,at:st.at||Date.now(),ok:r.ok,tot:r.tot,el:st.t.el||0,wr:r.wr,sk:r.sk}); }
   // older submissions (before the history log existed) become history entries from their saved answers
@@ -28,7 +29,41 @@
   var REV={}, NEW={};
   (D.review||[]).forEach(function(i){REV[i]=1;}); (D.fresh||[]).forEach(function(i){NEW[i]=1;});
   function pad(n){ return (n<10?'0':'')+n; }
-  function keyOf(id){ var p=id.split('-'); return (D.key[p[0]]||[])[p[1]-1]; }
+  function keyOf(id){ var p=id.split('-'); return (D.key[p[0]]||X.key[p[0]]||[])[p[1]-1]; }
+  /* the page a question lives on: "12-3" -> sets/12.html, "x2-3" -> sets/x02.html */
+  function pageOf(id){ var s=id.split('-')[0]; return s.charAt(0)==='x'?'x'+pad(+s.slice(1)):pad(+s); }
+
+  /* ---- improvement sets: the questions you got wrong, mixed into sets of 10 ---- */
+  // a question is "open" while its latest submitted answer is wrong and it was not solved correctly since
+  function mistakes(){
+    var out=[], seen={};
+    Object.keys(store.sets).forEach(function(n){
+      if(!/^(\d+|x\d+)$/.test(n)) return; var st=store.sets[n]; if(!st||!st.sub) return;
+      idsOf(n).forEach(function(id){ var p=st.a[id], m=store.m&&store.m[id]; if(p&&p!==+keyOf(id)&&!(m&&m>(st.at||0))&&!seen[id]){ seen[id]=1; out.push(id); } });
+    });
+    return out;
+  }
+  function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+  // keep the improvement sets in step with the current mistakes; started sets are never touched
+  function syncImp(){
+    var I=store.imp||(store.imp={next:1,sets:[]}), mis=mistakes(), open={}, used={}, changed=false;
+    mis.forEach(function(id){ open[id]=1; });
+    I.sets=I.sets.filter(function(x){
+      var st=store.sets['i'+x.n], started=st&&(st.sub||Object.keys(st.a||{}).length||st.t&&st.t.el);
+      if(!started&&!x.sub){ var k=x.ids.filter(function(id){ return open[id]; }); if(k.length!==x.ids.length){ x.ids=k; changed=true; } }
+      if(!st||!st.sub) x.ids.forEach(function(id){ used[id]=1; });
+      if(!x.ids.length){ changed=true; return false; } return true;
+    });
+    var pool=shuffle(mis.filter(function(id){ return !used[id]; }));
+    if(pool.length){
+      var last=I.sets[I.sets.length-1], lst=last&&store.sets['i'+last.n];
+      if(last&&!(lst&&(lst.sub||Object.keys(lst.a||{}).length))&&last.ids.length<10) last.ids=last.ids.concat(pool.splice(0,10-last.ids.length));
+      while(pool.length) I.sets.push({n:I.next++,ids:pool.splice(0,10),at:Date.now()});
+      changed=true;
+    }
+    if(changed){ I.u=Date.now(); save(); }
+    return I;
+  }
   function fmt(ms){ var s=Math.floor(ms/1000), h=Math.floor(s/3600), m=Math.floor(s%3600/60), r=s%60; return (h?h+':'+pad(m):pad(m))+':'+pad(r); }
   function fmtShort(ms){ var s=Math.round(ms/1000), m=Math.floor(s/60), r=s%60; return m+':'+pad(r); }
 
@@ -120,8 +155,8 @@
     if(anchor) anchor.insertAdjacentHTML('afterend',gateHTML(body.classList.contains('setpage')?'כדי לפתור את המקבץ צריך להתחבר':'תרגול הטעויות זמין למשתמשים מחוברים','המקבצים, הטיימר, הציונים והפתרונות פתוחים רק למי שנכנס עם חשבון Google.'));
   }
   if(!UID&&body.classList.contains('home-page')){ var sp=document.querySelector('.setpick'); if(sp) sp.insertAdjacentHTML('beforebegin','<div class="gate-strip"><span class="gate-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg></span><p><b>כדי לפתור מקבצים צריך להתחבר.</b> הכניסה עם Google חינמית ולוקחת כמה שניות.</p><a class="cta solid gate-go" href="'+root+'login.html">כניסה עם Google</a></div>'); }
-  if(body.classList.contains('setpage')&&!LOCKED){
-    var n=body.dataset.set, st=S(n);
+  function initSet(){
+    var n=body.dataset.set, st=S(n), isI=/^i\d/.test(n), isX=/^x\d/.test(n);
     var save0=save; save=function(){ st.u=Date.now(); save0(); };
     var cards=[].slice.call(document.querySelectorAll('.q:not(.miss)')), misses=[].slice.call(document.querySelectorAll('.q.miss'));
     var total=cards.length;
@@ -182,11 +217,11 @@
       var box=document.getElementById('results'); if(!box) return;
       if(!st.sub){ box.hidden=true; box.innerHTML=''; return; }
       var ok=0, pills='';
-      cards.forEach(function(c){ var id=c.dataset.q, q=id.split('-')[1], p=st.a[id], k=+keyOf(id), cls=!p?'skip':p===k?'ok':'no'; if(cls==='ok') ok++;
+      cards.forEach(function(c,ci){ var id=c.dataset.q, q=isI?ci+1:id.split('-')[1], p=st.a[id], k=+keyOf(id), cls=!p?'skip':p===k?'ok':'no'; if(cls==='ok') ok++;
         pills+='<a class="pill '+cls+'" href="#q'+id+'">'+q+'<span class="vh"> – '+(cls==='ok'?'נכונה':cls==='no'?'שגויה':'לא נענתה')+'</span></a>'; });
       var ms=st.t.el, pct=total?Math.round(100*ok/total):0;
-      var isT=/^t-/.test(n), tnext=document.querySelector('.pager .nx');
-      var nx=isT ? (tnext?'<a class="btn" href="'+tnext.getAttribute('href')+'">'+tnext.lastChild.textContent+'</a>':'') : +n<40?'<a class="btn" href="'+pad(+n+1)+'.html">למקבץ '+(+n+1)+'</a>':'<a class="btn" href="../sets.html">לכל המקבצים</a>';
+      var isT=/^t-/.test(n)||isI||isX, tnext=document.querySelector('.pager .nx');
+      var nx=isI ? '<a class="btn" href="../sets.html#improve">למקבצים לשיפור</a>' : isT ? (tnext?'<a class="btn" href="'+tnext.getAttribute('href')+'">'+tnext.lastChild.textContent+'</a>':'') : +n<40?'<a class="btn" href="'+pad(+n+1)+'.html">למקבץ '+(+n+1)+'</a>':'<a class="btn" href="../sets.html">לכל המקבצים</a>';
       var title=isT?(document.querySelector('.sethead h1')||{}).textContent:'מקבץ '+n;
       box.innerHTML='<div class="rd-top"><div><h2 class="rd-h" id="res-h">תוצאות – '+title+'</h2><p class="rd-sub">'+(isT?'התרגול הוגש':'המקבץ הוגש')+' והתשובות נעולות. הפתרון המלא מופיע מתחת לכל שאלה.</p></div></div>'+
         '<div class="rd-stats"><div class="stat"><b><bdi dir="ltr">'+ok+' / '+total+'</bdi></b><span>ציון<small>'+pct+'%</small></span></div>'+
@@ -197,7 +232,7 @@
         '<div class="rd-act"><button type="button" class="btn primary" id="retake">'+(isT?'איפוס ופתרון מחדש':'איפוס מקבץ ופתרון מחדש')+'</button>'+nx+'</div>';
       box.hidden=false;
       document.getElementById('retake').addEventListener('click',function(){
-        ask(isT?'לאפס את התרגול?':'לאפס את המקבץ?','כל התשובות, הסימונים והזמן של '+title+' יימחקו, ותוכלו לפתור מחדש.','איפוס',function(){ store.sets[n]=fresh(); store.sets[n].u=Date.now(); save(); location.replace(location.pathname); });
+        ask(isT?'לאפס את התרגול?':'לאפס את המקבץ?','כל התשובות, הסימונים והזמן של '+title+' יימחקו, ותוכלו לפתור מחדש.','איפוס',function(){ store.sets[n]=fresh(); store.sets[n].u=Date.now(); save(); location.replace(location.pathname+(isI?location.search:'')); });
       });
     }
     function drawAll(){ body.classList.toggle('is-review',!!st.sub); cards.forEach(drawCard); drawCounts(); drawResults(); drawStartBtn(); drawTimer(); }
@@ -240,7 +275,9 @@
 
     function doSubmit(){
       if(st.t.run){ st.t.el+=Date.now()-st.t.st; st.t.run=false; } loop(false);
-      st.sub=true; st.at=Date.now(); logAttempt(n,st); save(); drawAll();
+      st.sub=true; st.at=Date.now(); logAttempt(n,st);
+      if(isI){ var im=impOf(n); if(im){ im.sub=1; store.imp.u=st.at; } cards.forEach(function(c){ var id=c.dataset.q; if(st.a[id]===+keyOf(id)) (store.m=store.m||{})[id]=st.at; }); }
+      save(); drawAll();
       var last=summarize(n,st); emit('submit',{set:n,ok:last.ok,tot:last.tot});
       var box=document.getElementById('results'); if(box){ box.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); box.focus({preventScroll:true}); }
     }
@@ -272,6 +309,29 @@
     drawAll(); loop(st.t.run);
     if(location.hash){ var h=document.getElementById(location.hash.slice(1)); if(h&&cards.indexOf(h)>=0) setCur(cards.indexOf(h)); }
   }
+  /* an improvement set page: fetch its questions from their own set pages, then run it like any set */
+  function loadImp(done){
+    var qs=new URLSearchParams(location.search), num=+qs.get('n')||0, I=syncImp(), x=null;
+    I.sets.forEach(function(s){ if(s.n===num) x=s; });
+    var main=document.getElementById('main'), box=document.querySelector('.cards'), strip=document.querySelector('.strip');
+    if(!x){ var sh=document.querySelector('.sethead'); if(sh) sh.insertAdjacentHTML('afterend','<div class="panel empty-st"><h2>המקבץ הזה לא קיים</h2><p>אולי כבר פתרת נכון את כל השאלות שבו.</p><a class="cta solid" href="../sets.html#improve">למקבצים לשיפור</a></div>'); ['.exambar','.filters','.strip','.submitzone'].forEach(function(q){ var e=document.querySelector(q); if(e) e.hidden=true; }); return; }
+    body.dataset.set='i'+x.n; document.title='מקבץ שיפור '+x.n+' – urIQ';
+    var h1=document.querySelector('.sethead h1'); if(h1) h1.textContent='מקבץ שיפור '+x.n;
+    var meta=document.querySelector('.sethead .meta'); if(meta) meta.textContent=x.ids.length+' שאלות שטעית בהן, מעורבבות ממקבצים שונים';
+    document.querySelectorAll('.eb-count bdi, .sz-count bdi').forEach(function(b){ b.lastChild.textContent=b.closest('.sz-count')?' / '+x.ids.length:x.ids.length; });
+    box.innerHTML='<p class="empty-st">טוען את השאלות…</p>';
+    var cache={};
+    function page(id){ var f=pageOf(id); if(!cache[f]) cache[f]=fetch(f+'.html').then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); }).then(function(t){ return new DOMParser().parseFromString(t,'text/html'); }); return cache[f]; }
+    Promise.all(x.ids.map(function(id){ return page(id).then(function(doc){ var a=doc.getElementById('q'+id); return a?document.importNode(a,true):null; }); })).then(function(arts){
+      box.innerHTML=''; var mb='';
+      arts.forEach(function(a,i){ if(!a) return; var id=x.ids[i], p=id.split('-'), qn=a.querySelector('.qn');
+        if(qn) qn.innerHTML=(i+1)+' <a class="q-src" href="'+pageOf(id)+'.html#q'+id+'">'+(p[0].charAt(0)==='x'?'מקבץ נוסף '+p[0].slice(1):'מקבץ '+p[0])+' · שאלה '+p[1]+'</a>';
+        box.appendChild(a); mb+='<a class="mb" href="#q'+id+'" data-q="'+id+'" aria-label="שאלה '+(i+1)+'">'+(i+1)+'</a>'; });
+      if(strip) strip.innerHTML=mb;
+      done();
+    }).catch(function(){ box.innerHTML='<p class="auth-msg err">לא הצלחתי לטעון את השאלות. בדקו את החיבור ונסו שוב.</p>'; });
+  }
+  if(body.classList.contains('setpage')&&!LOCKED){ if(body.dataset.kind==='imp') loadImp(initSet); else initSet(); }
 
   /* ================= home ================= */
   if(body.classList.contains('home-page')){
@@ -340,6 +400,47 @@
       if(this.dataset.armed){ store={sets:{},hist:[],m:{},wiped:Date.now()}; save(); location.reload(); return; }
       this.dataset.armed=1; this.textContent='ללחוץ שוב כדי לאשר את האיפוס';
     };
+  }
+
+  /* ---- sets tab: real sets / improvement sets / extra sets ---- */
+  if(body.classList.contains('home-page')&&document.querySelector('.setview')){
+    (function(){
+      function setc(href,small,num,ids,st,key){
+        var ans=0, ok=0, tot=ids.length, cls='', lab=tot+' שאלות', p=0;
+        ids.forEach(function(id){ var a=st&&st.a[id]; if(a){ ans++; if(a===+keyOf(id)) ok++; } });
+        if(st&&st.sub){ cls=' done'; p=1; lab='הוגש · '+ok+'/'+tot; } else if(ans){ cls=' started'; p=ans/tot; lab='נענו '+ans+' מתוך '+tot; }
+        return '<a class="setc'+cls+'" href="'+href+'" style="--p:'+p+'"><span class="setc-n"><small>'+small+'</small>'+num+'</span><span class="setc-s">'+lab+'</span><span class="setc-bar" aria-hidden="true"><i></i></span></a>';
+      }
+      function drawImp(){
+        var box=document.getElementById('imp-box'); if(!box) return;
+        if(!UID){ box.innerHTML='<div class="panel empty-st"><h2>מקבצים לשיפור זמינים למשתמשים מחוברים</h2><p>אחרי שתתחברו ותגישו מקבצים, השאלות שטעיתם בהן יתחלקו כאן למקבצים מעורבבים.</p><a class="cta solid gate-go" href="login.html">כניסה עם Google</a></div>'; return; }
+        var I=syncImp(), open=mistakes().length;
+        if(!I.sets.length){ box.innerHTML='<div class="panel empty-st"><h2>אין עדיין טעויות לתרגול</h2><p>אחרי שתגישו מקבץ, כל שאלה שטעיתם בה תיכנס לכאן – מעורבבת עם טעויות ממקבצים אחרים, 10 שאלות בכל מקבץ.</p></div>'; return; }
+        var live=I.sets.filter(function(x){ var st=store.sets['i'+x.n]; return !(st&&st.sub); }), past=I.sets.filter(function(x){ var st=store.sets['i'+x.n]; return st&&st.sub; });
+        var h='<p class="imp-sum"><b>'+open+'</b> שאלות פתוחות לשיפור'+(live.length?' · '+live.length+' מקבצים לפתרון':'')+'</p>';
+        if(live.length) h+='<div class="setgrid">'+live.map(function(x){ return setc('sets/improve.html?n='+x.n,'שיפור',x.n,x.ids,store.sets['i'+x.n]); }).join('')+'</div>';
+        else h+='<div class="panel empty-st"><h2>פתרת את כל המקבצים לשיפור</h2><p>טעויות חדשות במקבצים יופיעו כאן במקבץ שיפור חדש.</p></div>';
+        if(past.length) h+='<h3 class="pv-sub">מקבצים לשיפור שהוגשו</h3><div class="setgrid">'+past.slice().reverse().map(function(x){ return setc('sets/improve.html?n='+x.n,'שיפור',x.n,x.ids,store.sets['i'+x.n]); }).join('')+'</div>';
+        box.innerHTML=h;
+      }
+      function drawX(){
+        var box=document.getElementById('x-box'); if(!box) return;
+        var ks=Object.keys(X.exist||{}).sort(function(a,b){ return +a.slice(1)-+b.slice(1); });
+        if(!ks.length){ box.innerHTML='<div class="panel empty-st"><h2>המקבצים הנוספים בהכנה</h2><p>הם יופיעו כאן בקרוב.</p></div>'; return; }
+        box.innerHTML='<div class="setgrid">'+ks.map(function(k){ var ids=X.exist[k].map(function(q){ return k+'-'+q; }); return setc('sets/'+pageOf(k+'-1')+'.html','נוסף',k.slice(1),ids,store.sets[k]); }).join('')+'</div>';
+      }
+      var drawn={};
+      function show(v,push){
+        if(['real','improve','extra'].indexOf(v)<0) v='real';
+        document.querySelectorAll('.setview .sv-btn').forEach(function(b){ b.setAttribute('aria-pressed',b.dataset.view===v?'true':'false'); });
+        document.querySelectorAll('.pv').forEach(function(p){ p.hidden=p.dataset.pv!==v; });
+        if(!drawn[v]){ drawn[v]=1; if(v==='improve') drawImp(); if(v==='extra') drawX(); }
+        if(push!==false){ try{ history.replaceState(null,'',v==='real'?location.pathname:'#'+v); }catch(e){} }
+      }
+      document.querySelectorAll('.setview .sv-btn').forEach(function(b){ b.addEventListener('click',function(){ show(b.dataset.view); }); });
+      window.addEventListener('hashchange',function(){ show(location.hash.slice(1),false); });
+      if(location.hash==='#improve'||location.hash==='#extra') show(location.hash.slice(1),false);
+    })();
   }
 
   window.addEventListener('beforeprint',function(){ document.querySelectorAll('details.sol').forEach(function(d){ d.dataset.was=d.open?'1':''; d.open=true; }); });
@@ -460,6 +561,6 @@
     });
     chips.forEach(function(a){ var d=done[a.dataset.q]; if(d){ a.classList.add(d); a.title=d==='ok'?'פתרת נכון':'טעית בשאלה הזאת'; } });
   })();
-  window.URIQ={displayName:displayName, accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
+  window.URIQ={syncImp:syncImp, mistakes:mistakes, pageOf:pageOf, X:X, displayName:displayName, accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

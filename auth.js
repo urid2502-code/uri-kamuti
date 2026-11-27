@@ -80,6 +80,7 @@
     out.rl.sort(function(x,y){ return x.at-y.at; }); if(out.rl.length>500) out.rl=out.rl.slice(-500);
     var newer=(a.u||0)>=(b.u||0)?a:b, older=newer===a?b:a;
     out.bm=newer.bm||older.bm||{}; out.avatar=newer.avatar||older.avatar||''; out.accent=newer.accent||older.accent||''; out.name=newer.name||older.name||'';
+    out.imp=a.imp&&b.imp?((a.imp.u||0)>=(b.imp.u||0)?a.imp:b.imp):(a.imp||b.imp||undefined);
     return out;
   }
   function same(a,b){ return JSON.stringify(a)===JSON.stringify(b); }

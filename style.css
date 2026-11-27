@@ -1726,3 +1726,20 @@ html.app [data-install]{display:none!important}
 .fm-nav a{padding:8px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--paper);color:var(--ink);font-weight:700;font-size:.9rem;text-decoration:none}
 .fm-nav a:hover{border-color:var(--ac)}
 #ls-formulas,#ls-formulas-alg{scroll-margin-top:90px}
+
+/* ---------- sets tab: real / improvement / extra ---------- */
+.setview{display:flex;width:fit-content;max-width:100%;margin:6px 0 18px;overflow-x:auto;scrollbar-width:none}
+.setview::-webkit-scrollbar{display:none}
+.setview .sv-btn{white-space:nowrap}
+.pv-h{font-size:1.25rem;margin:0 0 4px}
+.pv-p{margin:0 0 16px;color:var(--mute);max-width:62ch}
+.pv-sub{font-size:1rem;margin:26px 0 10px;color:var(--mute)}
+.imp-sum{margin:0 0 12px;font-size:.95rem;color:var(--ink2)}
+.imp-sum b{font-size:1.15rem;color:var(--ink)}
+.pv .empty-st{padding:26px 22px;text-align:center}
+.pv .empty-st h2{font-size:1.15rem;margin:0 0 6px}
+.pv .empty-st p{margin:0 auto 14px;color:var(--mute);max-width:46ch}
+.qn .q-src{margin-inline-start:8px;font-size:.8rem;font-weight:500;color:var(--mute);text-decoration:none;border-bottom:1px dotted currentColor}
+.qn .q-src:hover{color:var(--ac)}
+.pv .empty-st h2{font-family:var(--ui);font-weight:700;letter-spacing:0}
+@media (max-width:520px){.setview{width:100%}.setview .sv-btn{flex:1;padding:8px 6px;font-size:.84rem}}

@@ -35,8 +35,9 @@ def section(fname, sid, title):
     data = json.load(open(os.path.join(REPO, 'data', 'lessons', fname), encoding='utf-8'))
     cards = ''
     for i, g in enumerate(data):
-        rows = ''.join('<div class="fm-r"><span class="fm-k">%s</span><span class="fm-v">%s</span></div>'
-                       % (explain.render_line(k), val(v)) for k, v in g['rows'])
+        rows = ''.join('<div class="fm-r"><span class="fm-k">%s</span><span class="fm-v">%s%s</span></div>'
+                       % (explain.render_line(r[0]), val(r[1]),
+                          '<span class="fm-x">למשל: %s</span>' % val(r[2]) if len(r) > 2 else '') for r in g['rows'])
         cards += '<details class="fm-card"><summary>%s<small>%d</small></summary><div class="fm-rows">%s</div></details>' % (
             g['h'], len(g['rows']), rows)
     return ('<section class="ls-sec" id="%s" aria-labelledby="h-%s"><h2 id="h-%s">%s</h2>'

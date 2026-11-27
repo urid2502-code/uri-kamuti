@@ -1812,3 +1812,23 @@ html.app [data-install]{display:none!important}
 .look-toast a{margin-inline-start:auto;flex:none;padding:7px 12px;border-radius:999px;background:var(--ac);color:var(--on-ac,#fff);font-weight:700;font-size:.85rem;text-decoration:none}
 .look-toast button{flex:none;border:0;background:transparent;color:inherit;font-size:1.3rem;opacity:.7;cursor:pointer}
 @media (max-width:520px){.ls-prev{width:88px;height:88px}.ls-items{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- one compact lesson box: lesson, trap, recurring patterns ---------- */
+.lesson p.lsn-l,.lesson p.lsn-t{margin:0;line-height:1.65;font-size:.95rem}
+.lesson p.lsn-t{margin-top:6px;color:var(--ink2)}
+.lesson .lsn-l b,.lesson .lsn-t b{font-size:.82rem;font-weight:800;margin-inline-end:6px;white-space:nowrap}
+.lesson .lsn-l b{color:var(--ac-ink,#0B5D42)}
+.lesson .lsn-t b{color:var(--rv,#854D0E)}
+.trks{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px;padding-top:9px;border-top:1px dashed color-mix(in srgb,var(--ac,#12805C) 35%,transparent)}
+.trks-h{font-size:.8rem;font-weight:800;color:var(--ac-ink,#0B5D42)}
+details.trk{margin:0;padding:0;border:0}
+details.trk>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:999px;background:var(--paper);border:1px solid color-mix(in srgb,var(--ac,#12805C) 35%,transparent);font-size:.8rem;font-weight:600;color:var(--ink2)}
+details.trk>summary::-webkit-details-marker{display:none}
+details.trk>summary::after{content:"+";font:500 .9rem var(--mono);color:var(--faint)}
+details.trk[open]{flex-basis:100%}
+details.trk[open]>summary{border-color:var(--ac);color:var(--ink)}
+details.trk[open]>summary::after{content:"−"}
+details.trk .trk-r{margin:6px 0 0;font-size:.88rem;line-height:1.6;color:var(--ink2)}
+details.trk .seen{margin-top:4px}
+.sol details.trk>summary::before,.sol details.seen-more>summary::before{content:none;display:none}
+.sol details.trk>summary{font-weight:600;color:var(--ink2)}

@@ -28,6 +28,8 @@ sys.path.insert(0, os.path.join(REPO, 'tools', 'solutions'))
 sys.path.insert(0, os.path.join(REPO, 'tools', 'figs'))
 sys.path.insert(0, os.path.join(REPO, 'tools', 'extra', 'qs'))
 import explain  # noqa: E402
+sys.path.insert(0, os.path.join(REPO, 'tools', 'lessons'))
+import takeaways  # noqa: E402
 
 _site = open(os.path.join(REPO, 'data', 'site.js'), encoding='utf-8').read()
 TOPIC = json.loads(_site[_site.index('{'):_site.rindex('}') + 1])['topic']
@@ -65,8 +67,8 @@ def card(sid, n, q):
         % (i, i, line(o), i, i, STRIKE) for i, o in enumerate(q['opts'], 1))
     a = q['ans']
     ts = q['tricks'] if 'tricks' in q else TR['q'].get(q['src'], [])
-    lesson = '<div class="lesson"><b class="lsn-h">💡 הלקח</b><p>%s</p>%s</div>' % (line(q['lesson']), tricks_html(ts)) if q.get('lesson') else ''
-    pit = '<h4>מוקשים נפוצים</h4><p class="pit">%s</p>' % ''.join('<span class="ln">%s</span>' % line(p) for p in q['pit']) if q.get('pit') else ''
+    lesson = takeaways.box(q['lesson'], '', q.get('pit', []), ts).replace('{ROOT}', '../') if q.get('lesson') else ''
+    pit = ''
     src = q['src'].split('-')
     sol = ('<details class="sol" hidden><summary>הצגת הפתרון</summary><div class="sol-in"><p class="final"><span class="lbl">התשובה הסופית</span>'
            '<span class="fa"><span class="bub on" aria-hidden="true">%d</span><span>תשובה (%d)</span><span class="fo">%s</span></span></p>\n'

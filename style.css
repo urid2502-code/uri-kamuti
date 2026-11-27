@@ -1743,3 +1743,4 @@ html.app [data-install]{display:none!important}
 .qn .q-src:hover{color:var(--ac)}
 .pv .empty-st h2{font-family:var(--ui);font-weight:700;letter-spacing:0}
 @media (max-width:520px){.setview{width:100%}.setview .sv-btn{flex:1;padding:8px 6px;font-size:.84rem}}
+.flag.src span{background:var(--ac-soft);color:var(--ac-ink)}

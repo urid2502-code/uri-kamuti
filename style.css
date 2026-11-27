@@ -1778,3 +1778,4 @@ html.app [data-install]{display:none!important}
 #ls-topics .topic:not(.in-dlg) h3{display:block;font-size:1.08rem;line-height:1.35;padding-inline-end:0}
 #ls-topics .topic:not(.in-dlg) h3 small{display:block;margin:4px 0 0;font-size:.8rem}
 #ls-topics .topic:not(.in-dlg) h3 .tp-ic{display:inline-block;margin-inline-end:6px}
+.fm-x{display:block;margin-top:4px;font-size:.84rem;font-weight:400;color:var(--mute);line-height:1.55}

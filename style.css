@@ -1832,3 +1832,7 @@ details.trk .trk-r{margin:6px 0 0;font-size:.88rem;line-height:1.6;color:var(--i
 details.trk .seen{margin-top:4px}
 .sol details.trk>summary::before,.sol details.seen-more>summary::before{content:none;display:none}
 .sol details.trk>summary{font-weight:600;color:var(--ink2)}
+/* recurring-pattern cards: title on the right, the count and + together on the left */
+.trk-card>summary h3{justify-content:flex-start;gap:10px}
+.trk-card>summary h3 small{margin-inline-start:auto;white-space:nowrap;font-family:var(--mono);min-width:4.6em;text-align:left}
+.trk-card>summary h3::after{margin-inline-start:0;width:1em;text-align:center}

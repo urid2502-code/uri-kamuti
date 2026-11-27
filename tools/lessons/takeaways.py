@@ -19,7 +19,12 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 sys.path.insert(0, os.path.join(REPO, 'tools', 'solutions'))
 import explain  # noqa: E402  (render_line: bidi-safe math)
 
+BOX_NEW = re.compile(r'<div class="lesson">.*?<!--/lsn--></div>', re.S)
 BOX = re.compile(r'<div class="lesson">(?:(?!<div).)*?</div>|<div class="lesson">(?:(?!<div class="lesson").)*?</p></div></div>', re.S)
+PIT = re.compile(r'<h4>מוקשים נפוצים</h4><p class="pit">.*?</p>', re.S)
+EXPL = {}
+for _f in glob.glob(os.path.join(REPO, 'data', 'explain', '*.json')):
+    EXPL.update(json.load(open(_f, encoding='utf-8')))
 
 
 def load():
@@ -35,20 +40,33 @@ TR = json.load(open(os.path.join(REPO, 'data', 'lessons', 'tricks.json'), encodi
 GEO = {'insc', 'regpoly', 'circles', 'tri3060', 'sector', 'arcs', 'areasq', 'solid', 'coord', 'trineq'}
 
 
-def tricks_html(qid):
+def tricks_html(ts, qid=''):
+    """The recurring patterns as small buttons; the rule and the other questions open on a click."""
     out = ''
-    for t in TR['q'].get(qid, []):
+    for t in ts:
         tr = TR['tricks'][t]
         others = [i for i in tr['ids'] if i != qid]
-        geo = t in GEO
-        link = ' <a class="fm-link" href="%slessons.html#ls-formulas">📐 לדף הנוסחאות</a>' % ('{ROOT}') if geo else ''
-        out += ('<div class="trk" data-trick="%s"><p class="trk-h"><b>🔁 דפוס חוזר: %s</b> %s%s</p><p class="seen" data-ids="%s"></p></div>'
+        link = ' <a class="fm-link" href="{ROOT}lessons.html#ls-formulas">📐 נוסחאות</a>' if t in GEO else ''
+        out += ('<details class="trk" data-trick="%s"><summary>%s</summary><p class="trk-r">%s%s</p><p class="seen" data-ids="%s"></p></details>'
                 % (t, tr['name'], explain.render_line(tr['rule']), link, ','.join(others)))
-    return out
+    return '<div class="trks"><span class="trks-h">🔁 דפוס חוזר</span>%s</div>' % out if out else ''
 
 
-def box(text, qid=''):
-    return '<div class="lesson"><b class="lsn-h">💡 הלקח</b><p>%s</p>%s</div>' % (explain.render_line(text), tricks_html(qid))
+def same(a, b):
+    w = lambda t: {x for x in re.findall(r'[\w\u0590-\u05FF²³√]+', t) if len(x) > 1}  # noqa: E731
+    x, y = w(a), w(b)
+    return len(x & y) / max(1, len(x | y)) >= 0.6
+
+
+def box(text, qid='', pit=None, ts=None):
+    """One compact box: the lesson, the trap, and the recurring patterns."""
+    pit = pit if pit is not None else EXPL.get(qid, {}).get('pit', [])
+    ts = ts if ts is not None else TR['q'].get(qid, [])
+    if pit and same(text, ' '.join(pit)):       # the trap only repeats the lesson – keep one of them
+        pit = []
+    trap = '<p class="lsn-t"><b>⚠️ המלכודת</b> %s</p>' % ' '.join(explain.render_line(x) for x in pit) if pit else ''
+    return ('<div class="lesson"><p class="lsn-l"><b>💡 הלקח</b> %s</p>%s%s<!--/lsn--></div>'
+            % (explain.render_line(text), trap, tricks_html(ts, qid)))
 
 
 def put(page, anchor, html):
@@ -56,8 +74,10 @@ def put(page, anchor, html):
     if start < 0:
         return page, False
     end = page.find('</article>', start)
-    seg = page[start:end]
-    if BOX.search(seg):
+    seg = PIT.sub('', page[start:end])          # the trap now lives inside the lesson box
+    if BOX_NEW.search(seg):
+        seg = BOX_NEW.sub(lambda m: html, seg, count=1)
+    elif BOX.search(seg):
         seg = BOX.sub(lambda m: html, seg, count=1)
     else:
         m = re.search(r'<p class="steps">.*?</p>', seg, re.S)

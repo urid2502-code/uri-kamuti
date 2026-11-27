@@ -134,3 +134,108 @@
   window.URIQ_AVATARS=A;
   window.URIQ_AVATAR_ORDER=['explorer','professor','buddy','astro','scientist','artist','fox','owl','robot','cat','panda','lion','frog','bunny','penguin','koala'];
 })();
+
+/* ---- avatar looks: hats, glasses, backgrounds, frames, items and effects layered on any avatar.
+   Every piece is an original drawing; most unlock with progress (sets submitted, perfect sets…). ---- */
+(function(){
+  var A=window.URIQ_AVATARS||{}, uid=0;
+  // per avatar: [y where a hat sits, head width, eye line y, half distance between the eyes]
+  var ANC={explorer:[24,28,38,5],professor:[24,30,38,6],buddy:[24,28,39,5.5],astro:[17,34,38,4.5],scientist:[19,34,37,6],artist:[21,26,39,5],
+    fox:[25,32,38,8],owl:[24,34,40,9],robot:[21,38,35,7],cat:[26,36,40,8],panda:[25,36,39,8],lion:[23,38,39,6],frog:[25,40,31,11],
+    bunny:[29,26,41,7],penguin:[23,30,39,6],koala:[26,36,37,8]};
+  function star(cx,cy,r,f){ var p='',k; for(k=0;k<10;k++){ var a=Math.PI/5*k-Math.PI/2, rr=k%2?r*.45:r; p+=(k?'L':'M')+(cx+rr*Math.cos(a)).toFixed(2)+' '+(cy+rr*Math.sin(a)).toFixed(2); } return '<path d="'+p+'Z" fill="'+f+'"/>'; }
+  function heart(cx,cy,s,f){ return '<path transform="translate('+cx+' '+cy+') scale('+s+')" d="M0 3.2C-1.5 1.8-4 .2-4-1.8-4-3.4-2.8-4.4-1.6-4.4-.8-4.4-.2-3.9 0-3.4.2-3.9.8-4.4 1.6-4.4 2.8-4.4 4-3.4 4-1.8 4 .2 1.5 1.8 0 3.2z" fill="'+f+'"/>'; }
+  function spark(cx,cy,s,f){ return '<path transform="translate('+cx+' '+cy+') scale('+s+')" d="M0-4C.5-1 1-.5 4 0 1 .5.5 1 0 4-.5 1-1 .5-4 0-1-.5-.5-1 0-4z" fill="'+f+'"/>'; }
+
+  // hats are drawn around (0,0) = the middle of the head line, 30 units wide
+  var HATS={
+    cap:'<path d="M-15 1C-15-15 15-15 15 1z" fill="#2B59C3"/><path d="M4 0h17a3 3 0 0 1 0 5H4z" fill="#1C3D8C"/><circle cy="-13" r="2" fill="#1C3D8C"/>',
+    beanie:'<path d="M-15 1C-15-17 15-17 15 1z" fill="#E4572E"/><path d="M-9-11v10M-3-13v12M3-13v12M9-11v10" stroke="#C2410C" stroke-width="1.4"/><rect x="-16.5" y="-3" width="33" height="7" rx="3.5" fill="#F7B267"/><circle cy="-17" r="4.5" fill="#FFF3E0"/>',
+    party:'<path d="M-11 1L0-28 11 1z" fill="#7B61FF"/><path d="M-7-9L4-20M-9-1L7-16M-3 0L10-11" stroke="#FFD166" stroke-width="2.2"/><circle cy="-29" r="3.6" fill="#FF5C8A"/>',
+    grad:'<rect x="-12" y="-7" width="24" height="8" rx="1.5" fill="#1F2937"/><path d="M-22-9L0-17 22-9 0-1z" fill="#111827"/><path d="M0-9L14-7v9" stroke="#FBBF24" stroke-width="1.4" fill="none"/><rect x="12" y="1" width="4" height="6" rx="1" fill="#FBBF24"/>',
+    headphones:'<path d="M-18 6C-18-22 18-22 18 6" stroke="#111827" stroke-width="4" fill="none" stroke-linecap="round"/><rect x="-23" y="0" width="9" height="14" rx="4" fill="#EF4444"/><rect x="14" y="0" width="9" height="14" rx="4" fill="#EF4444"/>',
+    wizard:'<path d="M-15 1L5-33 16 1z" fill="#4C1D95"/><ellipse cy="1" rx="21" ry="4.5" fill="#5B21B6"/>'+star(1,-13,4,'#FDE047')+star(-6,-4,2.4,'#FDE047'),
+    crown:'<path d="M-15 1V-13L-7.5-5 0-17 7.5-5 15-13V1z" fill="#FBBF24" stroke="#B45309" stroke-width="1.2" stroke-linejoin="round"/><circle cx="0" cy="-5" r="2.4" fill="#EF4444"/><circle cx="-9" cy="-3" r="1.7" fill="#3B82F6"/><circle cx="9" cy="-3" r="1.7" fill="#10B981"/>',
+    viking:'<path d="M-15 1C-15-15 15-15 15 1z" fill="#9CA3AF"/><rect x="-16" y="-3" width="32" height="5" rx="2" fill="#6B7280"/><path d="M-14-6C-22-8-24-18-21-24-19-17-15-14-11-12z" fill="#FFF7E6"/><path d="M14-6C22-8 24-18 21-24 19-17 15-14 11-12z" fill="#FFF7E6"/>'
+  };
+  function glasses(t,y,dx){
+    var r=Math.max(3.4,Math.min(6.4,dx*.78)), L=40-dx, R=40+dx, k='#111827';
+    if(t==='round') return '<g fill="none" stroke="'+k+'" stroke-width="1.6"><circle cx="'+L+'" cy="'+y+'" r="'+r+'"/><circle cx="'+R+'" cy="'+y+'" r="'+r+'"/><path d="M'+(L+r)+' '+y+'H'+(R-r)+'"/></g>';
+    if(t==='sun') return '<g><rect x="'+(L-r-.6)+'" y="'+(y-r*.8)+'" width="'+(2*r+1.2)+'" height="'+(r*1.6)+'" rx="'+(r*.6)+'" fill="#111827"/><rect x="'+(R-r-.6)+'" y="'+(y-r*.8)+'" width="'+(2*r+1.2)+'" height="'+(r*1.6)+'" rx="'+(r*.6)+'" fill="#111827"/><path d="M'+(L+r)+' '+(y-1)+'H'+(R-r)+'" stroke="#111827" stroke-width="1.6"/><path d="M'+(L-r*.5)+' '+(y-r*.3)+'l'+r*.6+' -'+r*.3+'M'+(R-r*.5)+' '+(y-r*.3)+'l'+r*.6+' -'+r*.3+'" stroke="#fff" stroke-width="1" opacity=".7"/></g>';
+    if(t==='star') return '<g>'+star(L,y,r*1.35,'#FACC15')+star(R,y,r*1.35,'#FACC15')+'<path d="M'+(L+r)+' '+y+'H'+(R-r)+'" stroke="#CA8A04" stroke-width="1.4"/></g>';
+    if(t==='heart') return '<g>'+heart(L,y,r*.34,'#F43F5E')+heart(R,y,r*.34,'#F43F5E')+'<path d="M'+(L+r)+' '+y+'H'+(R-r)+'" stroke="#BE123C" stroke-width="1.4"/></g>';
+    if(t==='3d') return '<g stroke="#111827" stroke-width="1.4"><rect x="'+(L-r)+'" y="'+(y-r*.75)+'" width="'+2*r+'" height="'+r*1.5+'" fill="#EF4444" fill-opacity=".75"/><rect x="'+(R-r)+'" y="'+(y-r*.75)+'" width="'+2*r+'" height="'+r*1.5+'" fill="#06B6D4" fill-opacity=".75"/><path d="M'+(L+r)+' '+y+'H'+(R-r)+'" fill="none"/></g>';
+    if(t==='monocle') return '<g fill="none" stroke="#B45309" stroke-width="1.8"><circle cx="'+R+'" cy="'+y+'" r="'+(r+.6)+'"/><path d="M'+(R+r)+' '+(y+1)+'C'+(R+r+4)+' '+(y+8)+' '+(R+2)+' '+(y+14)+' '+(R+6)+' '+(y+20)+'" stroke-width="1"/></g>';
+    return '';
+  }
+  // backgrounds: [fill, extra drawing inside the circle]
+  function bg(t,u){
+    var g=function(a,b){ return '<linearGradient id="g'+u+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+a+'"/><stop offset="1" stop-color="'+b+'"/></linearGradient>'; };
+    switch(t){
+      case 'sunset': return [g('#FDBA74','#F43F5E'),'url(#g'+u+')',''];
+      case 'ocean': return [g('#67E8F9','#2563EB'),'url(#g'+u+')',''];
+      case 'mint': return [g('#D9F99D','#34D399'),'url(#g'+u+')',''];
+      case 'grape': return [g('#E9D5FF','#7C3AED'),'url(#g'+u+')',''];
+      case 'paper': { var l=''; for(var i=8;i<80;i+=8) l+='<path d="M'+i+' 0V80M0 '+i+'H80" stroke="#93C5FD" stroke-width=".5"/>'; return ['','#F8FAFC',l+'<text x="10" y="22" font-size="7" fill="#60A5FA" font-family="serif">π</text><text x="62" y="70" font-size="6" fill="#60A5FA">√x</text>']; }
+      case 'night': return [g('#1E1B4B','#0F172A'),'url(#g'+u+')',spark(12,20,1,'#FDE68A')+spark(66,14,.8,'#fff')+spark(70,40,1.1,'#FDE68A')+spark(9,52,.7,'#fff')+'<circle cx="62" cy="62" r=".9" fill="#fff"/><circle cx="20" cy="9" r=".7" fill="#fff"/>'];
+      case 'confetti': { var c=['#F43F5E','#FACC15','#22C55E','#3B82F6','#A855F7'], pts=[[10,18],[24,8],[58,10],[70,24],[8,44],[72,50],[14,66],[66,70],[34,4],[48,6]], s=''; pts.forEach(function(p,i){ s+='<rect x="'+p[0]+'" y="'+p[1]+'" width="4" height="2" rx=".8" fill="'+c[i%5]+'" transform="rotate('+(i*37%90)+' '+p[0]+' '+p[1]+')"/>'; }); return ['','#FFF7ED',s]; }
+      case 'rainbow': return ['<linearGradient id="g'+u+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F87171"/><stop offset=".25" stop-color="#FBBF24"/><stop offset=".5" stop-color="#4ADE80"/><stop offset=".75" stop-color="#60A5FA"/><stop offset="1" stop-color="#A78BFA"/></linearGradient>','url(#g'+u+')',''];
+    }
+    return null;
+  }
+  function frame(t,u){
+    if(t==='gold') return '<linearGradient id="f'+u+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FDE68A"/><stop offset=".5" stop-color="#D97706"/><stop offset="1" stop-color="#FDE68A"/></linearGradient>|<circle cx="40" cy="40" r="38.3" fill="none" stroke="url(#f'+u+')" stroke-width="3.4"/>';
+    if(t==='rainbow') return '<linearGradient id="f'+u+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F43F5E"/><stop offset=".3" stop-color="#FACC15"/><stop offset=".6" stop-color="#22C55E"/><stop offset="1" stop-color="#6366F1"/></linearGradient>|<circle cx="40" cy="40" r="38.3" fill="none" stroke="url(#f'+u+')" stroke-width="3.4"/>';
+    if(t==='neon') return '|<circle cx="40" cy="40" r="38" fill="none" stroke="#22FF9A" stroke-width="2.6"/><circle cx="40" cy="40" r="35.6" fill="none" stroke="#22FF9A" stroke-width=".8" opacity=".6"/>';
+    if(t==='dashed') return '|<circle cx="40" cy="40" r="38" fill="none" stroke="#fff" stroke-width="2.4" stroke-dasharray="4 3"/>';
+    return '|';
+  }
+  // items sit in a badge at the bottom right
+  var ITEMS={
+    pencil:'<path d="M-6 6L4-4l3 3L-3 9H-6z" fill="#FBBF24"/><path d="M4-4l2-2 3 3-2 2z" fill="#F472B6"/><path d="M-6 6v3h3z" fill="#1F2937"/>',
+    star:star(0,0,7,'#FACC15'),
+    heart:heart(0,.5,1.6,'#F43F5E'),
+    bolt:'<path d="M2-8L-5 1h4l-2 8 7-10H0z" fill="#F59E0B"/>',
+    trophy:'<path d="M-5-7h10v5a5 5 0 0 1-10 0z" fill="#FBBF24"/><path d="M-5-5h-3a3 3 0 0 0 3 5M5-5h3a3 3 0 0 1-3 5" stroke="#FBBF24" stroke-width="1.6" fill="none"/><rect x="-1.4" y="2" width="2.8" height="3" fill="#D97706"/><rect x="-4.5" y="5" width="9" height="2.6" rx="1" fill="#92400E"/>',
+    pi:'<text x="0" y="5" text-anchor="middle" font-size="15" font-family="Georgia,serif" font-weight="700" fill="#2563EB">π</text>',
+    rocket:'<path d="M0-9C4-6 5-1 4 4h-8C-5-1-4-6 0-9z" fill="#E5E7EB" stroke="#6B7280" stroke-width=".8"/><circle cy="-3" r="1.8" fill="#3B82F6"/><path d="M-4 1l-3 4h3M4 1l3 4H4" fill="#EF4444"/><path d="M-2 4.5L0 9 2 4.5z" fill="#F97316"/>',
+    calc:'<rect x="-6" y="-8" width="12" height="16" rx="2" fill="#374151"/><rect x="-4" y="-6" width="8" height="4" rx="1" fill="#A7F3D0"/><g fill="#F9FAFB"><circle cx="-2.5" cy="1" r="1.1"/><circle cx="2.5" cy="1" r="1.1"/><circle cx="-2.5" cy="5" r="1.1"/><circle cx="2.5" cy="5" r="1.1"/></g>'
+  };
+  function fx(t){
+    if(t==='sparkles') return spark(13,15,1.3,'#FDE047')+spark(67,12,1,'#fff')+spark(71,34,.8,'#FDE047')+spark(9,36,.8,'#fff');
+    if(t==='hearts') return heart(13,16,.9,'#FB7185')+heart(68,14,.7,'#F43F5E')+heart(71,32,.55,'#FB7185');
+    if(t==='math') return '<g font-family="Georgia,serif" font-weight="700" fill="#fff" opacity=".9" stroke="#1F2937" stroke-width=".35"><text x="7" y="20" font-size="9">π</text><text x="64" y="17" font-size="8">√</text><text x="68" y="38" font-size="7">∞</text><text x="5" y="40" font-size="7">Σ</text></g>';
+    if(t==='bubbles') return '<g fill="none" stroke="#fff" stroke-width=".9" opacity=".9"><circle cx="12" cy="18" r="3"/><circle cx="18" cy="10" r="1.8"/><circle cx="67" cy="15" r="2.6"/><circle cx="71" cy="30" r="1.6"/></g>';
+    return '';
+  }
+
+  /* the catalogue: category → items. req = what unlocks it ({k: stat, n: amount}); none = free */
+  var CATS=[
+    {k:'hat',name:'כובעים',items:[['','בלי'],['cap','כובע מצחייה'],['beanie','כובע צמר'],['party','כובע מסיבה',{k:'subs',n:1}],['headphones','אוזניות',{k:'subs',n:3}],['grad','כובע סיום',{k:'subs',n:5}],['viking','קסדת ויקינג',{k:'correct',n:100}],['wizard','כובע קוסם',{k:'perfect',n:1}],['crown','כתר',{k:'subs',n:20}]]},
+    {k:'eyes',name:'משקפיים',items:[['','בלי'],['round','עגולים'],['sun','משקפי שמש'],['star','כוכבים',{k:'subs',n:2}],['heart','לבבות',{k:'correct',n:50}],['3d','תלת־ממד',{k:'imp',n:1}],['monocle','מונוקל',{k:'correct',n:200}]]},
+    {k:'bg',name:'רקעים',items:[['','מקורי'],['sunset','שקיעה'],['ocean','ים'],['mint','מנטה'],['paper','מחברת חשבון',{k:'subs',n:3}],['grape','ענבים',{k:'subs',n:5}],['night','לילה',{k:'subs',n:10}],['confetti','קונפטי',{k:'perfect',n:1}],['rainbow','קשת',{k:'subs',n:25}]]},
+    {k:'frame',name:'מסגרות',items:[['','בלי'],['dashed','מקווקוות'],['gold','זהב',{k:'subs',n:5}],['neon','ניאון',{k:'extra',n:1}],['rainbow','קשת',{k:'perfect',n:2}]]},
+    {k:'item',name:'אביזרים',items:[['','בלי'],['pencil','עיפרון'],['heart','לב'],['star','כוכב',{k:'subs',n:1}],['calc','מחשבון',{k:'correct',n:30}],['bolt','ברק',{k:'imp',n:1}],['pi','פאי',{k:'correct',n:150}],['rocket','חללית',{k:'extra',n:3}],['trophy','גביע',{k:'perfect',n:1}]]},
+    {k:'fx',name:'אפקטים',items:[['','בלי'],['bubbles','בועות'],['sparkles','נצנצים',{k:'subs',n:3}],['hearts','לבבות',{k:'correct',n:75}],['math','סמלי מתמטיקה',{k:'subs',n:8}]]}
+  ];
+  var REQ={subs:function(n){ return n===1?'הגישו מקבץ ראשון':'הגישו '+n+' מקבצים'; }, correct:function(n){ return n+' תשובות נכונות'; },
+    perfect:function(n){ return n===1?'מקבץ אחד בלי טעויות':n+' מקבצים בלי טעויות'; }, imp:function(n){ return n===1?'הגישו מקבץ לשיפור':'הגישו '+n+' מקבצים לשיפור'; },
+    extra:function(n){ return n===1?'הגישו מקבץ נוסף':'הגישו '+n+' מקבצים נוספים'; }};
+
+  function render(id,look){
+    var av=A[id]; if(!av) return '';
+    look=look||{}; var u=++uid, S0='<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">';
+    var inner=av.svg.slice(av.svg.indexOf('>')+1,av.svg.lastIndexOf('</svg>')), defs='', out='';
+    var b=look.bg&&bg(look.bg,u);
+    if(b){ defs+=b[0]; inner=inner.replace(/^<circle cx="40" cy="40" r="40" fill="[^"]*"\/>/,''); out+='<clipPath id="c'+u+'"><circle cx="40" cy="40" r="40"/></clipPath><circle cx="40" cy="40" r="40" fill="'+b[1]+'"/><g clip-path="url(#c'+u+')">'+b[2]+'</g>'; }
+    out+=inner;
+    var a=ANC[id]||[22,30,38,6];
+    if(look.eyes) out+=glasses(look.eyes,a[2],a[3]);
+    if(look.hat&&HATS[look.hat]) out+='<g transform="translate(40 '+a[0]+') scale('+(a[1]/30).toFixed(3)+')">'+HATS[look.hat]+'</g>';
+    if(look.fx) out+=fx(look.fx);
+    var fr=frame(look.frame,u).split('|'); defs+=fr[0]; out+=fr[1];
+    if(look.item&&ITEMS[look.item]) out+='<g transform="translate(64 64)"><circle r="11" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>'+ITEMS[look.item]+'</g>';
+    return S0+(defs?'<defs>'+defs+'</defs>':'')+out+'</svg>';
+  }
+  window.URIQ_LOOK={render:render,cats:CATS,req:REQ};
+})();

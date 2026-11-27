@@ -278,7 +278,7 @@
       st.sub=true; st.at=Date.now(); logAttempt(n,st);
       if(isI){ var im=impOf(n); if(im){ im.sub=1; store.imp.u=st.at; } cards.forEach(function(c){ var id=c.dataset.q; if(st.a[id]===+keyOf(id)) (store.m=store.m||{})[id]=st.at; }); }
       save(); drawAll();
-      var last=summarize(n,st); emit('submit',{set:n,ok:last.ok,tot:last.tot});
+      var last=summarize(n,st); emit('submit',{set:n,ok:last.ok,tot:last.tot}); setTimeout(lookCheck,1200);
       var box=document.getElementById('results'); if(box){ box.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); box.focus({preventScroll:true}); }
     }
     document.querySelectorAll('[data-submit]').forEach(function(b){ b.addEventListener('click',function(){
@@ -452,11 +452,58 @@
     set(); addEventListener('resize',set,{passive:true}); if(window.ResizeObserver) new ResizeObserver(set).observe(hdr); })();
   /* ---- avatars ---- */
   var AV=window.URIQ_AVATARS||{}, AVO=window.URIQ_AVATAR_ORDER||[];
-  function avatarHTML(id){ return AV[id]?AV[id].svg:''; }
+  var LOOK=window.URIQ_LOOK||null;
+  function avatarHTML(id,look){ if(!AV[id]) return ''; return LOOK?LOOK.render(id,look||store.look):AV[id].svg; }
+  /* ---- avatar shop: what is unlocked comes from real progress ---- */
+  function lookStats(){
+    var r={subs:0,correct:0,perfect:0,imp:0,extra:0};
+    Object.keys(store.sets||{}).forEach(function(n){
+      var st=store.sets[n]; if(!st||!st.sub) return;
+      var ids=idsOf(n), ok=ids.filter(function(id){ return st.a[id]===+keyOf(id); }).length;
+      if(/^i\d/.test(n)) r.imp++; else { r.subs++; if(/^x/.test(n)) r.extra++; }
+      if(!/^i\d/.test(n)){ r.correct+=ok; if(ids.length&&ok===ids.length) r.perfect++; }
+    });
+    return r;
+  }
+  function lookOpen(it,stats){ var q=it[2]; return !q||(stats||lookStats())[q.k]>=q.n; }
+  function lookUnlocked(){ var st=lookStats(), out=[]; if(!LOOK) return out; LOOK.cats.forEach(function(c){ c.items.forEach(function(it){ if(it[2]&&lookOpen(it,st)) out.push(c.k+':'+it[0]); }); }); return out; }
+  function lookCheck(){   // a message for every item that opened since the last check
+    if(!LOOK||!UID) return; var now=lookUnlocked(), seen=store.lookSeen;
+    if(!seen){ store.lookSeen=now; save(); return; }
+    var fresh=now.filter(function(k){ return seen.indexOf(k)<0; }); if(!fresh.length) return;
+    store.lookSeen=now; save();
+    var names=fresh.map(function(k){ var p=k.split(':'), c=LOOK.cats.filter(function(x){ return x.k===p[0]; })[0], it=c&&c.items.filter(function(x){ return x[0]===p[1]; })[0]; return it?it[1]:''; }).filter(Boolean);
+    var t=document.createElement('div'); t.className='look-toast'; t.setAttribute('role','status');
+    t.innerHTML='<span class="lt-ic" aria-hidden="true">🎁</span><span><b>'+(names.length>1?'נפתחו '+names.length+' פריטים חדשים לדמות!':'נפתח פריט חדש לדמות!')+'</b><small>'+names.slice(0,3).join(' · ')+'</small></span><a href="'+root+'dashboard.html#look">לעיצוב</a><button type="button" aria-label="סגירה">×</button>';
+    document.body.appendChild(t); requestAnimationFrame(function(){ t.classList.add('on'); });
+    var bye=function(){ t.classList.remove('on'); setTimeout(function(){ t.remove(); },300); };
+    t.querySelector('button').addEventListener('click',bye); setTimeout(bye,9000);
+  }
+  function lookShop(box,onChange){
+    if(!LOOK||!box) return;
+    var cat=LOOK.cats[0].k;
+    function draw(){
+      var id=AV[store.avatar]?store.avatar:'buddy', look=store.look||{}, st=lookStats(), all=0, open=0;
+      LOOK.cats.forEach(function(c){ c.items.forEach(function(it){ if(it[0]){ all++; if(lookOpen(it,st)) open++; } }); });
+      var C=LOOK.cats.filter(function(c){ return c.k===cat; })[0];
+      box.innerHTML='<div class="ls-top"><span class="ls-prev" aria-hidden="true">'+avatarHTML(id,look)+'</span><div><p class="ls-cnt"><b>'+open+'</b> מתוך '+all+' פריטים פתוחים</p><p class="ls-hint">'+(AV[store.avatar]?'לחצו על פריט כדי להלביש אותו. פריטים נעולים נפתחים כשמתקדמים בתרגול.':'עוד לא בחרת דמות – הפריטים מוצגים על דמות לדוגמה.')+'</p>'+(Object.keys(look).some(function(k){ return look[k]; })?'<button type="button" class="cta line ls-reset">הסרת כל הפריטים</button>':'')+'</div></div>'+
+        '<div class="ls-cats" role="tablist">'+LOOK.cats.map(function(c){ return '<button type="button" role="tab" class="ls-cat" data-c="'+c.k+'" aria-selected="'+(c.k===cat)+'">'+c.name+'</button>'; }).join('')+'</div>'+
+        '<div class="ls-items">'+C.items.map(function(it){
+          var on=(look[cat]||'')===it[0], ok=lookOpen(it,st), L2={}; Object.keys(look).forEach(function(k){ L2[k]=look[k]; }); L2[cat]=it[0];
+          var q=it[2], prog=q?Math.min(st[q.k],q.n)+'/'+q.n:'';
+          return '<button type="button" class="ls-it'+(on?' on':'')+(ok?'':' locked')+'" data-v="'+it[0]+'"'+(ok?'':' aria-disabled="true"')+' aria-pressed="'+on+'"><span class="ls-img">'+avatarHTML(id,L2)+(ok?'':'<span class="ls-lock" aria-hidden="true">🔒</span>')+'</span><span class="ls-nm">'+it[1]+'</span>'+(ok?'':'<span class="ls-req">'+LOOK.req[q.k](q.n)+'<i>'+prog+'</i></span>')+'</button>'; }).join('')+'</div>';
+      box.querySelectorAll('.ls-cat').forEach(function(b){ b.addEventListener('click',function(){ cat=b.dataset.c; draw(); }); });
+      box.querySelectorAll('.ls-it').forEach(function(b){ b.addEventListener('click',function(){
+        if(b.classList.contains('locked')) return;
+        store.look=store.look||{}; store.look[cat]=b.dataset.v; save(); paintChip(); emit('look',{cat:cat,v:b.dataset.v}); draw(); if(onChange) onChange(); }); });
+      var rs=box.querySelector('.ls-reset'); if(rs) rs.addEventListener('click',function(){ store.look={}; save(); paintChip(); draw(); if(onChange) onChange(); });
+    }
+    draw();
+  }
   function avatarPicker(box,onPick){
     var cur=store.avatar||'';
     box.innerHTML='<fieldset class="avpick"><legend class="vh">בחירת דמות לפרופיל</legend>'+AVO.map(function(k){
-      return '<label class="avopt"><input type="radio" name="uriq-av" value="'+k+'"'+(k===cur?' checked':'')+'><span class="avimg">'+AV[k].svg+'</span><span class="avname">'+AV[k].name+'</span></label>'; }).join('')+'</fieldset>';
+      return '<label class="avopt"><input type="radio" name="uriq-av" value="'+k+'"'+(k===cur?' checked':'')+'><span class="avimg">'+avatarHTML(k)+'</span><span class="avname">'+AV[k].name+'</span></label>'; }).join('')+'</fieldset>';
     box.querySelectorAll('input').forEach(function(r){ r.addEventListener('change',function(){ store.avatar=r.value; save(); paintChip(); emit('avatar',{id:r.value}); if(onPick) onPick(r.value); }); });
   }
   /* ---- personal accent colour ---- */
@@ -561,6 +608,6 @@
     });
     chips.forEach(function(a){ var d=done[a.dataset.q]; if(d){ a.classList.add(d); a.title=d==='ok'?'פתרת נכון':'טעית בשאלה הזאת'; } });
   })();
-  window.URIQ={syncImp:syncImp, mistakes:mistakes, pageOf:pageOf, X:X, displayName:displayName, accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
+  window.URIQ={lookShop:lookShop, lookCheck:lookCheck, syncImp:syncImp, mistakes:mistakes, pageOf:pageOf, X:X, displayName:displayName, accentPicker:accentPicker, applyAccent:applyAccent, avatarHTML:avatarHTML, avatarPicker:avatarPicker, paintChip:paintChip, emit:emit, get store(){ return store; }, set store(v){ store=v; }, KEY:KEY, UID:UID, save:save, keyOf:keyOf, D:D, fmt:fmt, fmtShort:fmtShort, pad:pad, summarize:summarize, load:load, put:put, ask:ask, root:root};
   sideProgress();
 })();

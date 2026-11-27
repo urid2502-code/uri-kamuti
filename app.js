@@ -359,7 +359,7 @@
     box.querySelectorAll('input').forEach(function(r){ r.addEventListener('change',function(){ store.avatar=r.value; save(); paintChip(); emit('avatar',{id:r.value}); if(onPick) onPick(r.value); }); });
   }
   /* ---- personal accent colour ---- */
-  var ACC=[['green','ירוק','#12805C'],['ink','שחור','#111111'],['blue','כחול','#2B3BFF'],['violet','סגול','#7339F0'],['pink','ורוד','#E2336B'],['orange','כתום','#E25F14'],['teal','טורקיז','#0E7C86'],['sky','תכלת','#0A6CB5'],['red','אדום','#D12C2C'],['amber','חרדל','#A85F00'],['olive','זית','#5B7A12'],['wine','בורדו','#9C1F4A']];
+  var ACC=[['green','ירוק','#12805C'],['ink','שחור','#111111'],['blue','כחול','#2B3BFF'],['violet','סגול','#7339F0'],['pink','ורוד','#D9339A'],['orange','כתום','#E25F14'],['teal','טורקיז','#0E7C86'],['sky','תכלת','#0A6CB5'],['red','אדום','#D12C2C'],['amber','חרדל','#A85F00'],['olive','זית','#5B7A12'],['wine','בורדו','#9C1F4A']];
   function applyAccent(a){ var r=document.documentElement; if(a&&a!=='green') r.dataset.accent=a; else delete r.dataset.accent; try{ if(a) localStorage.setItem('uriq:accent',a); else localStorage.removeItem('uriq:accent'); }catch(e){} }
   (function(){ var want=store.accent&&store.accent!=='green'?store.accent:''; if(want!==(document.documentElement.dataset.accent||'')) applyAccent(want); })();
   function accentPicker(box){
